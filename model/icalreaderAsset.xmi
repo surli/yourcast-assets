@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:prodsource="prodsource.yourcast.fr"
+    xsi:schemaLocation="prodsource.yourcast.fr ../../metamodel/generation/products/source.ecore"
+    name="ICalReader"
+    id="ICalReader">
+  <service name="fr.unice.i3s.modalis.yourcast.sources.calendar.icalreader.war"/>
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"
+      type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters
+      name="icalreader.properties"/>
+  <personalization
+      image="icalreader.png"
+      listIntroductionMessage="Select a renderer to display the calendars">
+    <methods
+        name="Add"
+        pathPrefix="days/"
+        introductionMessage="Complete the information to add the calendar"
+        editMessage="Edit the information of the calendar">
+      <parameters
+          name="URL"
+          tip="The url of the calendar, e.x.,"
+          isPartOfPath="false"
+          dbName="body"/>
+      <parameters
+          name="Start Date"
+          type="DATE"
+          tip="the start date to retrieve the calendar information"
+          constraint="NONE"/>
+      <parameters
+          name="Number of Days"
+          tip="The number of days to display the calender, e.x., 10"
+          constraint="POSITIVE"
+          dbName=""/>
+    </methods>
+    <list name="URL"
+        tip="the URL related to the calendar"
+        parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="Start Time"
+        tip="the initial date to retrieve the calendar information"
+        parameters="//@personalization/@methods.0/@parameters.1"/>
+    <list name="Duration"
+        tip="the number of days that the calendar will be display"
+        parameters="//@personalization/@methods.0/@parameters.2"/>
+  </personalization>
+</prodsource:Source>

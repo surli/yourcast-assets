@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:prodsource="prodsource.yourcast.fr"
+    xsi:schemaLocation="prodsource.yourcast.fr ../../metamodel/generation/products/source.ecore"
+    name="Announcements"
+    id="Announcements">
+  <service name="fr.unice.i3s.modalis.yourcast.sources.announcement.war"/>
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"
+      type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters
+      name="announces.properties"/>
+  <personalization
+      image="announcement.png"
+      listIntroductionMessage="Select a renderer to display the target public for the announcements">
+    <methods
+        name="Add Target Public"
+        pathPrefix="target/"
+        introductionMessage="Complete the information to add the target public"
+        editMessage="Edit the information of the target public">
+      <parameters
+          name="target"
+          type="STRING"
+          tip="the target public for the announcements, e.x., students"
+          constraint="NONE"/>
+    </methods>
+    <list name="Target Public"
+        tip="the target public for the announcements"
+        parameters="//@personalization/@methods.0/@parameters.0"/>
+  </personalization>
+</prodsource:Source>

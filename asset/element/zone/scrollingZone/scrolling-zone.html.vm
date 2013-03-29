@@ -1,0 +1,3 @@
+<div id="$zoneName">
+	<div id="${zoneName}_logo"></div>
+</div>

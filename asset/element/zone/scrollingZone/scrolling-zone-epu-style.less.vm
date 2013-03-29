@@ -1,0 +1,56 @@
+@import "../less/functions.less";
+@import "../less/variables.less";
+
+#$zoneName {
+    position:absolute;
+    bottom:10px;
+    left:5%;
+    right:5%;
+    height:80px;
+    .zone2Background;
+    border-radius: 11px;
+    font-family:arial;
+    overflow:hidden;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    -moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: 4px 4px 12px #555;
+    box-shadow: 4px 4px 12px #555;
+}
+
+#$zoneName span {
+  position: relative;
+  margin-left: 90px;
+}
+
+.toLeft {
+  font-size:140%;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.toTop {
+  font-size:120%;
+}
+
+/*#$zoneName span#scrollContent img{
+  width : 90px;
+  padding-right: 20px;
+  padding-left: 20px;
+  vertical-align: middle;
+  display: inline-block;
+}*/
+
+#${zoneName}_logo img{
+  width : 80px;
+  overflow: hidden;
+  display: inline;
+}
+
+#$zoneName #${zoneName}_logo {
+  position: fixed;
+  display: inline;
+  overflow: hidden;
+  z-index: 1;
+}

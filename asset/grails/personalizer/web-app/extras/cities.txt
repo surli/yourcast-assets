@@ -1,0 +1,6 @@
+Australia,canberra,Canberra,01,324025,-35.27603,149.13435,true
+Nigeria,abuja,Abuja,11,,9.083333,7.533333,true
+France,paris,Paris,A8,2110694,48.866667,2.333333,true
+France,lille,Lille,B4,189746,50.6333,3.06667,false
+France,nice,Nice,B8,341621,43.713644,7.25952,false
+France,rennes,Rennes,A2,213334,48.111981,-1.674291,false

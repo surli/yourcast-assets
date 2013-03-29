@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodrenderer:Renderer
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:prodrenderer="prodrenderer.yourcast.fr"
+    xsi:schemaLocation="prodrenderer.yourcast.fr ../../metamodel/generation/products/renderer.ecore"
+    displayTime="15"
+    name="calendar.js"
+    infoType="Calendar">
+  <function
+      name="render_ICalReader_for_main_same_title"/>
+  <resources
+      name="/utils/calendar.js"/>
+</prodrenderer:Renderer>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0">
+    <info organisation="org.example" module="$applicationName"/>
+    <configurations defaultconfmapping="build->default">
+        <conf name="build"/>
+    </configurations>
+    <dependencies>
+        <dependency org="org.grails" name="grails-dependencies" rev="$grailsVersion" conf="build"/>
+    </dependencies>
+</ivy-module>

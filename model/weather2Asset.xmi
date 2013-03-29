@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:prodsource="prodsource.yourcast.fr"
+    xsi:schemaLocation="prodsource.yourcast.fr ../../metamodel/generation/products/source.ecore"
+    name="Weather2"
+    id="Weather2">
+  <service name="fr.unice.i3s.modalis.yourcast.sources.forecast.weather2.war"/>
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"
+      type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters
+      name="weather2.properties"/>
+  <personalization
+      image="weather2.png"
+      listIntroductionMessage="Select a renderer to show the cities of the weather being displayed">
+    <methods
+        name="Add City"
+        pathPrefix=""
+        introductionMessage="Select a renderer and a number of days for the forecast"
+        editMessage="Edit the forecast information">
+      <parameters
+          name="latitude"
+          type="DOUBLE"
+          tip="The latitude of the city, e.x., 43.713644 for nice"
+          constraint="NONE"/>
+      <parameters
+          name="longitude"
+          type="DOUBLE"
+          tip="The longitude of the city, e.x., 7.25952 for nice"/>
+    </methods>
+    <list name="Latitude"
+        tip="The latitude of the city"
+        parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="Longitude"
+        tip="The longitude of the city"
+        parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+</prodsource:Source>

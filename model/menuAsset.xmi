@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:prodsource="prodsource.yourcast.fr"
+    xsi:schemaLocation="prodsource.yourcast.fr ../../metamodel/generation/products/source.ecore"
+    name="Menu"
+    personalizerImage="menu.png">
+  <service name="fr.unice.i3s.modalis.yourcast.sources.menu.war"/>
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"
+      type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters
+      name="menu.properties"/>
+</prodsource:Source>

@@ -1,0 +1,690 @@
+@import "functions.less";
+@import "variables.less";
+
+body
+{
+    .radial-gradient;
+    background-attachment:fixed;
+    font-family:arial;
+    font-size:36pt;
+    overflow: hidden;
+}
+
+@media screen and (min-device-width: 0px) 	 and (max-device-width: 1024px) and (min-height: 0px) 		    and (max-height: 768px) 	    {body{font-size:20pt;}}
+@media screen and (min-device-width: 1025px) and (max-device-width: 1280px) and (min-device-height: 769px)  and (max-device-height: 800px)  {body{font-size:24pt;}}
+@media screen and (min-device-width: 1025px) and (max-device-width: 1280px) and (min-device-height: 801px)  and (max-device-height: 1024px) {body{font-size:26pt;}}
+@media screen and (min-device-width: 1281px) and (max-device-width: 1600px) and (min-device-height: 801px)  and (max-device-height: 901px)  {body{font-size:28pt;}}
+@media screen and (min-device-width: 1601px) and (max-device-width: 1920px) and (min-device-height: 901px)  and (max-device-height: 1054px) {body{font-size:33pt;}}
+@media screen and (min-device-width: 1601px) and (max-device-width: 1920px) and (min-device-height: 1055px) and (max-device-height: 1200px) {body{font-size:38pt;}}
+
+#logo_loading {
+	width: 100%; 
+	height: 100%; 
+	position: absolute; 
+	top: 0; 
+	left: 0;
+	z-index : 2;
+	img {
+		width: 100%; 
+		height: 100%;
+	}
+}
+
+
+#date_time
+{
+	position:absolute;
+    top:0.4em;
+    right:0.4em;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height:66px;
+    text-align:center;
+    color:#ffffff;
+    font-size: 120%;
+    .date-time-background;
+    font-family:arial;
+    z-index : 2;
+    box-shadow: 4px 4px 12px #555;
+    -moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: 4px 4px 12px #555;
+}
+
+/*************************
+ *  Style des renderers  *
+ *************************/
+
+
+.calendar_multiple_events {
+	font-size: 95%;
+	font-weight: bold;
+	margin-top: 1em;
+	margin-left: 1em;
+	width: 95%;
+	
+	div.calendar_description_multiple_element {
+		margin-left: 3em;
+		font-size: 70%;
+		font-weight: normal;
+		width: 90%;
+	}
+	
+	span.calendar_location_multiple_element {
+		color: @baseBlueFont;
+	}
+}
+
+.calendar_dates_multiple_element {
+	font-size: 150%;
+		position: relative;
+	    width: 100%;
+	    text-align: center;
+		i {
+	        color:@baseBlueFont;
+	    }
+}
+
+.calendar_one_event {
+	div.calendar_dates_one_element {
+		font-size: 170%;
+		position: relative;
+	    width: 100%;
+	    text-align: center;
+	    i {
+	        color:@baseBlueFont;
+	    }
+	}
+	
+	div.calendar_summary_one_element {
+	    font-size: 105%;
+	    position : relative;
+	   	width: 100%;
+	    text-align: center;
+	    margin-top: 0.5em;
+	}
+	
+	div.calendar_description_one_element {
+	    font-size: 100%;
+	    position: relative;
+	    -webkit-hyphens: auto;
+	    -moz-hyphens: auto;
+	    margin-top: 0.2em;
+		width: 95%;
+		left: 2%;
+		right: 2%;
+	    i {
+	        color:@baseBlueFont;
+	    }
+	}
+	
+	div.calendar_location_one_element {
+		font-size: 100%;
+		color:@baseBlueFont;
+		text-align: center;
+	}
+}
+
+.calendar_edt_summary_no_desc{
+	background-color : #ACD2E3;
+	-moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: 4px 4px 12px #555;
+    box-shadow: 4px 4px 12px #555;
+    border-radius: 0.5em;
+    border-radius: 0.5em;
+    padding-left : 0.5em;
+    padding-right : 0.5em;
+    margin-bottom : 2em;
+}
+.calendar_edt_summary{
+	background-color : #ACD2E3;
+	-moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: 4px 4px 12px #555;
+    box-shadow: 4px 4px 12px #555;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    padding-left : 0.5em;
+    padding-right : 0.5em;
+}
+.calendar_edt_summary_desc{
+	background-color : #ACD2E3;
+	-moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: 4px 4px 12px #555;
+    box-shadow: 4px 4px 12px #555;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    padding-left : 0.5em;
+    padding-right : 0.5em;
+}
+
+.calendar_edt_summary_top{
+	background-color : #ACD2E3;
+	-moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: 4px 4px 12px #555;
+    box-shadow: 4px 4px 12px #555;
+    border-radius: 0.5em;
+    border-top-left-radius: 0em;
+    border-bottom-left-radius: 0em;
+    border-bottom-right-radius: 0em;
+    padding-left : 0.5em;
+    padding-right : 0.5em;
+}
+
+.calendar_edt_summary_top_no_desc{
+	background-color : #ACD2E3;
+	-moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: 4px 4px 12px #555;
+    box-shadow: 4px 4px 12px #555;
+    border-radius: 0.5em;
+    border-top-left-radius: 0em;
+    padding-left : 0.5em;
+    padding-right : 0.5em;
+    margin-bottom : 2em;
+}
+
+
+.calendar_edt_hours {
+	background-color : #DFECFF;
+	margin-bottom : 0.5em;
+	-moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: -4px 4px 12px #555;
+    box-shadow: 4px 4px 12px #555;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    padding-left : 0.5em;
+    padding-right : 0.5em;
+}
+
+.calendar_edt_hours_desc {
+	background-color : #DFECFF;
+	-moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: 4px 4px 12px #555;
+    box-shadow: 4px 4px 12px #555;
+    padding-left : 0.5em;
+    padding-right : 0.5em;
+}
+.calendar_edt_description {
+	background-color : #DFECFF;
+	margin-bottom : 1em;
+	margin-top : 0.1em;
+	-moz-box-shadow: 4px 4px 12px #555;
+    -webkit-box-shadow: 4px 4px 12px #555;
+    box-shadow: 4px 4px 12px #555;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    padding-left : 0.5em;
+    padding-right : 0.5em;
+}
+.calendar_edt_events {
+	position : relative;
+   	margin-top: 0.5em;
+   	margin-bottom : 1em;
+	width: 95%;
+	left: 2%;
+	right: 2%;
+}
+
+.inProgress {
+	color : red;
+}
+.calendar_description_edt {
+	float : right;
+}
+.calendar_location_edt {
+	float : right;
+}
+
+.calendar_dates_multiple_element_hour_top {
+	font-size: 150%;
+	position: relative;
+    text-align: center;
+    border-top-left-radius : 2em;
+    border-top-right-radius : 2em;
+	border-bottom : 1px solid;
+	background: rgba(218,218,218,1);
+	top : -0.35em;
+}
+	    
+.calendar_edt_hours_top_date {
+	background-color : #ACD2E3;
+	padding-left : 0.5em;
+    padding-right : 0.5em;
+    /*-moz-box-shadow: 4px 0 12px #555;
+    -webkit-box-shadow: 4px 0 12px #555;
+    box-shadow: 4px 0 12px #555;*/
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    
+}
+
+	
+.calendar_edt_hours_top_location {
+	background-color : #ACD2E3;
+	padding-left : 0.5em;
+    padding-right : 0.5em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+.calendar_one_day_all_event {
+	margin-left : 0.2em;
+	margin-right : 0.2em;
+	.calendar_one_day_event{
+		.inProgress{
+			color : red;
+		}
+	}
+}
+
+.color1 {
+			/*background-color : #ACD2E3;*/
+		}
+		
+.color2 {
+			background-color : #AAAEAD;
+		}
+		
+.tableDate {text-align : left; width : 20%; font-weight : bold; font-size : 100%;}
+.tableSum  {padding-left : 0.5em; font-size : 90%;}
+.tableLoc  {text-align : right; font-size : 100%; width : 10%;}
+
+.calendarTable {
+	width : 100%;
+	vertical-align : middle;
+}
+
+.inProgress_synth {
+	 	.tableDate {color : red;}
+	}
+		    
+.currentWeather_city {
+    font-size: 150%;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.currentWeather {
+    font-size: 130%;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    p {display: inline;}
+    img {width:30%; vertical-align:middle;}
+}
+
+.currentWeather_wind_rain {
+    font-size: 130%;
+    position: relative;
+    width: 60%;
+    left : 20%;
+    right : 20%;
+    text-align: center;
+    .wind_rain_background;
+    div.currentWeather_wind {display: inline;}
+    div.currentWeather_rain {display: inline; margin-left: 2em;}
+}
+
+.forecast {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+
+    div.day {
+        display: inline-block;
+        padding-right : 2em;
+    }
+
+    div.night {
+        display: inline-block;
+        padding-left: 2em;
+    }
+}
+
+.currentWeather_day_forecast {
+    font-size: 100%;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.currentWeather_forecast {
+    font-size: 130%;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5em;
+    p {display: inline;}
+    img {width:90%; vertical-align:middle;}
+}
+
+.currentWeather_wind_rain_forecast {
+    font-size: 90%;
+    position: relative;
+    width: 120%;
+    text-align: center;
+    .wind_rain_background;
+    div.currentWeather_wind {display: inline;}
+    div.currentWeather_rain {display: inline; margin-left: 1em;}
+}
+
+.scrollContent {
+    i.atTwitter {
+        color:@baseBlueFont;
+    }
+    
+    span.user_logo {
+	    img {
+	    }
+    }
+}
+
+#Pictures {
+    div.Picturesimage{
+        position: relative;
+        width: 100%;
+        margin-top: 1em;
+        text-align: center;
+        img {
+            -moz-box-shadow: 1px 1px 12px #555;
+            -webkit-box-shadow: 1px 1px 12px #555;
+            box-shadow: 1px 1px 12px #555;
+        }
+    }
+    div.picturesDescription{
+        position: relative;
+        width: 100%;
+        margin-top: 1em;
+        text-align: center;
+        font-size: 80%;
+    }
+}
+
+.mosaicPictures {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    span {
+        img {
+        	width:30%;
+        	height:40%;
+            -moz-box-shadow: 1px 1px 12px #555;
+            -webkit-box-shadow: 1px 1px 12px #555;
+            box-shadow: 1px 1px 12px #555;
+        }
+    }
+} 
+
+.mosaicPicturesSize {
+    position: relative;
+    width: 100%;
+    height : 100%;
+    text-align: center;
+    margin-top: 1em;
+    div.mosaicPaysage{
+    	position: relative;
+	    width: 100%;
+    	height : 100%;
+	    text-align: center;
+    	span {
+    		img{
+    			margin-right : 0.5em;
+    			margin-left : 0.5em;
+    			margin-bottom : 0.5em;
+	    		width:30%;
+	        	height:35%;
+	            -moz-box-shadow: 1px 1px 12px #555;
+	            -webkit-box-shadow: 1px 1px 12px #555;
+	            box-shadow: 1px 1px 12px #555;
+	    	}
+	    }
+    }
+    div.mosaicPortrait{
+	    position: relative;
+	    width: 100%;
+    	height : 100%;
+	    text-align: center;
+    	span {
+    		img{
+    			margin-right : 0.5em;
+    			margin-left : 0.5em;
+    			margin-top : 1em;
+	    		width:25%;
+	        	height:70%;
+	            -moz-box-shadow: 1px 1px 12px #555;
+	            -webkit-box-shadow: 1px 1px 12px #555;
+	            box-shadow: 1px 1px 12px #555;
+	    	}
+	    }
+    }
+}
+
+
+#ephemTitle {
+    position: relative;
+    top:0%;
+    width: 100%;
+    margin-bottom: 0.5em;
+    font-size : 120%;
+    text-align: center;
+    i {
+        color:@baseBlueFont;
+    }
+}
+
+.ephemSaint {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.announces_title{
+	font-size: 150%;
+	position: relative;
+    text-align: center;
+    border-top-left-radius : 2em;
+    border-top-right-radius : 2em;
+	border-bottom : 1px solid;
+	background: rgba(218,218,218,1);
+	top : -0.35em;
+}
+
+.announces_body{
+    position : absolute;
+    width : 90%;
+    height : 80%;
+    overflow : hidden;
+    right : 6%;
+    left : 4%;
+    top : 15%;
+    
+	.announces_Dates{
+		font-size: 170%;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        i {
+            color:@baseBlueFont;
+        }
+	}
+	
+	.announces_Content{
+		font-size: 100%;
+        position: relative;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+        width: 95%;
+        left: 2%;
+        right: 2%;
+        i {
+            color:@baseBlueFont;
+        }
+	}
+	
+	.announces_Image{
+		position : relative;
+		float : right;
+		img {
+	        max-height: 250px;
+	    }
+	}
+	
+	.announces_Author{
+		font-size: 150%;
+	   	position : absolute;
+	   	bottom : 0.3em;
+	   	left : 1em;
+	   	float : left;
+	    i {
+	        color:@baseBlueFont;
+	    }
+	}
+}
+
+.announces_body_different_title{
+	background: rgba(218,218,218,1);
+	border : 1px solid;
+    border-radius: 0.5em;
+    
+    padding : 0.5em 0.5em 0.5em 0.5em;
+    
+    position : absolute;
+    width : 90%;
+    height : 80%;
+    overflow : hidden;
+    right : 6%;
+    left : 4%;
+    top : 5%;
+    
+	.announces_Dates{
+		font-size: 170%;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        i {
+            color:@baseBlueFont;
+        }
+	}
+	.announces_Content{
+		font-size: 100%;
+        position: relative;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+        width: 95%;
+        left: 2%;
+        right: 2%;
+        i {
+            color:@baseBlueFont;
+        }
+	}
+	.announces_Image{
+		position : relative;
+		float : right;
+		img {
+	        max-height: 200px;
+	    }
+	}
+	
+	.announces_Author{
+		font-size: 150%;
+	   	position : absolute;
+	   	bottom : 0.3em;
+	   	left : 1em;
+	   	float : left;
+	    i {
+	        color:@baseBlueFont;
+	    }
+	}
+}
+
+.videoTest {
+	width : 90%;
+	height : 90%;
+	position :absolute;
+	left : 5%;
+	right : 5%
+	top : 5%;
+	bottom : 5%;
+}
+
+.menus_content{
+	font-size : 120%;
+	text-align : center;
+	i {
+	        color:@baseBlueFont;
+	    }
+}
+
+
+.user_logo{
+  width : 70px;
+  vertical-align : middle;
+  margin-top : 0.1em;
+}
+
+
+
+.twitter_title{
+	font-size: 100%;
+	position: relative;
+    text-align: center;
+    border-top-left-radius : 2em;
+    border-top-right-radius : 2em;
+	border-bottom : 1px solid;
+	background: rgba(218,218,218,1);
+	height : 2.5em;
+	top : -0.50em;
+	i {
+            color:@baseBlueFont;
+            font-size: 160%;
+      }
+      img {
+      	position : absolute;
+      	top : 0.1em;
+      	margin-left : 0.5em;
+      	width : 7%;
+      }
+}
+
+
+.twitter_body{
+    position : absolute;
+    width : 90%;
+    height : 80%;
+    overflow : hidden;
+    right : 6%;
+    left : 4%;
+    top : 20%;
+
+	
+	.twitter_Content{
+		font-size: 190%;
+        position: relative;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+        width: 95%;
+        left: 2%;
+        right: 2%;
+        i {
+            color:@baseBlueFont;
+        }
+	}
+	
+	.twitter_Author{
+		img {
+		   	position : absolute;
+		   	bottom : 0.3em;
+		   	right : 1em;
+		   	float : right;
+		   	width : 12%;
+		}
+	}
+}
+
+

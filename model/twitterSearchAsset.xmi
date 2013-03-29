@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:prodsource="prodsource.yourcast.fr"
+    xsi:schemaLocation="prodsource.yourcast.fr ../../metamodel/generation/products/source.ecore"
+    name="Twitter"
+    id="TwitterSearch">
+  <actor name="fr.unice.yourcast.provider.model.actors.twitter.ServiceActorCompositeTwitterSearch"
+      type="fr.unice.yourcast.provider.model.actors.twitter.ServiceActorCompositeTwitterSearch"/>
+  <parameters
+      name="twitterSearch.properties"/>
+  <personalization
+      image="twitter.png"
+      listIntroductionMessage="Select a renderer to display the tweet queries">
+    <methods
+        name="Add By Search"
+        introductionMessage="Complete the information to add a Twitter search"
+        editMessage="Edit the Twitter search information">
+      <parameters
+          name="Search"
+          type="STRING"
+          tip="the search to retrieve the tweets"
+          constraint="NONE"
+          isPartOfPath="false"
+          dbName="q"/>
+      <parameters
+          name="Criteria Sort"
+          type="STRING"
+          tip="the criteria to order the retrieved tweets"
+          constraint="NONE"
+          isPartOfPath="false"
+          dbName="result_type"/>
+      <parameters
+          name="Max. Number"
+          tip="the maximal number of tweets to retrieve"
+          constraint="POSITIVE"
+          isPartOfPath="false"
+          dbName="rpp"/>
+      <mapParameters
+          name="query"
+          type="MAP"
+          tip=""
+          constraint="NONE"
+          isPartOfPath="false"
+          dbName="query"
+          relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1 //@personalization/@methods.0/@parameters.2"/>
+    </methods>
+    <list name="Search"
+        tip="the search employed to retrieve the tweets"
+        parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="Number Of Tweets"
+        tip="the maximal number of tweets to be retrieved by the query"
+        parameters="//@personalization/@methods.0/@parameters.2"/>
+    <list name="Criteria Sort"
+        tip="the used criteria to order the retrieved tweets"
+        parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+</prodsource:Source>

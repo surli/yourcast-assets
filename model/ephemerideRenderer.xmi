@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodrenderer:Renderer
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:prodrenderer="prodrenderer.yourcast.fr"
+    xsi:schemaLocation="prodrenderer.yourcast.fr ../../metamodel/generation/products/renderer.ecore"
+    displayTime="8"
+    name="ephemeride.js"
+    infoType="Ephemeride">
+  <function
+      name="render_ephemeride_for_main_same_title"/>
+</prodrenderer:Renderer>

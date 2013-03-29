@@ -1,0 +1,1 @@
+<g:select name="sort" from="${listOfCriteria}" value="${current}"/>

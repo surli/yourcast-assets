@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
+		
+		<title>IHM YourCast</title>
+		<script type="text/javascript" src="./js/libs/prototype.js"></script>
+		<script type="text/javascript" src="./js/utils.js"></script>
+    	<script type="text/javascript" src="./js/date.js"></script>
+    	<script type="text/javascript" src="./js/controler.js"></script>
+		
+		<link href="less/als.css" type="text/css" rel="stylesheet" />
+		<link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
+			    
+
+
+$zoneScripts	    
+   	    <!-- import the less interpreter -->
+	    <script type="text/javascript" src="./js/libs/less.js"></script> 
+	</head>
+
+	<body onload="$onLoadContent init_date();">
+		
+		<!--  zone pour la date -->
+		<div id="date_time"></div>
+
+		$layoutBody
+		
+		<!--div id="logo_loading">
+			<img src="./img/loading_img.gif" />
+		</div-->
+	</body>
+</html>
+
