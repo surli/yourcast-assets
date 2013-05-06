@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="83893624-b2d9-4f40-87e6-4f43c95b4e52" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/behavior/appearance.js/appearance.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/behavior/scrolling.js/scrolling.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/layout/epuLayout/als-epu.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/layout/epuLayout/black.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/layout/epuLayout/epu-layout-style.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/layout/epuLayout/epu-layout.html.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/layout/epuLayout/functions-epu.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/layout/epuLayout/variables-epu.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/layout/epuLayout/yellow.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/layout/irsamLayout/irsam-layout.html.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/renderer/announces.js/announces.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/renderer/calendar.js/calendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/renderer/ephemeride.js/ephemeride.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/renderer/menus.js/menus.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/renderer/pictures.js/pictures.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/renderer/twitter.js/twitter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/renderer/videos.js/videos.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/renderer/weather.js/weather.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Announcements/announces.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Announcements/fr.unice.i3s.modalis.yourcast.sources.announcement.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Ephemeride/ephemeride.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/ICalReader/fr.unice.i3s.modalis.yourcast.sources.calendar.icalreader.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/ICalReader/icalreader.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Menu/fr.unice.i3s.modalis.yourcast.sources.menu.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Menu/menu.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Picasa/fr.unice.i3s.modalis.yourcast.sources.picturealbum.picasa.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Picasa/picasa.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Twitter/twitterSearch.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Twitter/twitterTL.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Weather2/fr.unice.i3s.modalis.yourcast.sources.forecast.weather2.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/source/Weather2/weather2.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/zone/logoTittleZone/style1.less.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/zone/logoTittleZone/zone-logo-tittle.html.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/zone/scrollingZone/scrolling-zone-epu-style.less.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/element/zone/scrollingZone/scrolling-zone.html.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/conf/ApplicationResources.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/conf/BootStrap.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/conf/Config.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/conf/DataSource.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/conf/UrlMappings.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/conf/spring/resources.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/controllers/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/domain/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_cs_CZ.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_da.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_de.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_es.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_fr.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_it.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_ja.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_nl.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_pt_BR.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_pt_PT.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_ru.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_sv.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_th.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/i18n/messages_zh_CN.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/services/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/taglib/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/utils/test.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/views/error.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/grails-app/views/index.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/ivysettings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/lib/fr.unice.i3s.modalis.yourcast.sources.picturealbum.sharing.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/lib/fr.unice.i3s.modalis.yourcast.sources.twitter.sharing.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/lib/fr.unice.i3s.modalis.yourcast.sources.utils.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/lib/gpars-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/lib/json-lib-2.4-jdk15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/log4j.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/src/groovy/fr/unice/yourcast/provider/model/actors/ServiceActor.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/src/groovy/fr/unice/yourcast/provider/model/actors/ServiceActorComposite.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/src/groovy/fr/unice/yourcast/provider/model/actors/ServiceResponse.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/src/groovy/fr/unice/yourcast/provider/model/actors/flickr/ServiceActorCompositeFlickr.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/src/groovy/fr/unice/yourcast/provider/model/actors/twitter/ServiceActorCompositeTwitterSearch.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/src/groovy/fr/unice/yourcast/provider/model/actors/twitter/ServiceActorCompositeTwitterTimeline.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/src/groovy/fr/unice/yourcast/provider/util/CacheManagerYourCast.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/WEB-INF/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/WEB-INF/sitemesh.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/WEB-INF/tld/c.tld" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/WEB-INF/tld/fmt.tld" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/WEB-INF/tld/grails.tld" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/WEB-INF/tld/spring.tld" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/apple-touch-icon-retina.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/apple-touch-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/grails_logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/grails_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/leftnav_btm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/leftnav_midstretch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/leftnav_top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/database_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/database_delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/database_edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/database_save.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/database_table.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/exclamation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/house.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/information.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/shadow.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/sorted_asc.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/skin/sorted_desc.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/spinner.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/images/springsource.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/application/web-app/js/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/application.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/dist/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/conf/ApplicationResources.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/conf/BootStrap.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/conf/Config.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/conf/DataSource.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/conf/UrlMappings.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/conf/spring/resources.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/controllers/fr/unice/yourcast/personalizer/AbstractController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/controllers/fr/unice/yourcast/personalizer/AnnouncementsController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/controllers/fr/unice/yourcast/personalizer/ICalReaderController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/controllers/fr/unice/yourcast/personalizer/PicasaController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/controllers/fr/unice/yourcast/personalizer/TwitterController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/controllers/fr/unice/yourcast/personalizer/Weather2Controller.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/announcements/AnnouncementInfo.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/db/DBFlag.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/icalreader/Calendar.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/sources/ProviderFlag.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/sources/ProviderInfo.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/sources/ServiceCall.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/sources/ServiceInfo.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/sources/twitter/TwitterInfo.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/sources/twitter/TwitterTL.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/fr/unice/yourcast/sources/weather2/City.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/domain/sample/Person.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_cs_CZ.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_da.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_de.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_es.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_fr.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_it.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_ja.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_nl.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_pt_BR.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_pt_PT.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_ru.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_sv.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_th.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/i18n/messages_zh_CN.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/services/fr/unice/yourcast/service/cities/CityService.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/services/fr/unice/yourcast/service/personalizer/PersonalizerService.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/utils/fr/unice/yourcast/util/CacheManagerYourCast.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/utils/fr/unice/yourcast/util/Constants.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/utils/fr/unice/yourcast/util/RESTServiceClient.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/ICalReader/icalReaderAdd.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/ICalReader/icalReaderEdit.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/ICalReader/icalReaderShowList.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/announcements/announcementsAdd.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/announcements/announcementsEdit.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/announcements/announcementsShowList.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/error.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/index.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/layouts/main.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/main/main.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/picasa/PicasaList.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/picasa/_PicasaList.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/picasa/picasaAddAlbum.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/picasa/picasaAddAlbumBySearch.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/picasa/picasaEditAlbum.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/picasa/picasaEditAlbumBySearch.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/picasa/picasaShowList.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_announcementsListTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_announcementsMenuTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_citySelectedTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_cityTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_criteriaSortSelectedTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_criteriaSortTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_forecastSelectedTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_forecastTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_headTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_icalReaderListTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_icalReaderMenuTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_picasaAlbumListTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_picasaMenuTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_providersTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_renderersTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_renderersWithOptionSelectedTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_renderersWithSourceTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_tabsTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_twitterListTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_twitterMenuTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_weather2CityListTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/templates/_weather2MenuTemplate.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitter/twitterAddBySearch.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitter/twitterAddByUser.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitter/twitterEditSearch.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitter/twitterEditUser.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitter/twitterShowList.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitterTL/_form.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitterTL/create.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitterTL/edit.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitterTL/list.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/twitterTL/show.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/weather2/weather2AddCapital.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/weather2/weather2AddFrenchCity.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/weather2/weather2AddLocalCity.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/weather2/weather2AddRandomCity.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/weather2/weather2EditCity.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/grails-app/views/weather2/weatherShowList.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/ivysettings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/log4j.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/src/groovy/fr/unice/yourcast/personalizer/client/AlbumInfo.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/src/groovy/fr/unice/yourcast/personalizer/client/PersonalizerServiceWrapper.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/target/classes/extras/cities.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/WEB-INF/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/WEB-INF/sitemesh.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/WEB-INF/tld/c.tld" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/WEB-INF/tld/fmt.tld" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/WEB-INF/tld/grails.tld" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/WEB-INF/tld/spring.tld" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/css/errors.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/css/mobile.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/css/tabber.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/css/yourcast.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/extras/cities.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/apple-touch-icon-retina.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/apple-touch-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/grails_logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/grails_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/leftnav_btm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/leftnav_midstretch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/leftnav_top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/announcement.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/database_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/database_delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/database_edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/database_save.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/database_table.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/exclamation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/house.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/icalreader.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/information.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/picasa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/question-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/question.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/remove.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/remove2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/remove3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/save.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/shadow.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/sorted_asc.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/sorted_desc.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/skin/weather2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/spinner.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/images/springsource.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/js/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/js/tabber.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/grails/personalizer/web-app/js/yourcast.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/ServiceProviderController.groovy.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/application-personalizer.properties.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/application.properties.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/build-config-grails-app.groovy.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/build-grails-app.xml.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/controler.js.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/index.html.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/ivy.xml.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/main-controller-personalizer.groovy.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/main-menu-template.gsp.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/personalizer-proxy-provider.groovy.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/utils.js.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/template/zonesSources.txt.vm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/datetime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/loading_img.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/absence.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/apal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/edt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/hyperloc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/ical.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/internal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/pict.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/restaurant.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/rss.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/summons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/tv.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/logos/weather.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/mini_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/pluie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/rightNow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/vent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/warning.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/Orages.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/OragesPlus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/brouillard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/brume.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/chaleur.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/froid.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/fumee.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/grele.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/neige_grele.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/neige_grele_vent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/neige_pluie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/neige_pluie_froid.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuages.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuages_neige.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuages_neigePlus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuages_neige_grele.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuit_nuages.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuit_nuagesPlus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuit_nuages_moins.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuit_nuages_neige_grele.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuit_orages_pluie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/nuit_pluie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/orages_pluie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/pluie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/pluie_vent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/poussiere.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/soleil.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/soleil_nuages.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/soleil_nuagesMoins.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/soleil_nuagesPlus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/soleil_orages_pluie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/soleil_pluie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/unknow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/img/weather_icons/vent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/js/behaviours/utils/functions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/js/renderers/utils/calendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/js/renderers/utils/menus.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/js/renderers/utils/meteo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/client/js/renderers/utils/pictures.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/script/js/calendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/script/js/controler.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/script/js/date.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/script/js/less.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/script/js/menus.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/script/js/meteo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/script/js/pictures.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/web/script/js/prototype.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/announcesAsset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/announcesRenderer.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/appearanceBehavior.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/bigPictureRenderer.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/caLayout.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/calendarRenderer.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/ephemerideAsset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/ephemerideRenderer.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/epuLayout.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/flickrAsset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/icalReaderRenderer.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/icalreaderAsset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/irsamLayout.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/logoTittleZone.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/menuAsset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/menuRenderer.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/modelNameMapping.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/modelsList.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/picasaAsset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/picturesRenderer.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/presenceIrsamRenderer.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/privateAlbumAsset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/scrollingBehavior.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/scrollingZone.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/simpleWeatherRenderer.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/titleZone.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/twitterRendererScrolling.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/twitterSearchAsset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/twitterTimeLineAsset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/weather2Asset.xmi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/weatherRenderer.xmi" afterPath="" />
+    </list>
+    <ignored path="yourcast-repository.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1367824445761" ignored="false" />
+    <file path="/function.js" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1367827139242" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="yourcast-repository" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="function.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/renderers/announce/glc_render_Announces_for_main_different_title/function.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendar.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/utils/calendar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="24" selection-start="3191" selection-end="3191" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/renderers/announce/glc_render_Announces_for_main_different_title/style.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="35" selection-start="592" selection-end="592" vertical-scroll-proportion="-19.2">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="function.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes/function.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="13" selection-start="59" selection-end="59" vertical-scroll-proportion="0.033519555">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="meteo.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/utils/meteo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="199" column="41" selection-start="3944" selection-end="3944" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes/style.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="54" selection-start="604" selection-end="604" vertical-scroll-proportion="-12.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/asset/picturealbum/renderers/style.less" />
+        <option value="$PROJECT_DIR$/asset/announce/renderers/irsam_render_Announces_for_main_irsam/function.js" />
+        <option value="$PROJECT_DIR$/asset/picturealbum/renderers/irsam_render_Pictures_for_main_fullArea/function.js" />
+        <option value="$PROJECT_DIR$/asset/menu/renderers/irsam_render_Menus_for_main_without_title/function.js" />
+        <option value="$PROJECT_DIR$/asset/menu/renderers/irsam_render_Menus_for_main_without_title/style.less" />
+        <option value="$PROJECT_DIR$/asset/picturealbum/renderers/glc_render_Pictures_for_main_mosaic/function.js" />
+        <option value="$PROJECT_DIR$/asset/picturealbum/renderers/glc_render_Pictures_for_main_mosaic/style.less" />
+        <option value="$PROJECT_DIR$/asset/picturealbum/renderers/glc_render_Pictures_for_main_full/function.js" />
+        <option value="$PROJECT_DIR$/asset/announce/renderers/glc_render_Announces_for_main_different_title/style.less" />
+        <option value="$PROJECT_DIR$/asset/announce/renderers/glc_render_Announces_for_main_different_title/function.js" />
+        <option value="$PROJECT_DIR$/asset/utils/calendar.js" />
+        <option value="$PROJECT_DIR$/asset/renderers/announce/glc_render_Announces_for_main_different_title/style.less" />
+        <option value="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes/style.less" />
+        <option value="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes/function.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="960" />
+    <option name="y" value="22" />
+    <option name="width" value="960" />
+    <option name="height" value="1054" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="renderers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weather2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glc_render_Weather_current_for_main_different_title_Rennes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="renderers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="renderers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="announce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="irsam_render_Announces_for_main_irsam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yourcast-repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="renderers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="announce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glc_render_Announces_for_main_different_title" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83893624-b2d9-4f40-87e6-4f43c95b4e52" name="Default" comment="" />
+      <created>1367499527089</created>
+      <updated>1367499527089</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="960" y="22" width="960" height="1054" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2379936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/asset/utils/calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="24" selection-start="3191" selection-end="3191" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/renderers/announce/glc_render_Announces_for_main_different_title/function.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/utils/meteo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="199" column="41" selection-start="3944" selection-end="3944" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/renderers/announce/glc_render_Announces_for_main_different_title/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="35" selection-start="592" selection-end="592" vertical-scroll-proportion="-19.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="54" selection-start="604" selection-end="604" vertical-scroll-proportion="-12.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes/function.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="59" selection-end="59" vertical-scroll-proportion="0.033519555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
