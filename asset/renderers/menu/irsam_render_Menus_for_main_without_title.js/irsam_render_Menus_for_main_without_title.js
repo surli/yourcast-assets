@@ -5,6 +5,7 @@ loadLess(LESS_ROOT+"/irsam_render_Menus_for_main_without_title.less");
  * display the menu for the day on the zone1(main)
  * the title is deleted
  */
+//        irsam_render_Menus_for_main_without_title is not defined
 function irsam_render_Menus_for_main_without_title(tableau, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 5;
 	var logo = '<img src="img/logos/restaurant.png"/>';

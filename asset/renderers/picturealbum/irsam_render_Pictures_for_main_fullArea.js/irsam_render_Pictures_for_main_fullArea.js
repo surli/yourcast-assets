@@ -1,4 +1,6 @@
-/* 
+
+loadLess(LESS_ROOT+"/irsam_render_Menus_for_main_without_title.less");
+/*
  * display pictures in full on the zone1 (main)
  * the content is modified, the logo is the same and the title is the album's name
  TODO: change main_div_zone1
