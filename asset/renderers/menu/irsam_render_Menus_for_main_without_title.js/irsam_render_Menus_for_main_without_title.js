@@ -1,3 +1,5 @@
+
+loadLess(LESS_ROOT+"/irsam_render_Menus_for_main_without_title.less");
 /*
  * work on menus source
  * display the menu for the day on the zone1(main)

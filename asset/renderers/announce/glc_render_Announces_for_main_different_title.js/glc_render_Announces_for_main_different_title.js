@@ -13,6 +13,7 @@
  * - smooth
  */
 loadScript(RENDERER_PATH+"/utils/calendar.js");
+loadLess(LESS_ROOT+"/glc_render_Announces_for_main_different_title.less");
 
 function glc_render_Announces_for_main_different_title(tableau, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 4;
