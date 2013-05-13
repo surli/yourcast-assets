@@ -1,8 +1,0 @@
-@Import "style.less";
-@import "../zone1/style.less";
-@import "variables.less";
-
-@backgroundIrsam: #f4cb01;
-@textIrsam: #282d65;
-@author : @green;
-@workers : @black;

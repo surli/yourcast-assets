@@ -11,8 +11,6 @@
 loadScript(BEHAVIOUR_PATH+"/utils/functions.js");
 
 
-
-
 /*
  * this is a behavior for the zone1 (main) for irsam
  * the behavior is a simple appearance of each info but every info is display twice, first in black and the second in yellow
