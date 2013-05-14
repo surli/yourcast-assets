@@ -2,104 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83893624-b2d9-4f40-87e6-4f43c95b4e52" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/behavior/irsam_appearance.js/irsam_appearance.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/behavior/irsam_appearance.js/less/black.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/behavior/irsam_appearance.js/less/yellow.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/behavior/utils/functions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/layout/irsam/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/layout/irsam/less/als.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/layout/irsam/less/black.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/layout/irsam/less/sharedIRSAMVariables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/layout/irsam/less/style.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/layout/irsam/less/variables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/layout/irsam/less/yellow.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/announce/glc_render_Announces_for_main_different_title.js/glc_render_Announces_for_main_different_title.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/announce/glc_render_Announces_for_main_different_title.js/glc_render_Announces_for_main_different_title.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/announce/glc_render_Announces_for_main_different_title.js/img/logos/announce.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/announce/glc_render_Announces_for_main_different_title.js/img/smooth.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/announce/irsam_render_Announces_for_main_irsam.js/img/logos/internal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/announce/irsam_render_Announces_for_main_irsam.js/irsam_render_Announces_for_main_irsam.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/announce/irsam_render_Announces_for_main_irsam.js/irsam_render_Announces_for_main_irsam.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/birthday/irsam_render_birthday_for_irsam/img/logos/birthday.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/birthday/irsam_render_birthday_for_irsam/irsam_render_birthday_for_irsam.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/birthday/irsam_render_birthday_for_irsam/irsam_render_birthday_for_irsam.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/calendar/irsam_render_ICalReader_for_irsam/img/logos/ical.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/calendar/irsam_render_ICalReader_for_irsam/irsam_render_ICalReader_for_irsam.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/calendar/irsam_render_ICalReader_for_irsam/irsam_render_ICalReader_for_irsam.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/ephemeride/irsam_render_ephemeride_for_irsam/img/logos/absence.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/ephemeride/irsam_render_ephemeride_for_irsam/irsam_render_ephemeride_for_irsam.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/ephemeride/irsam_render_ephemeride_for_irsam/irsam_render_ephemeride_for_irsam.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/menu/irsam_render_Menus_for_main_without_title.js/img/logos/restaurant.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/menu/irsam_render_Menus_for_main_without_title.js/irsam_render_Menus_for_main_without_title.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/menu/irsam_render_Menus_for_main_without_title.js/irsam_render_Menus_for_main_without_title.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/picturealbum/glc_render_Pictures_for_main_full.js/glc_render_Pictures_for_main_full.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/picturealbum/glc_render_Pictures_for_main_full.js/img/logos/picture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/picturealbum/glc_render_Pictures_for_main_mosaic.js/glc_render_Pictures_for_main_mosaic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/picturealbum/glc_render_Pictures_for_main_mosaic.js/glc_render_Pictures_for_main_mosaic.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/picturealbum/glc_render_Pictures_for_main_mosaic.js/img/logos/picture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/picturealbum/irsam_render_Pictures_for_main_fullArea.js/img/logos/pict.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/picturealbum/irsam_render_Pictures_for_main_fullArea.js/irsam_render_Pictures_for_main_fullArea.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/picturealbum/irsam_render_Pictures_for_main_fullArea.js/irsam_render_Pictures_for_main_fullArea.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/planning_workers/irsam_render_planning_workers/img/logos/edt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/planning_workers/irsam_render_planning_workers/irsam_render_planning_workers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/planning_workers/irsam_render_planning_workers/irsam_render_planning_workers.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/utils/calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/utils/menus.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/utils/meteo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/utils/pictures.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/utils/twitter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/glc_render_Weather_current_for_main_different_title_Rennes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/glc_render_Weather_current_for_main_different_title_Rennes.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/Climacons-Font.dev.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/Climacons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/webfont/climacons-font.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/webfont/climacons-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/webfont/climacons-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/webfont/climacons-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/webfont/climacons-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/climacons-font/webfont/demo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/glc_render_Weather_current_for_main_different_title_Rennes.js/img/logos/weather.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/Orages.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/OragesPlus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/brouillard.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/brume.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/chaleur.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/froid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/fumee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/grele.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/neige_grele.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/neige_grele_vent.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/neige_pluie.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/neige_pluie_froid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuages.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuages_neige.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuages_neigePlus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuages_neige_grele.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuit_nuages.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuit_nuagesPlus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuit_nuages_moins.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuit_nuages_neige_grele.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuit_orages_pluie.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/nuit_pluie.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/orages_pluie.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/pluie.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/pluie_vent.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/poussiere.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/soleil.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/soleil_nuages.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/soleil_nuagesMoins.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/soleil_nuagesPlus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/soleil_orages_pluie.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/soleil_pluie.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/unknow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/img/weather_icons/vent.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/irsam_render_weather_irsam.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/renderers/weather2/irsam_render_weather_irsam/irsam_render_weather_irsam.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asset/zone/mainZone_irsam/style.less" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/element/layout/irsam/index.html" afterPath="$PROJECT_DIR$/asset/element/layout/irsam/index.html" />
     </list>
     <ignored path="yourcast-repository.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -127,7 +30,7 @@
     <file path="$PROJECT_DIR$/../yourcast-client/generated/yourcast-EPU-client/js/behaviours/appearance.js" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1368443739768" ignored="false" />
     <file path="/smooth_appearance.js" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1368444193931" ignored="false" />
     <file path="/smooth_appearance_slide.js" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1368444740551" ignored="false" />
-    <file path="/index.html" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1368547681246" ignored="false" />
+    <file path="/index.html" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1368550325801" ignored="false" />
     <file path="$PROJECT_DIR$/../yourcast-client/yourcast-EPU-client/zone3/controler.js" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1368547516776" ignored="false" />
     <file path="$PROJECT_DIR$/../yourcast-client/yourcast-EPU-client/zone4/controler.js" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1368547516776" ignored="false" />
     <file path="$PROJECT_DIR$/../yourcast-client/yourcast-EPU-client/zone1/controler.js" changelist="83893624-b2d9-4f40-87e6-4f43c95b4e52" time="1368547516776" ignored="false" />
@@ -154,63 +57,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asset/element/layout/irsam/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="44" selection-start="600" selection-end="600" vertical-scroll-proportion="-10.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset/element/layout/glc/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="45" selection-start="728" selection-end="728" vertical-scroll-proportion="-14.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../yourcast-client/yourcast-EPU-client/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="17" selection-start="3530" selection-end="3671" vertical-scroll-proportion="-26.208334">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset/element/zone/bottomZone_glc/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="39" selection-start="113" selection-end="113" vertical-scroll-proportion="-1.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset/element/zone/mainZone_glc/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="69" selection-start="75" selection-end="75" vertical-scroll-proportion="-0.625">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#span#2;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset/element/zone/rightZone_glc/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="57" selection-start="130" selection-end="130" vertical-scroll-proportion="-1.25">
+            <state line="29" column="0" selection-start="877" selection-end="877" vertical-scroll-proportion="-18.125">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/asset/element/zone/headerZone_glc/index.html">
+        <entry file="file://$PROJECT_DIR$/asset/element/zone/mainZone_irsam/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
+            <state line="3" column="39" selection-start="139" selection-end="139" vertical-scroll-proportion="0.050904978">
               <folding />
             </state>
           </provider>
@@ -243,13 +99,13 @@
         <option value="$PROJECT_DIR$/asset/layout/glc/less/functions.less" />
         <option value="$PROJECT_DIR$/asset/layout/glc/less/variable.less" />
         <option value="$PROJECT_DIR$/asset/layout/glc/index.html" />
-        <option value="$PROJECT_DIR$/asset/element/layout/irsam/index.html" />
-        <option value="$PROJECT_DIR$/asset/element/zone/mainZone_irsam/index.html" />
         <option value="$PROJECT_DIR$/asset/element/layout/glc/index.html" />
         <option value="$PROJECT_DIR$/asset/element/zone/bottomZone_glc/index.html" />
         <option value="$PROJECT_DIR$/asset/element/zone/mainZone_glc/index.html" />
         <option value="$PROJECT_DIR$/asset/element/zone/rightZone_glc/index.html" />
         <option value="$PROJECT_DIR$/asset/element/zone/headerZone_glc/index.html" />
+        <option value="$PROJECT_DIR$/asset/element/layout/irsam/index.html" />
+        <option value="$PROJECT_DIR$/asset/element/zone/mainZone_irsam/index.html" />
       </list>
     </option>
   </component>
@@ -341,32 +197,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rightZone_glc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="mainZone_irsam" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -386,114 +216,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mainZone_glc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="headerZone_glc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bottomZone_glc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="renderers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="renderers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="glc_render_Announces_for_main_different_title.js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -523,110 +245,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="glc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="behaviours" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="behaviours" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irsam_appearance.js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yourcast-repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="element" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="behaviours" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="irsam_appearance.js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="less" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -638,11 +256,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/asset/element/renderers/irsam_render_weather_irsam/less" />
-      <recent name="$PROJECT_DIR$/asset/element/renderers/irsam_render_planning_workers/less" />
-      <recent name="$PROJECT_DIR$/asset/element/renderers/irsam_render_Pictures_for_main_fullArea.js/less" />
-      <recent name="$PROJECT_DIR$/asset/element/renderers/irsam_render_Menus_for_main_without_title.js/less" />
-      <recent name="$PROJECT_DIR$/asset/element/renderers/irsam_render_ICalReader_for_irsam/less" />
+      <recent name="$PROJECT_DIR$/asset/renderers/irsam_render_weather_irsam/less" />
+      <recent name="$PROJECT_DIR$/asset/renderers/irsam_render_planning_workers/less" />
+      <recent name="$PROJECT_DIR$/asset/renderers/irsam_render_Pictures_for_main_fullArea.js/less" />
+      <recent name="$PROJECT_DIR$/asset/renderers/irsam_render_Menus_for_main_without_title.js/less" />
+      <recent name="$PROJECT_DIR$/asset/renderers/irsam_render_ICalReader_for_irsam/less" />
     </key>
   </component>
   <component name="RunManager">
@@ -775,55 +393,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asset/element/layout/irsam/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="68" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/layout/glc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="78" selection-start="2046" selection-end="2046" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/layout/irsam/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="68" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/layout/glc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="78" selection-start="2046" selection-end="2046" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/zone/mainZone_irsam/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="39" selection-start="139" selection-end="139" vertical-scroll-proportion="0.050904978">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/layout/irsam/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="44" selection-start="600" selection-end="600" vertical-scroll-proportion="-10.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/layout/glc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="45" selection-start="728" selection-end="728" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../yourcast-client/yourcast-EPU-client/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="111" column="17" selection-start="3530" selection-end="3671" vertical-scroll-proportion="-26.208334">
@@ -831,32 +400,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/zone/bottomZone_glc/index.html">
+    <entry file="file://$PROJECT_DIR$/asset/element/layout/irsam/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="39" selection-start="113" selection-end="113" vertical-scroll-proportion="-1.25">
+        <state line="29" column="0" selection-start="877" selection-end="877" vertical-scroll-proportion="-18.125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/zone/mainZone_glc/index.html">
+    <entry file="file://$PROJECT_DIR$/asset/element/zone/mainZone_irsam/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="69" selection-start="75" selection-end="75" vertical-scroll-proportion="-0.625">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#span#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/zone/rightZone_glc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="57" selection-start="130" selection-end="130" vertical-scroll-proportion="-1.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/element/zone/headerZone_glc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
+        <state line="3" column="39" selection-start="139" selection-end="139" vertical-scroll-proportion="0.050904978">
           <folding />
         </state>
       </provider>
