@@ -8,6 +8,9 @@
  * - main_div_zone1
  * - mosaicPictures
  */
+
+loadLess(LESS_ROOT+"/glc_render_Pictures_for_main_mosaic.less");
+
 function glc_render_Pictures_for_main_mosaic(collection, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 7;
 	var logo = '<img src="img/logos/picture.png"/>';

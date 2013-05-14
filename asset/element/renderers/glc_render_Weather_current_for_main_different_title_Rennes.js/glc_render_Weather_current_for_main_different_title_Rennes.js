@@ -1,4 +1,5 @@
 loadScript(RENDERER_PATH+"/utils/meteo.js");
+loadLess(LESS_ROOT+"/glc_render_Weather_current_for_main_different_title_Rennes.less");
 
 function glc_render_Weather_current_for_main_different_title_Rennes(collection, zone, timeInfo){
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 5;
