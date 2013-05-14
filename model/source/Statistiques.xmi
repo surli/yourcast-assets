@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Statistiques" id="Statistiques">
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Statistiques.properties"/>
+  <personalization image="">
+    <methods name="Statistiques vari&#x221a;&#xa9;es sur les Choralies" pathPrefix="stats" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Statistiques vari&#x221a;&#xa9;es sur les Choralies Statistiques" editMessage="Editer Statistiques vari&#x221a;&#xa9;es sur les Choralies Statistiques">
+      <parameters name="theme" type="STRING" tip="th&#x221a;&#xae;me des statistiques" constraint="NONE"/>
+    </methods>
+    <list name="theme" tip="th&#x221a;&#xae;me des statistiques" parameters="//@personalization/@methods.0/@parameters.0"/>
+  </personalization>
+</prodsource:Source>

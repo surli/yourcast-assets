@@ -1,0 +1,23 @@
+fm_zone = FM(Zone: [Design] Orientation Product Elements ; 
+Design: (GLC|IRSAM) ; 
+Orientation: (Portrait|Landscape) ; 
+Product: (RightZone_glc|BottomZone_glc|MainZone_irsam|HeaderZone_glc|MainZone_glc) ; 
+Elements: [Title] Content [Logo] ; 
+Content: Graphic [Text] ; 
+Graphic: (Thumbnails|Full)+ ; 
+(GLC -> Thumbnails);
+(Logo -> !HeaderZone_glc);
+(HeaderZone_glc -> Thumbnails);
+(IRSAM <-> MainZone_irsam);
+(Full -> Title);
+(Title -> !HeaderZone_glc);
+(RightZone_glc <-> Portrait);
+(BottomZone_glc -> Thumbnails);
+(Text <-> Logo);
+(Full -> Landscape);
+(Title -> !BottomZone_glc);
+(IRSAM -> !Thumbnails);
+(MainZone_glc -> Full);
+(MainZone_glc -> Thumbnails);
+(HeaderZone_glc -> !Full);
+)

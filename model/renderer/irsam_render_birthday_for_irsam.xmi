@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="irsam_render_birthday_for_irsam" infoType="Birthday">
+  <function name="irsam_render_birthday_for_irsam"/>
+  <resource name="img/logos/birthday.png" type="image" path="img/logos/birthday.png"/>
+  <resource name="less/irsam_render_birthday_for_irsam.less" type="css" path="less/irsam_render_birthday_for_irsam.less"/>
+</prodrenderer:Renderer>

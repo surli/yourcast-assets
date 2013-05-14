@@ -1,0 +1,21 @@
+fm_behaviour = FM(Behaviour: Number Animation Time Elements ; 
+Number: (One|All) ; 
+Animation: (Scrolling|Push|Appearance) [Repetition] ; 
+Time: (Individual|Global) ; 
+Elements: Content [Title] [Logo] ; 
+Scrolling: RightToLeft ; 
+Push: TopDown ; 
+Appearance: [Smooth] ; 
+Repetition: DarkThenClear ; 
+Logo: [Static] ; 
+(Repetition -> !RightToLeft);
+(All -> !Title);
+(Static -> !Title);
+(Static -> !TopDown);
+(Scrolling <-> All);
+(Static -> !One);
+(Static -> !DarkThenClear);
+(Smooth -> !Repetition);
+(DarkThenClear -> !TopDown);
+(All <-> Global);
+)

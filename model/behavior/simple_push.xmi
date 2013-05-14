@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="simple_push">
+  <function name="simple_push"/>
+  <resource name="../utils/scriptaculous.js" path="./js/behaviours/utils/scriptaculous.js"/>
+  <resource name="../utils/effects.js" path="./js/behaviours/utils/effects.js"/>
+</prodbehavior:Behavior>

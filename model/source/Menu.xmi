@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Menu" id="Menu">
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Menu.properties"/>
+  <personalization image="">
+    <methods name="Tous les menus" pathPrefix="all" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Tous les menus Menu" editMessage="Editer Tous les menus Menu"/>
+  </personalization>
+</prodsource:Source>

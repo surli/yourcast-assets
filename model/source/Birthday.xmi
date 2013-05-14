@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Birthday" id="Birthday">
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Birthday.properties"/>
+  <personalization image="">
+    <methods name="Anniversaire de l'irsam" pathPrefix="irsam" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Anniversaire de l'irsam Birthday" editMessage="Editer Anniversaire de l'irsam Birthday"/>
+  </personalization>
+</prodsource:Source>

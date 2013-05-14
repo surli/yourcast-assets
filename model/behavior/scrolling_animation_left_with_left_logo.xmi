@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="scrolling_animation_left_with_left_logo">
+  <function name="scrolling_animation_left_with_left_logo"/>
+  <resource name="../utils/functions.js" path="./js/behaviours/functions.js"/>
+</prodbehavior:Behavior>
