@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:action="action.spinefm.unice.fr" xsi:schemaLocation="action.spinefm.unice.fr ./MetamodelSpineFM.ecore#//ActionModel>
+  <action:ActionSelect id="AS_2235">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2236">
+    <feature href="./fm_source.xmi#//@root"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2237">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2238">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2239">
+    <feature href="./fm_renderer.xmi#//@root"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2240">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.1/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2241">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2242">
+    <feature href="./fm_renderer.xmi#//@root/@children.2/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2243">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2244">
+    <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2245">
+    <feature href="./fm_zone.xmi#//@root/@children.1/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2246">
+    <feature href="./fm_zone.xmi#//@root/@children.0/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2247">
+    <feature href="./fm_zone.xmi#//@root"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2248">
+    <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2213">
+    <feature href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1519">
+    <feature href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2249">
+    <feature href="./fm_layout.xmi#//@root"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2250">
+    <feature href="./fm_layout.xmi#//@root/@children.0/@features.0"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2251">
+    <feature href="./fm_layout.xmi#//@root/@children.1/@features.0"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2252">
+    <feature href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2253">
+    <feature href="./fm_layout.xmi#//@root/@children.2/@features.0"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2261">
+    <feature href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.3"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1515">
+    <feature href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.4"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1516">
+    <feature href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1517">
+    <feature href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.2"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1518">
+    <feature href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1513">
+    <feature href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.1/@features.0"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2262">
+    <feature href="./fm_layout.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1520">
+    <feature href="./fm_layout.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1521">
+    <feature href="./fm_layout.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_layout.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2254">
+    <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2255">
+    <feature href="./fm_behaviour.xmi#//@root/@children.3/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2256">
+    <feature href="./fm_behaviour.xmi#//@root/@children.2/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2257">
+    <feature href="./fm_behaviour.xmi#//@root"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2258">
+    <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2259">
+    <feature href="./fm_behaviour.xmi#//@root/@children.1/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2260">
+    <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2263">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2264">
+    <feature href="./fm_source.xmi#//@root"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1494">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1495">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1496">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1497">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2218">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1535">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.2/@children.0/@features.1"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1536">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.3/@children.0/@features.0"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1537">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.1/@children.0/@features.0"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1538">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.2/@children.0/@features.0"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1539">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2289">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.4/@children.0/@features.0"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1542">
+    <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.4/@children.0/@features.1"/>
+    <fm href="./fm_source.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2265">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2266">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2267">
+    <feature href="./fm_renderer.xmi#//@root"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2268">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.1/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2269">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2270">
+    <feature href="./fm_renderer.xmi#//@root/@children.2/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2271">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2285">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2286">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1523">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1524">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3/@children.0/@features.1"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1525">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1526">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4/@children.0/@features.1"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1527">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2/@children.0/@features.1"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1528">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1529">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1530">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.1/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1531">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1532">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1533">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1534">
+    <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2287">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1540">
+    <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.1/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2288">
+    <feature href="./fm_renderer.xmi#//@root/@children.2/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1541">
+    <feature href="./fm_renderer.xmi#//@root/@children.2/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_renderer.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2272">
+    <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2273">
+    <feature href="./fm_zone.xmi#//@root/@children.1/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2274">
+    <feature href="./fm_zone.xmi#//@root/@children.0/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2275">
+    <feature href="./fm_zone.xmi#//@root"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2276">
+    <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2284">
+    <feature href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1522">
+    <feature href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_zone.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2277">
+    <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2278">
+    <feature href="./fm_behaviour.xmi#//@root/@children.3/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2279">
+    <feature href="./fm_behaviour.xmi#//@root/@children.2/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2280">
+    <feature href="./fm_behaviour.xmi#//@root"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2281">
+    <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2282">
+    <feature href="./fm_behaviour.xmi#//@root/@children.1/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2283">
+    <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionSelect id="AS_2290">
+    <feature href="./fm_behaviour.xmi#//@root/@children.2/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1543">
+    <feature href="./fm_behaviour.xmi#//@root/@children.2/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2291">
+    <feature href="./fm_behaviour.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1544">
+    <feature href="./fm_behaviour.xmi#//@root/@children.1/@features.0/@children.0/@features.2"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionDeselect id="AD_1545">
+    <feature href="./fm_behaviour.xmi#//@root/@children.1/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionDeselect>
+  <action:ActionSelect id="AS_2292">
+    <feature href="./fm_behaviour.xmi#//@root/@children.3/@features.0/@children.0/@features.1"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionSelect>
+  <action:ActionDeselect id="AD_1546">
+    <feature href="./fm_behaviour.xmi#//@root/@children.3/@features.0/@children.0/@features.0"/>
+    <fm href="./fm_behaviour.xmi#/"/>
+  </action:ActionDeselect>
+</xmi:XMI>

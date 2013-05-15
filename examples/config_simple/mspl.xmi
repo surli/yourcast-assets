@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="ASCII"?>
+<msplm:MultipleSoftwareProductLine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:action="action.spinefm.unice.fr" xmlns:msplm="msplm.spinefm.unice.fr" xsi:schemaLocation="msplm.spinefm.unice.fr ./MetamodelSpineFM.ecore#//MSPLModel action.spinefm.unice.fr ./MetamodelSpineFM.ecore#//ActionModel">
+  <domainElements belongs_to="//@associations.0 //@associations.4" id="source">
+    <MultiplicityElement lowerBound="1" upperBound="-1" id="ME_441"/>
+    <refers_on href="./fm_source.xmi#/"/>
+  </domainElements>
+  <domainElements belongs_to="//@associations.0 //@associations.1 //@associations.4 //@associations.5" id="renderer">
+    <MultiplicityElement lowerBound="1" upperBound="-1" id="ME_442"/>
+    <refers_on href="./fm_renderer.xmi#/"/>
+  </domainElements>
+  <domainElements belongs_to="//@associations.1 //@associations.2 //@associations.3 //@associations.5 //@associations.6 //@associations.7" id="zone">
+    <MultiplicityElement lowerBound="1" upperBound="-1" id="ME_443"/>
+    <refers_on href="./fm_zone.xmi#/"/>
+  </domainElements>
+  <domainElements belongs_to="//@associations.3 //@associations.7" id="layout">
+    <MultiplicityElement lowerBound="1" upperBound="1" id="ME_444"/>
+    <refers_on href="./fm_layout.xmi#/"/>
+  </domainElements>
+  <domainElements belongs_to="//@associations.2 //@associations.6" id="behaviour">
+    <MultiplicityElement lowerBound="1" upperBound="-1" id="ME_445"/>
+    <refers_on href="./fm_behaviour.xmi#/"/>
+  </domainElements>
+  <associations id="AssoSourceRenderer" inverse="//@associations.4">
+    <restrictionFunction id="SourceRendererTI" inverse="//@associations.4/@restrictionFunction.0">
+      <rules id="RS_TypeInfo_Sel0">
+        <actions xsi:type="action:ActionSelect" id="AS_2193">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Sel0">
+          <selectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Sel1">
+        <actions xsi:type="action:ActionSelect" id="AS_2194">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Sel1">
+          <selectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Sel2">
+        <actions xsi:type="action:ActionSelect" id="AS_2195">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Sel2">
+          <selectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Sel3">
+        <actions xsi:type="action:ActionSelect" id="AS_2196">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Sel3">
+          <selectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Sel4">
+        <actions xsi:type="action:ActionSelect" id="AS_2197">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Sel4">
+          <selectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel0">
+        <actions xsi:type="action:ActionDeselect" id="AD_1473">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Desel0">
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel1">
+        <actions xsi:type="action:ActionDeselect" id="AD_1474">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Desel1">
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel2">
+        <actions xsi:type="action:ActionDeselect" id="AD_1475">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Desel2">
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel3">
+        <actions xsi:type="action:ActionDeselect" id="AD_1476">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Desel3">
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel4">
+        <actions xsi:type="action:ActionDeselect" id="AD_1477">
+          <feature href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Desel4">
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </rules>
+    </restrictionFunction>
+    <source apply_on="//@domainElements.0" id="DEAEnd_AssoSourceRenderer_source">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_446"/>
+    </source>
+    <target apply_on="//@domainElements.1" id="DEAEnd_AssoSourceRenderer_target">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_447"/>
+    </target>
+  </associations>
+  <associations id="AssoRendererZone" inverse="//@associations.5">
+    <restrictionFunction id="RZ_Element" inverse="//@associations.5/@restrictionFunction.0">
+      <rules id="Rule_1774">
+        <actions xsi:type="action:ActionSelect" id="AS_2198">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1774">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1775">
+        <actions xsi:type="action:ActionSelect" id="AS_2199">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1775">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1776">
+        <actions xsi:type="action:ActionSelect" id="AS_2200">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1776">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1777">
+        <actions xsi:type="action:ActionSelect" id="AS_2201">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1777">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1778">
+        <actions xsi:type="action:ActionSelect" id="AS_2202">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1778">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1779">
+        <actions xsi:type="action:ActionSelect" id="AS_2203">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1779">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1780">
+        <actions xsi:type="action:ActionSelect" id="AS_2204">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1780">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1781">
+        <actions xsi:type="action:ActionDeselect" id="AD_1478">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1781">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1782">
+        <actions xsi:type="action:ActionDeselect" id="AD_1479">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1782">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1783">
+        <actions xsi:type="action:ActionDeselect" id="AD_1480">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1783">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1784">
+        <actions xsi:type="action:ActionDeselect" id="AD_1481">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1784">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1785">
+        <actions xsi:type="action:ActionDeselect" id="AD_1482">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1785">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1786">
+        <actions xsi:type="action:ActionDeselect" id="AD_1483">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1786">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1787">
+        <actions xsi:type="action:ActionDeselect" id="AD_1484">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1787">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+    </restrictionFunction>
+    <source apply_on="//@domainElements.1" id="DEAEnd_AssoRendererZone_source">
+      <LinkMultiplicity lowerBound="1" upperBound="-1" id="ME_448"/>
+    </source>
+    <target apply_on="//@domainElements.2" id="DEAEnd_AssoRendererZone_target">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_449"/>
+    </target>
+  </associations>
+  <associations id="AssoBehaviourZone" inverse="//@associations.6">
+    <restrictionFunction id="BZ_Element" inverse="//@associations.6/@restrictionFunction.0">
+      <rules id="Rule_1788">
+        <actions xsi:type="action:ActionSelect" id="AS_2205">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1788">
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1789">
+        <actions xsi:type="action:ActionSelect" id="AS_2206">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1789">
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1790">
+        <actions xsi:type="action:ActionSelect" id="AS_2207">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1790">
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1791">
+        <actions xsi:type="action:ActionSelect" id="AS_2208">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1791">
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1792">
+        <actions xsi:type="action:ActionSelect" id="AS_2209">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1792">
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1793">
+        <actions xsi:type="action:ActionSelect" id="AS_2210">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1793">
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1794">
+        <actions xsi:type="action:ActionSelect" id="AS_2211">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1794">
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1795">
+        <actions xsi:type="action:ActionDeselect" id="AD_1485">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1795">
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1796">
+        <actions xsi:type="action:ActionDeselect" id="AD_1486">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1796">
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1797">
+        <actions xsi:type="action:ActionDeselect" id="AD_1487">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1797">
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1798">
+        <actions xsi:type="action:ActionDeselect" id="AD_1488">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1798">
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1799">
+        <actions xsi:type="action:ActionDeselect" id="AD_1489">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1799">
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1800">
+        <actions xsi:type="action:ActionDeselect" id="AD_1490">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1800">
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1801">
+        <actions xsi:type="action:ActionDeselect" id="AD_1491">
+          <feature href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1801">
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </rules>
+    </restrictionFunction>
+    <source apply_on="//@domainElements.4" id="DEAEnd_AssoBehaviourZone_source">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_450"/>
+    </source>
+    <target apply_on="//@domainElements.2" id="DEAEnd_AssoBehaviourZone_target">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_451"/>
+    </target>
+  </associations>
+  <associations id="AssoLayoutZone" inverse="//@associations.7">
+    <restrictionFunction id="LZ_Product" inverse="//@associations.7/@restrictionFunction.0">
+      <rules id="Rule_1802">
+        <actions xsi:type="action:ActionSelect" id="AS_2212">
+          <feature href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1802">
+          <selectedFeatures href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_layout.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1803">
+        <state id="cs_Rule_1803">
+          <selectedFeatures href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_layout.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1804">
+        <actions xsi:type="action:ActionDeselect" id="AD_1492">
+          <feature href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1804">
+          <deselectedFeatures href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_layout.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1805">
+        <actions xsi:type="action:ActionDeselect" id="AD_1493">
+          <feature href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1805">
+          <deselectedFeatures href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_layout.xmi#/"/>
+        </state>
+      </rules>
+    </restrictionFunction>
+    <source apply_on="//@domainElements.3" id="DEAEnd_AssoLayoutZone_source">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_452"/>
+    </source>
+    <target apply_on="//@domainElements.2" id="DEAEnd_AssoLayoutZone_target">
+      <LinkMultiplicity lowerBound="1" upperBound="-1" id="ME_453"/>
+    </target>
+  </associations>
+  <associations id="AssoSourceRenderer_inverse" inverse="//@associations.0">
+    <restrictionFunction id="SourceRendererTI_inverse" inverse="//@associations.0/@restrictionFunction.0">
+      <rules id="RS_TypeInfo_Sel0inv">
+        <state id="cs_RS_TypeInfo_Sel0inv">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Sel1inv">
+        <state id="cs_RS_TypeInfo_Sel1inv">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Sel2inv">
+        <state id="cs_RS_TypeInfo_Sel2inv">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Sel3inv">
+        <state id="cs_RS_TypeInfo_Sel3inv">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Sel4inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1498">
+          <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+          <fm href="./fm_source.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Sel4inv">
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel0inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2214">
+          <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_source.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Desel0inv">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel1inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2215">
+          <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_source.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Desel1inv">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel2inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2216">
+          <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <fm href="./fm_source.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Desel2inv">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel3inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2217">
+          <feature href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+          <fm href="./fm_source.xmi#/"/>
+        </actions>
+        <state id="cs_RS_TypeInfo_Desel3inv">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="RS_TypeInfo_Desel4inv">
+        <state id="cs_RS_TypeInfo_Desel4inv">
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </rules>
+    </restrictionFunction>
+    <source apply_on="//@domainElements.1" id="DEAEnd_AssoSourceRenderer_inverse_source">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_454"/>
+    </source>
+    <target apply_on="//@domainElements.0" id="DEAEnd_AssoSourceRenderer_inverse_target">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_455"/>
+    </target>
+  </associations>
+  <associations id="AssoRendererZone_inverse" inverse="//@associations.1">
+    <restrictionFunction id="RZ_Element_inverse" inverse="//@associations.1/@restrictionFunction.0">
+      <rules id="Rule_1774inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1499">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1774inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1775inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1500">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1775inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1776inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1501">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1776inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1777inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1502">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1777inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1778inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1503">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1778inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1779inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1504">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1779inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1780inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1505">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1780inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1781inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2219">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1781inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1782inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2220">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1782inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1783inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2221">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1783inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1784inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2222">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1784inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1785inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2223">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1785inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1786inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2224">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1786inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1787inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2225">
+          <feature href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1787inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+    </restrictionFunction>
+    <source apply_on="//@domainElements.2" id="DEAEnd_AssoRendererZone_inverse_source">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_456"/>
+    </source>
+    <target apply_on="//@domainElements.1" id="DEAEnd_AssoRendererZone_inverse_target">
+      <LinkMultiplicity lowerBound="1" upperBound="-1" id="ME_457"/>
+    </target>
+  </associations>
+  <associations id="AssoBehaviourZone_inverse" inverse="//@associations.2">
+    <restrictionFunction id="BZ_Element_inverse" inverse="//@associations.2/@restrictionFunction.0">
+      <rules id="Rule_1788inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1506">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1788inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1789inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1507">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1789inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1790inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1508">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1790inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1791inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1509">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1791inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1792inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1510">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1792inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1793inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1511">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1793inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1794inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1512">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1794inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1795inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2226">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1795inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1796inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2227">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1796inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1797inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2228">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1797inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1798inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2229">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1798inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1799inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2230">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1799inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1800inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2231">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1800inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1801inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2232">
+          <feature href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1801inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+    </restrictionFunction>
+    <source apply_on="//@domainElements.2" id="DEAEnd_AssoBehaviourZone_inverse_source">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_458"/>
+    </source>
+    <target apply_on="//@domainElements.4" id="DEAEnd_AssoBehaviourZone_inverse_target">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_459"/>
+    </target>
+  </associations>
+  <associations id="AssoLayoutZone_inverse" inverse="//@associations.3">
+    <restrictionFunction id="LZ_Product_inverse" inverse="//@associations.3/@restrictionFunction.0">
+      <rules id="Rule_1802inv">
+        <state id="cs_Rule_1802inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1803inv">
+        <actions xsi:type="action:ActionDeselect" id="AD_1514">
+          <feature href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_layout.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1803inv">
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1804inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2233">
+          <feature href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.1/@features.0"/>
+          <fm href="./fm_layout.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1804inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+      <rules id="Rule_1805inv">
+        <actions xsi:type="action:ActionSelect" id="AS_2234">
+          <feature href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_layout.xmi#/"/>
+        </actions>
+        <state id="cs_Rule_1805inv">
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </rules>
+    </restrictionFunction>
+    <source apply_on="//@domainElements.2" id="DEAEnd_AssoLayoutZone_inverse_source">
+      <LinkMultiplicity lowerBound="1" upperBound="-1" id="ME_460"/>
+    </source>
+    <target apply_on="//@domainElements.3" id="DEAEnd_AssoLayoutZone_inverse_target">
+      <LinkMultiplicity lowerBound="1" upperBound="1" id="ME_461"/>
+    </target>
+  </associations>
+</msplm:MultipleSoftwareProductLine>

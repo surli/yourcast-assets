@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fmm:FeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fmm="fmm.spinefm.unice.fr" id="fm_source" name="source" xsi:schemaLocation="fmm.spinefm.unice.fr ./MetamodelSpineFM.ecore#//FMModel">
+  <root id="fm_source.Source" name="Source">
+    <children>
+      <features id="fm_source.TypeInfo" name="TypeInfo">
+        <children state="xor">
+          <features id="fm_source.Tweet" name="Tweet">
+            <children>
+              <features id="fm_source.Twitter" name="Twitter"/>
+            </children>
+          </features>
+          <features id="fm_source.Weather" name="Weather">
+            <children>
+              <features id="fm_source.Weather2" name="Weather2"/>
+            </children>
+          </features>
+          <features id="fm_source.Calendar" name="Calendar">
+            <children state="xor">
+              <features id="fm_source.ICalReader" name="ICalReader"/>
+              <features id="fm_source.HyperCal" name="HyperCal"/>
+            </children>
+          </features>
+          <features id="fm_source.Announcement" name="Announcement">
+            <children>
+              <features id="fm_source.AnnouncementService" name="AnnouncementService"/>
+            </children>
+          </features>
+          <features id="fm_source.PictureAlbum" name="PictureAlbum">
+            <children state="xor">
+              <features id="fm_source.FlickR" name="FlickR"/>
+              <features id="fm_source.Picasa" name="Picasa"/>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+    <children state="opt">
+      <features id="fm_source.Criteria" name="Criteria">
+        <children state="opt">
+          <features id="fm_source.Filter" name="Filter">
+            <children state="xor">
+              <features id="fm_source.Album" name="Album"/>
+              <features id="fm_source.Timeline" name="Timeline"/>
+              <features id="fm_source.Period" name="Period"/>
+            </children>
+          </features>
+        </children>
+        <children state="opt">
+          <features id="fm_source.Sort" name="Sort">
+            <children state="or">
+              <features id="fm_source.Popularity" name="Popularity"/>
+              <features id="fm_source.Date" name="Date"/>
+              <features id="fm_source.Name" name="Name"/>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+  </root>
+</fmm:FeatureModel>
