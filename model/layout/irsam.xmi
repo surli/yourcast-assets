@@ -3,6 +3,6 @@
   <index name="index.html" type="html"/>
   <resources name="less/als.css" type="css" path="less/als.css"/>
   <resources name="less/sharedIRSAMVariables.less" type="css" path="less/sharedIRSAMVariables.less"/>
-  <resources name="style.less" type="css" path="style.less"/>
+  <resources name="less/style.less" type="css" path="less/style.less"/>
   <resources name="less/variables.less" type="css" path="less/variables.less"/>
 </prodlayout:Layout>
