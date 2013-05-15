@@ -1,0 +1,96 @@
+<!--
+  To change this template, choose Tools | Templates
+  and open the template in the editor.
+-->
+
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<html>
+  <head>
+    <g:render template="/templates/headTemplate"/>
+    <title>${tab.sourceName}- Edit Calls</title>
+  </head>
+  <body>
+    <g:render template="/templates/mainMenuTemplate"/>
+    <div id="container">
+                      
+            <g:render template="/templates/$tab.sourceMenuTemplate"/>
+            <table class="principal">
+              <tr>  
+                <td>
+                   <p class="message">$tab.editMessage </p>
+                </td>  
+               </tr>
+               <tr> 
+                 <td>
+                   <g:form name="${tab.sourceName}EditForm" controller="$tab.controller">
+                      <g:hiddenField name="callId" value="${info.renderer}" />
+                      <g:hiddenField name="position" value="${position}" />
+                      <g:hiddenField name="current" value="${current}" />
+                      <table>
+                      #foreach( $field in $tab.fields )
+                       <tr>
+                         <td class="basic-label" title="">
+                          $field.name
+                        </td> 
+                        <td>
+                        #set($resource='${resource(dir: ')
+                          <img src="${resource}'images/skin', file: 'question.png')}" alt="Help" title="${field.tip}"/>
+                        </td> 
+                        
+                        #if( $field.template )
+                        <td>
+                            <g:render template="/templates/$field.editTemplate.name" model="$field.editTemplate.model"/>
+                        </td> 
+                        #elseif( $field.date)
+                        
+                        <td>
+                        	#set($date='${info')
+                        	#set($years='${2013..2112}')
+                          <g:datePicker name="$field.dbName" value="$date.$field.dbName}" years="$years" precision="hour"/>  
+                        </td>
+                        #else
+                     	<td>
+                     	#set($info='${info')
+                           <g:textField name="$field.dbName" value="$info.$field.dbName}"/>
+                         </td> 
+                        #end
+                       </tr>
+                       
+                        #end
+                        <tr> 
+
+                           <td colspan="4" align="center">   
+                             
+                             <table>
+                              
+                               <tr>
+                                 <td align="center" colspan="2">
+                                 	#set($resource='${resource(dir: ')
+                                   <g:actionSubmitImage value="Save" action="$tab.editAction" src="${resource}'images/skin', file: 'save.png')}" title="Save"/>  
+                                 </td>  
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td colspan="2" align="center">  
+                                 	#set($resource='${resource(dir: ')  
+                                   <g:actionSubmitImage value="Back" action="back" src="${resource}'images/skin', file: 'back.png')}" title="Back"/>  
+                                 </td>
+                               </tr>
+                             </table>
+                           </td>  
+                        </tr>
+                    </table>
+                  </g:form>
+
+                </td>   
+              </tr>    
+              <tr>
+                <td class="${messageClass}">
+                  <p> ${message} </p>
+                </td>
+              </tr>
+             </table>
+        </div>  
+  </body>
+</html>

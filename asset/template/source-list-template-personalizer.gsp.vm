@@ -1,0 +1,53 @@
+<table class="content">
+  <tr class="content-title">
+  #foreach( $c in $columns )
+    <td align="center" title="">
+       #set($src='${resource(dir: ')		
+      $c.name <img src="$src'images/skin', file: 'question.png')}" alt="Help" title="$c.tip"/>
+    </td>
+  #end 
+  	<td align="center" colspan="2" title="">
+      Actions <img src="$src'images/skin', file: 'question.png')}" alt="Help" title="You can edit or remove the $sourceName calls"/>
+    </td>
+  </tr>
+   #set($value='${0}')
+  <g:set var="counter" value="$value" />
+  <g:set var="currentRenderer" value=""></g:set>
+   #set($in='${listOfItems}')
+  <g:each in="$in">
+    
+      <g:if test="${!it.renderer.equals(currentRenderer)}">
+      	 #set($value='${0}')
+        <g:set var="counter" value="$value" />
+         #set($value='${it.renderer}')
+        <g:set var="currentRenderer" value="$value"/>
+      </g:if>
+      <tr>   
+      	#foreach( $c in $columns )
+      	 $c.tdTagCode
+        #end
+        
+        <g:form name="${sourceName}ListForm-operation" controller="$controllerName">
+          #set($callId='${it.renderer}')	
+          <g:hiddenField name="callId" value="$callId" />
+          #set($position='${counter}')
+          #set($current='${current}')
+          <g:hiddenField name="position" value="$position" />
+          <g:hiddenField name="current" value="$current" />
+          <td class="content-cell-action">
+          	 #set($src='${resource(dir: ')
+            <g:actionSubmitImage value="${it.renderer}" action="$removeAction" src="$src'images/skin', file: 'remove.png')}" title="Remove"/> 
+          </td>
+          <td class="content-cell-action">
+          	 #set($src='${resource(dir: ')
+      	  	 #set($value='${it.renderer}')
+            <g:actionSubmitImage value="$value" action="$editAction" src="$src'images/skin', file: 'edit.png')}" title="Edit"/> 
+          </td>
+        </g:form>  
+        <td>
+        </td>
+      </tr>
+       #set($value='${counter + 1}')
+      <g:set var="counter" value="$value" />  
+  </g:each>
+</table> 

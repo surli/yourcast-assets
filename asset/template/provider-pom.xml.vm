@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!-- Creation Date: $creationDate -->
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>fr.yourcast</groupId>
+    <artifactId>yourcast-provider</artifactId>
+    <version>$parentVersion</version>
+  </parent>
+  <artifactId>$artifactId</artifactId>
+  <packaging>war</packaging>
+  <name>$name</name>
+	<repositories>
+		<repository>
+          	<id>snapshots</id>
+          	<name>I3S Maven Snapshots Repository</name>
+          	<url>http://nyx.unice.fr:9007/nexus/content/repositories/snapshots</url>	
+		</repository>
+	</repositories>  
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>fr.yourcast</groupId>
+    	<artifactId>provider-core</artifactId>
+    	<version>$parentVersion</version>
+    </dependency>
+    <dependency>
+  		<groupId>com.sun.jersey</groupId>
+  		<artifactId>jersey-server</artifactId>
+  		<version>1.17.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.sun.jersey</groupId>
+  		<artifactId>jersey-servlet</artifactId>
+  		<version>1.17.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.sun.jersey</groupId>
+  		<artifactId>jersey-json</artifactId>
+  		<version>1.17.1</version>
+  	</dependency>
+  	
+  	#foreach($dependency in $dependencies )
+  	<dependency>
+  		<groupId>$dependency.groupId</groupId>
+  		<artifactId>$dependency.artifactId</artifactId>
+  		<version>$dependency.version</version>
+  	</dependency>
+  	
+  	#end
+  </dependencies>
+  <build>
+    <finalName>$finalName</finalName>
+  </build>
+</project>

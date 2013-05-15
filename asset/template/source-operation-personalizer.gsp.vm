@@ -1,0 +1,78 @@
+<!--
+  To change this template, choose Tools | Templates
+  and open the template in the editor.
+-->
+
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<html>
+  <head>
+    <g:render template="/templates/headTemplate"/>
+    <title>${tab.sourceName}- ${tab.name}</title>
+  </head>
+  <body>
+    <g:render template="/templates/mainMenuTemplate"/>
+    <div id="container">
+                      
+            <g:render template="/templates/$tab.sourceMenuTemplate"/>
+            <table class="principal">
+              <tr>  
+                <td>
+                   <p class="message"> $tab.introductionMessage </p>
+                </td>  
+               </tr>
+               <tr> 
+                 <td>
+                   <g:form name="${tab.sourceName}Form" controller="$tab.controller">
+                      <table>
+                      #foreach( $field in $tab.fields )
+                       <tr>
+                         <td class="basic-label" title="">
+                          $field.name
+                        </td> 
+                        <td>
+                        	#set($resource='${resource(dir: ')
+                          <img src="${resource}'images/skin', file: 'question.png')}" alt="Help" title="${field.tip}"/>
+                        </td> 
+                        
+                        #if( $field.template )
+                        <td>
+                            <g:render template="/templates/$field.template.name" model="$field.template.model"/>
+                        </td> 
+                        #elseif( $field.date)
+                        
+                        <td>
+                        	#set($date='${new Date()}')
+                        	#set($years='${2013..2112}')
+                          <g:datePicker name="$field.dbName" value="$date" years="$years" precision="hour"/>  
+                        </td>
+                        #else
+                     	<td>
+                           <g:textField name="$field.dbName" value=""/>
+                         </td> 
+                        #end
+                       </tr>
+                       
+                       #end
+                       <tr> 
+                        <td colspan="3" align="center">   
+                        	#set($src='${resource(dir: ') 
+                          <g:actionSubmitImage value="add" action="$tab.action" src="${src}'images/skin', file: '$tab.actionImage')}" title="$tab.actionTitle"/>  
+                        </td>
+                       </tr>
+                    </table>
+                  </g:form>
+
+                </td>   
+              </tr>    
+              <tr>
+              	#set($class='${messageClass}')
+                <td class="$class">
+            	 #set($message='${message}')
+                  <p> ${message} </p>
+                </td>
+              </tr>
+             </table>
+        </div>  
+  </body>
+</html>

@@ -1,0 +1,410 @@
+package fr.unice.yourcast.personalizer
+
+import fr.unice.yourcast.util.Constants
+import fr.unice.yourcast.sources.ServiceCall
+
+import fr.unice.yourcast.util.Information
+
+
+/**
+* Controller providing the functionality related to the $sourceName source
+* @author $author
+  Created: $date		
+*/
+class ${controllerName}Controller extends AbstractController {
+
+    
+    /*---CONSTANTS---*/
+    
+    private static String SERVICE_NAME="$sourceName"
+    
+
+    /*---METHODS---*/
+    
+   /**
+     * Display the page to list the items
+     **/
+    def list() 
+    { 
+          
+        def listOfCallIds = null
+        
+        if(personalizerService.getIsInitialized())
+            listOfCallIds = getListOfCallIdsComplete(SERVICE_NAME)
+        
+        log.debug "Showing the items of source "+SERVICE_NAME
+        render(view:"$listView", model:[listOfRenderers:listOfCallIds])
+    
+    }
+    
+    /**
+     * Display the page to execute the operation
+     **/
+     #foreach( $tab in $tabs )
+    def ${tab.showAction}()
+    {
+            
+        def listOfCallIds = null
+        
+        if(personalizerService.getIsInitialized())
+            listOfCallIds = getListOfCallIds(SERVICE_NAME)
+        
+   
+		#if($tab.extraParamCode)
+		$tab.extraParamCode
+		#end
+		
+		#if($tab.showModelExtraParam)
+        render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,$tab.showModelExtraParam])
+        #else
+        render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds])
+        #end
+    }
+    
+    
+    
+    /**
+     *Execute the operation
+     **/
+    def ${tab.action}()
+    {
+        def listOfCallIds = null
+        
+        if(personalizerService.getIsInitialized())
+        {
+            listOfCallIds = getListOfCallIds(SERVICE_NAME)
+            
+    		#if($tab.extraParamCode)
+			$tab.extraParamCode
+			#end
+           
+            
+            #foreach( $field in $tab.fields )
+            def ${field.dbName}= params.get("${field.dbName}")
+			#end
+            
+             #foreach( $field in $tab.fields ) 
+             #if(!$field.date)   
+             if(${field.dbName}==null || ${field.dbName}.trim().equals(""))  
+             {  
+             	#if($tab.showModelExtraParam)
+             	render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS,message:"The ${field.name} has to be defined!",$tab.showModelExtraParam])
+             	#else
+                render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS,message:"The ${field.name} has to be defined!"])
+                #end
+                return
+             }   
+             #end   
+             #end   
+            else
+            {
+            	
+				#foreach( $field in $tab.fields )
+				 #if(!$field.date)   
+            	${field.dbName}= ${field.dbName}.trim()
+            	#end
+				#end
+                
+                def calls= personalizerService.getCallByIdAndService(SERVICE_NAME,renderer)
+
+                if(calls==null)
+                {
+                	#if($tab.showModelExtraParam)
+                	 render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS,message:"The renderer does not exist!",$tab.showModelExtraParam])
+                	#else
+                    render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS,message:"The renderer does not exist!"])
+                    #end
+                }
+                else
+                {
+                
+                	#foreach( $field in $tab.fields )
+                		#if($field.validationCode)
+                			$field.validationCode
+                		#end
+                	#end
+                    
+                    $tab.createMapCode
+
+
+                    boolean saved= personalizerService.saveServiceCall(renderer,SERVICE_NAME, map) 
+
+                    if(saved)
+                    {
+                        personalizerService.updateProviderFlag(calls.provider.name, SERVICE_NAME, true)
+                        
+                        #if($tab.showModelExtraParam)
+                        render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.RESPONSE_MESSAGE_CLASS, message:"The operation has been executed!",$tab.showModelExtraParam])
+                        #else
+                        render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.RESPONSE_MESSAGE_CLASS, message:"The operation has been executed!"])
+                        #end
+                    }   
+                    else
+                	 	#if($tab.showModelExtraParam)
+                	 	render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS, message:"There was a problem executing the operation. Try again!",$tab.showModelExtraParam])
+                	 	#else
+                        render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS, message:"There was a problem executing the operation. Try again!"])
+                        #end
+
+                }
+            }
+        }
+        else
+        	#if($tab.showModelExtraParam)
+    	 	render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS, message:Constants.DB_MESSAGE_ERROR,$tab.showModelExtraParam])
+        	#else
+            render(view:"$tab.showView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS, message:Constants.DB_MESSAGE_ERROR])
+            #end   
+    }
+    
+    
+    /**
+     * Edit a call
+     **/
+    def ${tab.editAction}()
+    {
+        
+        def previousRenderer= params.callId
+        
+        def pos= Integer.parseInt(params.position)
+        
+        def listOfCallIds = getListOfCallIds(SERVICE_NAME)
+        
+        
+        #if($tab.extraParamCode)
+        //Extra parameters
+		$tab.extraParamCode
+		#end
+        
+        //New values of parameters
+     #foreach( $field in $tab.fields )
+        def ${field.dbName}= params.get("${field.dbName}")
+	#end
+        
+        
+        def call= personalizerService.getCallByIdAndService(SERVICE_NAME,previousRenderer)
+        
+        def mapOriginal= call.parameters.get(pos)
+        
+        //Previous version of the call 
+        def info= createInformation(call, mapOriginal)
+        
+        //Validation of the parameters    
+     #foreach( $field in $tab.fields ) 
+     	#if(!$field.date)   
+         if(${field.dbName}==null || ${field.dbName}.trim().equals(""))  
+         {  
+         	#if($tab.showModelExtraParam)
+         	render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS,message:"The ${field.name} has to be defined!",current:params.current, info:info, position:params.position,$tab.showModelExtraParam])
+         	#else
+            render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS,message:"The ${field.name} has to be defined!",current:params.current, info:info, position:params.position])
+            #end
+            return
+         }   
+         #end   
+     #end   
+        else
+        {
+
+            
+        #foreach( $field in $tab.fields )
+			 #if(!$field.date)   
+        	${field.dbName}= ${field.dbName}.trim()
+    		#end
+		#end    
+            
+        #foreach( $field in $tab.fields )
+    		#if($field.validationCode)
+    			$field.validationCode
+    		#end
+    	#end
+            
+            
+        
+       		 $tab.createMapCode
+
+            if(renderer.equals(previousRenderer))
+            {
+                def updated= personalizerService.updateServiceCall(previousRenderer, SERVICE_NAME, map, pos)
+                
+                if(updated)
+                {
+                    info= createInformation(call, map)
+                    personalizerService.updateProviderFlag(call.provider.name, SERVICE_NAME, true)
+                    #if($tab.showModelExtraParam)
+                    render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.RESPONSE_MESSAGE_CLASS, message:"The call has been updated!",current:params.current, info:info,position:params.position,$tab.showModelExtraParam])
+                    #else
+                    render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.RESPONSE_MESSAGE_CLASS, message:"The call has been updated!",current:params.current, info:info,position:params.position])
+                	#end
+                }
+                else
+                {
+                     #if($tab.showModelExtraParam)
+                 	render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS, message:"There was a problem updating the call. Try again!",current:params.current, info:info,position:params.position,$tab.showModelExtraParam])
+                     #else
+                    render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS, message:"There was a problem updating the call. Try again!",current:params.current, info:info,position:params.position])
+                    #end
+         
+                }
+                
+            }
+            else
+            {
+                def saved= personalizerService.saveServiceCall(renderer,SERVICE_NAME, map) 
+
+                if(saved)
+                {
+                    personalizerService.updateProviderFlag(call.provider.name, SERVICE_NAME, true)
+                    personalizerService.deleteCall(SERVICE_NAME, previousRenderer, pos)
+                    
+                    call= personalizerService.getCallByIdAndService(SERVICE_NAME,renderer)
+                    personalizerService.updateProviderFlag(call.provider.name, SERVICE_NAME, true)
+                    info= createInformation(call, map)
+                     #if($tab.showModelExtraParam)
+                     render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.RESPONSE_MESSAGE_CLASS, message:"The call has been updated!",current:params.current, info:info,position:call.parameters.size()-1,$tab.showModelExtraParam])
+                     #else
+                    render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.RESPONSE_MESSAGE_CLASS, message:"The call has been updated!",current:params.current, info:info,position:call.parameters.size()-1])
+                	#end
+                }
+                else
+                 	#if($tab.showModelExtraParam)
+                    render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS, message:"There was a problem updating the call. Try again!",current:params.current, info:info,position:params.position,$tab.showModelExtraParam])
+                    #else
+                    render(view:"$tab.editView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS, message:"There was a problem updating the call. Try again!",current:params.current, info:info,position:params.position])
+                    #end
+         
+            }
+               
+        }     
+    }
+    
+    #end
+    
+    def getListOfProvidersComplete()
+    {
+        return personalizerService.getListOfProviderNames()
+    }
+    
+    /**
+     * List the $sourceName calls
+     **/
+    def listCalls()
+    {
+        def listOfCallIds = null
+        
+        if(personalizerService.getIsInitialized())
+        {
+            def renderer= params.renderer
+
+            def calls= null
+
+            def infos= null
+
+            listOfCallIds = getListOfCallIdsComplete(SERVICE_NAME)
+
+            if(renderer.equals(Constants.ALL))
+            {
+                def list= personalizerService.getCalls(SERVICE_NAME)
+                infos= new ArrayList()
+
+                for(ServiceCall call:list)
+                {
+                    def infoTemp= getCallsInformation(call)
+                    infos.addAll(infoTemp)
+                }
+
+            }
+            else
+            {
+                calls= personalizerService.getCallByIdAndService(SERVICE_NAME,renderer)
+                if(calls!=null)
+                    infos= getCallsInformation(calls)
+                else
+                    infos= new ArrayList()
+            }
+
+            render(view:"$listView", model:[listOfRenderers:listOfCallIds, listOfItems:infos, current:renderer])
+        }  
+        else
+            render(view:"$listView", model:[listOfRenderers:listOfCallIds,messageClass:Constants.ERROR_MESSAGE_CLASS, message:Constants.DB_MESSAGE_ERROR])
+    }
+    
+    /**
+     * Delete a concrete announcement call
+     **/
+    def remove()
+    {
+        def call= personalizerService.getCallByIdAndService(SERVICE_NAME,params.callId)
+        personalizerService.deleteCall(SERVICE_NAME, params.callId, Integer.parseInt(params.position))
+        personalizerService.updateProviderFlag(call.provider.name, SERVICE_NAME, true)
+        params.renderer= params.current
+        listCalls()
+    }
+    
+    /**
+     *  Display the page to edit a call of the $sourceName source
+     **/
+    def edit()
+    {
+        def call= personalizerService.getCallByIdAndService(SERVICE_NAME,params.callId)
+        
+        def parameters= call.parameters.get(Integer.parseInt(params.position))
+        
+        def info= createInformation(call, parameters)
+        
+        def viewName=""
+        
+        $showEditViewCode
+        
+        #if($additionalParamsModelCode)
+        render(view:viewName, model:[listOfRenderers:getListOfCallIds(SERVICE_NAME), current:params.current, info:info, position:params.position, $additionalParamsModelCode])
+		#else
+        render(view:viewName, model:[listOfRenderers:getListOfCallIds(SERVICE_NAME), current:params.current, info:info, position:params.position])
+		#end
+    }
+    
+    
+    /**
+     * Retrieve the calls of the specified renderer
+     * @param call The renderer
+     * @return the list of calls 
+     **/
+    protected def getCallsInformation(ServiceCall call)
+    {
+        
+         
+        def informations= new ArrayList() 
+         
+        for(Map p:call.parameters)
+        {
+            
+            
+            informations.add(createInformation(call,p))
+        }
+        
+        log.debug "Size "+informations.size()
+        
+        return informations
+    }
+    
+    /**
+     * Create a new announcement 
+     * @param call The renderer
+     *  @param map The parameters of the call
+     * @return The announcement 
+     **/
+    protected def createInformation(def call, def map)
+    {
+        $createInfoCode
+    }
+    
+    /**
+     * Reload the list page by displaying the calls of the last selected renderer
+     **/
+    def back()
+    {
+        params.renderer= params.current
+        
+        listCalls()
+    }
+}
