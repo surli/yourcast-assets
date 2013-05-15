@@ -1,0 +1,10 @@
+#Grails Metadata file
+#$creationDate
+app.grails.version=$grailsVersion
+app.name=$applicationName
+app.servlet.version=2.5
+app.version=$applicationVersion
+plugins.cache-ehcache=1.0.0
+plugins.json-rest-api=1.0.11
+plugins.mongodb=1.0.0.GA
+plugins.rest=0.7

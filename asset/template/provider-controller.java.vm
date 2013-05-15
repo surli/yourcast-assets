@@ -1,0 +1,49 @@
+package fr.yourcast.provider;
+
+import java.util.List;
+import java.util.ArrayList;
+import net.sf.json.JSONObject;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import fr.yourcast.provider.core.ProviderCore;
+#foreach($import in $imports)
+import $import; 
+#end
+
+@Path("/")
+/**
+ * @author $author
+   Creation Date: $creationDate
+ *
+ **/
+public class ServiceProviderController extends ProviderCore {
+
+    //The id of the provider
+    private final static String PROVIDER_NAME = "$providerName";
+    private final static String PERSONALIZER_URL = "$personalizerURL";
+    private static final String SERVICE_PRODUCES = MediaType.APPLICATION_JSON+";charset=UTF-8";
+
+
+    public List<fr.yourcast.provider.model.actors.ServiceActorComposite> createActors()
+    {
+    	 List<fr.yourcast.provider.model.actors.ServiceActorComposite> services = new ArrayList<fr.yourcast.provider.model.actors.ServiceActorComposite>();
+    	#foreach( $key in $actors.keySet() )
+    		services.add(new $actors.get($key)(PROVIDER_NAME,"$key"));
+		#end
+		return services;
+    }
+    
+	public ServiceProviderController() {
+		super(PROVIDER_NAME,PERSONALIZER_URL);
+	}
+	
+	@GET
+	@Produces(SERVICE_PRODUCES)
+	public JSONObject getResponse() {
+		return this.invokeServices();
+	}
+}

@@ -1,0 +1,62 @@
+<!--
+  To change this template, choose Tools | Templates
+  and open the template in the editor.
+-->
+
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<html>
+  <head>
+    <g:render template="/templates/headTemplate"/>
+    <title>${sourceName}- List</title>
+  </head>
+  <body>
+    
+      <g:render template="/templates/mainMenuTemplate"/>
+      
+      <div class="tabber" id="container">
+         
+            <g:render template="/templates/$sourceMenuTemplate"/>
+            <table class="principal">
+              <tr>  
+                <td>
+                   <p class="message"> $introductionMessage</p>
+                </td>  
+               </tr>
+               <tr> 
+                 <td>
+                   <g:form name="${sourceName}TargetForm" controller="$controllerName">
+                      <table>
+                       <tr>
+                        <td class="basic-label">
+                          Renderer
+                        </td> 
+                        <td>
+                        	#set($model='${[listOfRenderers:listOfRenderers]}')
+                            <g:render template="/templates/renderersWithOptionSelectedTemplate" model="$model"/>
+                            <g:actionSubmit value="List" action="$formAction"/> 
+                        </td>
+                       </tr>
+                    </table>
+                  </g:form>
+
+                </td>   
+              </tr>
+              <tr>
+                <td colspan="2">
+                  #set($model='${listOfItems}')
+                  <g:render template="/templates/$tableTemplate" model="listOfItems:$model"/>
+                     
+                </td>  
+              </tr>
+              <tr>
+             	 #set($class='${messageClass}')
+                <td class="$class">
+                #set($message='${message}')
+                  <p> $message </p>
+                </td>
+              </tr>
+             </table>
+        </div>  
+  </body>
+</html>
