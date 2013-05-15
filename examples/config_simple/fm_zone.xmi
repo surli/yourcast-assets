@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fmm:FeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fmm="fmm.spinefm.unice.fr" id="fm_zone" name="zone" xsi:schemaLocation="fmm.spinefm.unice.fr ./MetamodelSpineFM.ecore#//FMModel">
+  <root id="fm_zone.Zone" name="Zone">
+    <children>
+      <features id="fm_zone.Elements" name="Elements">
+        <children state="opt">
+          <features id="fm_zone.Logo" name="Logo"/>
+        </children>
+        <children state="opt">
+          <features id="fm_zone.Title" name="Title"/>
+        </children>
+        <children>
+          <features id="fm_zone.Content" name="Content">
+            <children>
+              <features id="fm_zone.Text" name="Text"/>
+            </children>
+            <children state="opt">
+              <features id="fm_zone.Graphic" name="Graphic">
+                <children state="opt">
+                  <features id="fm_zone.Full" name="Full"/>
+                </children>
+                <children>
+                  <features id="fm_zone.Thumbnails" name="Thumbnails"/>
+                </children>
+              </features>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_zone.Product" name="Product">
+        <children state="xor">
+          <features id="fm_zone.ThinBarFooter" name="ThinBarFooter"/>
+          <features id="fm_zone.BigSquareCenter" name="BigSquareCenter"/>
+        </children>
+      </features>
+    </children>
+  </root>
+</fmm:FeatureModel>

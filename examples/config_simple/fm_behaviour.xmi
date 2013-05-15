@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fmm:FeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fmm="fmm.spinefm.unice.fr" id="fm_behaviour" name="behaviour" xsi:schemaLocation="fmm.spinefm.unice.fr ./MetamodelSpineFM.ecore#//FMModel">
+  <root id="fm_behaviour.Behaviour" name="Behaviour">
+    <children>
+      <features id="fm_behaviour.Elements" name="Elements">
+        <children state="opt">
+          <features id="fm_behaviour.Title" name="Title"/>
+        </children>
+        <children state="opt">
+          <features id="fm_behaviour.Logo" name="Logo"/>
+        </children>
+        <children>
+          <features id="fm_behaviour.Content" name="Content">
+            <children>
+              <features id="fm_behaviour.Text" name="Text"/>
+            </children>
+            <children state="opt">
+              <features id="fm_behaviour.Graphic" name="Graphic">
+                <children>
+                  <features id="fm_behaviour.Thumbnails" name="Thumbnails"/>
+                </children>
+                <children state="opt">
+                  <features id="fm_behaviour.Full" name="Full"/>
+                </children>
+              </features>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_behaviour.Numbers" name="Numbers">
+        <children state="xor">
+          <features id="fm_behaviour.Fixed" name="Fixed"/>
+          <features id="fm_behaviour.One" name="One"/>
+          <features id="fm_behaviour.All" name="All"/>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_behaviour.Animation" name="Animation">
+        <children state="xor">
+          <features id="fm_behaviour.Scrolling" name="Scrolling"/>
+          <features id="fm_behaviour.Appear" name="Appear"/>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_behaviour.Product" name="Product">
+        <children state="xor">
+          <features id="fm_behaviour.ScrollingBehaviour" name="ScrollingBehaviour"/>
+          <features id="fm_behaviour.SimpleAppearanceBehaviour" name="SimpleAppearanceBehaviour"/>
+        </children>
+      </features>
+    </children>
+  </root>
+</fmm:FeatureModel>

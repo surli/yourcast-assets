@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fmm:FeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fmm="fmm.spinefm.unice.fr" id="fm_renderer" name="renderer" xsi:schemaLocation="fmm.spinefm.unice.fr ./MetamodelSpineFM.ecore#//FMModel">
+  <root id="fm_renderer.Renderer" name="Renderer">
+    <children>
+      <features id="fm_renderer.TypeInfo" name="TypeInfo">
+        <children state="xor">
+          <features id="fm_renderer.Tweet" name="Tweet">
+            <children state="xor">
+              <features id="fm_renderer.RendererTwitterFull" name="RendererTwitterFull"/>
+              <features id="fm_renderer.RendererScrollingTwitter" name="RendererScrollingTwitter"/>
+            </children>
+          </features>
+          <features id="fm_renderer.Weather" name="Weather">
+            <children>
+              <features id="fm_renderer.RendererWeather2Nice" name="RendererWeather2Nice"/>
+            </children>
+          </features>
+          <features id="fm_renderer.Calendar" name="Calendar">
+            <children state="xor">
+              <features id="fm_renderer.RendererCalendarByDay" name="RendererCalendarByDay"/>
+              <features id="fm_renderer.RendererCalendarByMonth" name="RendererCalendarByMonth"/>
+            </children>
+          </features>
+          <features id="fm_renderer.Announcement" name="Announcement">
+            <children state="xor">
+              <features id="fm_renderer.RendererTabTitle" name="RendererTabTitle"/>
+              <features id="fm_renderer.RendererScrollingLogoForSources" name="RendererScrollingLogoForSources"/>
+            </children>
+          </features>
+          <features id="fm_renderer.PictureAlbum" name="PictureAlbum">
+            <children state="xor">
+              <features id="fm_renderer.RendererBigPicture" name="RendererBigPicture"/>
+              <features id="fm_renderer.RendererMosaic" name="RendererMosaic"/>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_renderer.Elements" name="Elements">
+        <children state="opt">
+          <features id="fm_renderer.Logo" name="Logo"/>
+        </children>
+        <children>
+          <features id="fm_renderer.Discretization" name="Discretization">
+            <children state="xor">
+              <features id="fm_renderer.Assembly" name="Assembly"/>
+              <features id="fm_renderer.ByOne" name="ByOne"/>
+            </children>
+          </features>
+        </children>
+        <children state="opt">
+          <features id="fm_renderer.Title" name="Title"/>
+        </children>
+        <children>
+          <features id="fm_renderer.Content" name="Content">
+            <children>
+              <features id="fm_renderer.Text" name="Text"/>
+            </children>
+            <children state="opt">
+              <features id="fm_renderer.Graphic" name="Graphic">
+                <children state="opt">
+                  <features id="fm_renderer.Full" name="Full"/>
+                </children>
+                <children>
+                  <features id="fm_renderer.Thumbnails" name="Thumbnails"/>
+                </children>
+              </features>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_renderer.Output" name="Output">
+        <children state="xor">
+          <features id="fm_renderer.Block" name="Block"/>
+          <features id="fm_renderer.Line" name="Line"/>
+        </children>
+      </features>
+    </children>
+  </root>
+</fmm:FeatureModel>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pm:ContextManager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:action="action.spinefm.unice.fr" xmlns:pm="pm.spinefm.unice.fr" xsi:schemaLocation="action.spinefm.unice.fr ./MetamodelSpineFM.ecore#//ActionModel pm.spinefm.unice.fr ./MetamodelSpineFM.ecore#//ProcessModel">
+  <mspl href="./mspl.xmi#/"/>
+  <globalContext id="gc">
+    <CPS id="gc_source" description="PartialConf_217_source" context="//@globalContext">
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/0"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/1"/>
+      <domainElement href="./mspl.xmi#//@domainElements.0"/>
+    </CPS>
+    <CPS id="gc_renderer" description="PartialConf_218_renderer" context="//@globalContext">
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/2"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/3"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/4"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/5"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/6"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/7"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/8"/>
+      <domainElement href="./mspl.xmi#//@domainElements.1"/>
+    </CPS>
+    <CPS id="gc_zone" description="PartialConf_219_zone" context="//@globalContext">
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/9"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/10"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/11"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/12"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/13"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/14"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/15"/>
+      <domainElement href="./mspl.xmi#//@domainElements.2"/>
+    </CPS>
+    <CPS id="gc_layout" description="PartialConf_220_layout" context="//@globalContext" configuration="//@globalContext/@configuration/@subConfigurations.0" userConfig="true">
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/16"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/17"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/18"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/19"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/20"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/21"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/22"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/23"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/24"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/25"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/26"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/27"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/28"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/29"/>
+      <domainElement href="./mspl.xmi#//@domainElements.3"/>
+    </CPS>
+    <CPS id="gc_behaviour" description="PartialConf_221_behaviour" context="//@globalContext">
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/30"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/31"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/32"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/33"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/34"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/35"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/36"/>
+      <domainElement href="./mspl.xmi#//@domainElements.4"/>
+    </CPS>
+    <configuration>
+      <subConfigurations CPS="//@globalContext/@CPS.3" id="conf_gc_layout" belongs_to="//@globalContext/@configuration/@links.0" description="PartialConf_220_layout">
+        <state>
+          <selectedFeatures href="./fm_layout.xmi#//@root"/>
+          <selectedFeatures href="./fm_layout.xmi#//@root/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_layout.xmi#//@root/@children.1/@features.0"/>
+          <selectedFeatures href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_layout.xmi#//@root/@children.2/@features.0"/>
+          <selectedFeatures href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.3"/>
+          <selectedFeatures href="./fm_layout.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <deselectedFeatures href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.4"/>
+          <deselectedFeatures href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.2"/>
+          <deselectedFeatures href="./fm_layout.xmi#//@root/@children.2/@features.0/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_layout.xmi#//@root/@children.1/@features.0/@children.1/@features.0"/>
+          <deselectedFeatures href="./fm_layout.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_layout.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_layout.xmi#/"/>
+        </state>
+      </subConfigurations>
+      <subConfigurations CPS="//@localContexts.0/@CPS.2" id="conf_cl_50_zone" belongs_to="//@globalContext/@configuration/@links.0 //@globalContext/@configuration/@links.1 //@globalContext/@configuration/@links.3" description="PartialConf_224_zone">
+        <state>
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.1/@features.0"/>
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_zone.xmi#//@root"/>
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <selectedFeatures href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_zone.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_zone.xmi#/"/>
+        </state>
+      </subConfigurations>
+      <subConfigurations CPS="//@localContexts.0/@CPS.1" id="conf_cl_50_renderer" belongs_to="//@globalContext/@configuration/@links.1 //@globalContext/@configuration/@links.2" description="PartialConf_223_renderer">
+        <state>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.1/@features.0"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.2/@features.0"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.3/@features.0"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.1/@features.0/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_renderer.xmi#//@root/@children.2/@features.0/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.4/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.1/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.2/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.0/@features.0/@children.0/@features.3/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.1/@features.0/@children.1/@features.0/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_renderer.xmi#//@root/@children.2/@features.0/@children.0/@features.1"/>
+          <fm href="./fm_renderer.xmi#/"/>
+        </state>
+      </subConfigurations>
+      <subConfigurations CPS="//@localContexts.0/@CPS.0" id="conf_cl_50_source" belongs_to="//@globalContext/@configuration/@links.2" description="PartialConf_222_source">
+        <state>
+          <selectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_source.xmi#//@root"/>
+          <selectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.4"/>
+          <selectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.4/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.2/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.3/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.2"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.1/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.3"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.2/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.0/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_source.xmi#//@root/@children.0/@features.0/@children.0/@features.4/@children.0/@features.1"/>
+          <fm href="./fm_source.xmi#/"/>
+        </state>
+      </subConfigurations>
+      <subConfigurations CPS="//@localContexts.0/@CPS.3" id="conf_cl_50_behaviour" belongs_to="//@globalContext/@configuration/@links.3" description="PartialConf_225_behaviour">
+        <state>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.3/@features.0"/>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.2/@features.0"/>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root"/>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.1/@features.0"/>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.0/@features.0/@children.2/@features.0"/>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.2/@features.0/@children.0/@features.1"/>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.1/@features.0/@children.0/@features.0"/>
+          <selectedFeatures href="./fm_behaviour.xmi#//@root/@children.3/@features.0/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.2/@features.0/@children.0/@features.0"/>
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.1/@features.0/@children.0/@features.2"/>
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.1/@features.0/@children.0/@features.1"/>
+          <deselectedFeatures href="./fm_behaviour.xmi#//@root/@children.3/@features.0/@children.0/@features.0"/>
+          <fm href="./fm_behaviour.xmi#/"/>
+        </state>
+      </subConfigurations>
+      <links source="//@globalContext/@configuration/@subConfigurations.1" target="//@globalContext/@configuration/@subConfigurations.0" id="link_conf_cl_50_zone-conf_gc_layout">
+        <relatedAssociation href="./mspl.xmi#//@associations.7"/>
+      </links>
+      <links source="//@globalContext/@configuration/@subConfigurations.2" target="//@globalContext/@configuration/@subConfigurations.1" id="link_conf_cl_50_renderer-conf_cl_50_zone">
+        <relatedAssociation href="./mspl.xmi#//@associations.1"/>
+      </links>
+      <links source="//@globalContext/@configuration/@subConfigurations.3" target="//@globalContext/@configuration/@subConfigurations.2" id="link_conf_cl_50_source-conf_cl_50_renderer">
+        <relatedAssociation href="./mspl.xmi#//@associations.0"/>
+      </links>
+      <links source="//@globalContext/@configuration/@subConfigurations.4" target="//@globalContext/@configuration/@subConfigurations.1" id="link_conf_cl_50_behaviour-conf_cl_50_zone">
+        <relatedAssociation href="./mspl.xmi#//@associations.2"/>
+      </links>
+    </configuration>
+  </globalContext>
+  <localContexts id="cl_50">
+    <CPS id="cl_50_source" description="PartialConf_222_source" context="//@localContexts.0" configuration="//@globalContext/@configuration/@subConfigurations.3" userConfig="true">
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/37"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/38"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/39"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/40"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/41"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/42"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/43"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/44"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/45"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/46"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/47"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/48"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/49"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/50"/>
+      <domainElement href="./mspl.xmi#//@domainElements.0"/>
+    </CPS>
+    <CPS id="cl_50_renderer" description="PartialConf_223_renderer" context="//@localContexts.0" configuration="//@globalContext/@configuration/@subConfigurations.2" userConfig="true">
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/51"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/52"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/53"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/54"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/55"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/56"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/57"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/58"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/59"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/60"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/61"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/62"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/63"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/64"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/65"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/66"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/67"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/68"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/69"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/70"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/71"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/72"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/73"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/74"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/75"/>
+      <domainElement href="./mspl.xmi#//@domainElements.1"/>
+    </CPS>
+    <CPS id="cl_50_zone" description="PartialConf_224_zone" context="//@localContexts.0" configuration="//@globalContext/@configuration/@subConfigurations.1" userConfig="true">
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/76"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/77"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/78"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/79"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/80"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/81"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/82"/>
+      <domainElement href="./mspl.xmi#//@domainElements.2"/>
+    </CPS>
+    <CPS id="cl_50_behaviour" description="PartialConf_225_behaviour" context="//@localContexts.0" configuration="//@globalContext/@configuration/@subConfigurations.4" userConfig="true">
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/83"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/84"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/85"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/86"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/87"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/88"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/89"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/90"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/91"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/92"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/93"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/94"/>
+      <actionsDone xsi:type="action:ActionSelect" href="./actions.xmi#/95"/>
+      <actionsDone xsi:type="action:ActionDeselect" href="./actions.xmi#/96"/>
+      <domainElement href="./mspl.xmi#//@domainElements.4"/>
+    </CPS>
+  </localContexts>
+</pm:ContextManager>
