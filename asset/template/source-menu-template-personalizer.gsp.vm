@@ -1,0 +1,10 @@
+<table class="menu-source">
+  <tr>
+  	#foreach( $tab in $tabs )
+    <td><g:link controller="$tab.controller" action="$tab.showAction">$tab.name</g:link></td>
+    <td>|</td>
+    #end
+  </tr>
+</table>
+<br/>
+<br/>
