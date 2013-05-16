@@ -1,5 +1,5 @@
-Text,Orientation,Product,Logo,Graphic,RightZone_glc,Elements,Portrait,Zone,Content,Thumbnails,Title:./zone/rightZone_glc.xmi
+Orientation,Product,Logo,Graphic,Title,Design,Text,RightZone_glc,GLC,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_glc.xmi
 IRSAM,Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,Full,Elements,MainZone_irsam,Zone,Content:./zone/mainZone_irsam.xmi
-Orientation,Product,Logo,Graphic,Landscape,Title,Text,Full,Elements,Zone,Content,MainZone_glc,Thumbnails:./zone/mainZone_glc.xmi
-Orientation,Product,Graphic,Landscape,Elements,Zone,Content,HeaderZone_glc,Thumbnails:./zone/headerZone_glc.xmi
-Text,Orientation,Product,Graphic,Logo,Landscape,Elements,BottomZone_glc,Zone,Content,Thumbnails:./zone/bottomZone_glc.xmi
+Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,GLC,Full,Elements,Zone,Content,MainZone_glc,Thumbnails:./zone/mainZone_glc.xmi
+Orientation,Product,Graphic,GLC,Landscape,Elements,Zone,Content,Thumbnails,HeaderZone_glc,Design:./zone/headerZone_glc.xmi
+Orientation,Product,Logo,Graphic,Landscape,Design,Text,GLC,Elements,BottomZone_glc,Zone,Content,Thumbnails:./zone/bottomZone_glc.xmi
