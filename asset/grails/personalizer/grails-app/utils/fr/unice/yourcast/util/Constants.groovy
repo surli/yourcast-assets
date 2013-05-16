@@ -48,6 +48,9 @@ class Constants {
        
     public final static String ZONES_SOURCES_FILE_ALT=File.separator+"extras"+File.separator+"zonesSources.txt"
     
+    public final static String WEB_APP_DIR= "webapp"
+    
+    
     public final static String ZONES_SOURCES_SEPARATOR=";"
     
     public final static String ZONES_SOURCES_PARAM_VALUE_SEPARATOR="=="

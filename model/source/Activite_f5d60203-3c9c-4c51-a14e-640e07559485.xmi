@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Activite" id="Activite_f5d60203-3c9c-4c51-a14e-640e07559485">
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Activite.properties"/>
+  <personalization image="">
+    <methods name="Informations sur une activit&#x221a;&#xa9; avec sa liste de participants" pathPrefix="activite" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Informations sur une activit&#x221a;&#xa9; avec sa liste de participants Activite" editMessage="Editer Informations sur une activit&#x221a;&#xa9; avec sa liste de participants Activite">
+      <parameters name="limit" tip="nombre maximum de personnes" constraint="NONE"/>
+      <parameters name="nom_activite" type="STRING" tip="nom de l'activit&#x221a;&#xa9;" constraint="NONE"/>
+    </methods>
+    <list name="limit" tip="nombre maximum de personnes" parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="nom_activite" tip="nom de l'activit&#x221a;&#xa9;" parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+</prodsource:Source>

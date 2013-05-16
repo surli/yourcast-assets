@@ -15,6 +15,8 @@ import fr.unice.yourcast.util.Constants
 import fr.unice.yourcast.sources.ProviderFlag
 import fr.unice.yourcast.db.DBFlag
 
+import java.io.FileReader
+
 
 /**
 * The service to personalize the source calls
@@ -424,20 +426,66 @@ class PersonalizerService {
         {
             bf= new BufferedReader(new FileReader(Constants.ZONES_SOURCES_FILE))
         }
-        else //if(file2.exists())
+        else if(file2.exists())
         {
             try{
                 bf= new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream(Constants.ZONES_SOURCES_FILE_ALT)))
             }
             catch(Exception e)
             {
-                log.error "PersonalizerService- Files "+Constants.ZONES_SOURCES_FILE+" and "+Constants.ZONES_SOURCES_FILE_ALT+" not found! The DB can not be initiliazed "
-                message= "The DB can not be initialized."
+                
+                String filePath = ""
+				java.net.URL url = PersonalizerService.class.getResource("PersonalizerService.class")
+				String className = url.getFile()
+				filePath = className.substring(0,className.indexOf(Constants.WEB_APP_DIR) + Constants.WEB_APP_DIR.length()) 
+				
+				File file3= new File(filePath,Constants.ZONES_SOURCES_FILE_ALT)
+				
+				if(file3.exists())
+				{
+				 try{
+		                bf= new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream(file3.getAbsolutePath())))
+		            }
+		            catch(Exception e1)
+		            {
+		                log.error "PersonalizerService- The Files "+Constants.ZONES_SOURCES_FILE+", "+Constants.ZONES_SOURCES_FILE_ALT+" and "+ filePath +" not found! The DB can not be initiliazed "
+		                message= "The DB can not be initialized."
+		            }
+				}
+		                
+		                
             }
             
         }
-        //else
-        //    log.error "PersonalizerService- Files "+Constants.ZONES_SOURCES_FILE+" and "+Constants.ZONES_SOURCES_FILE_ALT+" not found! The DB can not be initiliazed "
+        else
+        {
+            
+                
+            
+            String filePath = ""
+			java.net.URL url = PersonalizerService.class.getResource("PersonalizerService.class")
+			String className = url.getFile()
+			log.debug "PersonalizerService- Class name "+className
+			
+			filePath = className.substring(0,className.indexOf(Constants.WEB_APP_DIR) + Constants.WEB_APP_DIR.length()) 
+			
+			log.debug "PersonalizerService- Using the file path "+filePath
+			
+			File file3= new File(filePath,Constants.ZONES_SOURCES_FILE_ALT)
+			
+			if(file3.exists())
+			{
+			 try{
+	                bf= new BufferedReader(new FileReader(file3.getAbsolutePath()))
+	            }
+	            catch(Exception e1)
+	            {
+	                log.error "PersonalizerService- The Files "+Constants.ZONES_SOURCES_FILE+", "+Constants.ZONES_SOURCES_FILE_ALT+" and "+ filePath +" not found! The DB can not be initiliazed "
+	                message= "The DB can not be initialized."
+	            }            
+            }
+        
+        }
         
         
         if(bf)

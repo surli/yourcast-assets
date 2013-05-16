@@ -1,13 +1,13 @@
 fm_layout = FM(Layout: Design Product Zones ; 
 Design: (GLC|IRSAM) ; 
 Product: (LayoutAcademic|LayoutHandicap) ; 
-Zones: (MainZone_irsam|HeaderZone_glc) [RightZone_glc] [BottomZone_glc] [MainZone_glc] ; 
+Zones: (BottomZone_glc|MainZone_irsam) [RightZone_glc] [HeaderZone_glc] [MainZone_glc] ; 
 ((Zones -> MainZone_irsam) | (Zones -> MainZone_glc));
 (RightZone_glc <-> GLC);
-((Zones -> MainZone_irsam) | (Zones -> BottomZone_glc));
-(GLC <-> BottomZone_glc);
-(LayoutAcademic <-> RightZone_glc);
+(GLC <-> LayoutAcademic);
+(LayoutAcademic <-> BottomZone_glc);
 (MainZone_glc <-> HeaderZone_glc);
 (BottomZone_glc <-> MainZone_glc);
+((Zones -> MainZone_irsam) | (Zones -> HeaderZone_glc));
 ((Zones -> MainZone_irsam) | (Zones -> RightZone_glc));
 )

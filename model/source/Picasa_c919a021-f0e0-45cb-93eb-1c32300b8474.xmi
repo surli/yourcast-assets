@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Picasa" id="Picasa_c919a021-f0e0-45cb-93eb-1c32300b8474">
+  <service name="sources-picasa.war"/>
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Picasa.properties"/>
+  <personalization image="">
+    <methods name="Album d'un utilisateur avec limite" pathPrefix="album" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Album d'un utilisateur avec limite Picasa" editMessage="Editer Album d'un utilisateur avec limite Picasa">
+      <parameters name="limit" tip="nombre maximum de photos" constraint="NONE"/>
+      <parameters name="userid" type="STRING" tip="identifiant de l'utilisateur" constraint="NONE"/>
+      <parameters name="albumid" type="STRING" tip="identifiant de l'album" constraint="NONE"/>
+    </methods>
+    <list name="limit" tip="nombre maximum de photos" parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="userid" tip="identifiant de l'utilisateur" parameters="//@personalization/@methods.0/@parameters.1"/>
+    <list name="albumid" tip="identifiant de l'album" parameters="//@personalization/@methods.0/@parameters.2"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-picasa" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>

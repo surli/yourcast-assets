@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="4" name="irsam_render_Pictures_for_main_fullArea" infoType="PictureAlbum">
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="4" name="irsam_render_Pictures_for_main_fullArea.js" infoType="PictureAlbum">
   <function name="irsam_render_Pictures_for_main_fullArea"/>
   <resource name="img/logos/pict.png" type="image" path="img/logos/pict.png"/>
   <resource name="less/irsam_render_Pictures_for_main_fullArea.less" type="css" path="less/irsam_render_Pictures_for_main_fullArea.less"/>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Alertes" id="Alertes_33d20caf-dad0-477e-ae0c-c6b6aa6a707b">
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Alertes.properties"/>
+  <personalization image="">
+    <methods name="Alertes SupraLink" pathPrefix="alerte" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Alertes SupraLink Alertes" editMessage="Editer Alertes SupraLink Alertes"/>
+  </personalization>
+</prodsource:Source>

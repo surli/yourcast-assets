@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Announces" id="Announces_c050734a-6663-4ce9-9929-4d95f6c5b2fe">
+  <service name="sources-announce.war"/>
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Announces.properties"/>
+  <personalization image="">
+    <methods name="Annonce" pathPrefix="target" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Annonce Announces" editMessage="Editer Annonce Announces">
+      <parameters name="target" type="STRING" tip="&#x221a;&#xa9;cran cible de l'affichage" constraint="NONE"/>
+    </methods>
+    <list name="target" tip="&#x221a;&#xa9;cran cible de l'affichage" parameters="//@personalization/@methods.0/@parameters.0"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-announce" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>

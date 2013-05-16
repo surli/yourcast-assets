@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Ephemeride" id="Ephemeride_2ea434d8-1cbd-4592-ac5d-373586063a88">
+  <service name="sources-ephemeride.war"/>
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Ephemeride.properties"/>
+  <personalization image="">
+    <methods name="Ephemeride" pathPrefix="" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Ephemeride Ephemeride" editMessage="Editer Ephemeride Ephemeride"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-ephemeride" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
