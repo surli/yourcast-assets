@@ -1,0 +1,5 @@
+rule :
+	SELECTED Design.$A => SELECT Design.$A ;
+
+rule :
+	DESELECTED Design.$A => DESELECT Design.$A ;
