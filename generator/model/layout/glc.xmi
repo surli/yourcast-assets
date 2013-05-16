@@ -3,7 +3,7 @@
   <index name="index.html" type="html"/>
   <resources name="less/functions.less" type="css" path="less/functions.less"/>
   <resources name="less/style.less" type="css" path="less/style.less"/>
-  <resources name="less/variable.less" type="css" path="less/variable.less"/>
+  <resources name="less/variables.less" type="css" path="less/variables.less"/>
   <resources name="../libs/prototype.js" path="js/libs/prototype.js"/>
   <resources name="../libs/less.js" path="js/libs/less.js"/>
   <resources name="../common/controler.js" path="js/controler.js"/>
