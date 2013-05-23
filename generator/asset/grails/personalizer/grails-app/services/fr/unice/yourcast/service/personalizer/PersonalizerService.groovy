@@ -139,13 +139,7 @@ class PersonalizerService {
         def theService= getService(source)
         
         log.debug "Personalizer Service service "+ theService
-        
-        //def theProvider= getProvider(provider) 
-        
-        
-        //System.out.println("Personalizer Service provider "+ theProvider)
-        
-        
+                
         log.debug "Personalizer Service callId "+ callId
         
         
@@ -159,198 +153,12 @@ class PersonalizerService {
             theCall.parameters.remove(pos)
             theCall.parameters.add(pos,parameters)
             return theCall.save(flush:true)
-            //return true
         }
         
         return false
              
-        //def serviceCallInstance = new ServiceCall(callId:callId, provider:theProvider, source:theService,parameters:parameters)
-                    
-        //return serviceCallInstance.save(flush: true)
     }
-    
-
-    
-    def init()
-    {
-        log.debug "Calling init"
-        //Providers
-        def zone1= new ProviderInfo(name:"zone1")
-        def result= zone1.save()
-        
-        log.debug "zone1 :"+result
-        
-        def zone2= new ProviderInfo(name:"zone2")
-        result= zone2.save()
-        
-        log.debug "zone2 :"+result
-        
-        //Picasa
-        def argsPicasa= new Hashtable()
-        
-        argsPicasa.put("uri", DEFAULT_URL)
-        argsPicasa.put("path","/fr.unice.i3s.modalis.yourcast.sources.picturealbum.picasa/")
-        
-        ServiceInfo picasa = new ServiceInfo(name:"Picasa", args:argsPicasa)
-        
-        picasa.save()
-        
-       
-        def parametersPicasa= new ArrayList() {{
-			add(new HashMap() {{
-				put("method","get");
-				put("path","album/106664018239891640265/5742732035849898049/Gv1sRgCPL909uNx8vzMw");
-			}})}}
-        ServiceCall picasaSponsors = new ServiceCall(callId:"PicasaSponsors", source:picasa, provider:zone1, parameters:parametersPicasa)
-        
-        picasaSponsors.save()
-        
-        
-        ServiceCall picasaSponsors2 = new ServiceCall(callId:"PicasaSponsors2", source:picasa, provider:zone1, parameters:new ArrayList())
-        
-        picasaSponsors2.save()
-        
-        //Weather 2
-        def argsWeather2= new Hashtable()
-        
-        argsWeather2.put("uri", DEFAULT_URL)
-        argsWeather2.put("path","/fr.unice.i3s.modalis.yourcast.sources.forecast.weather2/rest/")
-        
-        ServiceInfo weather2 = new ServiceInfo(name:"Weather2",args:argsWeather2)
-
-																					
-	weather2.save()
-        
-        ServiceCall weatherRennes = new ServiceCall(callId:"weatherRennes", source:weather2, provider:zone1, parameters:new ArrayList() {{
-            add(new HashMap() {{
-                put("method","get")
-                put("path","48.111981/-1.674291")
-                put("forecast","2")
-            }})
-        }})
-
-        weatherRennes.save()
-        
-        
-        ServiceCall weatherLille = new ServiceCall(callId:"weatherLille", source:weather2, provider:zone2, parameters:new ArrayList())
-        weatherLille.save()
-        
-        //Announces
-        def argsAnnounces= new Hashtable()
-        
-        argsAnnounces.put("uri", DEFAULT_URL)
-        
-        argsAnnounces.put("path","/fr.unice.i3s.modalis.yourcast.sources.announcement/rest/")
-        
-	ServiceInfo announces = new ServiceInfo(name:"Announces", args:argsAnnounces)
-
-        announces.save()
-        
-        ServiceCall announcesCall = new ServiceCall(callId:"announces", source:announces, provider:zone1, parameters:new ArrayList())
-	announcesCall.save()
-        
-        ServiceCall announcesCall2 = new ServiceCall(callId:"announces2", source:announces, provider:zone2, parameters:new ArrayList())
-	announcesCall2.save()
-        
-        
-        ServiceCall announcesCall3 = new ServiceCall(callId:"announces3", source:announces, provider:zone1, parameters:new ArrayList())
-	announcesCall3.save()
-        
-																		
-        //Twitter TL
-        def argsTwitter= new Hashtable()
-        
-        argsTwitter.put("uri", "https://api.twitter.com")
-        argsTwitter.put("path","/1/statuses/user_timeline.json")
-        argsTwitter. put("query",new HashMap() {{
-                            put("include_entities","true");
-                            }})
-     
-	ServiceInfo twitterTL = new ServiceInfo(name:"TwitterTL", args:argsTwitter)
-																														
-        twitterTL.save()
-        
-        
-        ServiceCall twitterTLGPL = new ServiceCall(callId:"twitterTLGPL", source:twitterTL, provider:zone2, parameters:new ArrayList() {{
-                add(new HashMap() {{
-                        put("method","get");
-                        put("query",new HashMap() {{
-                                put("screen_name","GPL2012");
-                                put("count",5);
-                        }});
-                }});
-        }});
-        
-        twitterTLGPL.save()
-        
-        
-        ServiceCall twitterTLGPL2 = new ServiceCall(callId:"twitterTLGPL2", source:twitterTL, provider:zone2, parameters:new ArrayList() )
-        
-        twitterTLGPL2.save()
-           
-        //Twitter search
-        def argsTwitterSearch= new HashMap() 
-        
-        argsTwitterSearch.put("uri", "http://search.twitter.com")
-        argsTwitterSearch.put("path","/search.json")
-        
-        argsTwitterSearch.put("query",new HashMap() {{
-                                put("include_entities","true");
-                                }})
-        
-        
-        ServiceInfo twitterSearch= new ServiceInfo(name:"TwitterSearch", args:argsTwitterSearch)
-																														
-        twitterSearch.save()
-        
-        ServiceCall twitterSearchGPL = new ServiceCall(callId:"twitterSearchGPL", source:twitterSearch, provider:zone2, parameters:new ArrayList() {{
-                add(new HashMap() {{
-                        put("method","get");
-                        put("query",new HashMap() {{
-                                put("q","#GPL2012");
-                                put("result_type","recent");
-                                put("rpp",10);
-                        }});
-                }});
-        }})
-
-        
-        twitterSearchGPL.save()
-        
-        
-        ServiceCall twitterSearchGPL2 = new ServiceCall(callId:"twitterSearchGPL2", source:twitterSearch, provider:zone2, parameters:new ArrayList())
-
-        
-        twitterSearchGPL2.save()
-        
-        //Icalreader
-        
-        ServiceInfo icalreader= new ServiceInfo(name:"ICalReader", args:new HashMap() {{
-                        put("uri", DEFAULT_URL);
-                        put("path","/fr.unice.i3s.modalis.yourcast.sources.calendar.icalreader/");
-                        }})
-        icalreader.save()
-        
-        ServiceCall icalReaderGDRGPL = new ServiceCall(callId:"icalreaderAll", source:icalreader, provider:zone1, parameters:new ArrayList() {{
-			add(new HashMap() {{
-				put("method","post");
-				put("path","hours/12/1");
-				put("body","https://www.google.com/calendar/ical/vpd9psgi66nuoad1h586s77ffg%40group.calendar.google.com/private-14b83e20d01a54d7d43eb1de278b6c1f/basic.ics");
-			}});
-		}})
-        icalReaderGDRGPL.save()
-        
-        ServiceCall icalReaderGDRGPL2 = new ServiceCall(callId:"icalreaderAll2", source:icalreader, provider:zone2, parameters:new ArrayList() {{
-                add(new HashMap() {{
-                        put("method","post");
-                        put("path","hours/12/1");
-                        put("body","https://www.google.com/calendar/ical/vpd9psgi66nuoad1h586s77ffg%40group.calendar.google.com/private-14b83e20d01a54d7d43eb1de278b6c1f/basic.ics");
-                }});
-        }})
-        icalReaderGDRGPL2.save()
-    }
-
-    
+   
     def saveProvider(ProviderInfo providerInfoInstance)
     {
         return providerInfoInstance.save(flush: true)
@@ -392,9 +200,7 @@ class PersonalizerService {
      * @return List of providers
      **/
     def getListOfProviderNames()
-    {
-        //def listOfProviders = [ALL, "zone1", "zone2"]
-        
+    {   
         List providers= getListOfProviders()
         
         List providersNames= new ArrayList()
@@ -492,8 +298,6 @@ class PersonalizerService {
         {
             
             def line= bf.readLine()
-            
-            //def zones= new Hashtable()
             
             while(line.trim().equals(""))
             {
@@ -690,10 +494,7 @@ class PersonalizerService {
     def getCalls(String providerName, String serviceName) 
     {
         def serviceInfo= getService(serviceName)
-        def providerInfo= getProvider(providerName)
-        
-        //def ServiceCall serviceCallInfo= new ServiceCall(provider:providerInfo, source:serviceInfo)
-        
+        def providerInfo= getProvider(providerName) 
         def calls= ServiceCall.findAllByProviderAndSource(providerInfo,serviceInfo)
                
         return calls
@@ -708,9 +509,7 @@ class PersonalizerService {
     def getCalls(String serviceName) 
     {
         def serviceInfo= getService(serviceName)
-        
-        //def ServiceCall serviceCallInfo= new ServiceCall(provider:providerInfo, source:serviceInfo)
-        
+      
         def calls= ServiceCall.findAllBySource(serviceInfo)
                
         return calls
@@ -751,8 +550,6 @@ class PersonalizerService {
         {
             if(call.parameters!=null)
             {
-                //for(Object o:call.parameters)
-                //    result.put(call.callId,o)
                 result.put(call.callId,call.parameters)
             }
             
@@ -779,7 +576,6 @@ class PersonalizerService {
         {
             if(call.parameters!=null)
             {
-                //for(Object o:call.parameters)
                 result.put(call.callId,call.parameters)
             }
             
@@ -890,7 +686,6 @@ class PersonalizerService {
         {
             callInfo.parameters.remove(position)
             callInfo.save(flush: true)
-            //callInfo.delete(flush:true)
         }
         
         
