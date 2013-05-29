@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="irsam_appearance.js">
-  <function name="irsam_appearance"/>
-  <resource name="../utils/functions.js" path="./js/behaviours/functions.js"/>
-  <resource name="less/black.less" type="css" path="less/black.less"/>
-  <resource name="less/yellow.less" type="css" path="less/yellow.less"/>
-</prodbehavior:Behavior>

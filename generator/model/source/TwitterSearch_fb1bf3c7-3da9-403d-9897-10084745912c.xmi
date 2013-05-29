@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prodsource="prodsource.yourcast.fr" name="TwitterSearch" id="TwitterSearch">
+  <actor name="fr.yourcast.sources.twitter.search.ServiceActorCompositeTwitterSearch" type="fr.yourcast.sources.twitter.search.ServiceActorCompositeTwitterSearch"/>
+  <parameters name="TwitterSearch.properties"/>
+  <personalization image="">
+    <methods name="Recherche par tags" pathPrefix="search.json" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Recherche par tags TwitterSearch" editMessage="Editer Recherche par tags TwitterSearch">
+      <parameters xsi:type="prodsource:ListParameter" name="result_type" type="LIST" tip="Ordre des r&#x221a;&#xa9;sultats &#x221a;&#x2020; afficher (recent pour les r&#x221a;&#xa9;sultats r&#x221a;&#xa9;cents, mixed pour les r&#x221a;&#xa9;sultats populaires)" constraint="NONE" isPartOfPath="false">
+        <values>recent</values>
+        <values>mixed</values>
+      </parameters>
+      <parameters name="rpp" tip="nombre de r&#x221a;&#xa9;sultats &#x221a;&#x2020; afficher" constraint="NONE" isPartOfPath="false"/>
+      <parameters name="q" type="STRING" tip="chaine de recherche" constraint="NONE" isPartOfPath="false"/>
+      <parameters xsi:type="prodsource:MapParameter" name="query" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1 //@personalization/@methods.0/@parameters.2"/>
+      <parameters name="Authorization" type="STRING" tip="La cl&#x221a;&#xa9; d'API commence forc&#x221a;&#xa9;ment par Bearer et doit &#x221a;&#x2122;tre suivi d'une chaine de caract&#x221a;&#xae;re encod&#x221a;&#xa9;e. Elle vous sera fournie en m&#x221a;&#x2122;me temps que l'application." constraint="NONE" isPartOfPath="false"/>
+      <parameters xsi:type="prodsource:MapParameter" name="headers" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.4"/>
+    </methods>
+    <list name="result_type" tip="Ordre des r&#x221a;&#xa9;sultats &#x221a;&#x2020; afficher (recent pour les r&#x221a;&#xa9;sultats r&#x221a;&#xa9;cents, mixed pour les r&#x221a;&#xa9;sultats populaires)" parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="rpp" tip="nombre de r&#x221a;&#xa9;sultats &#x221a;&#x2020; afficher" parameters="//@personalization/@methods.0/@parameters.1"/>
+    <list name="q" tip="chaine de recherche" parameters="//@personalization/@methods.0/@parameters.2"/>
+    <list name="Authorization" tip="La cl&#x221a;&#xa9; d'API commence forc&#x221a;&#xa9;ment par Bearer et doit &#x221a;&#x2122;tre suivi d'une chaine de caract&#x221a;&#xae;re encod&#x221a;&#xa9;e. Elle vous sera fournie en m&#x221a;&#x2122;me temps que l'application." parameters="//@personalization/@methods.0/@parameters.4"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-twitter-search" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
