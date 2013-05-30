@@ -1,13 +1,4 @@
-fm_layout = FM(Layout: Design Product Zones ; 
-Design: (GLC|IRSAM) ; 
-Product: (LayoutAcademic|LayoutHandicap) ; 
-Zones: (RightZone_glc|MainZone_irsam) [BottomZone_glc] [HeaderZone_glc] [MainZone_glc] ; 
-((Zones -> MainZone_irsam) | (Zones -> MainZone_glc));
-((Zones -> MainZone_irsam) | (Zones -> BottomZone_glc));
-(LayoutAcademic <-> BottomZone_glc);
-(MainZone_glc <-> HeaderZone_glc);
-(BottomZone_glc <-> MainZone_glc);
-(MainZone_irsam <-> LayoutHandicap);
-(GLC <-> RightZone_glc);
-((Zones -> MainZone_irsam) | (Zones -> HeaderZone_glc));
-)
+layout0 = FM (Layout: Product Zones Design;                                 Product: LayoutAcademic;                                 Zones: MainZone_glc BottomZone_glc RightZone_glc HeaderZone_glc;                                 Design: GLC;)
+layout1 = FM (Layout: Product Zones Design;                                 Product: LayoutHandicap;                                 Zones: MainZone_irsam;                                 Design: IRSAM;)
+
+fm_layout = merge sunion layout*

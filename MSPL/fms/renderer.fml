@@ -1,66 +1,12 @@
-fm_renderer = FM(Renderer: TypeInfo [Criteria] Design Elements Discretization ; 
-TypeInfo: (Birthday|Calendar|PictureAlbum|Forecast|Announces|Ephemeride|Menu) ; 
-Criteria: (Tomorow|currentEventAnnoted) (Today|noPastEvent) ; 
-Design: (GLC|IRSAM) ; 
-Elements: Title [Content] Logo ; 
-Discretization: (FilterByDate|FixedNumber)? [ByOne] ; 
-Title: (ForecastCity|AlbumName|MenuName|FrenchDate|PredefinedTitle|AnnounceTitle) ; 
-Content: (Location|Graphic|FirstName|Text)+ ; 
-Logo: (NoLogo|FromSource) ; 
-FixedNumber: "By6" ; 
-Graphic: (Thumbnails|Full)? ; 
-(Graphic -> !FirstName);
-(FirstName <-> PredefinedTitle);
-(Full -> !Today);
-(ForecastCity -> !"By6");
-(Menu <-> MenuName);
-(Text -> ByOne);
-(IRSAM -> ByOne);
-(FilterByDate -> !Forecast);
-(Location <-> noPastEvent);
-(Menu -> !Thumbnails);
-(NoLogo -> FrenchDate);
-(PredefinedTitle -> !Text);
-(currentEventAnnoted -> !NoLogo);
-(currentEventAnnoted -> !Full);
-(Ephemeride -> NoLogo);
-(NoLogo -> Text);
-(ForecastCity -> !Thumbnails);
-((Criteria -> noPastEvent) | (Criteria -> Tomorow));
-(noPastEvent <-> Calendar);
-(FrenchDate -> IRSAM);
-(Full -> IRSAM);
-(Full -> !FrenchDate);
-(Today <-> Tomorow);
-(AnnounceTitle <-> Announces);
-(IRSAM -> !FixedNumber);
-(Criteria -> !"By6");
-(Text -> !FixedNumber);
-(Criteria -> FrenchDate);
-(Ephemeride -> !Today);
-((Discretization -> ByOne) | (Discretization -> FixedNumber));
-(Menu -> !GLC);
-(Graphic -> !Ephemeride);
-(PredefinedTitle -> !FixedNumber);
-(Birthday -> !GLC);
-(ForecastCity -> Forecast);
-(AnnounceTitle -> !FixedNumber);
-(currentEventAnnoted -> !Text);
-("By6" -> !ByOne);
-(Menu -> !Full);
-(Forecast -> Text);
-(PictureAlbum <-> AlbumName);
-(Graphic -> !Location);
-(FromSource -> !Today);
-(Text -> !PictureAlbum);
-(Ephemeride -> !Full);
-(noPastEvent -> !FixedNumber);
-(FilterByDate -> Text);
-(Birthday <-> FirstName);
-(FilterByDate -> !PictureAlbum);
-(Menu -> !"By6");
-(FilterByDate -> GLC);
-(Full -> !AnnounceTitle);
-(Thumbnails -> !Announces);
-(ForecastCity -> GLC);
-)
+renderer0 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Ephemeride; Elements: Content Logo Title; Content: Text; Design: IRSAM; Discretization: ByOne; Title: FrenchDate; Logo: NoLogo;)
+renderer1 = FM(Renderer: TypeInfo Elements Design Discretization Criteria; TypeInfo: Calendar; Elements: Content Logo Title; Content: Location ; Design: IRSAM; Discretization: ByOne; Title: FrenchDate; Logo: FromSource;Criteria: noPastEvent currentEventAnnoted;)
+renderer2 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Announces; Elements: Content Logo Title; Content: Text Graphic; Design: GLC; Discretization: ByOne FilterByDate; Title: AnnounceTitle; Logo: FromSource;)
+renderer3 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Forecast; Elements: Content Logo Title; Content: Text Graphic; Design: GLC; Discretization: ByOne; Title: ForecastCity; Logo: FromSource;)
+renderer4 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Menu; Elements: Content Logo Title; Content: Text; Design: IRSAM; Discretization: ByOne; Title: MenuName; Logo: FromSource;)
+renderer5 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Announces; Elements: Logo Title; Design: IRSAM; Discretization: ByOne; Title: AnnounceTitle; Logo: FromSource;)
+renderer6 = FM(Renderer: TypeInfo Elements Design Discretization Criteria; TypeInfo: Forecast; Elements: Content Logo Title; Content: Text Graphic; Graphic: Thumbnails; Design: IRSAM; Discretization: ByOne; Title: FrenchDate; Logo: NoLogo; Criteria: Today Tomorow;)
+renderer7 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Birthday; Elements: Content Logo Title; Content: FirstName; Design: IRSAM; Discretization: ByOne; Title: PredefinedTitle; Logo: FromSource;)
+renderer8 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: PictureAlbum; Elements: Content Logo Title; Content: Graphic; Graphic: Thumbnails; Design: GLC; Discretization: FixedNumber; FixedNumber: By6; Title: AlbumName; Logo: FromSource;)
+renderer9 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: PictureAlbum; Elements: Content Logo Title; Content: Graphic; Graphic: Full; Design: IRSAM; Discretization: ByOne; Title: AlbumName; Logo: FromSource;)
+
+fm_renderer = merge sunion renderer*

@@ -1,19 +1,7 @@
-fm_zone = FM(Zone: Design Orientation Product Elements ; 
-Design: (GLC|IRSAM) ; 
-Orientation: (Portrait|Landscape) ; 
-Product: (RightZone_glc|MainZone_irsam|BottomZone_glc|HeaderZone_glc|MainZone_glc) ; 
-Elements: [Title] Content [Logo] ; 
-Content: Graphic [Text] ; 
-Graphic: (Thumbnails|Full)+ ; 
-(Logo -> !HeaderZone_glc);
-(Text <-> Logo);
-(GLC <-> Thumbnails);
-(Full -> Landscape);
-(Title -> !BottomZone_glc);
-(MainZone_glc -> Full);
-(Full -> Title);
-(IRSAM <-> MainZone_irsam);
-(HeaderZone_glc -> !Title);
-(HeaderZone_glc -> !Full);
-(RightZone_glc <-> Portrait);
-)
+zone0 = FM(Zone: Product Elements Orientation Design; Product: RightZone_glc; Elements: Logo Title Content; Content: Graphic Text; Graphic: Thumbnails; Orientation: Portrait; Design: GLC;)
+zone1 = FM(Zone: Product Elements Orientation Design; Product: MainZone_irsam; Elements: Logo Title Content; Content: Graphic Text; Graphic: Full ; Orientation: Landscape; Design: IRSAM;)
+zone2 = FM(Zone: Product Elements Orientation Design; Product: MainZone_glc; Elements: Logo Title Content; Content: Graphic Text; Graphic: Full Thumbnails; Orientation: Landscape; Design: GLC;)
+zone3 = FM(Zone: Product Elements Orientation Design; Product: HeaderZone_glc; Elements: Content; Content: Graphic; Graphic: Thumbnails; Orientation: Landscape; Design: GLC;)
+zone4 = FM(Zone: Product Elements Orientation Design; Product: BottomZone_glc; Elements: Logo Content; Content: Graphic Text; Graphic: Thumbnails; Orientation: Landscape; Design: GLC;)
+
+fm_zone = merge sunion zone*
