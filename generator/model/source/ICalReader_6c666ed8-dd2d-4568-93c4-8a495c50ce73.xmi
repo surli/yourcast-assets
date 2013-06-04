@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="ICalReader" id="ICalReader">
+  <service name="sources-icalreader.war"/>
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="ICalReader.properties"/>
+  <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
+    <methods name="ICalReader_6c666ed8-dd2d-4568-93c4-8a495c50ce73" pathPrefix="hours" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Lecteur de calendrier avec dur&#x221a;&#xa9;e ICalReader" editMessage="Editer Lecteur de calendrier avec dur&#x221a;&#xa9;e ICalReader">
+      <parameters name="n" tip="Dur&#x221a;&#xa9;e en heure" constraint="NONE"/>
+      <parameters name="body" type="STRING" constraint="NONE" isPartOfPath="false"/>
+    </methods>
+    <list name="n" tip="Dur&#x221a;&#xa9;e en heure" parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="body" parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-icalreader" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
