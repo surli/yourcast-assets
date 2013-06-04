@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Dailymotion" id="Dailymotion">
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Dailymotion.properties"/>
+  <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
+    <methods name="Vid&#x221a;&#xa9;os Dailymotion par utilisateur" pathPrefix="user" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Vid&#x221a;&#xa9;os Dailymotion par utilisateur Dailymotion" editMessage="Editer Vid&#x221a;&#xa9;os Dailymotion par utilisateur Dailymotion">
+      <parameters name="limit" tip="nombre maximum de vid&#x221a;&#xa9;os" constraint="NONE"/>
+      <parameters name="userid" type="STRING" tip="identifiant de l'utilisateur" constraint="NONE"/>
+    </methods>
+    <list name="limit" tip="nombre maximum de vid&#x221a;&#xa9;os" parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="userid" tip="identifiant de l'utilisateur" parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+</prodsource:Source>
