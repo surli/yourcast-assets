@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prodsource="prodsource.yourcast.fr" name="Breves" id="Breves">
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Breves.properties"/>
+  <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
+    <methods name="Breves_b2f3aa3b_a517_4e68_8076_cbca51eadf6a" pathPrefix="breve" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Br&#x221a;&#xae;ves d'actualit&#x221a;&#xa9; Breves" editMessage="Editer Br&#x221a;&#xae;ves d'actualit&#x221a;&#xa9; Breves">
+      <parameters name="limit" tip="nombre de br&#x221a;&#xae;ves max" constraint="NONE" isPartOfPath="false"/>
+      <parameters name="fields" type="STRING" tip="th&#x221a;&#xae;me des br&#x221a;&#xae;ves" constraint="NONE" isPartOfPath="false"/>
+      <parameters xsi:type="prodsource:MapParameter" name="query" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>
+    </methods>
+    <list name="limit" tip="nombre de br&#x221a;&#xae;ves max" parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="fields" tip="th&#x221a;&#xae;me des br&#x221a;&#xae;ves" parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+</prodsource:Source>
