@@ -50,6 +50,10 @@ class Constants {
     
     public final static String WEB_APP_DIR= "webapp"
     
+    public final static String WEB_INF_DIR_TOMCAT= "WEB-INF"
+    
+    public final static String ZONES_SOURCES_FILE_TOMCAT= "classes"+File.separator+"extras"+File.separator+"zonesSources.txt"
+    
     
     public final static String ZONES_SOURCES_SEPARATOR=";"
     

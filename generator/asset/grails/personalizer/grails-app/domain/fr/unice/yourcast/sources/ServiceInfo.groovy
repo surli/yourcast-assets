@@ -17,6 +17,8 @@ class ServiceInfo {
     * The map of arguments expected by a call of the source
     **/ 
     Map<String,Object> args
+
+   	RateLimit rateLimit
     
     static mapWith="mongo"
 

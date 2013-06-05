@@ -3,6 +3,8 @@ package fr.unice.yourcast.service.personalizer
 import fr.unice.yourcast.sources.ServiceCall
 import fr.unice.yourcast.sources.ProviderInfo
 import fr.unice.yourcast.sources.ServiceInfo
+import fr.unice.yourcast.sources.RateLimit
+import fr.unice.yourcast.sources.CallCount
 
 import net.sf.json.JSONObject
 import net.sf.json.JSONNull
@@ -265,9 +267,6 @@ class PersonalizerService {
         }
         else
         {
-            
-                
-            
             String filePath = ""
 			java.net.URL url = PersonalizerService.class.getResource("PersonalizerService.class")
 			String className = url.getFile()
@@ -286,10 +285,30 @@ class PersonalizerService {
 	            }
 	            catch(Exception e1)
 	            {
-	                log.error "PersonalizerService- The Files "+Constants.ZONES_SOURCES_FILE+", "+Constants.ZONES_SOURCES_FILE_ALT+" and "+ filePath +" not found! The DB can not be initiliazed "
+	                log.error "PersonalizerService- The File "+file3.getAbsolutePath() +" can not be found! The DB can not be initiliazed "
 	                message= "The DB can not be initialized."
 	            }            
             }
+			else
+			{
+				filePath = className.substring(0,className.indexOf(Constants.WEB_INF_DIR_TOMCAT) + Constants.WEB_INF_DIR_TOMCAT.length())
+				
+				log.debug "PersonalizerService- Using the file path "+filePath
+				
+				file3= new File(filePath,Constants.ZONES_SOURCES_FILE_TOMCAT)
+				
+				if(file3.exists())
+				{
+				 try{
+						bf= new BufferedReader(new FileReader(file3.getAbsolutePath()))
+					}
+					catch(Exception e1)
+					{
+						log.error "PersonalizerService- The File "+file3.getAbsolutePath() +" can not be found! The DB can not be initiliazed "
+						message= "The DB can not be initialized."
+					}
+				}
+			}
         
         }
         
@@ -329,19 +348,27 @@ class PersonalizerService {
                 {
                     if(!line.trim().equals(""))
                     {
-                        def infos= line.split(Constants.ZONES_SOURCES_SEPARATOR) //format sourceName;argName0|value;argName1|value;... 
-                    
+                        def infos= line.split(Constants.ZONES_SOURCES_SEPARATOR) //format sourceName;requests;minutes;argName0|value;argName1|value;... 
+                    															//requests,minutes=>RateLimit. default value (-1,-1)
                         def sourceName= infos[0]
+                        
+                        def requests= infos[1]
+                        
+                        def minutes= infos[2]
+                        
+                        def RateLimit rl= new RateLimit(requests:requests, minutes:minutes)
+                        
+                        rl.save()
                     
                         def args= new Hashtable()
                     
                     
-                        for(def i=1;i<infos.length;i++) 
+                        for(def i=3;i<infos.length;i++) 
                         {
                             addParameterValue(args,infos[i])
                         }
                     
-                        def serviceInfo= new ServiceInfo(name:sourceName, args:args)
+                        def serviceInfo= new ServiceInfo(name:sourceName, args:args, rateLimit:rl)
                         serviceInfo.save()
                         sourcesMap.put(sourceName,serviceInfo)
                     }
@@ -384,7 +411,7 @@ class PersonalizerService {
                 //Calls
                 line= bf.readLine()
                 
-                while(line!=null)
+                while(!line.trim().startsWith("#Call count"))
                 {
                     if(!line.trim().equals(""))
                     {
@@ -401,6 +428,31 @@ class PersonalizerService {
                         def serviceCall= new ServiceCall(callId:callId, source:sourcesMap.get(sourceName), provider:zonesMap.get(providerName), parameters:callParametersMap.get(parametersId)) 
 
                         serviceCall.save()
+                    }    
+                    
+                    line= bf.readLine()
+                    
+                }
+                
+                //Call Counts
+                line= bf.readLine()
+                
+                while(line!=null)
+                {
+                    if(!line.trim().equals(""))
+                    {
+                        def infos= line.trim().split(Constants.ZONES_SOURCES_SEPARATOR) //sourceName;providerName;value
+
+                       
+                        def sourceName= infos[0].trim()
+
+                        def providerName= infos[1].trim()
+
+                        def value= infos[2].trim()
+
+                        def callCount= new CallCount(source:sourcesMap.get(sourceName), provider:zonesMap.get(providerName), callExecuted:value) 
+
+                        callCount.save()
                     }    
                     
                     line= bf.readLine()
@@ -607,6 +659,55 @@ class PersonalizerService {
     {
         def serviceInfo= new ServiceInfo(name:name)
         return ServiceInfo.find(serviceInfo)
+    }
+    
+        /**
+     * Retrieve the specified source
+     *@param name The source name
+     *@return The source
+     **/
+    def getServiceRateLimit(String name)
+    {
+        def serviceInfo= new ServiceInfo(name:name)
+        
+        def service= ServiceInfo.find(serviceInfo)
+        
+        if(service)
+        	return service.rateLimit
+        
+        return null
+    }
+    
+    def getCallCount(String provider, String service)
+    {
+        def serviceInfo= getService(service)
+        def providerInfo= getProvider(provider)
+        return CallCount.findByProviderAndSource(providerInfo,serviceInfo)
+    }
+    
+    def updateCallCount(String provider, String source, int value)
+    {
+        def providerInfo= getProvider(provider)
+        def serviceInfo= getService(source)
+         
+        def callCount= CallCount.findByProviderAndSource(providerInfo,serviceInfo)
+        
+        if(callCount==null)
+        {
+            return false
+        }
+        
+       callCount.callExecuted=value
+        
+        try{
+            callCount.save(flush:true)
+            
+            return true
+        }
+        catch(Exception e)
+        {
+            return false
+        }
     }
     
     /**

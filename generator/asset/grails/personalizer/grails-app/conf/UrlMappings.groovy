@@ -9,10 +9,6 @@ class UrlMappings {
 
 		"/"(view:"/index")
 		"500"(view:'/error')
-                /*"/Picasa/list"{
-                    controller="Picasa"
-                    action="listAlbums"
-                }*/
                 
                 "/"(controller: 'Main', action: 'index')
         
@@ -25,10 +21,10 @@ class UrlMappings {
         
                 "/flags/$provname/$servname" (controller: 'Main', action: 'getProviderFlags')
                 
-                /*"/"(controller: 'Picasa', action: 'List')*/
-
-                /*"/personalizer/"(controller: "product") {
-                action = [GET: "show", PUT: "update", DELETE: "delete", POST: "save"]
-                }*/
+ 		"/rateLimit/$servname" (controller: 'Main', action: 'getServiceRateLimit')
+ 		
+ 		"/callCount/$provname/$servname" (controller: 'Main', action: 'getServiceCallCount')
+ 		
+ 		"/callCount/update/$provname/$servname/$value" (controller: 'Main', action: 'updateServiceCallCount')
 	}
 }
