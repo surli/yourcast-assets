@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="RSSFeedReader" id="RSSFeedReader">
+  <service name="sources-RSSFeedReader.war"/>
+  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="RSSFeedReader_65f1eb39-b228-45da-a6a5-06f7fc9da5f5.properties"/>
+  <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
+    <methods name="RSSFeedReader_65f1eb39_b228_45da_a6a5_06f7fc9da5f5" pathPrefix="all" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Flux RSS RSSFeedReader" editMessage="Editer Flux RSS RSSFeedReader">
+      <parameters name="body" type="STRING" constraint="NONE" isPartOfPath="false"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.0"/>
+    </methods>
+    <list name="body" parameters="//@personalization/@methods.0/@parameters.0"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-RSSFeedReader" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
