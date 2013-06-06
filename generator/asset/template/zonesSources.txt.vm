@@ -3,12 +3,12 @@
 ${provider}        
 #end
 
-#Sources- sourceName;argName0==value;argName1==value;... 
+#Sources- sourceName;requests;minutes;argName0==value;argName1==value;... 
 #foreach( $source in $sources )
 ${source}        
 #end
 
-#Service Call parameters- parametersId;[param1=value,param2=value...];[param3=value,...]... 
+#Service Call parameters- parametersId;[param1=value param2=value param3=value…];[param4=value ...]... 
 #foreach( $parameters in $sourceParameters )
 ${parameters}        
 #end
@@ -16,4 +16,9 @@ ${parameters}
 #Service calls- callId;sourceName;providerName;parametersId
 #foreach( $serviceCall in $serviceCalls )
 ${serviceCall}        
+#end
+
+#Call count- sourceName;providerName;value
+#foreach( $callCount in $callCounts )
+${callCount}        
 #end

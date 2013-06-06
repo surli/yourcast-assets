@@ -61,7 +61,7 @@ class Constants {
     
     public final static String ZONES_SOURCES_MAP_KEY_VALUE_SEPARATOR="="
     
-    public final static String ZONES_SOURCES_MAP_SEPARATOR=","
+    public final static String ZONES_SOURCES_MAP_SEPARATOR=" "
     
     public final static String DB_MESSAGE_ERROR="The DB is not initialized. The operation can not be executed."
     
