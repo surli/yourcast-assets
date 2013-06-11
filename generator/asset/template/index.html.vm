@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
+		
+		<title>IHM YourCast</title>
+		<script type="text/javascript" src="../js/libs/prototype.js"></script>
+		<script type="text/javascript" src="../js/utils.js"></script>
+    	<script type="text/javascript" src="../js/date.js"></script>
+    	<script type="text/javascript" src="../js/controler.js"></script>
+		
+		<link href="less/als.css" type="text/css" rel="stylesheet" />
+		<link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
+		
+		<!-- Zone 1 Script & CSS -->
+		<script type="text/javascript" src="zone1/controler.js"></script>
+	    <link href="zone1/style.less" rel="stylesheet/less" />
+
+	    <!-- Zone 2 Script & CSS -->
+		<script type="text/javascript" src="zone2/controler.js"></script>
+	    <link href="zone2/style.less" rel="stylesheet/less" />
+	    
+	    <!-- Alert Script & CSS -->
+		<script type="text/javascript" src="zoneAlert/controler.js"></script>
+	    <link href="zoneAlert/style.less" rel="stylesheet/less" />
+
+		<!-- Notif Script & CSS -->
+		<script type="text/javascript" src="zoneNotif/controler.js"></script>
+		<link href="zoneNotif/style.less" rel="stylesheet/less" />
+	    
+	    <!-- import the less interpreter -->
+	    <script type="text/javascript" src="../js/libs/less.js"></script>
+	    
+		<script type="text/javascript">
+			function init_zoneAll(){
+				z1=init_zone1(); 
+				z2=init_zone2();
+				
+				var tabZone = new Object();
+				tabZone.zone1 = z1;
+				tabZone.zone2 = z2;
+				
+				zN=init_zoneNotif(tabZone);
+				
+				var tabAll = new Object();
+				tabAll.zone1 = z1;
+				tabAll.zone2 = z2;
+				tabAll.zoneNotif = zN;
+				
+				init_zoneAlert(tabAll);
+			}
+		</script>
+	</head>
+
+	<body onload="init_zoneAll(); init_date();">
+	
+		
+		<!--  to manage alert -->
+		<div id="zoneAlert">
+			<span class="logo" style="display:none" id="zoneAlert_logo"></span>
+			<span class="title" style="display:none" id="zoneAlert_title"></span>
+		</div>
+
+		<!--  to manage notif -->
+		<div id="zoneNotif">
+			<span class="logo" style="display:none" id="zoneNotif_logo"></span>
+			<span class="title" style="display:none" id="zoneNotif_title"></span>
+		</div>
+		
+		<!--  zone pour la date -->
+		<div id="date_time"></div>
+
+		<!--  zone 1 (infos) -->
+		<div id="zone1">
+			<span class="logo" id="zone1_logo"></span>
+			<span class="title" id="zone1_title"></span>
+		</div>
+
+		<!--  zone 2 (scrolling) -->
+		<div id="zone2">
+			<div id="zone2_logo"></div>
+		</div>
+		<div id="logo_loading">
+			<img src="./img/loading_img.gif" />
+		</div>
+	</body>
+</html>
+

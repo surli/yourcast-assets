@@ -1,0 +1,135 @@
+package fr.unice.yourcast.provider
+
+import net.sf.json.JSONObject
+import groovyx.gpars.group.DefaultPGroup
+import groovyx.gpars.dataflow.Promise
+import fr.unice.yourcast.provider.model.actors.ServiceActorComposite
+import fr.unice.yourcast.provider.model.actors.flickr.ServiceActorCompositeFlickr
+import fr.unice.yourcast.provider.model.actors.twitter.ServiceActorCompositeTwitterTimeline
+import fr.unice.yourcast.provider.model.actors.twitter.ServiceActorCompositeTwitterSearch
+import fr.unice.yourcast.provider.model.actors.ServiceResponse
+/**
+*
+* This class contains the logic to orchestrate the different sources to be called.
+* It represents a controller in the sense of Grails' MVC model
+* @author: Daniel Romero
+*/
+class ServiceProviderController {
+
+    /*---ATTRIBUTES---*/
+
+    Integer clients=1
+    List resultsString= ["test"]
+
+    // The response to be sent to the client
+    private JSONObject informations= new JSONObject()
+
+    //The id of the provider
+    private final static String PROVIDER_NAME = "$providerName"
+
+  
+    private static List services= createActors()
+        
+     //Group of actors related to services and sharing 10 threads
+    private static DefaultPGroup actorsGroup = new DefaultPGroup(10)
+
+     /*---BUSINESS METHODS---*/
+
+    /**
+    * This method invokes the different sources related to the provider. The answer is a json object with
+    * the informations collected from such sources
+    */
+    def invokeServices()
+    {
+       List finalResults=[]
+       log.debug "Executing the calls"
+        for (int i=0; i<services.size(); i++)
+        {
+            def service= services.get(i)
+
+            //Start the actors if they are not actived
+            try{
+                if(!service.isActive())
+                {
+                    service.parallelGroup= actorsGroup
+                    service.start()
+                }
+                
+                //Execute the calls of different sources
+                Promise result= service.sendAndPromise(ServiceActorComposite.EXECUTE_CALLS)
+                finalResults.add(result);
+            }
+            catch(Exception e)
+            {
+                log.debug "Actor in a inconsistent stated"
+                log.debug "Recreating actors"
+                recreateActors()
+                i-- 
+            }
+
+            
+        }
+
+
+        List results=[]
+
+        //Wait for all the result of each invocation before sending the answer
+        log.debug "Waiting for the results"
+        for(result in finalResults)
+        {
+            log.debug "Adding result "+result
+            results.add(result.get())
+        }
+
+        log.debug "Putting the results"
+        informations.put("informations", results)
+
+        //response.contentType = "application/json"
+        //response.encoding = "UTF-8"
+        log.debug "Showing the results"
+        render(text:informations,contentType:"application/json",encoding:"UTF-8")
+    }
+    
+    
+    def recreateActors()
+    {
+        for(service in services)
+        {
+            service.stop()
+            service.terminate()
+        }
+        
+        createActors()
+    }
+    
+    static def createActors()
+    {
+    	services= new ArrayList()
+    	#foreach( $key in $actors.keySet() )
+    		services.add(new $actors.get($key)(PROVIDER_NAME,'$key'))
+		#end
+		return services
+    }
+    
+    def cleanPersonalizerCache()
+    {
+        Personalizer.cleanCache()
+    }
+
+    def getListResults () {
+	
+			
+				
+        ByteArrayOutputStream bos = new ByteArrayOutputStream()
+        ObjectOutputStream oos= new ObjectOutputStream(bos)
+        oos.flush()
+        oos.close()
+        bos.close()
+        def bytes= bos.toByteArray()
+        response.contentType = 'application/octet-stream'
+        response.contentLength = bytes.length
+        response.outputStream<< bytes
+        response.outputStream.flush()		
+		
+    }
+}

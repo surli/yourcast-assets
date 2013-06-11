@@ -1,0 +1,31 @@
+#CLIENT TEMPLATES
+
+- Template Name: controler.js.vm
+  Params: 
+  		  zoneName
+  		  callIdRendererMap
+  		  callIdTimeMap
+  		  providerPath
+  		  behaviorFunction
+  		  requestTimeout
+  Related concept: zone		  
+- Template Name: utils.js.vm
+  Params:
+  		imagePath
+  Related concept: client		
+- Template Id: zone template (a html file) 
+  Params:
+  		zoneName
+  Related concept: zone
+
+- Template Id: zone style
+  Params:
+  		zoneName
+  Related concept: zone	
+
+- Template id: layout template
+  Params:
+		zoneScripts
+		layoutBody
+  Related concept: layout	
+		

@@ -20,7 +20,7 @@ class MainController {
     /**
      * The service to access the databese of cities
      **/
-    def cityService
+    //def cityService
     
     /*---METHODS---*/
     
@@ -57,7 +57,7 @@ class MainController {
         redirect(controller: "$controllerName", action: "list")
     }
     
-    def initValues() {
+    /*def initValues() {
         personalizerService.initServiceCalls()
         redirect(controller: "$controllerName", action: "list")
     }
@@ -67,27 +67,16 @@ class MainController {
         personalizerService.initServiceCalls()
         cityService.init()
         redirect(controller: "$controllerName", action: "list")
-    }
-    
-    def createICalReader(){
-        personalizerService.createICalReader()
-        redirect(controller: "$controllerName", action: "list")
-    }
-    /*
-    def createTwitterSearch(){
-        personalizerService.createTwitterSearch()
-        redirect(controller: "$controllerName", action: "list")
     }*/
-    
-    
+        
     /**
     * Initiliaze the cities
     **/
-    def initCities()
+    /*def initCities()
     {
         cityService.init()
         redirect(controller: "$controllerName", action: "list")
-    }
+    }*/
     
     /**
     * Retrieve the parameters related to an specific service/source in json
@@ -153,6 +142,56 @@ class MainController {
         JSONObject result = new JSONObject()
         if (flag != null)
             result.putAt("value",flag)
+        render(text:result,contentType:"application/json",encoding:"UTF-8")
+    }
+    
+   def getServiceRateLimit()
+    {
+        def rl=personalizerService.getServiceRateLimit(params.servname)
+        
+        
+        JSONObject result = new JSONObject()
+        
+        if(rl)
+        {
+        	result.putAt("minutes",rl.minutes)
+        	result.putAt("requests", rl.requests)
+        }
+        else
+        {
+        	result.putAt("error","The service "+params.servname+" does not exist")
+        }	
+        render(text:result,contentType:"application/json",encoding:"UTF-8")
+    }
+    
+    
+    def getServiceCallCount()
+    {
+    	def callCount=personalizerService.getCallCount(params.provname, params.servname)
+    	
+    	JSONObject result = new JSONObject()
+    	
+    	if(callCount)
+    	{
+    		result.putAt("value",callCount.callExecuted)
+    	
+    	}
+    	else
+        {
+        	result.putAt("error","The service "+params.servname+" does not have a call count related to "+params.provname+" provider")
+        }
+          
+        render(text:result,contentType:"application/json",encoding:"UTF-8")
+    }
+    
+    
+    def updateServiceCallCount()
+    {
+    	def updated=personalizerService.updateCallCount(params.provname, params.servname, Integer.valueOf(params.value))
+        
+        log.debug "call count updated"
+        JSONObject result = new JSONObject()
+        result.putAt("updated",updated)
         render(text:result,contentType:"application/json",encoding:"UTF-8")
     }
     
