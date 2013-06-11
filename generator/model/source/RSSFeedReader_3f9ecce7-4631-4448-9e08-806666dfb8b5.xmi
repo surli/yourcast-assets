@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="RSSFeedReader" id="RSSFeedReader">
   <service name="sources-RSSFeedReader.war"/>
-  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="RSSFeedReader_46eca02a-4726-4fb1-917e-077c6f8f6eaa.properties"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="RSSFeedReader_3f9ecce7-4631-4448-9e08-806666dfb8b5.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="RSSFeedReader_46eca02a_4726_4fb1_917e_077c6f8f6eaa" pathPrefix="tv5" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Flux TV5 RSSFeedReader" editMessage="Editer Flux TV5 RSSFeedReader">
+    <methods name="RSSFeedReader_3f9ecce7_4631_4448_9e08_806666dfb8b5" pathPrefix="tv5" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Flux TV5 RSSFeedReader" editMessage="Editer Flux TV5 RSSFeedReader">
       <parameters name="limit" constraint="NONE"/>
     </methods>
     <list name="limit" parameters="//@personalization/@methods.0/@parameters.0"/>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="FlickR" id="FlickR">
   <actor name="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr" type="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr"/>
-  <parameters name="FlickR_f8f4ac74-7d63-4e3f-94e6-6cfff2f28d60.properties"/>
+  <parameters name="FlickR_c29fd738-f6e8-4c22-84f4-d02476bdd2be.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="FlickR_f8f4ac74_7d63_4e3f_94e6_6cfff2f28d60" pathPrefix="" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Recherche FlickR FlickR" editMessage="Editer Recherche FlickR FlickR">
+    <methods name="FlickR_c29fd738_f6e8_4c22_84f4_d02476bdd2be" pathPrefix="" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Recherche FlickR FlickR" editMessage="Editer Recherche FlickR FlickR">
       <parameters name="text" type="STRING" tip="Requ&#x221a;&#x2122;te pour rechercher des photos" constraint="NONE" isPartOfPath="false"/>
       <parameters name="per_page" tip="Nombre limite de photos &#x221a;&#x2020; afficher" constraint="NONE" isPartOfPath="false"/>
       <parameters name="api_key" type="STRING" tip="la cl&#x221a;&#xa9; d'API fournie par FlickR" constraint="NONE" isPartOfPath="false"/>

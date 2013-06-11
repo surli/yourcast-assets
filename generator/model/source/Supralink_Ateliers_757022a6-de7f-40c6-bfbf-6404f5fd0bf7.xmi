@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Affiches" id="Supralink_Affiches">
-  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Supralink_Affiches_bfd06aec-cc28-4f8a-86b7-7f65ae0f6397.properties"/>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Ateliers" id="Supralink_Ateliers">
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Supralink_Ateliers_757022a6-de7f-40c6-bfbf-6404f5fd0bf7.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Supralink_Affiches_bfd06aec_cc28_4f8a_86b7_7f65ae0f6397" pathPrefix="affiche" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Affiches de concert Supralink_Affiches" editMessage="Editer Affiches de concert Supralink_Affiches">
+    <methods name="Supralink_Ateliers_757022a6_de7f_40c6_bfbf_6404f5fd0bf7" pathPrefix="atelier" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Informations sur les ateliers Supralink_Ateliers" editMessage="Editer Informations sur les ateliers Supralink_Ateliers">
       <parameters name="page" constraint="NONE" isPartOfPath="false"/>
       <parameters name="fields" type="STRING" tip="La cat&#x221a;&#xa9;gorie associ&#x221a;&#xa9;e aux informations r&#x221a;&#xa9;cup&#x221a;&#xa9;r&#x221a;&#xa9;es dans SupraLink." constraint="NONE" isPartOfPath="false"/>
       <mapParameters name="query" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>

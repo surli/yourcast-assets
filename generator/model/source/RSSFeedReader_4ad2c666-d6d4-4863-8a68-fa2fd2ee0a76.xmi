@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="RSSFeedReader" id="RSSFeedReader">
+  <service name="sources-RSSFeedReader.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="RSSFeedReader_4ad2c666-d6d4-4863-8a68-fa2fd2ee0a76.properties"/>
+  <personalization image="">
+    <methods name="RSSFeedReader_4ad2c666_d6d4_4863_8a68_fa2fd2ee0a76" pathPrefix="" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Flux TV5 RSSFeedReader" editMessage="Editer Flux TV5 RSSFeedReader"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-RSSFeedReader" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>

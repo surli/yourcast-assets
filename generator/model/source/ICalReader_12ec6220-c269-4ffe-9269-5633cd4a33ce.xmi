@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="ICalReader" id="ICalReader">
   <service name="sources-icalreader.war"/>
-  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="ICalReader_bd796485-b3bf-4b28-a9c3-25d1148f835e.properties"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="ICalReader_12ec6220-c269-4ffe-9269-5633cd4a33ce.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="ICalReader_bd796485_b3bf_4b28_a9c3_25d1148f835e" pathPrefix="hours" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Lecteur de calendrier avec d&#x221a;&#xa9;but et dur&#x221a;&#xa9;e ICalReader" editMessage="Editer Lecteur de calendrier avec d&#x221a;&#xa9;but et dur&#x221a;&#xa9;e ICalReader">
+    <methods name="ICalReader_12ec6220_c269_4ffe_9269_5633cd4a33ce" pathPrefix="hours" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Lecteur de calendrier avec d&#x221a;&#xa9;but et dur&#x221a;&#xa9;e ICalReader" editMessage="Editer Lecteur de calendrier avec d&#x221a;&#xa9;but et dur&#x221a;&#xa9;e ICalReader">
       <parameters name="n" tip="Dur&#x221a;&#xa9;e en heure" constraint="NONE"/>
       <parameters name="debut" type="LONG" tip="date de debut" constraint="NONE"/>
       <parameters name="body" type="STRING" tip="URL du calendrier &#x221a;&#x2020; afficher" constraint="NONE" isPartOfPath="false"/>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Picasa" id="Picasa">
   <service name="sources-picasa.war"/>
-  <actor name="fr.unice.yourcast.provider.model.actors.ServiceActorComposite" type="fr.unice.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Picasa_21295f36-2bf4-4f32-b57e-b3888c6f23ab.properties"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Picasa_0ef9980c-f5dc-420b-9eac-5ad010c8aa35.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Picasa_21295f36_2bf4_4f32_b57e_b3888c6f23ab" pathPrefix="album" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Album d'un utilisateur avec limite Picasa" editMessage="Editer Album d'un utilisateur avec limite Picasa">
+    <methods name="Picasa_0ef9980c_f5dc_420b_9eac_5ad010c8aa35" pathPrefix="shufflealbum" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Album d'un utilisateur avec limite et m&#x221a;&#xa9;lange Picasa" editMessage="Editer Album d'un utilisateur avec limite et m&#x221a;&#xa9;lange Picasa">
       <parameters name="limit" tip="nombre maximum de photos" constraint="NONE"/>
       <parameters name="userid" type="STRING" tip="identifiant de l'utilisateur" constraint="NONE"/>
       <parameters name="albumid" type="STRING" tip="identifiant de l'album" constraint="NONE"/>

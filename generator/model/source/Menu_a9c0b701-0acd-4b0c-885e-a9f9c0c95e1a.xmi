@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Menu" id="Menu">
+  <service name="sources-menu.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Menu_a9c0b701-0acd-4b0c-885e-a9f9c0c95e1a.properties"/>
+  <personalization image="">
+    <methods name="Menu_a9c0b701_0acd_4b0c_885e_a9f9c0c95e1a" pathPrefix="all" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Tous les menus Menu" editMessage="Editer Tous les menus Menu"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-menu" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
