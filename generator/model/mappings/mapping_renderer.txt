@@ -8,3 +8,4 @@ IRSAM,Discretization,Graphic,Logo,Tomorow,Criteria,Title,Design,TypeInfo,NoLogo,
 IRSAM,Discretization,Logo,FromSource,Title,Design,PredefinedTitle,TypeInfo,Renderer,Birthday,Elements,FirstName,Content,ByOne:./renderer/irsam_render_birthday_for_irsam.xmi
 Discretization,Logo,Graphic,FromSource,By6,Title,Design,TypeInfo,Renderer,PictureAlbum,FixedNumber,GLC,Elements,AlbumName,Content,Thumbnails:./renderer/glc_render_Pictures_for_main_mosaic.xmi
 IRSAM,Discretization,Logo,Graphic,FromSource,Title,Design,TypeInfo,Renderer,PictureAlbum,Full,Elements,AlbumName,Content,ByOne:./renderer/irsam_render_Pictures_for_main_fullArea.xmi
+TypeInfo,Text,Renderer,Discretization,Elements,Output,Content,RendererBigPicture,PictureAlbum,Assembly,Block:bigPictureRenderer.xmi

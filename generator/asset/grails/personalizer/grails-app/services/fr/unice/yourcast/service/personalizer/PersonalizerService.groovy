@@ -308,6 +308,25 @@ class PersonalizerService {
 						message= "The DB can not be initialized."
 					}
 				}
+				else
+				{
+					file3= new File(filePath,".."+File.separator+Constants.ZONES_SOURCES_FILE_ALT)
+					
+					log.debug "PersonalizerService- Using the file path "+file3.getAbsolutePath()
+					
+					if(file3.exists())
+					{
+					 try{
+							bf= new BufferedReader(new FileReader(file3.getAbsolutePath()))
+						}
+						catch(Exception e1)
+						{
+							log.error "PersonalizerService- The File "+file3.getAbsolutePath() +" can not be found! The DB can not be initiliazed "
+							message= "The DB can not be initialized."
+						}
+					}
+					
+				}
 			}
         
         }
