@@ -3,3 +3,4 @@ IRSAM,Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,Full,Elements
 Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,GLC,Full,Elements,Zone,Content,MainZone_glc,Thumbnails:./zone/mainZone_glc.xmi
 Orientation,Product,Graphic,GLC,Landscape,Elements,Zone,Content,HeaderZone_glc,Thumbnails,Design:./zone/headerZone_glc.xmi
 Orientation,Product,Logo,Graphic,Landscape,Design,Text,GLC,Elements,BottomZone_glc,Zone,Content,Thumbnails:./zone/bottomZone_glc.xmi
+Text,Product,Elements,Zone,Content,BigSquareCenter:./zone/mainZone_glc.xmi
