@@ -1,11 +1,10 @@
-IRSAM,Discretization,Logo,Title,Ephemeride,Design,TypeInfo,NoLogo,Renderer,Text,Elements,FrenchDate,Content,ByOne:./renderer/irsam_render_ephemeride_for_irsam.xmi
-IRSAM,Discretization,currentEventAnnoted,Logo,FromSource,Location,Calendar,Criteria,Title,Design,TypeInfo,Renderer,Elements,noPastEvent,FrenchDate,Content,ByOne:./renderer/irsam_render_ICalReader_for_irsam.xmi
+IRSAM,Discretization,Logo,Title,Design,Ephemeride,TypeInfo,NoLogo,Renderer,Text,Elements,FrenchDate,Content,ByOne:./renderer/irsam_render_ephemeride_for_irsam.xmi
+IRSAM,Discretization,Logo,currentEventAnnoted,Location,FromSource,Calendar,Criteria,Title,Design,TypeInfo,Renderer,Elements,noPastEvent,FrenchDate,Content,ByOne:./renderer/irsam_render_ICalReader_for_irsam.xmi
 AnnounceTitle,Discretization,Graphic,Logo,FilterByDate,Announces,FromSource,Title,Design,TypeInfo,Renderer,Text,GLC,Elements,Content,ByOne:./renderer/glc_render_Announces_for_main_different_title.xmi
-Discretization,Graphic,Logo,FromSource,Title,Design,TypeInfo,Renderer,Text,GLC,ForecastCity,Elements,Forecast,Content,ByOne:./renderer/glc_render_Weather_current_for_main_different_title_Rennes.xmi
+Discretization,Logo,Graphic,FromSource,Title,Design,TypeInfo,Renderer,Text,GLC,ForecastCity,Elements,Forecast,Content,ByOne:./renderer/glc_render_Weather_current_for_main_different_title_Rennes.xmi
 IRSAM,Discretization,Logo,FromSource,Title,Design,Menu,TypeInfo,Renderer,Text,MenuName,Elements,Content,ByOne:./renderer/irsam_render_Menus_for_main_without_title.xmi
-TypeInfo,IRSAM,Renderer,AnnounceTitle,Discretization,Logo,Elements,FromSource,Announces,Title,ByOne,Design:./renderer/irsam_render_Announces_for_main_irsam.xmi
-IRSAM,Discretization,Graphic,Logo,Tomorow,Criteria,Title,Design,TypeInfo,NoLogo,Text,Renderer,Today,Elements,Forecast,FrenchDate,Content,Thumbnails,ByOne:./renderer/irsam_render_weather_irsam.xmi
+TypeInfo,IRSAM,Renderer,AnnounceTitle,Discretization,Logo,Elements,Announces,FromSource,Title,ByOne,Design:./renderer/irsam_render_Announces_for_main_irsam.xmi
+IRSAM,Discretization,Graphic,Logo,Tomorow,Criteria,Title,Design,NoLogo,TypeInfo,Renderer,Text,Today,Elements,Forecast,FrenchDate,Content,Thumbnails,ByOne:./renderer/irsam_render_weather_irsam.xmi
 IRSAM,Discretization,Logo,FromSource,Title,Design,PredefinedTitle,TypeInfo,Renderer,Birthday,Elements,FirstName,Content,ByOne:./renderer/irsam_render_birthday_for_irsam.xmi
 Discretization,Logo,Graphic,FromSource,By6,Title,Design,TypeInfo,Renderer,PictureAlbum,FixedNumber,GLC,Elements,AlbumName,Content,Thumbnails:./renderer/glc_render_Pictures_for_main_mosaic.xmi
 IRSAM,Discretization,Logo,Graphic,FromSource,Title,Design,TypeInfo,Renderer,PictureAlbum,Full,Elements,AlbumName,Content,ByOne:./renderer/irsam_render_Pictures_for_main_fullArea.xmi
-TypeInfo,Text,Renderer,Discretization,Elements,Output,Content,RendererBigPicture,PictureAlbum,Assembly,Block:bigPictureRenderer.xmi
