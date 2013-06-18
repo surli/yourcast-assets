@@ -19,7 +19,7 @@ function simple_push_timeout(zone, indice, run) {
 		var info = "";
 		info = zone.infoList[indice];
 		zone.addContent(info.content);
-		Effect.BlindDown('new_push');
+		Effect.BlindDown(zone.id+'_new_push');
 
 		indice = (indice+1) % zone.counterInfo;
 
