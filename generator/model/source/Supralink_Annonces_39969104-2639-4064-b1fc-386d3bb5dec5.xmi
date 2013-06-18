@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Annonces" id="Supralink_Annonces">
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Supralink_Annonces_39969104-2639-4064-b1fc-386d3bb5dec5.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Supralink_Annonces_39969104_2639_4064_b1fc_386d3bb5dec5" pathPrefix="annonce" introductionMessage="Compléter les informations pour ajouter un(e) Annonces SupraLink Supralink_Annonces" editMessage="Editer Annonces SupraLink Supralink_Annonces">
+      <parameters name="Nombre d'√©l√©ments" tip="Nombre maximum d'annonces affich√©es." constraint="NONE" isPartOfPath="false" dbName="pagesize"/>
+      <parameters name="Cat√©gorie" type="STRING" tip="La cat√©gorie associ√©e aux informations r√©cup√©r√©es dans SupraLink." constraint="NONE" isPartOfPath="false" dbName="fields"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>
+    </methods>
+    <list name="Nombre d'√©l√©ments" tip="Nombre maximum d'annonces affich√©es." parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="Cat√©gorie" tip="La cat√©gorie associ√©e aux informations r√©cup√©r√©es dans SupraLink." parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+</prodsource:Source>
