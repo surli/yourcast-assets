@@ -1,0 +1,68 @@
+@import "style";
+
+#ateliers.main_div_zone{
+	width:98%;
+	padding:1%;
+}
+.atelier{
+
+	font-size:80%;
+	width:96%;
+	margin:2% 2% 0% 2%;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;   
+	box-sizing: border-box;  
+	display:table-row;
+
+	
+	span{
+		padding:2% 2% 1% 2%;
+		-webkit-box-sizing: border-box; 
+		-moz-box-sizing: border-box;   
+		box-sizing: border-box; 	
+		display:inline-block;	
+		overflow:hidden;
+		display:table-cell;
+		vertical-align:middle;
+		border-bottom:1px solid @black;
+	}
+	
+	.atelier_loc{
+		background-color:@black;
+		color:@white;
+		width:27%;
+		height:100%;
+		border-bottom:1px solid @white;
+	}
+	.atelier_title{
+		width:36%;
+		background:rgba(255, 255, 255, 0.95) url('../img/atelier_arrow.png') no-repeat -5px center;
+		/*text-indent:10px;*/
+	}
+	.atelier_sep{
+		background-color:@pink;
+		width:2%;
+	}
+	.atelier_hour{
+		width:13%;
+		background-color:rgba(255, 255, 255, 0.95);
+		font-size:130%;
+		text-align:center;
+	}
+	.atelier_day{
+		width:22%;
+		.lightBackground;
+		font-size:130%;
+	}
+}
+.atelier:after{
+	content:" ";
+}
+
+.ateliers_counter{
+	position:absolute;
+	right:5px;
+	bottom:5px;
+	color:@gray;
+	z-index:101;
+}
