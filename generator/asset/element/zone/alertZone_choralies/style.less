@@ -1,0 +1,71 @@
+@import "../less/functions.less";
+@import "../less/variables.less";
+
+#${zoneName} {
+	display:none;
+    height:9%;
+    margin-top:1%;
+    overflow:hidden;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    position:absolute;
+    bottom:10%;
+    left:0;
+    width:100%;
+    background-color:@red;
+    color:@white;
+    font-weight:bold;
+    font-size:120%;
+    line-height:200%;
+    z-index:200;
+    /*text-align:center;*/
+}
+
+#${zoneName} .noinfo{
+	display:table;
+	.lightBackground;
+	margin-left:1%;
+	margin-right:1%;
+	width:98%;
+	font-size:95%;
+	font-weight:400;
+	height:90%;
+
+	text-align:center;
+	div{
+		display:table-cell;
+		vertical-align:middle;
+	}
+}
+
+#${zoneName} span {
+  position: relative;
+}
+
+#${zoneName} .title{
+	display:none;
+}
+
+
+#${zoneName} .scrollContentAlert{
+    margin-left:10px;
+    margin-right:10px;
+    height:90%;
+    color:@white;
+    overflow:hidden;
+    span{
+    	line-height:135%;
+    }
+    position:relative;
+}
+
+#${zoneName} .scrollContentAlert .scrollContent{
+	font-size:120%;
+	white-space: nowrap;
+	display: inline-block;
+	line-height:135%;
+	height:100%;
+}
+
+

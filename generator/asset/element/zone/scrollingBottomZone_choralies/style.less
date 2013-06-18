@@ -1,0 +1,243 @@
+@import "../less/functions.less";
+@import "../less/variables.less";
+
+#${zoneName} {
+    height:9%;
+    margin-top:1%;
+    overflow:hidden;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    position:relative;
+    .blueAlpha;
+}
+@media (max-width: 768px) 	{
+	#${zoneName} {
+		height:11%;
+		font-size:130%;
+		margin-bottom:2%;
+	}
+}
+#${zoneName} .noinfo{
+	display:table;
+	.lightBackground;
+	margin-left:1%;
+	margin-right:1%;
+	width:98%;
+	font-size:95%;
+	font-weight:400;
+	height:90%;
+
+	text-align:center;
+	div{
+		display:table-cell;
+		vertical-align:middle;
+	}
+}
+
+#${zoneName} span {
+  position: relative;
+}
+
+#${zoneName} .title{
+	display:none;
+}
+
+#${zoneName} .scrollContentLogoLeftBefore{
+    float:left;
+    height:90%;
+    .leftArrow;
+}
+
+
+#${zoneName} .scrollContentLeft{
+    margin-left:10px;
+    margin-right:10px;
+    height:90%;
+    color:@white;
+    overflow:hidden;
+    span{
+    	line-height:135%;
+    }
+    background-color:@blue;
+}
+
+#${zoneName} .scrollContentLogoLeft{
+    margin-left:100px;
+    margin-right:10px;
+    height:90%;
+    color:@white;
+    overflow:hidden;
+    span{
+    	line-height:135%;
+    }
+    background-color:@blue;
+    
+}
+#${zoneName} .scrollContentEachLogoLeft{
+    margin-left:10px;
+    margin-right:10px;
+    height:90%;
+    color:@white;
+    overflow:hidden;
+    span{
+    	line-height:135%;
+    }
+    position:relative;
+}
+
+
+#${zoneName} .scrollContentLeft .scrollContent{
+  font-size:120%;
+  white-space: nowrap;
+  display: inline-block;
+  line-height:135%;
+  height:100%;
+ 	
+	
+	/* Twitter */
+	.tweet{
+		moz-box-shadow: none;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+		padding:0px 20px 0px 0;
+		margin-right:10px;
+		display: inline-block;
+  		line-height:220%;
+  		height:100%;	
+  		border-left:10px solid @purple;	
+	}
+	.twitter_title{
+		background-color:transparent;
+		color:@white;
+		padding-top:0em;
+		i { color:@white; }
+		img {
+	  		float:none;
+	  		border-radius : 3px;
+	  		height:80%;
+	  	}
+	}
+	.twitter_Content{
+		margin-left:0em;
+		padding-right:0em;
+		a{
+			color:@blue;
+			text-decoration:none;
+		}
+		s{
+			text-decoration:none;
+		}
+		b{ font-weight:400; }
+	}
+}
+
+#${zoneName} .scrollContentLogoLeft .scrollContent{
+	font-size:120%;
+	white-space: nowrap;
+	display: inline-block;
+	line-height:135%;
+	height:100%;
+  
+	/* Twitter */
+	.tweet{
+		moz-box-shadow: none;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+		padding:0px 20px 0px 0;
+		margin-right:10px;
+		display: inline-block;
+  		line-height:220%;
+  		height:100%;	
+  		border-left:10px solid @purple;		
+	}
+	.twitter_title{
+		background-color:transparent;
+		color:@white;
+		padding-top:0em;
+		i { color:@white; }
+		img {
+	  		float:none;
+	  		border-radius : 3px;
+	  		height:80%;
+	  	}
+	}
+	.twitter_Content{
+		margin-left:0em;
+		padding-right:0em;
+		a{
+			color:@blue;
+			text-decoration:none;
+		}
+		s{
+			text-decoration:none;
+		}
+		b{ font-weight:400; }
+	}			
+}
+
+#${zoneName} .scrollContentEachLogoLeft .scrollContent{
+	font-size:120%;
+	white-space: nowrap;
+	display: inline-block;
+	line-height:135%;
+	height:100%;
+		
+
+	/* Twitter */
+	.logo_user{
+		margin-top:0.3em;
+		height:80%;		
+	}
+	.tweet{
+		moz-box-shadow: none;
+	  	-webkit-box-shadow: none;
+	    box-shadow: none;
+		padding:0px 10px 0 10px;
+		margin-right:20px;
+		background-color:@blue;
+		display: inline-block;
+	  	line-height:220%;
+	  	height:100%;
+	  	border-left:10px solid @purple;	
+		
+		.twitter_title{
+			background-color:transparent;
+			color:@white;
+			padding-top:0em;
+			i { color:@white;}
+			img {
+		  		float:none;
+		  		border-radius : 3px;
+		  		height:80%;
+		  		margin-top:8px;
+		  	}
+		}
+		.twitter_Content{
+			margin-left:0em;
+			padding-right:0em;
+			a{
+				color:@blue;
+				text-decoration:none;
+			}
+			b{ font-weight:400; }
+			s{
+				text-decoration:none;
+			}
+		}		
+	}
+	
+	
+		
+}
+
+#${zoneName} #${zoneName}_logo {
+  float:left;
+  width:80px;
+  overflow: hidden;
+  z-index: 1;
+  margin-left:10px;
+  img{
+  	margin-top:8px;
+  }
+}
