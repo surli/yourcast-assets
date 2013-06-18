@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="5" name="glc_render_Weather_current_for_main_different_title_Rennes.js" infoType="Forecast">
   <function name="glc_render_Weather_current_for_main_different_title_Rennes"/>
   <resource name="../utils/meteo.js" path="js/renderers/utils/meteo.js"/>

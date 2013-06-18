@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="irsam_render_weather_irsam.js" infoType="Forecast">
   <function name="irsam_render_weather_irsam"/>
   <resource name="../utils/meteo.js" path="./js/renderers/utils/meteo.js"/>

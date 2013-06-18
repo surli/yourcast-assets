@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="glc_render_Announces_for_main_different_title.js" infoType="Announces">
   <function name="glc_render_Announces_for_main_different_title"/>
   <resource name="../utils/calendar.js" path="js/renderers/utils/calendar.js"/>

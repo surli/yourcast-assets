@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="irsam_render_ephemeride_for_irsam.js" infoType="NamesOfTheDay">
   <function name="irsam_render_ephemeride_for_irsam"/>
   <resource name="img/logos/absence.png" type="image" path="img/logos/absence.png"/>

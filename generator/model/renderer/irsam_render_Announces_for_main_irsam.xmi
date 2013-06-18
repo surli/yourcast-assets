@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="irsam_render_Announces_for_main_irsam.js" infoType="Announces">
   <function name="irsam_render_Announces_for_main_irsam"/>
   <resource name="../utils/calendar.js" path="js/renderers/utils/calendar.js"/>
