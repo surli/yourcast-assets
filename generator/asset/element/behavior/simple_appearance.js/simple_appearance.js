@@ -1,7 +1,9 @@
 /*
- * this is a behavior for the zone1 (main)
- * the behavior is a simple appearance of each info
+ * This behavior is a simple appearance of each info
  */
+ 
+loadScript(BEHAVIOUR_PATH+"/utils/functions.js");
+ 
 function simple_appearance_timeout(zone, indice, run) {
 	if(run){
 		var info = "";
@@ -10,9 +12,11 @@ function simple_appearance_timeout(zone, indice, run) {
 		zone.changeContent(info.content);
 
 		// place the logo on the zone
+		if(document.getElementById(zone.id+"_logo"))
 		document.getElementById(zone.id+"_logo").innerHTML = info.logo;
 
 		// place the title on the zone
+		if(document.getElementById(zone.id+"_title"))
 		document.getElementById(zone.id+"_title").innerHTML = info.title;
 		indice = (indice+1) % zone.counterInfo;
 

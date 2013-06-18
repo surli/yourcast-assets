@@ -347,3 +347,102 @@ function render_date_edt_synth(elements) {
 	}
 }
 
+// [jour] : [heure debut] - [heure fin] 
+function render_date_announce(elements) {
+	if (elements.debut == 0 || elements.fin == 0){
+		return "";
+	} else {
+		var start = get_date_from_date(elements.debut);
+		var end = get_date_from_date(elements.fin);
+		var today = get_current_date();
+		
+        var startDate = start.day + " " + start.month;
+        var endDate = end.day + " " + end.month;
+	
+	    var startTime = start.hour + "h" + start.min;
+	    var endTime = end.hour + "h" + end.min;
+	    
+	    //var month = parseInt(daytab[1],10) - 1;
+	    //var monthString = get_a_month(month);
+	    var dayString = parseInt(start.day,10);
+	    
+	    var content = "";
+	    
+	    if(start.day == today.day && start.month==today.month)
+	    	content = "Aujourd'hui : "+startTime+" - "+endTime;
+	    else{
+	    	var currentDate = new Date(start.year, start.month, start.day);
+    		var currentDay = get_a_day(currentDate.getDay());
+	    	content = currentDay+" "+dayString+" : "+startTime+" - "+endTime;
+	    }
+	
+	    return content;
+	}
+}
+
+// [heure debut] - [heure fin] 
+function render_hour_announce(elements) {
+	if (elements.debut == 0 || elements.fin == 0){
+		return "";
+	} else {
+		var start = get_date_from_date(elements.debut);
+		var end = get_date_from_date(elements.fin);
+
+	    var startTime = start.hour + "h" + start.min;
+	    var endTime = end.hour + "h" + end.min;
+
+	    var content = startTime+" - "+endTime;
+
+	    return content;
+	}
+}
+
+// [heure debut] 
+function render_hour_atelier(elements) {
+	if (elements == 0){
+		return "";
+	} else {
+		var start = get_date_from_timestamp(elements);
+	    var startTime = start.hour + "h" + start.min;
+
+	    return startTime;
+	}
+}
+
+// [aujourd'hui] || [demain] || [jour day] 
+function render_day_atelier(elements) {
+	if (elements == 0){
+		return "";
+	} else {
+		var start = get_date_from_timestamp(elements);
+		var startInt = get_date_from_timestamp_int(elements);
+		
+	    var today = new Date();
+
+		var year = today.getFullYear();
+
+		var month = get_a_month(today.getMonth());
+
+		var day = add_zero_if_need(today.getDate());
+	
+	    var monthString = parseInt(start.month,10)-1;
+
+		if(start.day == day && start.month==month)
+	    	return "aujourd'hui";
+	    else{
+  			//var start = get_date_from_date(elements);
+		    var currentTimestamp = new Date(year, today.getMonth(), day);
+		    var tomorrow = new Date(year, today.getMonth(), day+1);
+		    
+		    //if(elements - currentTimestamp.getTime() < 2764800001) return "demain";
+		    if(add_zero_if_need(tomorrow.getDate())==start.day && get_a_month(tomorrow.getMonth())==start.month) return "demain";
+		    else {
+		    	var currentDate = new Date(startInt.year, startInt.month, startInt.day);
+    			var currentDay = get_a_day(currentDate.getDay());
+	    		return currentDay+" "+start.day;
+		    }
+	    }
+	    	
+	    return "";
+	}
+}
