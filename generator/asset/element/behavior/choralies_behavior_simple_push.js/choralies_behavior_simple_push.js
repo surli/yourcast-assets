@@ -3,13 +3,23 @@
  * the behavior is a simple push appearance of each new info
  */
 
+
+
+
+
+
 loadScript(BEHAVIOUR_PATH+"/utils/functions.js");
 
+/*
+ * this is a behavior for right sidebar
+ * the behavior is a simple push appearance of each new info
+ */
 function choralies_behavior_simple_push_timeout(zone, indice, run) {
 	if(run){
 		var info = "";
 		info = zone.infoList[indice];
 		zone.addContent(info.content);
+		
 		Effect.BlindDown(zone.id+'_new_push'); 
 
 		indice = (indice+1) % zone.counterInfo;

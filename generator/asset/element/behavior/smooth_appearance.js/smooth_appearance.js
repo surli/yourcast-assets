@@ -1,7 +1,7 @@
 loadScript(BEHAVIOUR_PATH+"/utils/scriptaculous.js?load=effects");
 
 /*
- * this is a behavior for the zone1 (main)
+ * this is a behavior for the main zone
  * the behavior is a simple appearance of each info with a smooth appearance
  */
 function simple_smooth_appearance_timeout(zone, indice, run) {
@@ -9,13 +9,15 @@ function simple_smooth_appearance_timeout(zone, indice, run) {
 		var info = "";
 		info = zone.infoList[indice];
 
-		zone.changeContent("<div id='new_appear' style='display:none;'>"+info.content+"</div>");
-		Effect.Appear("new_appear");
+		zone.changeContent("<div id='"+zone.id+"_new_appear' style='display:none;'>"+info.content+"</div>");
+		Effect.Appear(zone.id+"_new_appear");
 
 		// place the logo on the zone
+		if(document.getElementById(zone.id+"_logo"))
 		document.getElementById(zone.id+"_logo").innerHTML = info.logo;
 
 		// place the title on the zone
+		if(document.getElementById(zone.id+"_title"))
 		document.getElementById(zone.id+"_title").innerHTML = info.title;
 		indice = (indice+1) % zone.counterInfo;
 
