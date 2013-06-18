@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Ephemeride" id="Ephemeride">
   <service name="sources-ephemeride.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Ephemeride_b0f8675b-16be-4488-a0ba-9dca01bc2280.properties"/>
+  <parameters name="Ephemeride_3367eb72-3bf2-4288-9b55-c0f4f864cc81.properties"/>
   <personalization image="">
-    <methods name="Ephemeride_b0f8675b_16be_4488_a0ba_9dca01bc2280" pathPrefix="" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Ephemeride Ephemeride" editMessage="Editer Ephemeride Ephemeride"/>
+    <methods name="Ephemeride_3367eb72_3bf2_4288_9b55_c0f4f864cc81" pathPrefix="" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Ephemeride Ephemeride" editMessage="Editer Ephemeride Ephemeride"/>
   </personalization>
   <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-ephemeride" version="1.0.0-SNAPSHOT"/>
 </prodsource:Source>

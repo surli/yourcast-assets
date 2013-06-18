@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Breves" id="Supralink_Breves">
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Ateliers" id="Supralink_Ateliers">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Supralink_Breves_2ba8b4bf-fb5f-43fe-b008-04691131b086.properties"/>
+  <parameters name="Supralink_Ateliers_72367daf-3726-4fac-85cc-29d214b94d3c.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Supralink_Breves_2ba8b4bf_fb5f_43fe_b008_04691131b086" pathPrefix="breve" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Br&#x221a;&#xae;ves d'actualit&#x221a;&#xa9; Supralink_Breves" editMessage="Editer Br&#x221a;&#xae;ves d'actualit&#x221a;&#xa9; Supralink_Breves">
+    <methods name="Supralink_Ateliers_72367daf_3726_4fac_85cc_29d214b94d3c" pathPrefix="atelier" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Informations sur les ateliers Supralink_Ateliers" editMessage="Editer Informations sur les ateliers Supralink_Ateliers">
       <parameters name="page" constraint="NONE" isPartOfPath="false"/>
       <parameters name="fields" type="STRING" tip="La cat&#x221a;&#xa9;gorie associ&#x221a;&#xa9;e aux informations r&#x221a;&#xa9;cup&#x221a;&#xa9;r&#x221a;&#xa9;es dans SupraLink." constraint="NONE" isPartOfPath="false"/>
-      <mapParameters name="query" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>
     </methods>
     <list name="page" parameters="//@personalization/@methods.0/@parameters.0"/>
     <list name="fields" tip="La cat&#x221a;&#xa9;gorie associ&#x221a;&#xa9;e aux informations r&#x221a;&#xa9;cup&#x221a;&#xa9;r&#x221a;&#xa9;es dans SupraLink." parameters="//@personalization/@methods.0/@parameters.1"/>

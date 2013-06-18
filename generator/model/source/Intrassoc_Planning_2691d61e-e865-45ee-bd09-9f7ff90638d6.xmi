@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Intrassoc_Planning" id="Intrassoc_Planning">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Intrassoc_Planning_cad502a7-9148-420d-808b-5f153661fcd7.properties"/>
+  <parameters name="Intrassoc_Planning_2691d61e-e865-45ee-bd09-9f7ff90638d6.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Intrassoc_Planning_cad502a7_9148_420d_808b_5f153661fcd7" pathPrefix="planning" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Planning des activit&#x221a;&#xa9;s d'une journ&#x221a;&#xa9;e Intrassoc_Planning" editMessage="Editer Planning des activit&#x221a;&#xa9;s d'une journ&#x221a;&#xa9;e Intrassoc_Planning">
+    <methods name="Intrassoc_Planning_2691d61e_e865_45ee_bd09_9f7ff90638d6" pathPrefix="planning" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Planning des activit&#x221a;&#xa9;s d'une journ&#x221a;&#xa9;e Intrassoc_Planning" editMessage="Editer Planning des activit&#x221a;&#xa9;s d'une journ&#x221a;&#xa9;e Intrassoc_Planning">
       <parameters name="limit" tip="Le nombre maximal de cr&#x221a;&#xa9;neaux d'activit&#x221a;&#xa9;s affich&#x221a;&#xa9;s." constraint="NONE"/>
       <parameters name="jour" type="DATE" tip="La date du jour pour lequel afficher le planning d'activit&#x221a;&#xa9;s." constraint="NONE"/>
     </methods>

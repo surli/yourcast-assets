@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="TwitterTL" id="TwitterTL">
   <actor name="fr.yourcast.sources.twitter.timeline.ServiceActorCompositeTwitterTimeline" type="fr.yourcast.sources.twitter.timeline.ServiceActorCompositeTwitterTimeline"/>
-  <parameters name="TwitterTL_7b5ab401-e26f-48d6-81d8-fbd187ca9dbf.properties"/>
+  <parameters name="TwitterTL_42001ce8-8a1b-4d76-ae56-09bcebf8fc55.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="TwitterTL_7b5ab401_e26f_48d6_81d8_fbd187ca9dbf" pathPrefix="user_timeline.json" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Timeline d'un utilisateur TwitterTL" editMessage="Editer Timeline d'un utilisateur TwitterTL">
+    <methods name="TwitterTL_42001ce8_8a1b_4d76_ae56_09bcebf8fc55" pathPrefix="user_timeline.json" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Timeline d'un utilisateur TwitterTL" editMessage="Editer Timeline d'un utilisateur TwitterTL">
       <parameters name="count" tip="nombre de tweets &#x221a;&#x2020; r&#x221a;&#xa9;cup&#x221a;&#xa9;rer" constraint="NONE" isPartOfPath="false"/>
       <parameters name="screen_name" type="STRING" tip="Nom du compte de l'utilisateur &#x221a;&#x2020; afficher" constraint="NONE" isPartOfPath="false"/>
       <parameters name="Authorization" type="STRING" tip="La cl&#x221a;&#xa9; d'API commence forc&#x221a;&#xa9;ment par Bearer et doit &#x221a;&#x2122;tre  suivi d'une chaine de caract&#x221a;&#xae;re encod&#x221a;&#xa9;e. Elle vous sera fournie en m&#x221a;&#x2122;me  temps que l'application." constraint="NONE" isPartOfPath="false"/>
-      <mapParameters name="query" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>
-      <mapParameters name="headers" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.2"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>
+      <mapParameters name="headers" type="MAP" constraint="NONE" dbName="headers" relatedParams="//@personalization/@methods.0/@parameters.2"/>
     </methods>
     <list name="count" tip="nombre de tweets &#x221a;&#x2020; r&#x221a;&#xa9;cup&#x221a;&#xa9;rer" parameters="//@personalization/@methods.0/@parameters.0"/>
     <list name="screen_name" tip="Nom du compte de l'utilisateur &#x221a;&#x2020; afficher" parameters="//@personalization/@methods.0/@parameters.1"/>

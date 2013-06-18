@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Intrassoc_Stats" id="Intrassoc_Stats">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Intrassoc_Stats_d0cbd7ad-beda-413b-b3f0-156020eead05.properties"/>
+  <parameters name="Intrassoc_Stats_44fe7877-c8b3-4810-9f0f-a0afcfaf2bb7.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Intrassoc_Stats_d0cbd7ad_beda_413b_b3f0_156020eead05" pathPrefix="stats" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Statistiques vari&#x221a;&#xa9;es sur les Choralies Intrassoc_Stats" editMessage="Editer Statistiques vari&#x221a;&#xa9;es sur les Choralies Intrassoc_Stats">
+    <methods name="Intrassoc_Stats_44fe7877_c8b3_4810_9f0f_a0afcfaf2bb7" pathPrefix="stats" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Statistiques vari&#x221a;&#xa9;es sur les Choralies Intrassoc_Stats" editMessage="Editer Statistiques vari&#x221a;&#xa9;es sur les Choralies Intrassoc_Stats">
       <parameters name="limit" tip="Nombre max d'informations r&#x221a;&#xa9;cup&#x221a;&#xa9;r&#x221a;&#xa9;es." constraint="NONE"/>
       <parameters name="theme" type="STRING" tip="Th&#x221a;&#xae;me des statistiques parmi &quot;repas&quot;, &quot;departement&quot;, &quot;structure&quot;, &quot;role&quot;, &quot;activite&quot;." constraint="NONE"/>
     </methods>
