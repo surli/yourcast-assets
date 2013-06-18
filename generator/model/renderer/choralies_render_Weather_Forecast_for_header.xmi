@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="choralies_render_Weather_Forecast_for_header.js" infoType="Forecast">
+  <function name="choralies_render_Weather_Forecast_for_header"/>
+  <resource name="../utils/meteo.js" path="js/renderers/utils/meteo.js"/>
+  <resource name="../utils/calendar.js" path="js/renderers/utils/calendar.js"/>
+  <resource name="img/climacons-font/webfont/climacons-font.css" type="image" path="img/climacons-font/webfont/climacons-font.css"/>
+  <resource name="img/climacons-font/webfont/climacons-webfont.svg" type="image" path="img/climacons-font/webfont/climacons-webfont.svg"/>
+  <resource name="img/climacons-font/webfont/climacons-webfont.eot" type="image" path="img/climacons-font/webfont/climacons-webfont.eot"/>
+  <resource name="img/climacons-font/webfont/climacons-webfont.ttf" type="image" path="img/climacons-font/webfont/climacons-webfont.ttf"/>
+  <resource name="img/climacons-font/webfont/climacons-webfont.woff" type="image" path="img/climacons-font/webfont/climacons-webfont.woff"/>
+  <resource name="less/choralies_render_Weather_Forecast_for_header.less" type="css" path="less/choralies_render_Weather_Forecast_for_header.less"/>
+</prodrenderer:Renderer>

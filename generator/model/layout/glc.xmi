@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <prodlayout:Layout xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodlayout="prodlayout.yourcast.fr" name="glc">
   <index name="index.html" type="html"/>
   <resources name="less/functions.less" type="css" path="less/functions.less"/>

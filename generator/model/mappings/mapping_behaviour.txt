@@ -1,3 +1,4 @@
+Time,Animation,Logo,Number,Behaviour,Elements,Choralies,Scrolling,All,Content,Global,RightToLeft:./behaviour/choralies_behavior_scrolling_left.xmi
 Time,Animation,Logo,Number,Behaviour,Elements,Static,Scrolling,All,Content,Global,RightToLeft:./behaviour/scrolling_animation_left_with_each_logo.xmi
 Time,Animation,Number,Behaviour,Elements,Scrolling,All,Content,Global,RightToLeft:./behaviour/scrolling_animation_left.xmi
 Appearance,Time,Animation,Logo,Number,Behaviour,Elements,Individual,One,Content,Title:./behaviour/simple_appearance.xmi
@@ -6,4 +7,3 @@ Time,Animation,Logo,Number,Behaviour,Elements,Scrolling,All,Content,Global,Right
 Logo,Animation,Number,Behaviour,Individual,Title,Repetition,Time,Appearance,DarkThenClear,Elements,Content,One:./behaviour/irsam_appearance.xmi
 Appearance,Time,Animation,Number,Smooth,Behaviour,Elements,Individual,One,Content:./behaviour/smooth_appearance_slide.xmi
 Appearance,Time,Animation,Logo,Number,Smooth,Behaviour,Elements,Individual,One,Content,Title:./behaviour/smooth_appearance.xmi
-Text,Product,Animation,Behaviour,Elements,Numbers,Content,Appear,Fixed,SimpleAppearanceBehaviour:./behaviour/simple_appearance.xmi
