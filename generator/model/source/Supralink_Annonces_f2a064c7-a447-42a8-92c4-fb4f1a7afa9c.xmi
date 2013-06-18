@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Ateliers" id="Supralink_Ateliers">
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Annonces" id="Supralink_Annonces">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Supralink_Ateliers_757022a6-de7f-40c6-bfbf-6404f5fd0bf7.properties"/>
+  <parameters name="Supralink_Annonces_f2a064c7-a447-42a8-92c4-fb4f1a7afa9c.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Supralink_Ateliers_757022a6_de7f_40c6_bfbf_6404f5fd0bf7" pathPrefix="atelier" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Informations sur les ateliers Supralink_Ateliers" editMessage="Editer Informations sur les ateliers Supralink_Ateliers">
+    <methods name="Supralink_Annonces_f2a064c7_a447_42a8_92c4_fb4f1a7afa9c" pathPrefix="annonce" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Annonces SupraLink Supralink_Annonces" editMessage="Editer Annonces SupraLink Supralink_Annonces">
       <parameters name="page" constraint="NONE" isPartOfPath="false"/>
       <parameters name="fields" type="STRING" tip="La cat&#x221a;&#xa9;gorie associ&#x221a;&#xa9;e aux informations r&#x221a;&#xa9;cup&#x221a;&#xa9;r&#x221a;&#xa9;es dans SupraLink." constraint="NONE" isPartOfPath="false"/>
       <mapParameters name="query" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>

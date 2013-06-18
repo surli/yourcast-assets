@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Videos" id="Supralink_Videos">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Supralink_Videos_75de8a16-65b2-4343-92b2-d28ddb479709.properties"/>
+  <parameters name="Supralink_Videos_74114377-6dc7-481f-9e42-ed0bee40c92b.properties"/>
   <personalization image="">
-    <methods name="Supralink_Videos_75de8a16_65b2_4343_92b2_d28ddb479709" pathPrefix="video" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Vid&#x221a;&#xa9;os flumotion Supralink_Videos" editMessage="Editer Vid&#x221a;&#xa9;os flumotion Supralink_Videos"/>
+    <methods name="Supralink_Videos_74114377_6dc7_481f_9e42_ed0bee40c92b" pathPrefix="video" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Vid&#x221a;&#xa9;os flumotion Supralink_Videos" editMessage="Editer Vid&#x221a;&#xa9;os flumotion Supralink_Videos"/>
   </personalization>
 </prodsource:Source>

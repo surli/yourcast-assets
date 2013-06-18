@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="FlickR" id="FlickR">
   <actor name="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr" type="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr"/>
-  <parameters name="FlickR_990ccaa5-0a88-4acf-b00e-b3b02ba747c6.properties"/>
+  <parameters name="FlickR_c6ec852f-1fda-4bce-a59f-cbf46b6d70e4.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="FlickR_990ccaa5_0a88_4acf_b00e_b3b02ba747c6" pathPrefix="" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Photos publiques d'un album FlickR FlickR" editMessage="Editer Photos publiques d'un album FlickR FlickR">
+    <methods name="FlickR_c6ec852f_1fda_4bce_a59f_cbf46b6d70e4" pathPrefix="" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Photos publiques d'un album FlickR FlickR" editMessage="Editer Photos publiques d'un album FlickR FlickR">
       <parameters name="per_page" tip="Nombre limite de photos &#x221a;&#x2020; afficher" constraint="NONE" isPartOfPath="false"/>
       <parameters name="api_key" type="STRING" tip="la cl&#x221a;&#xa9; d'API fournie par FlickR" constraint="NONE" isPartOfPath="false"/>
       <parameters name="photoset_id" type="STRING" tip="L'identifiant de l'album est une cha&#x221a;&#xc6;ne de la forme &quot;72157632035599694&quot; que vous pouvez retrouver dans lien lorsque vous cliquez sur un album" constraint="NONE" isPartOfPath="false"/>

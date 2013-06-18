@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Picasa" id="Picasa">
   <service name="sources-picasa.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Picasa_526a229e-1775-4435-8dd1-9983ec1e85a6.properties"/>
+  <parameters name="Picasa_d90fc42c-a535-4bee-b2a4-a14d7ae3018b.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Picasa_526a229e_1775_4435_8dd1_9983ec1e85a6" pathPrefix="album" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Album d'un utilisateur Picasa" editMessage="Editer Album d'un utilisateur Picasa">
+    <methods name="Picasa_d90fc42c_a535_4bee_b2a4_a14d7ae3018b" pathPrefix="album" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Album d'un utilisateur Picasa" editMessage="Editer Album d'un utilisateur Picasa">
       <parameters name="userid" type="STRING" tip="identifiant de l'utilisateur" constraint="NONE"/>
       <parameters name="albumid" type="STRING" tip="identifiant de l'album" constraint="NONE"/>
     </methods>

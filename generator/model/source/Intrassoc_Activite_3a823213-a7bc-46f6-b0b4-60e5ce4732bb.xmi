@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Intrassoc_Activite" id="Intrassoc_Activite">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Intrassoc_Activite_c312b32a-b72e-469a-8a49-a1c2054fc324.properties"/>
+  <parameters name="Intrassoc_Activite_3a823213-a7bc-46f6-b0b4-60e5ce4732bb.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Intrassoc_Activite_c312b32a_b72e_469a_8a49_a1c2054fc324" pathPrefix="activite" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Informations sur une activit&#x221a;&#xa9; : cr&#x221a;&#xa9;neaux, participants inscrits Intrassoc_Activite" editMessage="Editer Informations sur une activit&#x221a;&#xa9; : cr&#x221a;&#xa9;neaux, participants inscrits Intrassoc_Activite">
+    <methods name="Intrassoc_Activite_3a823213_a7bc_46f6_b0b4_60e5ce4732bb" pathPrefix="activite" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Informations sur une activit&#x221a;&#xa9; : cr&#x221a;&#xa9;neaux, participants inscrits Intrassoc_Activite" editMessage="Editer Informations sur une activit&#x221a;&#xa9; : cr&#x221a;&#xa9;neaux, participants inscrits Intrassoc_Activite">
       <parameters name="limit" tip="Le nombre maximal de cr&#x221a;&#xa9;neaux affich&#x221a;&#xa9;s." constraint="NONE"/>
       <parameters name="nom_activite" type="STRING" tip="Le nom de l'activit&#x221a;&#xa9; dont renvoyer les informations." constraint="NONE"/>
     </methods>

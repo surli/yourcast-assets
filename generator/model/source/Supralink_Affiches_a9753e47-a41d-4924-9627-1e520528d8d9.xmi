@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Affiches" id="Supralink_Affiches">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Supralink_Affiches_025b2537-35a0-4ae7-92b2-166004b503cd.properties"/>
+  <parameters name="Supralink_Affiches_a9753e47-a41d-4924-9627-1e520528d8d9.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Supralink_Affiches_025b2537_35a0_4ae7_92b2_166004b503cd" pathPrefix="affiche" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Affiches de concert Supralink_Affiches" editMessage="Editer Affiches de concert Supralink_Affiches">
+    <methods name="Supralink_Affiches_a9753e47_a41d_4924_9627_1e520528d8d9" pathPrefix="affiche" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Affiches de concert Supralink_Affiches" editMessage="Editer Affiches de concert Supralink_Affiches">
       <parameters name="page" constraint="NONE" isPartOfPath="false"/>
       <parameters name="fields" type="STRING" tip="La cat&#x221a;&#xa9;gorie associ&#x221a;&#xa9;e aux informations r&#x221a;&#xa9;cup&#x221a;&#xa9;r&#x221a;&#xa9;es dans SupraLink." constraint="NONE" isPartOfPath="false"/>
       <mapParameters name="query" type="MAP" constraint="NONE" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>

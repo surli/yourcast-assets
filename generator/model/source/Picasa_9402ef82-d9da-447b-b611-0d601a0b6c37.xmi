@@ -2,14 +2,16 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Picasa" id="Picasa">
   <service name="sources-picasa.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Picasa_448ba719-f5a3-49a6-ad86-0dc062181188.properties"/>
+  <parameters name="Picasa_9402ef82-d9da-447b-b611-0d601a0b6c37.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Picasa_448ba719_f5a3_49a6_ad86_0dc062181188" pathPrefix="search" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Recherche de photos Picasa" editMessage="Editer Recherche de photos Picasa">
+    <methods name="Picasa_9402ef82_d9da_447b_b611_0d601a0b6c37" pathPrefix="shufflealbum" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Album d'un utilisateur avec limite et m&#x221a;&#xa9;lange Picasa" editMessage="Editer Album d'un utilisateur avec limite et m&#x221a;&#xa9;lange Picasa">
       <parameters name="limit" tip="nombre maximum de photos" constraint="NONE"/>
-      <parameters name="query" type="STRING" tip="termes de la requ&#x221a;&#x2122;te" constraint="NONE"/>
+      <parameters name="userid" type="STRING" tip="identifiant de l'utilisateur" constraint="NONE"/>
+      <parameters name="albumid" type="STRING" tip="identifiant de l'album" constraint="NONE"/>
     </methods>
     <list name="limit" tip="nombre maximum de photos" parameters="//@personalization/@methods.0/@parameters.0"/>
-    <list name="query" tip="termes de la requ&#x221a;&#x2122;te" parameters="//@personalization/@methods.0/@parameters.1"/>
+    <list name="userid" tip="identifiant de l'utilisateur" parameters="//@personalization/@methods.0/@parameters.1"/>
+    <list name="albumid" tip="identifiant de l'album" parameters="//@personalization/@methods.0/@parameters.2"/>
   </personalization>
   <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-picasa" version="1.0.0-SNAPSHOT"/>
 </prodsource:Source>

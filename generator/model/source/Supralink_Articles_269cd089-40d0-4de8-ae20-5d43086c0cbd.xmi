@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Articles" id="Supralink_Articles">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Supralink_Articles_770dd83a-4bc6-4e89-b151-8aaa79770f73.properties"/>
+  <parameters name="Supralink_Articles_269cd089-40d0-4de8-ae20-5d43086c0cbd.properties"/>
   <personalization image="" listIntroductionMessage="S&#xe9;lectionnez un renderer pour voir la liste des appels cr&#xe9;&#xe9;s.">
-    <methods name="Supralink_Articles_770dd83a_4bc6_4e89_b151_8aaa79770f73" pathPrefix="article" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Articles de presse Supralink_Articles" editMessage="Editer Articles de presse Supralink_Articles">
+    <methods name="Supralink_Articles_269cd089_40d0_4de8_ae20_5d43086c0cbd" pathPrefix="article" introductionMessage="Compl&#xe9;ter les informations pour ajouter un(e) Articles de presse Supralink_Articles" editMessage="Editer Articles de presse Supralink_Articles">
       <parameters name="pagesize" tip="La taille maximale en caract&#x221a;&#xae;res de chaque page de contenu de chaque article." constraint="NONE" isPartOfPath="false"/>
       <parameters name="page" constraint="NONE" isPartOfPath="false"/>
       <parameters name="fields" type="STRING" tip="La cat&#x221a;&#xa9;gorie associ&#x221a;&#xa9;e aux informations r&#x221a;&#xa9;cup&#x221a;&#xa9;r&#x221a;&#xa9;es dans SupraLink." constraint="NONE" isPartOfPath="false"/>
