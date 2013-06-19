@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Picasa" id="Picasa">
+  <service name="sources-picasa.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Picasa_f60a743e-23cf-442b-812c-a108ea5ca5b5.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Picasa_f60a743e-23cf-442b-812c-a108ea5ca5b5" pathPrefix="search" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Picasa" editMessage="Editer Recherche de photos Picasa">
+      <parameters name="limit" tip="nombre maximum de photos" constraint="NONE" dbName="limit"/>
+      <parameters name="query" type="STRING" tip="termes de la requ√™te" constraint="NONE" dbName="query"/>
+    </methods>
+    <list name="limit" tip="nombre maximum de photos" parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="query" tip="termes de la requ√™te" parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-picasa" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>

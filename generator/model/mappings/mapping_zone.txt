@@ -1,9 +1,13 @@
-Orientation,Product,Graphic,Landscape,Choralies,Title,Design,attenteMainZone_choralies,Text,Full,Elements,Zone,Content:./zone/attenteMainZone_choralies.xmi
 headerZone_choralies,Orientation,Product,Graphic,Landscape,Elements,Choralies,Zone,Content,Thumbnails,Design:./zone/headerZone_choralies.xmi
 Orientation,Product,Logo,Graphic,Title,Design,Text,GLC,RightZone_glc,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_glc.xmi
-Orientation,Product,Graphic,rightZone_choralies,Choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_choralies.xmi
+Orientation,Product,Graphic,Choralies,Title,Design,publicMainZone_choralies,Text,Full,Elements,Portrait,Zone,Content,Thumbnails:./zone/publicMainZone_choralies.xmi
 Text,Orientation,scrollingBottomZone_choralies,Product,Landscape,Elements,Choralies,Zone,Content,Design:./zone/scrollingBottomZone_choralies.xmi
-IRSAM,Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,Full,Elements,MainZone_irsam,Zone,Content:./zone/mainZone_irsam.xmi
 Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,GLC,Full,Elements,Zone,Content,MainZone_glc,Thumbnails:./zone/mainZone_glc.xmi
-Orientation,Product,Graphic,GLC,Landscape,Elements,Zone,Content,HeaderZone_glc,Thumbnails,Design:./zone/headerZone_glc.xmi
+Orientation,Product,Graphic,Choralies,Title,Design,publicLeftZone_choralies,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/publicLeftZone_choralies.xmi
 Orientation,Product,Logo,Graphic,Landscape,Design,Text,GLC,Elements,BottomZone_glc,Zone,Content,Thumbnails:./zone/bottomZone_glc.xmi
+Orientation,Product,Graphic,Choralies,publicRightZone_choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/publicRightZone_choralies.xmi
+Orientation,Product,Graphic,Landscape,Choralies,Title,Design,attenteMainZone_choralies,Text,Full,Elements,Zone,Content,Thumbnails:./zone/attenteMainZone_choralies.xmi
+Orientation,Product,Graphic,Landscape,atelierMainZone_choralies,Choralies,Title,Design,Text,Full,Elements,Zone,Content,Thumbnails:./zone/atelierMainZone_choralies.xmi
+Orientation,Product,Graphic,rightZone_choralies,Choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_choralies.xmi
+IRSAM,Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,Full,Elements,MainZone_irsam,Zone,Content:./zone/mainZone_irsam.xmi
+Orientation,Product,Graphic,GLC,Landscape,Elements,Zone,Content,HeaderZone_glc,Thumbnails,Design:./zone/headerZone_glc.xmi
