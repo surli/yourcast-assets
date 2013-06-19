@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
+		
+		<title>YourCast Choralies - Bienvenue</title>
+		
+		<link rel="stylesheet" type="text/css" href="style.css" >
+		
+		<script type="text/javascript" src="js/libs/prototype.js"></script>
+		<script type="text/javascript" src="js/libs/scriptaculous/scriptaculous.js?load=effects,slider"></script>
+		<script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/date.js"></script>
+        <script type="text/javascript" src="js/controler.js"></script>
+		
+		<link href="img/climacons-font/webfont/climacons-font.css" rel="stylesheet" type="text/css" />
+		<link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
+		
+		$zoneScripts
+		
+		<script type="text/javascript">
+
+            /**
+             *  Fin de traitement des fichiers less
+             */
+            function finTraitementLess() {
+                
+                // Cache le logo de chargement
+                $('logo_loading').hide();
+
+            }
+                
+		    less = {
+		        env: "production",
+		        async: false,
+		        fileAsync: true
+		    };
+		    
+		</script>
+				
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600' rel='stylesheet' type='text/css'>
+		
+	</head>
+
+	<body onload="$onLoadContent" class="jour1">
+
+		$layoutBody
+						
+		<div id="logo_loading">
+			<div>
+				<img id="loading_img" src="./img/yc_loading.gif" />
+			</div>
+		</div>
+		<span class="design_signature"><a href="http://c.line-design.fr">c.line-design.fr</a></span>
+	</body>
+</html>
+
