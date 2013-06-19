@@ -3,3 +3,4 @@ rule :
 
 rule :
 	DESELECTED Design.$A => DESELECT Design.$A ;
+	DESELECTED Zones.$A => DESELECT Product.$A ;
