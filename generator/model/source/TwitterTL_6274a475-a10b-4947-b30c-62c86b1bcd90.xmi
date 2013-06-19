@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="TwitterTL" id="TwitterTL">
   <actor name="fr.yourcast.sources.twitter.timeline.ServiceActorCompositeTwitterTimeline" type="fr.yourcast.sources.twitter.timeline.ServiceActorCompositeTwitterTimeline"/>
-  <parameters name="TwitterTL_9fff9a3a-8599-464a-ad66-c1aef7740140.properties"/>
+  <parameters name="TwitterTL_6274a475-a10b-4947-b30c-62c86b1bcd90.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_TwitterTL_9fff9a3a_8599_464a_ad66_c1aef7740140" pathPrefix="user_timeline.json" introductionMessage="Compléter les informations pour ajouter un(e) appel à  TwitterTL" editMessage="Editer Timeline d'un utilisateur TwitterTL">
+    <methods name="Add_TwitterTL_6274a475_a10b_4947_b30c_62c86b1bcd90" pathPrefix="user_timeline.json" introductionMessage="Compléter les informations pour ajouter un(e) appel à  TwitterTL" editMessage="Editer Timeline d'un utilisateur TwitterTL">
       <parameters name="count" tip="nombre de tweets √† r√©cup√©rer" constraint="NONE" isPartOfPath="false" dbName="count"/>
       <parameters name="screen_name" type="STRING" tip="Nom du compte de l'utilisateur √† afficher" constraint="NONE" isPartOfPath="false" dbName="screen_name"/>
       <parameters name="Cl√© d'API" type="STRING" tip="La cl√© d'API commence forc√©ment par Bearer et doit √™tre  suivi d'une chaine de caract√®re encod√©e. Elle vous sera fournie en m√™me  temps que l'application." constraint="NONE" isPartOfPath="false" dbName="Authorization"/>

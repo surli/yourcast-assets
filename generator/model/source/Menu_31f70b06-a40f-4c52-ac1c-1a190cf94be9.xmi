@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Menu" id="Menu">
   <service name="sources-menu.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Menu_a938a001-d698-41e6-8f95-8f59609b780e.properties"/>
+  <parameters name="Menu_31f70b06-a40f-4c52-ac1c-1a190cf94be9.properties"/>
   <personalization image="">
-    <methods name="Add_Menu_a938a001_d698_41e6_8f95_8f59609b780e" pathPrefix="all" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Menu" editMessage="Editer Tous les menus Menu"/>
+    <methods name="Add_Menu_31f70b06_a40f_4c52_ac1c_1a190cf94be9" pathPrefix="all" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Menu" editMessage="Editer Tous les menus Menu"/>
   </personalization>
   <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-menu" version="1.0.0-SNAPSHOT"/>
 </prodsource:Source>

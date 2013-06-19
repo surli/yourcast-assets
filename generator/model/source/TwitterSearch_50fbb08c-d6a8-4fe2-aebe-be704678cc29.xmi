@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prodsource="prodsource.yourcast.fr" name="TwitterSearch" id="TwitterSearch">
   <actor name="fr.yourcast.sources.twitter.search.ServiceActorCompositeTwitterSearch" type="fr.yourcast.sources.twitter.search.ServiceActorCompositeTwitterSearch"/>
-  <parameters name="TwitterSearch_789cd053-4dd4-4f1f-9f34-a56f30fa1f73.properties"/>
+  <parameters name="TwitterSearch_50fbb08c-d6a8-4fe2-aebe-be704678cc29.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_TwitterSearch_789cd053_4dd4_4f1f_9f34_a56f30fa1f73" pathPrefix="search.json" introductionMessage="Compléter les informations pour ajouter un(e) appel à  TwitterSearch" editMessage="Editer Recherche par tags TwitterSearch">
+    <methods name="Add_TwitterSearch_50fbb08c_d6a8_4fe2_aebe_be704678cc29" pathPrefix="search.json" introductionMessage="Compléter les informations pour ajouter un(e) appel à  TwitterSearch" editMessage="Editer Recherche par tags TwitterSearch">
       <parameters xsi:type="prodsource:ListParameter" name="Sort" type="LIST" tip="Ordre des r√©sultats √† afficher (recent pour les r√©sultats r√©cents, mixed pour les r√©sultats populaires)" constraint="NONE" isPartOfPath="false" dbName="result_type">
         <values>recent</values>
         <values>mixed</values>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Photos" id="Supralink_Photos">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Supralink_Photos_d9a79ce5-22f6-45ac-ab7d-3f36cd10a84d.properties"/>
+  <parameters name="Supralink_Photos_1c07b850-ac33-4c35-8cdb-71f926a9c311.properties"/>
   <personalization image="">
-    <methods name="Add_Supralink_Photos_d9a79ce5_22f6_45ac_ab7d_3f36cd10a84d" pathPrefix="photo" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Supralink_Photos" editMessage="Editer Photos (pro et participants) Supralink_Photos"/>
+    <methods name="Add_Supralink_Photos_1c07b850_ac33_4c35_8cdb_71f926a9c311" pathPrefix="photo" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Supralink_Photos" editMessage="Editer Photos (pro et participants) Supralink_Photos"/>
   </personalization>
 </prodsource:Source>
