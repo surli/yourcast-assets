@@ -4,7 +4,7 @@ Discretization,Graphic,Affiche,Choralies,Criteria,Title,Design,TypeInfo,Renderer
 Discretization,Graphic,SupraLink_News,Choralies,Criteria,Title,Design,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Announces_for_right_push.xmi
 AnnounceTitle,Discretization,Logo,Graphic,FilterByDate,Announces,FromSource,Title,Design,TypeInfo,Renderer,Text,GLC,Elements,Content,ByOne:./renderer/glc_render_Announces_for_main_different_title.xmi
 Discretization,Graphic,Choralies,Title,Article,Design,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Articles_for_main_zone.xmi
-Discretization,Graphic,Choralies,Tomorow,Criteria,Design,TypeInfo,Renderer,Text,Today,Elements,Forecast,Content,ByOne,Thumbnails:./renderer/choralies_render_Weather_Forecast_for_header.xmi
+Discretization,Graphic,Choralies,Tomorow,Criteria,Design,TypeInfo,Renderer,Today,Elements,Forecast,Content,ByOne,Thumbnails:./renderer/choralies_render_Weather_Forecast_for_header.xmi
 TypeInfo,Text,Renderer,Discretization,BySix,Elements,Events,Choralies,Content,Criteria,Title,Design:./renderer/choralies_render_Ateliers_for_main.xmi
 IRSAM,Discretization,Logo,FromSource,Title,Design,PredefinedTitle,TypeInfo,Renderer,Birthday,Elements,FirstName,Content,ByOne:./renderer/irsam_render_birthday_for_irsam.xmi
 TypeInfo,Text,Renderer,Discretization,Elements,Tweet,Choralies,All,Content,Design:./renderer/choralies_render_Twitter_for_scrolling.xmi
