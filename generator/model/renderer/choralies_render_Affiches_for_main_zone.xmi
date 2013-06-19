@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="choralies_render_Affiches_for_main_zone.js" infoType="Affiches">
+  <function name="choralies_render_Affiches_for_main_zone"/>
+  <resource name="../utils/calendar.js" path="js/renderers/utils/calendar.js"/>
+  <resource name="img/smooth.png" type="image" path="img/smooth.png"/>
+  <resource name="img/location_small.png" type="image" path="img/location_small.png"/>
+  <resource name="less/choralies_render_Affiches_for_main_zone.less" type="css" path="less/choralies_render_Affiches_for_main_zone.less"/>
+</prodrenderer:Renderer>

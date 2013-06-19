@@ -1,3 +1,5 @@
-attenteMainZone_choralies,headerZone_choralies,Layout,scrollingBottomZone_choralies,Product,rightZone_choralies,Choralies,LayoutChoralies,Zones,Design:./layout/choralies_attente.xmi
+attenteMainZone_choralies,headerZone_choralies,Layout,scrollingBottomZone_choralies,Product,rightZone_choralies,LayoutChoraliesAttente,Choralies,Zones,Design:./layout/choralies_attente.xmi
 Layout,Product,LayoutAcademic,RightZone_glc,GLC,BottomZone_glc,MainZone_glc,Zones,HeaderZone_glc,Design:./layout/glc.xmi
 IRSAM,Layout,Product,MainZone_irsam,LayoutHandicap,Zones,Design:./layout/irsam.xmi
+publicLeftZone_choralies,publicMainZone_choralies,headerZone_choralies,Layout,scrollingBottomZone_choralies,Product,LayoutChoraliesPublic,Choralies,publicRightZone_choralies,Zones,Design:./layout/choralies_public.xmi
+LayoutChoraliesAteliers,headerZone_choralies,Layout,scrollingBottomZone_choralies,Product,rightZone_choralies,atelierMainZone_choralies,Choralies,Zones,Design:./layout/choralies_ateliers.xmi
