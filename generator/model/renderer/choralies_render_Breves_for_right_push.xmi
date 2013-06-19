@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="6" name="choralies_render_Breves_for_right_push.js" infoType="Breve">
   <function name="choralies_render_Breves_for_right_push"/>
-  <resource name="less/choralies_render_Breves_for_rigth_push.less" type="css" path="less/choralies_render_Breves_for_rigth_push.less"/>
+  <resource name="less/choralies_render_Breves_for_right_push.less" type="css" path="less/choralies_render_Breves_for_right_push.less"/>
 </prodrenderer:Renderer>
