@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Announces" id="Announces">
   <service name="sources-announce.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Announces_79f99787-82f4-437d-9a90-80135c859fc1.properties"/>
+  <parameters name="Announces_1620188f-de54-483d-bbfd-eaa0fd306b92.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_Announces_79f99787-82f4-437d-9a90-80135c859fc1" pathPrefix="target" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Announces" editMessage="Editer Annonce Announces">
+    <methods name="Add_Announces_1620188f_de54_483d_bbfd_eaa0fd306b92" pathPrefix="target" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Announces" editMessage="Editer Annonce Announces">
       <parameters name="target" type="STRING" tip="√©cran cible de l'affichage" constraint="NONE" dbName="target"/>
     </methods>
     <list name="target" tip="√©cran cible de l'affichage" parameters="//@personalization/@methods.0/@parameters.0"/>

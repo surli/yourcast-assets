@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Picasa" id="Picasa">
   <service name="sources-picasa.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Picasa_aa4d6e03-c216-4d9d-a291-a611f68354df.properties"/>
+  <parameters name="Picasa_d113984d-c74d-4013-a188-c25b6ee18c93.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_Picasa_aa4d6e03-c216-4d9d-a291-a611f68354df" pathPrefix="shufflealbum" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Picasa" editMessage="Editer Album d'un utilisateur avec limite et m√©lange Picasa">
+    <methods name="Add_Picasa_d113984d_c74d_4013_a188_c25b6ee18c93" pathPrefix="album" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Picasa" editMessage="Editer Album d'un utilisateur avec limite Picasa">
       <parameters name="limit" tip="nombre maximum de photos" constraint="NONE" dbName="limit"/>
       <parameters name="userid" type="STRING" tip="identifiant de l'utilisateur" constraint="NONE" dbName="userid"/>
       <parameters name="albumid" type="STRING" tip="identifiant de l'album" constraint="NONE" dbName="albumid"/>

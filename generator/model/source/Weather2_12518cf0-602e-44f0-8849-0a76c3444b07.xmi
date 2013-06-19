@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Weather2" id="Weather2">
   <service name="sources-weather2.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Weather2_09444073-5453-4d22-929b-97730860d2ce.properties"/>
+  <parameters name="Weather2_12518cf0-602e-44f0-8849-0a76c3444b07.properties"/>
   <personalization image="">
-    <methods name="Add_Weather2_09444073-5453-4d22-929b-97730860d2ce" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Weather2" editMessage="Editer Meteo avec le service Weather2 Weather2"/>
+    <methods name="Add_Weather2_12518cf0_602e_44f0_8849_0a76c3444b07" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Weather2" editMessage="Editer Meteo avec le service Weather2 Weather2"/>
   </personalization>
   <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-weather2" version="1.0.0-SNAPSHOT"/>
   <rateLimit requests="20" minutes="60"/>

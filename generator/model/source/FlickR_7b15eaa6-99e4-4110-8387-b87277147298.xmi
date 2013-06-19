@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="FlickR" id="FlickR">
   <actor name="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr" type="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr"/>
-  <parameters name="FlickR_82624292-dff0-4059-bdc9-c821bb8ae37d.properties"/>
+  <parameters name="FlickR_7b15eaa6-99e4-4110-8387-b87277147298.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_FlickR_82624292-dff0-4059-bdc9-c821bb8ae37d" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  FlickR" editMessage="Editer Photos publiques d'un utilisateur FlickR FlickR">
+    <methods name="Add_FlickR_7b15eaa6_99e4_4110_8387_b87277147298" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  FlickR" editMessage="Editer Photos publiques d'un utilisateur FlickR FlickR">
       <parameters name="Nombre d'images" tip="Nombre limite de photos √† afficher" constraint="NONE" isPartOfPath="false" dbName="per_page"/>
       <parameters name="Cl√© d'API" type="STRING" tip="la cl√© d'API fournie par FlickR" constraint="NONE" isPartOfPath="false" dbName="api_key"/>
       <parameters name="Identifiant de l'utilisateur" type="STRING" tip="L'identifiant de l'utilisateur est une cha√Æne de la forme &quot;26593919@N04&quot; que vous pouvez retrouver lorsque vous cliquez sur le logo d'un utilisateur." constraint="NONE" isPartOfPath="false" dbName="user_id"/>
