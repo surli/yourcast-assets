@@ -15,7 +15,7 @@ function choralies_render_Breves_for_right_push(tableau, zone, timeInfo) {
 		var elements = tableau[indice];
 
 		var reg=new RegExp("(\n)", "g");
-		var contentBreve = elements.corps.replace(reg, "<br/>");
+		var contentBreve = elements.texte_court.replace(reg, "<br/>");
 		var content = "";
 		
 		content += "<div id='"+zone.id+"_new_push' class='push_div_zone breve' style='display:none;'>";

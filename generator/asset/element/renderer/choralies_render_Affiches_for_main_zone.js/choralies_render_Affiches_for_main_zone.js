@@ -16,7 +16,7 @@ function choralies_render_Affiches_for_main_zone(tableau, zone, timeInfo) {
 		var elements = tableau[indice];
 
 		var reg=new RegExp("(\n)", "g");
-		var contentAnnounces = elements.corps.replace(reg, "<br/>");
+		var contentAnnounces = elements.contenu.replace(reg, "<br/>");
 		var content = "";
 		
 		content += "<div class='affiches_number'>"+tableau.length+" soir&eacute;es &agrave; venir</div>";	
