@@ -9,7 +9,6 @@
 *     Simon Urli (simon.urli@gmail.com) - initial API and implementation
 ******************************************************************************/
 
-loadScript(RENDERER_PATH+"/utils/calendar.js");
 #foreach($rendererFile in $renderers)
 loadScript(RENDERER_PATH+"/$rendererFile");
 #end
@@ -19,7 +18,7 @@ init_$zoneName = function() {
 	var id = "$zoneName";
 	var map = {$callIdRendererMap}; 
 	var map_time = {$callIdTimeMap};
-	var url = '/$providerPath/serviceProvider/invokeServices';
+	var url = '/$providerPath/rest/';
 	var anim_func = $behaviorFunction;
 	var request_timeout = $requestTimeout;
 	var z1 = new Zone(id, map, map_time, url, anim_func, request_timeout);

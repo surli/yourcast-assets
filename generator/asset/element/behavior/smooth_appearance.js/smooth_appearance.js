@@ -5,7 +5,7 @@ loadScript(BEHAVIOUR_PATH+"/utils/scriptaculous.js?load=effects");
  * this is a behavior for the main zone
  * the behavior is a simple appearance of each info with a smooth appearance
  */
-function simple_smooth_appearance_timeout(zone, indice, run) {
+function smooth_appearance_timeout(zone, indice, run) {
 	if(run){
 		var info = "";
 		info = zone.infoList[indice];
@@ -27,7 +27,7 @@ function simple_smooth_appearance_timeout(zone, indice, run) {
 
 		Effect.BlindDown('progressbar', { scaleX : false, scaleY : true, duration: info.time });
 
-		zone.set_timeout("timeoutBehav", function() { simple_smooth_appearance_timeout(zone, indice, run); }, time);
+		zone.set_timeout("timeoutBehav", function() { smooth_appearance_timeout(zone, indice, run); }, time);
 	}else {
 		zone.clear_timeout("timeoutBehav");
 	}
@@ -36,6 +36,6 @@ function simple_smooth_appearance_timeout(zone, indice, run) {
 /*
  * call the behavior simple_appearance_timeout()
  */
-function simple_smooth_appearance(zone, run) {
-	simple_smooth_appearance_timeout(zone, 0, run);
+function smooth_appearance(zone, run) {
+	smooth_appearance_timeout(zone, 0, run);
 }

@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="RSSFeedReader" id="RSSFeedReader">
   <service name="sources-RSSFeedReader.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="RSSFeedReader_4c473ddf-2149-4f7e-87d5-86385db7cd6f.properties"/>
+  <parameters name="RSSFeedReader_7d8fe6e8-f23e-4087-82b7-768708a40ca8.properties"/>
   <personalization image="">
-    <methods name="Add_RSSFeedReader_4c473ddf_2149_4f7e_87d5_86385db7cd6f" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  RSSFeedReader" editMessage="Editer Flux TV5 RSSFeedReader"/>
+    <methods name="Add_RSSFeedReader_7d8fe6e8_f23e_4087_82b7_768708a40ca8" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  RSSFeedReader" editMessage="Editer Flux TV5 RSSFeedReader"/>
   </personalization>
   <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-RSSFeedReader" version="1.0.0-SNAPSHOT"/>
 </prodsource:Source>
