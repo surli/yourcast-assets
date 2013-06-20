@@ -23,7 +23,8 @@
 		var description = elements.description;
 		if (description.length > 60) {description = description.substring(0, 60); description += " ...";}
 
-		var url = elements.thumbs[1].url ;
+		//var url = elements.thumbs[1].url ;
+		var url = elements.url;
 		zone.loadImage(url);
 		
 		var zoneHeight = $(zone.id).getHeight() - ($(zone.id).getHeight()*15/100);

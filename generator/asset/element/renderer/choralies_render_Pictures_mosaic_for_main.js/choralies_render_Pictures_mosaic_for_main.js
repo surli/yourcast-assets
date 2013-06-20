@@ -23,13 +23,13 @@
 	content += "<div class='mosaicPictures' style='height:"+zoneHeight+"px;'>";	
 	
 	for (var indice = 0; indice < tableau.length; indice++){
-		elements = tableau[indice].thumbs[2].url;
+		elements = tableau[indice].thumbs[1].url;
 		zone.loadImage(elements);
 
 		if ((indice+1) % 6 == 0) {
 			content += "<span><img src='"+elements+"'/></span>";
 			content += "</div>";
-			var dico = {"content": content, "logo": logo, "title": title, "time" : time};
+			var dico = {"content": content, "logo": '', "title": title, "time" : time};
 			zone.pushInfo(dico);
 			content = "<div class='mosaicPictures' style='height:"+zoneHeight+"px;'>";
 		} else {
