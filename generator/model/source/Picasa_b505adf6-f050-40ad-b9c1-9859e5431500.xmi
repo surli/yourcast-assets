@@ -2,16 +2,14 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Picasa" id="Picasa">
   <service name="sources-picasa.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Picasa_4283ffa2-c68b-48db-a8a1-cec2e631c191.properties"/>
+  <parameters name="Picasa_b505adf6-f050-40ad-b9c1-9859e5431500.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_Picasa_4283ffa2_c68b_48db_a8a1_cec2e631c191" pathPrefix="shufflealbum" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Picasa" editMessage="Editer Album d'un utilisateur avec limite et m√©lange Picasa">
+    <methods name="Add_Picasa_b505adf6_f050_40ad_b9c1_9859e5431500" pathPrefix="search" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Picasa" editMessage="Editer Recherche de photos Picasa">
       <parameters name="limit" tip="nombre maximum de photos" constraint="NONE" dbName="limit"/>
-      <parameters name="userid" type="STRING" tip="identifiant de l'utilisateur" constraint="NONE" dbName="userid"/>
-      <parameters name="albumid" type="STRING" tip="identifiant de l'album" constraint="NONE" dbName="albumid"/>
+      <parameters name="query" type="STRING" tip="termes de la requ√™te" constraint="NONE" dbName="query"/>
     </methods>
     <list name="limit" tip="nombre maximum de photos" parameters="//@personalization/@methods.0/@parameters.0"/>
-    <list name="userid" tip="identifiant de l'utilisateur" parameters="//@personalization/@methods.0/@parameters.1"/>
-    <list name="albumid" tip="identifiant de l'album" parameters="//@personalization/@methods.0/@parameters.2"/>
+    <list name="query" tip="termes de la requ√™te" parameters="//@personalization/@methods.0/@parameters.1"/>
   </personalization>
   <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-picasa" version="1.0.0-SNAPSHOT"/>
 </prodsource:Source>
