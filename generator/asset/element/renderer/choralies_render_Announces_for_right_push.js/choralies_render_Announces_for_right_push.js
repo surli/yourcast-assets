@@ -28,7 +28,7 @@ function choralies_render_Announces_for_right_push(tableau, zone, timeInfo) {
 		content += "<div id='"+zone.id+"_new_push' class='push_div_zone' style='display:none;'>";
 			content += "<div class='announce_body'>";
 				content += "<div class='announce_Title'>"+elements.titre+"</div>";
-				if (elements.image != ""){
+				if (elements.image !== ""){
 					zone.loadImage(elements.image);
 					content += "<img src="+elements.image+">";
 				}	
