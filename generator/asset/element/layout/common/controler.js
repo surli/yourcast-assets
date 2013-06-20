@@ -129,9 +129,7 @@ Zone.prototype = {
 			if (this.timeout === null)
 				// timeout on the request
 				this.timeout = setInterval(function() { self.request(); }, this.request_timeout);
-			if (this.is_master)
-				// hide the logo loading
-				document.getElementById("logo_loading").style.display = 'none';
+
 			// launch the behaviour function
 			this.anim_func(this, true);
 			
@@ -145,6 +143,7 @@ Zone.prototype = {
 	*/
 	receive: function(json) {
 		var self = this;
+		var info_found = false;
 		// if the timeout is null, launch the request for a define interval
 		if (this.timeout === null)
 			this.timeout = setInterval(function() { self.request(); }, this.request_timeout);
@@ -169,6 +168,7 @@ Zone.prototype = {
 					for (var cle in this.map_renderers) {
 						if (elements[cle]) {
 							for (var index = 0; index < elements[cle].length; index++) {
+								info_found = true;
 								try {
 									this.map_renderers[cle](elements[cle][index], this, this.map_time[cle]);
 								} catch(err) {
@@ -180,6 +180,9 @@ Zone.prototype = {
 						}
 					}
 				}
+				// If no info to display
+				if(!info_found)
+					this.empty_zone();
 			
 				try {
 					this.initBehaviour();
@@ -239,7 +242,17 @@ Zone.prototype = {
 		this.img_loaded = 0;
 		this.array_img = {};
 	},
-	
+
+	// no information to display
+	empty_zone: function() {
+		if (this.timeout_list.timeoutBehav) 
+			this.clear_timeout("timeoutBehav");
+		this.infoList = new Array();
+		this.changeContent("<div class='noinfo'><div>Aucune information disponible pour le moment.</di></div>");
+		this.counterInfo = 0;
+		this.img_loaded = 0;
+		this.array_img = {};
+	},	
 
 	// stop the request by the delete of the interval
 	stop_request: function() {
