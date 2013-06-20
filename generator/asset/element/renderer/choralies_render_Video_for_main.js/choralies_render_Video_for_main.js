@@ -76,8 +76,8 @@ function choralies_render_Video_for_main(tableau, zone, timeInfo) {
         var elements = videoList.videos[i];
 
         // Récupération des dimensions
-        var width = window.innerWidth;// * 0.9;
-        var height = window.innerHeight; // * 0.7;
+        var width = window.innerWidth * 0.73;// * 0.9;
+        var height = window.innerHeight * 0.75 ; // * 0.7;
 
         // Initialisation du content
         var content = "<div id='video'>";
