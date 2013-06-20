@@ -385,8 +385,8 @@ function render_hour_announce(elements) {
 	if (elements.debut == 0 || elements.fin == 0){
 		return "";
 	} else {
-		var start = get_date_from_date(elements.debut);
-		var end = get_date_from_date(elements.fin);
+		var start = get_date_from_timestamp(elements.debut);
+		var end = get_date_from_timestamp(elements.fin);
 
 	    var startTime = start.hour + "h" + start.min;
 	    var endTime = end.hour + "h" + end.min;

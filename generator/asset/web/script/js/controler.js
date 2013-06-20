@@ -60,6 +60,8 @@ Zone.prototype = {
 		this.is_master = false;
 		
 		this.timeout_list = {};
+		this.specificActionWhenRequestWorks = function() {};
+		this.specificActionWhenRequestFails = function() {};
 
 	},
 	
@@ -95,6 +97,11 @@ Zone.prototype = {
 		this.divMarquee.innerHTML = this.htmlinit + html; 
 	},
 	
+	 // add to the content, but keep the base of the zone
+	addContent: function(html) {
+		this.divMarquee.innerHTML = html + this.divMarquee.innerHTML; 
+	},
+	
 	// put to true, the behaviour is started
 	behaviour_start: function() {
 		this.behaviour_running = true;
@@ -115,16 +122,14 @@ Zone.prototype = {
 	* It prepares the datas to be used by the behaviour. Then it launches the behaviour function.
 	*/
 	initBehaviour : function() {
-		if (this.imagesAreLoaded()) {
+		if (this.imagesAreLoaded() && this.infoList.length > 0) {
 			this.clear_timeout("timeoutBehav");
 			var self = this;
 			
 			if (this.timeout === null)
 				// timeout on the request
 				this.timeout = setInterval(function() { self.request(); }, this.request_timeout);
-			if (this.is_master)
-				// hide the logo loading
-				document.getElementById("logo_loading").style.display = 'none';
+
 			// launch the behaviour function
 			this.anim_func(this, true);
 			
@@ -136,13 +141,13 @@ Zone.prototype = {
 	* Callback function of the request : transport is an object given by the request
 	* It uses the map of renderers to call the appropriate renderer function for each information, then it put the results in document and launches behaviour.
 	*/
-	receive: function(transport) {
+	receive: function(json) {
 		var self = this;
+		var info_found = false;
 		// if the timeout is null, launch the request for a define interval
 		if (this.timeout === null)
 			this.timeout = setInterval(function() { self.request(); }, this.request_timeout);
-		var textContent = transport.responseText;
-		var json = JSON.parse(textContent);		
+			
 		var init_renderer = false;
 		this.reset_zone();
 		if (json.informations) {
@@ -163,22 +168,26 @@ Zone.prototype = {
 					for (var cle in this.map_renderers) {
 						if (elements[cle]) {
 							for (var index = 0; index < elements[cle].length; index++) {
+								info_found = true;
 								try {
 									this.map_renderers[cle](elements[cle][index], this, this.map_time[cle]);
 								} catch(err) {
 									console.log(init_renderer);
-									new Debug("Error in loading renderer",cle,err);
+									debug.add_message("Error in loading renderer : "+cle+" : "+err);
 								}
 								
 							}
 						}
 					}
 				}
+				// If no info to display
+				if(!info_found)
+					this.empty_zone();
 			
 				try {
 					this.initBehaviour();
 				} catch(err) {
-					new Debug("Error in loading behaviour",this.anim_func.name,err);
+					debug.add_message("Error in loading behaviour : "+this.anim_func.name+" : "+err);
 				}
 			}else {
 				this.reset_zone();
@@ -198,13 +207,29 @@ Zone.prototype = {
 			method:'get',
 			onSuccess: function(transport) {
 				if (transport.status == 200) {
-					self.receive(transport);
+					var textContent = transport.responseText;
+					var json = JSON.parse(textContent);	
+					self.specificActionWhenRequestWorks();
+					self.receive(json);
 				} else {
-					set_timeout("requestTimeout", function() { self.request(); }, self.request_timeout);
+					self.actionOnRequestFailure("Statut : "+transport.status);
 				}
 			},
-			onFailure: function(transport){ alert('Something went wrong...'); }
+			onFailure: function(transport) { 
+				self.actionOnRequestFailure(transport); 
+			}
 		});
+	},
+	
+	setSpecificActionsForRequest: function(fWhenWorks, fWhenFails) {
+		this.specificActionWhenRequestWorks = fWhenWorks;
+		this.specificActionWhenRequestFails = fWhenFails;
+	},
+	
+	actionOnRequestFailure: function(err) {
+		this.specificActionWhenRequestFails();
+		debug.add_message("Error when getting informations: "+err);
+		set_timeout("requestTimeout", function() { self.request(); }, self.request_timeout);
 	},
 	
 	// reset the zone
@@ -217,7 +242,17 @@ Zone.prototype = {
 		this.img_loaded = 0;
 		this.array_img = {};
 	},
-	
+
+	// no information to display
+	empty_zone: function() {
+		if (this.timeout_list.timeoutBehav) 
+			this.clear_timeout("timeoutBehav");
+		this.infoList = new Array();
+		this.changeContent("<div class='noinfo'><div>Aucune information disponible pour le moment.</di></div>");
+		this.counterInfo = 0;
+		this.img_loaded = 0;
+		this.array_img = {};
+	},	
 
 	// stop the request by the delete of the interval
 	stop_request: function() {
@@ -356,7 +391,7 @@ var NotifZone = Class.create(Zone, {
 									this.map_renderers[cle](elements[cle], this, this.map_time[cle]);
 								} catch(err) {
 									console.log(init_renderer);
-									new Debug("Error in loading renderer",cle,err);
+									debug.add_message("Error in loading renderer : "+cle+" : "+err);
 								}
 							}
 						}
@@ -365,7 +400,7 @@ var NotifZone = Class.create(Zone, {
 					try {
 						this.initBehaviour();
 					} catch(err) {
-						new Debug("Error in loading behaviour",this.anim_func.name,err);
+						new debug.add_message("Error in loading behaviour : "+this.anim_func.name+" : "+err);
 					}
 				}else {
 					this.reset_zone();
