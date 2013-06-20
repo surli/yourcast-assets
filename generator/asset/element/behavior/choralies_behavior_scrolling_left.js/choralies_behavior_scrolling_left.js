@@ -5,6 +5,9 @@
  *	- time_duration(time, taille, direction) -> behaviours/utils/functions.js
  *	- create_or_get_behaviour_style_zone() -> behaviours/utils/functions.js
  */
+ 
+loadScript(BEHAVIOUR_PATH+"/utils/functions.js");
+ 
 function choralies_behavior_scrolling_left(zone){
 
 	var info;

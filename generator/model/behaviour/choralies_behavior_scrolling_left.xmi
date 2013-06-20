@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="choralies_behavior_scrolling_left.js">
   <function name="choralies_behavior_scrolling_left"/>
+  <resource name="../utils/functions.js" path="./js/behaviours/utils/functions.js"/>
 </prodbehavior:Behavior>
