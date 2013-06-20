@@ -27,8 +27,10 @@ function choralies_render_Articles_for_main_zone(tableau, zone, timeInfo) {
 				content += "<div id='articles' class='main_div_zone'>";
 					content += "<div class='article_body'>";
 						content += "<div class='article_Subtitle'>"+headerAnnounces+"</div>";
-						if (elements.image != null && elements.image != "")
+						if (elements.image != "" && elements.image != ""){
+							zone.loadImage(elements.image);
 							content += "<img src="+elements.image+">";
+						}
 						content += "<div class='article_Content'>"+contentAnnounces+"</div>";
 						
 						if(i==elements.contenu.length-1)

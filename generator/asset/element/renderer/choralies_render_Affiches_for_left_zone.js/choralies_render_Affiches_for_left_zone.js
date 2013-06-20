@@ -29,8 +29,10 @@ function choralies_render_Affiches_for_left_zone(tableau, zone, timeInfo) {
 				content += "<div class='affiche_Subtitle'>"+elements.soustitre+"</div>";
 				content += "<div class='affiche_Loc'>"+elements.lieu+"</div>";		
 				content += "<div style='clear:both;'> </div>";
-				if (elements.image != "")
-					content += "<img src="+elements.image+">";	
+				if (elements.image != ""){
+					zone.loadImage(elements.image);
+					content += "<img src="+elements.image+">";
+				}		
 				content += "<div class='affiche_Content'>"+contentAnnounces+"</div>";
 			content += "</div>";
 			
