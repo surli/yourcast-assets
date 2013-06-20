@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="StaffScheduling" id="StaffScheduling">
   <service name="sources-irsam_staffScheduling.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="StaffScheduling_44005a1a-a349-4038-8440-86aac053a247.properties"/>
+  <parameters name="StaffScheduling_ab0923f1-b953-46c8-beaf-7ca5c37607f4.properties"/>
   <personalization image="">
-    <methods name="Add_StaffScheduling_44005a1a_a349_4038_8440_86aac053a247" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  StaffScheduling" editMessage="Editer Emploi du temps du Staff StaffScheduling"/>
+    <methods name="Add_StaffScheduling_ab0923f1_b953_46c8_beaf_7ca5c37607f4" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  StaffScheduling" editMessage="Editer Emploi du temps du Staff StaffScheduling"/>
   </personalization>
   <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-irsam_staffScheduling" version="1.0.0-SNAPSHOT"/>
 </prodsource:Source>

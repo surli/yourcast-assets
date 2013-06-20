@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="ICalReader" id="ICalReader">
   <service name="sources-icalreader.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="ICalReader_aa07d86c-93a6-4c6d-91a6-30c43b9e84ef.properties"/>
+  <parameters name="ICalReader_2dd34eec-0676-4d43-8917-adef2bc48b9f.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_ICalReader_aa07d86c_93a6_4c6d_91a6_30c43b9e84ef" pathPrefix="hours/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  ICalReader" editMessage="Editer Lecteur de calendrier avec d√©but et dur√©e ICalReader">
+    <methods name="Add_ICalReader_2dd34eec_0676_4d43_8917_adef2bc48b9f" pathPrefix="hours/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  ICalReader" editMessage="Editer Lecteur de calendrier avec d√©but et dur√©e ICalReader">
       <parameters name="n" tip="Dur√©e en heure" constraint="NONE" dbName="n"/>
       <parameters name="debut" type="LONG" tip="date de debut" constraint="NONE" dbName="debut"/>
       <parameters name="URL Calendar" type="STRING" tip="URL du calendrier √† afficher" constraint="NONE" isPartOfPath="false" dbName="body"/>

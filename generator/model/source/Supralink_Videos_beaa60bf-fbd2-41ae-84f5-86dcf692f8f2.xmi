@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Videos" id="Supralink_Videos">
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Supralink_Videos_0c4feb77-1caf-41b0-aca0-18bca79a5071.properties"/>
+  <parameters name="Supralink_Videos_beaa60bf-fbd2-41ae-84f5-86dcf692f8f2.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_Supralink_Videos_0c4feb77_1caf_41b0_aca0_18bca79a5071" pathPrefix="video/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Supralink_Videos" editMessage="Editer Vid√©os flumotion Supralink_Videos">
+    <methods name="Add_Supralink_Videos_beaa60bf_fbd2_41ae_84f5_86dcf692f8f2" pathPrefix="video/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Supralink_Videos" editMessage="Editer Vid√©os flumotion Supralink_Videos">
       <parameters name="Nombre d'√©l√©ments" tip="Le nombre de vid√©os √† r√©cup√©rer dans l'album." constraint="NONE" isPartOfPath="false" dbName="pagesize"/>
       <parameters name="Cat√©gorie" type="STRING" tip="La cat√©gorie d√©finissant la liste de lecture √† r√©cup√©rer dans SupraLink." constraint="NONE" isPartOfPath="false" dbName="fields"/>
       <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>
