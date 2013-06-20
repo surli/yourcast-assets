@@ -169,11 +169,14 @@ Zone.prototype = {
 						if (elements[cle]) {
 							for (var index = 0; index < elements[cle].length; index++) {
 								info_found = true;
-								try {
-									this.map_renderers[cle](elements[cle][index], this, this.map_time[cle]);
-								} catch(err) {
-									console.log(init_renderer);
-									debug.add_message("Error in loading renderer : "+cle+" : "+err);
+								var infoToRender = elements[cle][index];
+								if (this.infoIsRendable(infoToRender)) {
+									try {
+										this.map_renderers[cle](infoToRender, this, this.map_time[cle]);
+									} catch(err) {
+										console.log(init_renderer);
+										debug.add_message("Error in loading renderer : "+cle+" : "+err);
+									}
 								}
 								
 							}
@@ -194,6 +197,18 @@ Zone.prototype = {
 			}
 		}else {
 			this.reset_zone();
+		}
+	},
+	
+	infoIsRendable: function(infoToRender) {
+		if (!(infoToRender instanceof Object)) {
+			return false;
+		} else {
+			if (infoToRender instanceof Array) {
+				return (infoToRenderer.length > 0);
+			} else {
+				return (infoToRenderer !== {});
+			}
 		}
 	},
 	
