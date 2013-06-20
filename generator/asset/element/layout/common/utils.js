@@ -14,7 +14,7 @@
 // ====================================================
 
 var MOTEUR_PATH = "/moteur_yourcast"
-var ROOT = "/yourcast/client/yourcast-choralies-client";
+var ROOT = document.location.pathname;
 
 
 var LESS_ROOT = ROOT+"/less";
@@ -117,6 +117,22 @@ function is_empty(obj) {
     }
 
     return true;
+}
+
+function isPropertyDefined(prop) {
+	if (prop === undefined) {
+		return false;
+	} else {
+		if (typeof prop === "string") {
+			return (prop !== "");
+		} else if (typeof prop === "object") {
+			return !(is_empty(prop));
+		} else if (typeof prop === "array") {
+			return !(is_empty(prop));
+		} else {
+			return true;
+		}
+	}	
 }
 
 function firstLettertoUpperCase(str){
