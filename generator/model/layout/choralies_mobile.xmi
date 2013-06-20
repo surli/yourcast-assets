@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<prodlayout:Layout xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodlayout="prodlayout.yourcast.fr" name="irsam">
-  <index name="index.html" type="html"/>
+<prodlayout:Layout xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodlayout="prodlayout.yourcast.fr" name="choralies_mobile">
+  <index name="index-mobile.html" type="html"/>
+  <resources name="img/background_choralies.png" type="image" path="img/background_choralies.png"/>
+  <resources name="img/experimentation_yourcast_supralog1.png" type="image" path="img/experimentation_yourcast_supralog1.png"/>
+  <resources name="img/yourcast_background.png" type="image" path="img/yourcast_background.png"/>
   <resources name="img/yc_loading.gif" type="image" path="img/yc_loading.gif"/>
-  <resources name="less/als.css" type="css" path="less/als.css"/>
-  <resources name="less/sharedIRSAMVariables.less" type="css" path="less/sharedIRSAMVariables.less"/>
+  <resources name="less/functions.less" type="css" path="less/functions.less"/>
   <resources name="less/style.less" type="css" path="less/style.less"/>
   <resources name="less/variables.less" type="css" path="less/variables.less"/>
   <resources name="../libs/prototype.js" path="js/libs/prototype.js"/>

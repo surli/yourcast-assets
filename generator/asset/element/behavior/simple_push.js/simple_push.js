@@ -8,7 +8,8 @@
  * Simon Urli (simon.urli@gmail.com) - Main contributor
  */
 
-loadScript(BEHAVIOUR_PATH+"/utils/functions.js");
+loadScript(BEHAVIOUR_PATH+"/utils/effects.js");
+loadScript(BEHAVIOUR_PATH+"/utils/scriptaculous.js?load=effects");
 
 /*
  * this is a behavior for the zone4 (right sidebar)

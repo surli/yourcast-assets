@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="scrolling_animation_left_with_each_logo.js">
   <function name="scrolling_animation_left_with_each_logo"/>
-  <resource name="../utils/functions.js" path="./js/behaviours/functions.js"/>
+  <resource name="../utils/functions.js" path="./js/behaviours/utils/functions.js"/>
 </prodbehavior:Behavior>

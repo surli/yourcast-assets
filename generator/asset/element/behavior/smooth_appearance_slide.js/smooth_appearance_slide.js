@@ -1,3 +1,4 @@
+loadScript(BEHAVIOUR_PATH+"/utils/effects.js");
 loadScript(BEHAVIOUR_PATH+"/utils/scriptaculous.js?load=effects");
 
 
