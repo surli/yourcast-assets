@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Picasa" id="Picasa">
   <service name="sources-picasa.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Picasa_b505adf6-f050-40ad-b9c1-9859e5431500.properties"/>
+  <parameters name="Picasa_ff96a90f-e47c-426c-847e-9de239c55da8.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_Picasa_b505adf6_f050_40ad_b9c1_9859e5431500" pathPrefix="search" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Picasa" editMessage="Editer Recherche de photos Picasa">
+    <methods name="Add_Picasa_ff96a90f_e47c_426c_847e_9de239c55da8" pathPrefix="search/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Picasa" editMessage="Editer Recherche de photos Picasa">
       <parameters name="limit" tip="nombre maximum de photos" constraint="NONE" dbName="limit"/>
       <parameters name="query" type="STRING" tip="termes de la requ√™te" constraint="NONE" dbName="query"/>
     </methods>

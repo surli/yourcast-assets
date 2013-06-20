@@ -2,9 +2,9 @@
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Weather2" id="Weather2">
   <service name="sources-weather2.war"/>
   <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
-  <parameters name="Weather2_0a7cf253-ad45-49fe-99d0-e6832c63d5f4.properties"/>
+  <parameters name="Weather2_d517715b-b6e3-4ccf-bdce-50659bfd13b1.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_Weather2_0a7cf253_ad45_49fe_99d0_e6832c63d5f4" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Weather2" editMessage="Editer Meteo avec le service Weather2 Weather2">
+    <methods name="Add_Weather2_d517715b_b6e3_4ccf_bdce_50659bfd13b1" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Weather2" editMessage="Editer Meteo avec le service Weather2 Weather2">
       <parameters name="Longitude" type="DOUBLE" constraint="NONE" dbName="lon"/>
       <parameters name="Latitude" type="DOUBLE" constraint="NONE" dbName="lat"/>
       <parameters name="Cl√© d'API" type="STRING" constraint="NONE" dbName="apikey"/>

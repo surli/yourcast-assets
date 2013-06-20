@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="FlickR" id="FlickR">
   <actor name="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr" type="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr"/>
-  <parameters name="FlickR_cd05e7de-37c2-4e34-b535-1ef3a9e8575a.properties"/>
+  <parameters name="FlickR_a32036fc-5869-4358-928e-8118fc1cff46.properties"/>
   <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
-    <methods name="Add_FlickR_cd05e7de_37c2_4e34_b535_1ef3a9e8575a" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  FlickR" editMessage="Editer Recherche FlickR FlickR">
+    <methods name="Add_FlickR_a32036fc_5869_4358_928e_8118fc1cff46" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  FlickR" editMessage="Editer Recherche FlickR FlickR">
       <parameters name="Recherche" type="STRING" tip="Requ√™te pour rechercher des photos" constraint="NONE" isPartOfPath="false" dbName="text"/>
       <parameters name="Nombre d'images" tip="Nombre limite de photos √† afficher" constraint="NONE" isPartOfPath="false" dbName="per_page"/>
       <parameters name="Cl√© d'API" type="STRING" tip="la cl√© d'API fournie par FlickR" constraint="NONE" isPartOfPath="false" dbName="api_key"/>
