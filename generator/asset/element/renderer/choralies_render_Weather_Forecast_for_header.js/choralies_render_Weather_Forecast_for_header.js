@@ -15,7 +15,7 @@ loadLess(LESS_ROOT+"/choralies_render_Weather_Forecast_for_header.less");
 loadScript(RENDERER_PATH+"/utils/meteo.js");
 loadScript(RENDERER_PATH+"/utils/calendar.js");
  
-function choralies_render_Weather_Forecast_for_header(collection, zone, ville, timeInfo) {
+function choralies_render_Weather_Forecast_for_header(collection, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 1800;
 
 	var time = timeInfo;
