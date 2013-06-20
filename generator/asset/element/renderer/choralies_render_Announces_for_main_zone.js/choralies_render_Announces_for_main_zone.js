@@ -16,14 +16,14 @@ function choralies_render_Announces_for_main_zone(tableau, zone, timeInfo) {
 		var elements = tableau[indice];
 
 		var reg=new RegExp("(\n)", "g");
-		var contentAnnounces = elements.corps.replace(reg, "<br/>");
+		var contentAnnounces = elements.contenu.replace(reg, "<br/>");
 		var content = "";
 			
 		content += "<div id='announces' class='main_div_zone'>";
 			content += "<div class='announce_body'>";
 				content += "<br/><div class='announce_Title'>"+elements.titre+"</div>";
 				content += "<div style='clear:both;'> </div>";
-				if (elements.image != ""){
+				if (elements.image !== ""){
 					zone.loadImage(elements.image);
 					content += "<img src="+elements.image+">";
 				}		
