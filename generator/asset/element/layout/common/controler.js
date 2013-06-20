@@ -202,12 +202,13 @@ Zone.prototype = {
 	
 	infoIsRendable: function(infoToRender) {
 		if (!(infoToRender instanceof Object)) {
+			console.log("info to render is not an object");
 			return false;
 		} else {
 			if (infoToRender instanceof Array) {
-				return (infoToRenderer.length > 0);
+				return (infoToRender.length > 0);
 			} else {
-				return (infoToRenderer !== {});
+				return (infoToRender !== {});
 			}
 		}
 	},
