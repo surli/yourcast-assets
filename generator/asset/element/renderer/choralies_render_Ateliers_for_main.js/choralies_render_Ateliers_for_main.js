@@ -13,9 +13,10 @@ function choralies_render_Ateliers_for_main(tableau, zone, timeInfo) {
 	var time = timeInfo;
 	var title = "Programme des prochains ateliers";
 	var content = "";
+	var nbAteliers = tableau.length < 12 ? tableau.length : 12;
 	
 	content += "<div id='ateliers' class='main_div_zone'>";
-	for (var indice = 0; indice < tableau.length; indice++) {
+	for (var indice = 0; indice < nbAteliers; indice++) {
 		var elements = tableau[indice];
 
 		var reg=new RegExp("(\n)", "g");
@@ -30,7 +31,7 @@ function choralies_render_Ateliers_for_main(tableau, zone, timeInfo) {
 			content += "</div>";
 			
 			content += "</div>";
-			content += "<div class='ateliers_counter'>"+(Math.floor(indice/6)+1)+"/"+( Math.floor((tableau.length-1)/6) + 1 )+"</div>";
+			content += "<div class='ateliers_counter'>"+(Math.floor(indice/6)+1)+"/"+( Math.floor((nbAteliers-1)/6) + 1 )+"</div>";
 			//content +="<div class='smooth'> </div>";
 			var dico = {"content": content, "logo": '', "title": title, "time" : time};
 			zone.pushInfo(dico);
@@ -48,7 +49,7 @@ function choralies_render_Ateliers_for_main(tableau, zone, timeInfo) {
 		if (indice+1 == tableau.length){
 			if ((indice+1) % 6 != 0) {
 				content += "</div>";
-				content += "<div class='ateliers_counter'>"+(Math.floor(indice/6)+1)+"/"+( Math.floor((tableau.length-1)/6) + 1 )+"</div>";
+				content += "<div class='ateliers_counter'>"+(Math.floor(indice/6)+1)+"/"+( Math.floor((nbAteliers-1)/6) + 1 )+"</div>";
 				//content +="<div class='smooth'> </div>";
 				var dico = {"content": content, "logo": '', "title": title, "time" : time};
 				zone.pushInfo(dico);
