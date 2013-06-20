@@ -16,7 +16,7 @@ function choralies_render_Announces_for_main_zone(tableau, zone, timeInfo) {
 		var elements = tableau[indice];
 
 		var reg=new RegExp("(\n)", "g");
-		var contentAnnounces = elements.corps.replace(reg, "<br/>");
+		var contentAnnounces = elements.contenu.replace(reg, "<br/>");
 		var content = "";
 			
 		content += "<div id='announces' class='main_div_zone'>";
