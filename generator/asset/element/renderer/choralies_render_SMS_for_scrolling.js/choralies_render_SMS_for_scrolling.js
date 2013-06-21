@@ -10,15 +10,17 @@ function choralies_render_SMS_for_scrolling(tableau, zone, timeInfo) {
 
 	var content = "";
 	var time = timeInfo;
-	for (var indice = 0; indice < tableau.sms.length; indice++) {
-		var elements = tableau.sms[indice];
+	for (var indice = 0; indice < tableau.length; indice++) {
+		var elements = tableau[indice];
 		
 		var reg=new RegExp("(\n)", "g");
-		var contentSMS = elements.text.replace(reg, " ");
+		var contentSMS = elements.texte_court.replace(reg, " ");
 
 		content += "<span class='sms'>";
-		content += " "+"<span class='sms_author'>"+elements.user+"</span> : ";
-		content += "<span class='sms_Content'>"+contentSMS+" </span>";
+			content += "<span class='sms_Content'>";
+				if(elements.titre!="")
+					content += "<b>"+elements.titre+"</b> - ";	
+			content += contentSMS+" </span>";
 		content += "</span>";
 		
 	}

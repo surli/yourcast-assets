@@ -17,7 +17,7 @@
 	
 	//var zoneHeight = $(zone.id).getHeight() - 140;
 	var heightScreen = window.outerHeight;
-	var zoneHeight = (heightScreen * 70 / 100) - 140;
+	var zoneHeight = (heightScreen * 70 / 100) - 130;
 	
 	var content = "<span class='pictureInfo'>Envoyez vos photos par email &agrave; contact@choralies.org !</span>";
 	content += "<div class='mosaicPictures' style='height:"+zoneHeight+"px;'>";	

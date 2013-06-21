@@ -12,7 +12,7 @@
  
  function choralies_render_Pictures_full_for_main(collection, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 7;
-	var title = collection.albumName;
+	var title = collection.albumName+".";
 	if (title.length > 30) {title = title.substring(0, 30); title += " ...";}
 	var time = timeInfo;
 	var tableau = collection.pictures;
@@ -32,7 +32,7 @@
 		var zoneHeight = (heightScreen * 70 / 100) - 100;
 
 		content ="<div id='Pictures' class='main_div_zone' style='height:"+zoneHeight+"px;'>";
-				content += "<div class='Picturesimage'><span class='imageLegende'><img src='"+url+"'/>";
+				content += "<br/><div class='Picturesimage'><span class='imageLegende'><img src='"+url+"'/>";
 				if(description!="")
 					content += "<div class='picturesDescription' >"+description+"</div>";
 		content += "</span></div></div>";
