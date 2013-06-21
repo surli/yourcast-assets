@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Photos" id="Supralink_Photos">
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Supralink_Photos_a2167f21-0fe0-47d1-b52a-0223851b5049.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Supralink_Photos" pathPrefix="photo/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Supralink_Photos" editMessage="Editer Photos (pro et participants) Supralink_Photos">
+      <parameters name="Nombre d'√©l√©ments" tip="Le nombre de photos √† r√©cup√©rer dans l'album." constraint="NONE" isPartOfPath="false" dbName="pagesize"/>
+      <parameters name="Cat√©gorie" type="STRING" tip="La cat√©gorie d√©finissant l'album photos √† r√©cup√©rer dans SupraLink." constraint="NONE" isPartOfPath="false" dbName="fields"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods.0/@parameters.0 //@personalization/@methods.0/@parameters.1"/>
+    </methods>
+    <list name="Nombre d'√©l√©ments" tip="Le nombre de photos √† r√©cup√©rer dans l'album." parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="Cat√©gorie" tip="La cat√©gorie d√©finissant l'album photos √† r√©cup√©rer dans SupraLink." parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+</prodsource:Source>
