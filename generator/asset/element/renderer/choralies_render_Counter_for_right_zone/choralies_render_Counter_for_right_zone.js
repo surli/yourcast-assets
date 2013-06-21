@@ -23,7 +23,7 @@ function choralies_render_Counter_for_right_zone(tableau, zone, timeInfo) {
 		content += "<div id='counter' class='right_div_zone'>";
 			content += "<div class='counter_body'>";
 				content += "<div class='counter_Title'>"+title+"</div>";
-				content += "<div class='counter_number'>"+elements.number+"</div>";
+				content += "<div class='counter_number'>"+elements.texte_court+"</div>";
 			content += "</div>";
 		content += "</div>";
 	
