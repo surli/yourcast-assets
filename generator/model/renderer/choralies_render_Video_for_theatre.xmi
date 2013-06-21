@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="30" name="choralies_render_Video_for_theatre.js" infoType="PlaylistVideo">
+  <function name="choralies_render_Video_for_theatre"/>
+  <resource name="less/choralies_render_Video_for_theatre.less" type="css" path="less/choralies_render_Video_for_theatre.less"/>
+</prodrenderer:Renderer>
