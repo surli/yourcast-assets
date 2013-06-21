@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="RSSFeedReader" id="RSSFeedReader">
+  <service name="sources-RSSFeedReader.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="RSSFeedReader_a8bcc085-316f-4ec8-ac1f-2db824de9d4e.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_RSS_Limited" pathPrefix="reduce/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  RSSFeedReader" editMessage="Editer Flux RSS RSSFeedReader">
+      <parameters name="limit" tip="nombre maximum de nouvelles" constraint="NONE" dbName="limit"/>
+      <parameters name="URL flux" type="STRING" tip="url du flux √† r√©cup√©rer" constraint="NONE" isPartOfPath="false" dbName="body"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods.0/@parameters.1"/>
+    </methods>
+    <list name="limit" tip="nombre maximum de nouvelles" parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="URL flux" tip="url du flux √† r√©cup√©rer" parameters="//@personalization/@methods.0/@parameters.1"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-RSSFeedReader" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
