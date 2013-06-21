@@ -42,7 +42,7 @@ function choralies_render_Affiches_for_main_zone(tableau, zone, timeInfo) {
 		
 		content += "<div class='affiche_counter'>"+(indice+1)+"/"+tableau.length+"</div>";		
 		
-		var dico = {"content": content, "logo": '', "title": title, "time": time};
+		var dico = {"content": content, "logo": '', "title": title, "time": time, "ecran":"public"};
 		zone.pushInfo(dico);
 
 	}
