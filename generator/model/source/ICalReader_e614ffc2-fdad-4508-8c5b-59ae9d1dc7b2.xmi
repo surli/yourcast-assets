@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="ICalReader" id="ICalReader">
+  <service name="sources-icalreader.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="ICalReader_e614ffc2-fdad-4508-8c5b-59ae9d1dc7b2.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Calendar_Filter_By_Date_And_Duration" pathPrefix="hours/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  ICalReader" editMessage="Editer Lecteur de calendrier avec d√©but et dur√©e ICalReader">
+      <parameters name="n" tip="Dur√©e en heure" constraint="NONE" dbName="n"/>
+      <parameters name="debut" type="LONG" tip="date de debut" constraint="NONE" dbName="debut"/>
+      <parameters name="URL Calendar" type="STRING" tip="URL du calendrier √† afficher" constraint="NONE" isPartOfPath="false" dbName="body"/>
+    </methods>
+    <list name="n" tip="Dur√©e en heure" parameters="//@personalization/@methods.0/@parameters.0"/>
+    <list name="debut" tip="date de debut" parameters="//@personalization/@methods.0/@parameters.1"/>
+    <list name="URL Calendar" tip="URL du calendrier √† afficher" parameters="//@personalization/@methods.0/@parameters.2"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-icalreader" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
