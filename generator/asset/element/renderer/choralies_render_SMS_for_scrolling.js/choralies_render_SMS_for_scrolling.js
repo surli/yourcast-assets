@@ -16,12 +16,17 @@ function choralies_render_SMS_for_scrolling(tableau, zone, timeInfo) {
 		var reg=new RegExp("(\n)", "g");
 		var contentSMS = elements.texte_court.replace(reg, " ");
 
+		if(indice%3==0)
+			content += "<span class=\"info\"> Participez via Twitter (#choralies2013) ou par SMS (06.01.02.03.04) ! </span>";
+			
 		content += "<span class='sms'>";
 			content += "<span class='sms_Content'>";
-				if(elements.titre!="")
-					content += "<b>"+elements.titre+"</b> - ";	
+				//if(elements.titre!="")
+				//	content += "<b>"+elements.titre+"</b> - ";	
 			content += contentSMS+" </span>";
 		content += "</span>";
+
+
 		
 	}
 
