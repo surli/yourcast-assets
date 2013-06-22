@@ -21,6 +21,8 @@ function choralies_render_SMS_for_scrolling(tableau, zone, timeInfo) {
 			
 		content += "<span class='sms'>";
 			content += "<span class='sms_Content'>";
+				zone.loadImage('img/SMS.png');
+				content += "&nbsp;<img src=\"img/SMS.png\" height=\"100%\" align=\"top\">&nbsp;";			
 				//if(elements.titre!="")
 				//	content += "<b>"+elements.titre+"</b> - ";	
 			content += contentSMS+" </span>";
