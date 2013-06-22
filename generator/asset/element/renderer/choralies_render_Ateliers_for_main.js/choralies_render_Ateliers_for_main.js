@@ -13,8 +13,12 @@ function choralies_render_Ateliers_for_main(tableau, zone, timeInfo) {
 	var time = timeInfo;
 	var title = "Programme des prochains ateliers";
 	var content = "";
-	var nbAteliers = tableau.length < 12 ? tableau.length : 12;
+	//var nbAteliers = tableau.length < 12 ? tableau.length : 12;
+	var nbAteliers = tableau.length;
 	
+	var heightScreen = window.outerHeight;
+	var zoneHeight = Math.floor((heightScreen * 0.62) /6);
+		
 	content += "<div id='ateliers' class='main_div_zone'>";
 	for (var indice = 0; indice < nbAteliers; indice++) {
 		var elements = tableau[indice];
@@ -22,12 +26,13 @@ function choralies_render_Ateliers_for_main(tableau, zone, timeInfo) {
 		var reg=new RegExp("(\n)", "g");
 
 		if ((indice+1) % 6 == 0) {
-			content += "<div class='atelier'>";
+			content += "<div class='atelier' style='height:"+zoneHeight+"px;'>";
+				content += "<span class='atelier_hour' style='height:"+zoneHeight+"px;'>"+render_hour_atelier(elements.debut)+"</span>";
 				content += "<span class='atelier_loc'>"+elements.lieu+"</span>";
-				content += "<span class='atelier_title'>"+elements.titre+"</span>";
 				content += "<span class='atelier_sep'> </span>";
-				content += "<span class='atelier_hour'>"+render_hour_atelier(parseInt(elements.debut+"000"))+"</span>";
-				content += "<span class='atelier_day'>"+render_day_atelier(parseInt(elements.debut+"000"))+"</span>";
+				content += "<span class='atelier_title'>"+elements.titre+"</span>";
+				
+				//content += "<span class='atelier_day'>"+render_day_atelier(parseInt(elements.debut+"000"))+"</span>";
 			content += "</div>";
 			
 			content += "</div>";
@@ -38,12 +43,12 @@ function choralies_render_Ateliers_for_main(tableau, zone, timeInfo) {
 			content = "<div id='ateliers' class='main_div_zone'>";
 		}
 		else{
-			content += "<div class='atelier'>";
+			content += "<div class='atelier' style='height:"+zoneHeight+"px;'>";
+				content += "<span class='atelier_hour' style='height:"+zoneHeight+"px;'>"+render_hour_atelier(elements.debut)+"</span>";
 				content += "<span class='atelier_loc'>"+elements.lieu+"</span>";
-				content += "<span class='atelier_title'>"+elements.titre+"</span>";
 				content += "<span class='atelier_sep'> </span>";
-				content += "<span class='atelier_hour'>"+render_hour_atelier(elements.debut)+"</span>";
-				content += "<span class='atelier_day'>"+render_day_atelier(elements.debut)+"</span>";
+				content += "<span class='atelier_title'>"+elements.titre+"</span>";
+				//content += "<span class='atelier_day'>"+render_day_atelier(elements.debut)+"</span>";
 			content += "</div>";
 		}
 		if (indice+1 == tableau.length){
