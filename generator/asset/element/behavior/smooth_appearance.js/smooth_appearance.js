@@ -20,8 +20,7 @@ function smooth_appearance_timeout(zone, indice, run) {
 		// place the title on the zone
 		if(document.getElementById(zone.id+"_title"))
 		document.getElementById(zone.id+"_title").innerHTML = info.title;
-		if(info.ecran != null && info.ecran=="public")
-		document.getElementById(zone.id+"_title").innerHTML = "Cette semaine au Th&eacute;&acirc;tre Antique";
+
 				
 		indice = (indice+1) % zone.counterInfo;
 

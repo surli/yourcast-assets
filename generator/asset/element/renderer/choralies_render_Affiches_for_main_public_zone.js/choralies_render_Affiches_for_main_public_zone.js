@@ -7,10 +7,10 @@
 loadLess(LESS_ROOT+"/choralies_render_Affiches_for_main_zone.less"); 
 loadScript(RENDERER_PATH+"/utils/calendar.js");
  
-function choralies_render_Affiches_for_main_zone(tableau, zone, timeInfo) {
+function choralies_render_Affiches_for_main_public_zone(tableau, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 8;
 	var time = timeInfo;
-	var title = "Aujourd'hui";
+	var title = "Cette semaine au Th&eacute;&acirc;tre Antique";
 	
 	for (var indice = 0; indice < tableau.length; indice++) {
 		var elements = tableau[indice];
@@ -32,7 +32,7 @@ function choralies_render_Affiches_for_main_zone(tableau, zone, timeInfo) {
 				if (isPropertyDefined(elements.image)){
 					zone.loadImage(elements.image);
 					content += "<img src="+elements.image+">";
-				}		
+				}	
 				content += "<div class='affiche_Content'>"+contentAnnounces+"</div>";
 			content += "</div>";
 			
