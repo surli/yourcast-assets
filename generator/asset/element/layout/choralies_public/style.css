@@ -1,0 +1,29 @@
+
+#logo_loading {
+	display: table;
+	width: 100%; 
+	height: 100%; 
+	background-color: rgba(0, 0, 0, 0.95);
+	position: absolute; 
+	top: 0; 
+	left: 0;
+	z-index : 40;
+	text-align:center;
+}
+
+#logo_loading div {
+	display:table-cell;
+	vertical-align:middle;	
+}
+
+#logo_loading img {
+	margin:auto;
+	-moz-box-shadow: 0px 5px 1px #1088a2;
+	-webkit-box-shadow: 0px 5px 1px #1088a2;
+	box-shadow: 0px 5px 1px #1088a2;
+	vertical-align:middle;
+	border-top-left-radius : 2px;
+	border-top-right-radius : 2px;
+	border-bottom-left-radius : 6px;
+	border-bottom-right-radius : 6px;
+}

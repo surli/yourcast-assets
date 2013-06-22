@@ -42,8 +42,8 @@ function choralies_render_Ateliers_for_main(tableau, zone, timeInfo) {
 				content += "<span class='atelier_loc'>"+elements.lieu+"</span>";
 				content += "<span class='atelier_title'>"+elements.titre+"</span>";
 				content += "<span class='atelier_sep'> </span>";
-				content += "<span class='atelier_hour'>"+render_hour_atelier(parseInt(elements.debut+"000"))+"</span>";
-				content += "<span class='atelier_day'>"+render_day_atelier(parseInt(elements.debut+"000"))+"</span>";
+				content += "<span class='atelier_hour'>"+render_hour_atelier(elements.debut)+"</span>";
+				content += "<span class='atelier_day'>"+render_day_atelier(elements.debut)+"</span>";
 			content += "</div>";
 		}
 		if (indice+1 == tableau.length){

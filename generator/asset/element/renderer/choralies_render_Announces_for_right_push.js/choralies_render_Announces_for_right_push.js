@@ -23,6 +23,7 @@ function choralies_render_Announces_for_right_push(tableau, zone, timeInfo) {
 
 		var reg=new RegExp("(\n)", "g");
 		var contentAnnounces = elements.contenu.replace(reg, "<br/>");
+		if (contentAnnounces.length > 500) {contentAnnounces = contentAnnounces.substring(0, 500); contentAnnounces += " ...";}
 		var content = "";
 		
 		content += "<div id='"+zone.id+"_new_push' class='push_div_zone' style='display:none;'>";

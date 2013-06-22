@@ -50,7 +50,8 @@ function choralies_render_Weather_Forecast_for_header(collection, zone, timeInfo
 		content +="<div class='weatherHeaderForecast'>";
 		for (var indice = 0; indice < 2; indice++) {
 			elements = forecast[indice];
-			currentDay = dayOfWeek(elements.date);
+			//currentDay = dayOfWeek(elements.date);
+			currentDay= indice==0?"Aujourd'hui":"Demain";
 			currentCodeDay = dicoMeteo[elements.day[0].weather_code];
 	
 			tempDay = elements.day_max_temp;

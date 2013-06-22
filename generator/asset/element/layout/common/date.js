@@ -37,7 +37,9 @@ function clearTimer(){
 
 function day_date(){
     var date = get_time();
-    document.getElementById("date_time").innerHTML = date;
+    var hour = get_time();
+    //document.getElementById("date_time").innerHTML = date;
+    document.getElementById("date_time").innerHTML = "<big>" + hour + "</big>";
 }
 
 function get_time(){
