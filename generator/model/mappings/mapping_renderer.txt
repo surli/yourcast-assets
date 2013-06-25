@@ -23,4 +23,4 @@ PlaylistVideo,Discretization,Graphic,Choralies,Title,Design,TypeInfo,Renderer,Te
 Discretization,Graphic,Affiche,Choralies,Title,Design,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Affiches_for_main_zone.xmi
 TypeInfo,Text,Renderer,Discretization,Breves,Elements,Choralies,All,Content,Design:./renderer/choralies_render_SMS_for_scrolling.xmi
 IRSAM,Discretization,Logo,FromSource,Title,Design,Menu,TypeInfo,Renderer,Text,MenuName,Elements,Content,ByOne:./renderer/irsam_render_Menus_for_main_without_title.xmi
-Discretization,Graphic,Affiche,Choralies,Title,Design,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Affiches_for_main_public_zone.xmi
+Discretization,Graphic,Affiche,Choralies,Title,Design,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails,Public:./renderer/choralies_render_Affiches_for_main_public_zone.xmi

@@ -23,6 +23,6 @@ renderer21 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Pla
 renderer22 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Affiche; Elements: Content Title; Content: Text Graphic; Graphic: Thumbnails; Design: Choralies; Discretization: ByOne;)
 renderer23 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Breves; Elements: Content; Content: Text; Design: Choralies; Discretization: All;)
 renderer24 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Menu; Elements: Content Logo Title; Content: Text; Design: IRSAM; Discretization: ByOne; Title: MenuName; Logo: FromSource;)
-renderer25 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Affiche; Elements: Content Title; Content: Text Graphic; Graphic: Thumbnails; Design: Choralies; Discretization: ByOne;)
+renderer25 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Affiche; Elements: Content Title; Content: Text Graphic; Graphic: Thumbnails; Design: Choralies Public; Discretization: ByOne;)
 
 fm_renderer = merge sunion renderer*
