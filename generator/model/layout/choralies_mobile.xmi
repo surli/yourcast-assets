@@ -6,7 +6,7 @@
   <resources name="img/yourcast_background.png" type="image" path="img/yourcast_background.png"/>
   <resources name="img/yc_loading.gif" type="image" path="img/yc_loading.gif"/>
   <resources name="less/functions.less" type="css" path="less/functions.less"/>
-  <resources name="style.less" type="css" path="style.less"/>
+  <resources name="style.css" type="css" path="style.css"/>
   <resources name="less/style.less" type="css" path="less/style.less"/>
   <resources name="less/variables.less" type="css" path="less/variables.less"/>
   <resources name="../libs/prototype.js" path="js/libs/prototype.js"/>
