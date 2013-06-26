@@ -10,9 +10,4 @@
   <resources name="style.css" type="css" path="style.css"/>
   <resources name="less/style.less" type="css" path="less/style.less"/>
   <resources name="less/variables.less" type="css" path="less/variables.less"/>
-  <resources name="../libs/prototype.js" path="js/libs/prototype.js"/>
-  <resources name="../libs/less.js" path="js/libs/less.js"/>
-  <resources name="../common/controler.js" path="js/controler.js"/>
-  <resources name="../common/utils.js" path="js/utils.js"/>
-  <resources name="../common/date.js" path="js/date.js"/>
 </prodlayout:Layout>
