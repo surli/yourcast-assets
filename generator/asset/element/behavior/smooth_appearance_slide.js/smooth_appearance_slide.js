@@ -12,7 +12,8 @@ function simple_smooth_slide_appearance_timeout(zone, indice, run) {
 		var info = "";
 		info = zone.infoList[indice];
 
-		zone.changeContent("<div id='new_appear' style='display:none;'>"+info.content+"</div>");
+		info.content = "<div id='new_appear' style='display:none;'>"+info.content+"</div>";
+		zone.changeContent(info);
 		Effect.Appear("new_appear");
 
 		// Hide logo and title

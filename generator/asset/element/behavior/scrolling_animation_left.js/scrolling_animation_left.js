@@ -18,7 +18,10 @@ function scrolling_animation_left(zone){
 		time += info.time;
 	}
 
-	zone.changeContent("<div class='scrollContentLeft'><span class='scrollContent toLeft' id='scrollcontent_"+zone.id+"'>"+content+"</span></div>");
+	content = "<div class='scrollContentLeft'><span class='scrollContent toLeft' id='scrollcontent_"+zone.id+"'>"+content+"</span></div>";
+	var dicoInfo = {"content":content, "time": time};
+	
+	zone.changeContent(dicoInfo);
 
 	var tailleSpan = document.getElementById('scrollcontent_'+zone.id).offsetWidth;
 	var leftPourcent = (tailleSpan * 100) / zone.divMarquee.offsetWidth;

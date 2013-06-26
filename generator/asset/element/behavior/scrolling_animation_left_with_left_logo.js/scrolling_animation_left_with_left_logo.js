@@ -19,9 +19,12 @@ function scrolling_animation_left_with_left_logo (zone, run){
 			time += info.time;
 		}
 
-		zone.changeContent("<div class='scrollContentLogoLeftBefore'> </div><div class='scrollContentLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_"+zone.id+"'>"+content+"</span></div>", zone.id);
-		document.getElementById(zone.id+"_logo").innerHTML = info.logo;
+		content = "<div class='scrollContentLogoLeftBefore'> </div><div class='scrollContentLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_"+zone.id+"'>"+content+"</span></div>";
 
+		var dicoInfo = {"content": content, "time":time, "logo": info.logo};
+
+		zone.changeContent(dicoInfo);
+			
 		var tailleSpan = document.getElementById('scrollcontent_'+zone.id).offsetWidth;
 		var leftPourcent = (tailleSpan * 100) / zone.divMarquee.offsetWidth;
 

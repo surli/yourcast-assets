@@ -10,7 +10,8 @@ function smooth_appearance_timeout(zone, indice, run) {
 		var info = "";
 		info = zone.infoList[indice];
 
-		zone.changeContent("<div id='"+zone.id+"_new_appear' style='display:none;'>"+info.content+"</div>");
+		info.content = "<div id='"+zone.id+"_new_appear' style='display:none;'>"+info.content+"</div>";
+		zone.changeContent(info);
 		Effect.Appear(zone.id+"_new_appear");
 
 		// place the logo on the zone

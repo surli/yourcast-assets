@@ -9,8 +9,6 @@
  *    Simon Urli (simon.urli@gmail.com) - Main contributor
  */
 
-loadScript(JS_ROOT+'/comportement.js');
-
 var Zone = Class.create({	
 
 	/* 
@@ -141,36 +139,36 @@ var Zone = Class.create({
 
 	},
 	
+	/**
+	 *	Change content
+	 *
+	 *	Cette fonction change le contenu d'une zone. Si "_content" existe elle mettra
+	 *	ce qui existe dans info.content dedans, sinon elle le mettra dans la continuité
+	 *	de la zone.
+	 *
+	 *	Ensuite elle s'occupera de tous les paramètres et testera s'il existe un id
+	 *	correspondant. Si tel est le cas, elle mettra les informations contenues 
+	 *	dedans.
+	 */
 	changeContent: function(info) {	
 
-		// On récupère les enfants de la classe
-	 	var childs = $(this.divMarquee).childElements();
+	 	// S'il n'existe pas alors, on ajoute le content directement dans la zone
+	 	if(!($(this.id + "_content"))) {
 
-	 	// Boucle sur les enfants de la zone
-	 	for(var index = 0 ; index < childs.length ; index++) {
+	 		this.divMarquee.innerHTML = this.htmlinit + info.content;
+
+		}
+
+	 	// Boucle sur les clés de l'info
+	 	for(var cle in info) {
 
 	 		// Stockage de l'enfant
-	 		var child = childs[index];
-	 		var tmp = $(child.id);
-
-	 		// On récupère le nom de l'id
- 		    var nom = child.id;
-    		nom = nom.replace(this.id + "_", '');
-    		    		
+	 		var tmp = $(this.id + "_" + cle);
+	
     		if(tmp) {
 
-	    		// On test s'il existe dans les infos
-	    		if(typeof info[nom] === 'undefined') {
-
-	    			// On change le contenu
-	    			tmp.update('');
-
-	    		} else {
-
-	    			// On change le contenu
-	    			tmp.update(info[nom]);
-
-	    		}
+    			// On change le contenu
+    			tmp.update(info[cle]);
 
 	    	}
 
@@ -188,7 +186,10 @@ var Zone = Class.create({
 	addContent: function(html) {
 
 		// Récupération du content
-		var content = document.getElementById(this.id + "_content");
+	 	if($(this.id + "_content"))
+			var content = document.getElementById(this.id + "_content");
+		else
+			var content = document.getElementById(this.id);
 
 		// Pas d'inversement dans l'ajout des données
 		if(!this.order_content)
@@ -523,22 +524,13 @@ var Zone = Class.create({
 	 */
 	reset_zone: function() {
 
-		// Test si le comportement est en pause
-		if(this.comportement.isRunning()) {
-
-			// Retro-compatibilité
-			if(this.comportement instanceof Comportement)
-				this.comportement.stop();
-			else
-				this.stopComportement();
-
-			this.infoList = new Array();
-			this.changeContent("");
-			this.counterInfo = 0;
-			this.img_loaded = 0;
-			this.array_img = {};
-
-		}
+		// Retro-compatibilité
+		this.stopComportement();
+		this.infoList = new Array();
+		this.changeContent("");
+		this.counterInfo = 0;
+		this.img_loaded = 0;
+		this.array_img = {};
 
 	},
 	

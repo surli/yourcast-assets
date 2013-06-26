@@ -18,8 +18,11 @@ function scrolling_animation_left_with_each_logo(zone){
 		content += info.content;
 		time += info.time;
 	}
-
-	zone.changeContent("<div class='scrollContentEachLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_"+zone.id+"'>"+content+"</span></div>", zone.id);
+	
+	content = "<div class='scrollContentEachLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_"+zone.id+"'>"+content+"</span></div>";
+	var dicoInfo = {"content":content, "time":time};
+	
+	zone.changeContent(dicoInfo);
 
 	var tailleSpan = document.getElementById('scrollcontent_'+zone.id).offsetWidth;
 

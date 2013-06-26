@@ -58,14 +58,17 @@ var ComportementSimpleAppearance = Class.create(Comportement, {
 		self.zone_concerne.changeContent(info);
 		
 		// Met le nouveau block en opacité 0
-		$(self.zone_concerne.id + "_content").setStyle({
-			opacity: 0
-		});
+		if($(self.zone_concerne.id + "_content")) {
 
-		// Transition d'apparition des informations
-		setTimeout(function() { fadeIn(self.zone_concerne.id + "_content", info.time/4, "linear"); }, 1);
-		setTimeout(function() { fadeOut(self.zone_concerne.id + "_content", info.time/4, "linear"); }, (1000*2.9*info.time)/4);
+			$(self.zone_concerne.id + "_content").setStyle({
+				opacity: 0
+			});
 
+			// Transition d'apparition des informations
+			setTimeout(function() { fadeIn(self.zone_concerne.id + "_content", info.time/4, "linear"); }, 1);
+			setTimeout(function() { fadeOut(self.zone_concerne.id + "_content", info.time/4, "linear"); }, (1000*2.9*info.time)/4);
+
+		}
 
 		// On test si le comportement est en marche
 		if(self.isRunning())

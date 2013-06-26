@@ -17,8 +17,11 @@ function choralies_behavior_scrollingAlert_left(zone){
 			time += info.time;
 	}
 	
-	//zone.changeContent("<div class='scrollContentAlert'><span class='scrollContent toLeft' id='scrollcontent_"+zone.id+"'>"+content+"</span></div>", zone.id);
-		zone.changeContent("<div class='scrollContentEachLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_"+zone.id+"'>"+content+"</span></div>", zone.id);
+	content = "<div class='scrollContentEachLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_"+zone.id+"'>"+content+"</span></div>";
+	zone.changeContent(content);
+	
+	var dicoInfo = {"content": content, "time":time};
+	
 		
 	var tailleSpan = document.getElementById('scrollcontent_'+zone.id).offsetWidth;
 

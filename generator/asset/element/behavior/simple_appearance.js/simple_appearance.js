@@ -9,15 +9,7 @@ function simple_appearance_timeout(zone, indice, run) {
 		var info = "";
 		info = zone.infoList[indice];
 
-		zone.changeContent(info.content);
-
-		// place the logo on the zone
-		if(document.getElementById(zone.id+"_logo"))
-		document.getElementById(zone.id+"_logo").innerHTML = info.logo;
-
-		// place the title on the zone
-		if(document.getElementById(zone.id+"_title"))
-		document.getElementById(zone.id+"_title").innerHTML = info.title;
+		zone.changeContent(info);
 		indice = (indice+1) % zone.counterInfo;
 
 		// the time is transform in millisecond
