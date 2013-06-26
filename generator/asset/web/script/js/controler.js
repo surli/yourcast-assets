@@ -1,67 +1,107 @@
 /*
-*Copyright (c) 2012 YourCast - I3S/CNRS ADAM/INRIA.
-*All rights reserved. This program and the accompanying materials
-*are made available under the terms of the GNU Public License v3.0
-*which accompanies this distribution, and is available at
-*http://www.gnu.org/licenses/gpl.html
-*
-*Contributors:
-*    Simon Urli (simon.urli@gmail.com) - Main contributor
-*/
+ * Copyright (c) 2012 YourCast - I3S/CNRS ADAM/INRIA.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Contributors:
+ *    Simon Urli (simon.urli@gmail.com) - Main contributor
+ */
 
-var Zone = Class.create();
-Zone.prototype = {		
+var Zone = Class.create({	
+
 	/* 
-	* Constructor to an object Zone. It takes :
-	* - An id: must be coherent with the HTML (if the given id is 'foo' the html must contain an element with the id 'foo': <div id='foo'>)
-	* - A map given the binding between informations and renderers functions to use (e.g: { 'myJsonKey': my_renderer_to_use })
-	* - The URL of the service given json informations 
-	* - A pointer on a behaviour function
-	*/
+	 * Constructor to an object Zone. It takes :
+	 * - An id: must be coherent with the HTML (if the given id is 'foo' the html must contain an element with the id 'foo': <div id='foo'>)
+	 * - A map given the binding between informations and renderers functions to use (e.g: { 'myJsonKey': my_renderer_to_use })
+	 * - The URL of the service given json informations 
+	 * - A pointer on a behaviour class
+	 * - Plus la hauteur est grande et plus le calque sera en haut.
+	 */
+	initialize: function(id, map_renderers, map_time, url, anim_func, request_timeout, map_ordre, order_content) {
 		
-	initialize: function(id, map_renderers, map_time, url, anim_func, request_timeout) {
-		
-		// put a default value if the request timeout is not defined
-		request_timeout = typeof request_timeout !== 'undefined' ? request_timeout : DEFAULT_REQUEST_TIMEOUT;
-		
-		this.id = id;
+	    // Si un des paramètres n'est pas défini
+	    if(typeof id === 'undefined')
+	        throw new Exception("[moteur/js/controler_zone.js] initialize", "L'id n'est pas défini.");
+
+	    if(typeof url === 'undefined')
+	        throw new Exception("[moteur/js/controler_zone.js] initialize", "L'url n'est pas défini.");
+
+    	if(typeof anim_func === 'undefined')
+	        throw new Exception("[moteur/js/controler_zone.js] initialize", "Le comportement n'est pas défini.");
+
+	    // Récupération de l'élément html
+		if(document.getElementById(id) != null) {
+
+            this.divMarquee = $(id);
+            this.htmlinit = this.divMarquee.innerHTML;
+
+			// On stocke l'id de la zone
+			this.id = id;
+
+        }
+
+        // Sinon Exception
+        else {
+        	throw new Exception("[moteur/js/controler_zone.js] initialize", "L'id de la zone n'a pas été trouvée dans le code html.");	
+        }
+
+		// Test si le comportement est une fonction ou une classe
+		if(anim_func instanceof Function || anim_func instanceof Comportement)
+			this.comportement = anim_func;
+		else
+			throw new Exception("[moteur/js/controler_zone.js] initialize", "La variable anim_func doit être un comportement.");
+
+		// Test si l'ordre des renderers a été donné
+		if(typeof map_ordre !== 'undefined' && map_ordre != null) {
+
+			// On initialise le tableau de renderers
+			this.tab_renderers = new Array();
+
+			// On récupère tous les renderers
+			for(var cle in map_ordre) {
+				this.tab_renderers.push(cle);
+			}
+
+			// On trie le tableau des renderers
+			this.tab_renderers.sort(function(a, b) {
+				return map_ordre[a] - map_ordre[b];
+			});
+
+		}
+
 		this.map_renderers = map_renderers;
+
+		// Stocke l'inversement ou non lors de l'ajout d'un content
+		this.order_content = typeof order_content === 'undefined' ? false : order_content;
+
+		// Stocke le temps d'affichage de chaque renderers
 		this.map_time = map_time;
 		
 		// we can't do cross-site request, so we don't give complete URL, just the path
-		this.url = DOMAIN_PATH+url;
-		this.anim_func = anim_func;
-		
-		// to put datas in document
-		this.divMarquee = document.getElementById(id);
-		this.htmlinit = this.divMarquee.innerHTML;
-		
-		// used by the behaviour
-		this.indiceEltAnim = 0;
-		this.indiceNext = 0;
-		
-		this.timeout = null;
-		
-		this.request_timeout = request_timeout;
-		
-		// elements of the zone
+		this.url = DOMAIN_PATH + url;
+
+		// Elements of the zone
 		this.infoList = new Array();
+		this.last_request = 0;
 		
 		// initialize the counter of informations
 		this.counterInfo = 0; 
 		
 		this.img_loaded = 0;
 		this.array_img = {};
-		
-		this.wait_end_behaviour = true;
-		this.behaviour_running = true;
-		this.req_timeout = null;
-		
+
+		// Savoir si la zone est maître		
 		this.is_master = false;
-		
+
+		// Définition du timeout
+		this.request_timeout = typeof request_timeout !== 'undefined' ? request_timeout : DEFAULT_REQUEST_TIMEOUT;
+		this.timeout = null;
 		this.timeout_list = {};
-		this.specificActionWhenRequestWorks = function() {};
-		this.specificActionWhenRequestFails = function() {};
+
+		// Initialise le content à rien
+		this.changeContent("");
 
 	},
 	
@@ -86,189 +126,440 @@ Zone.prototype = {
 		return Object.keys(this.array_img).length == this.img_loaded;
 	},
 	
-	// put the infos in the infoList of the zone for the behavior
+	/**
+	 *	Put the infos in the infoList of the zone for the behavior
+	 */
 	pushInfo: function(dico) {
+
+		// Ajoute la nouvelle info au tableau des données
 		this.infoList.push(dico);
+		
+		// On incrémente le nombre de données
 		this.counterInfo++;
+
 	},
 	
-	// change the content, but keep the base of the zone and add the new html
-	changeContent: function(html) {
-		this.divMarquee.innerHTML = this.htmlinit + html; 
+	changeContent: function(info) {	
+
+		// On récupère les enfants de la classe
+	 	var childs = $(this.divMarquee).childElements();
+
+	 	// Boucle sur les enfants de la zone
+	 	for(var index = 0 ; index < childs.length ; index++) {
+
+	 		// Stockage de l'enfant
+	 		var child = childs[index];
+	 		var tmp = $(child.id);
+
+	 		// On récupère le nom de l'id
+ 		    var nom = child.id;
+    		nom = nom.replace(this.id + "_", '');
+    		    		
+    		if(tmp) {
+
+	    		// On test s'il existe dans les infos
+	    		if(typeof info[nom] === 'undefined') {
+
+	    			// On change le contenu
+	    			tmp.update('');
+
+	    		} else {
+
+	    			// On change le contenu
+	    			tmp.update(info[nom]);
+
+	    		}
+
+	    	}
+
+	 	}
+
 	},
 	
-	 // add to the content, but keep the base of the zone
+	/**
+	 *	Add Content
+	 *
+	 *	Permet d'ajouter du contenu au content d'une zone. On peut l'ajouter selon
+	 *	deux manières. La première en ajoutant l'html avant le content et la deuxième 
+	 *	en ajoutant l'html après le content.
+	 */
 	addContent: function(html) {
-		this.divMarquee.innerHTML = html + this.divMarquee.innerHTML; 
+
+		// Récupération du content
+		var content = document.getElementById(this.id + "_content");
+
+		// Pas d'inversement dans l'ajout des données
+		if(!this.order_content)
+			content.innerHTML = content.innerHTML + html;
+		
+		// Inversement dans l'ajout des données
+		else
+			content.innerHTML = html + content.innerHTML;
+
 	},
-	
-	// put to true, the behaviour is started
-	behaviour_start: function() {
-		this.behaviour_running = true;
-	},
-	
-	// put to false, the behaviour is stoped
-	behaviour_stop: function() {
-		this.behaviour_running = false;
-	},
-	
+
 	// set the zone to master for the loading state
 	set_master: function(val) {
 		this.is_master = true;
 	},
 	
 	/*
-	* This function is called by the callback of the request.
-	* It prepares the datas to be used by the behaviour. Then it launches the behaviour function.
-	*/
+	 * This function is called by the callback of the request.
+	 * It prepares the datas to be used by the behaviour. Then it launches the behaviour function.
+	 */
 	initBehaviour : function() {
-		if (this.imagesAreLoaded() && this.infoList.length > 0) {
-			this.clear_timeout("timeoutBehav");
-			var self = this;
-			
-			if (this.timeout === null)
-				// timeout on the request
-				this.timeout = setInterval(function() { self.request(); }, this.request_timeout);
 
-			// launch the behaviour function
-			this.anim_func(this, true);
-			
-			
+		// On stocke le this
+		var self = this;
+
+		self.runComportement();
+
+		// On test si les images sont chargés et que on a des infos à afficher
+		if (self.imagesAreLoaded() && self.infoList.length > 0) {
+
+			// On lance le comportement
+			self.runComportement();
+
 		}
+		
 	},
 	
 	/*
 	* Callback function of the request : transport is an object given by the request
 	* It uses the map of renderers to call the appropriate renderer function for each information, then it put the results in document and launches behaviour.
 	*/
-	receive: function(json) {
+	receive: function() {
+
+		// On stocke le this
 		var self = this;
-		var info_found = false;
-		// if the timeout is null, launch the request for a define interval
-		if (this.timeout === null)
-			this.timeout = setInterval(function() { self.request(); }, this.request_timeout);
-			
-		var init_renderer = false;
+
+		// On reset la zone
 		this.reset_zone();
-		if (json.informations) {
-			if (json.informations.length !== 0) {
-				// if the zone is an alert and not null
-				if(this.id == "zoneAlert"){
-					// put the zone in visible
-					document.getElementById(this.id).style.visibility="visible";
-					// for all the others zone, we reset, stop the behaviour and stop the request
-					for(var i in this.all_zone){
-						this.all_zone[i].reset_zone();
-						this.all_zone[i].anim_func(this, false);
-						this.all_zone[i].stop_request();
-					}
+
+		// On regarde si le fichier JSon contient des informations
+		if (this.json.informations && this.json.informations.length !== 0) {
+			
+			// On affiche la zone
+			self.afficherZone();
+
+			// On test si le tableau de renderers n'est pas indéfini
+			if(typeof this.tab_renderers !== 'undefined') {
+
+				// Récupération des éléments du JSon
+				var elements = new Array();
+
+				// Boucle sur les informations recues
+				for (var indice = 0; indice < this.json.informations.length ; indice++) {
+
+					// On stocke ces éléments
+					elements.push(this.json.informations[indice]);
+
 				}
-				for (var indice = 0; indice < json.informations.length; indice++) {
-					var elements = json.informations[indice];
+
+				// On ajoute les infos aux renderers
+				for (i = 0 ; i < this.tab_renderers.length ; i++) {
+
+					// Stocke la clé
+					var cle = this.tab_renderers[i];
+
+					// On boucle sur les éléments du JSon
+					for(var cpt in elements) {
+
+						// On test si la clé existe dans le JSon
+						if (elements[cpt][cle]) {
+
+							// On boucle sur chaque information que contient le JSon sur la clé
+							for (var index = 0; index < elements[cpt][cle].length ; index++) {
+									
+								this.lancer_render(cle, elements[cpt][cle][index]);
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+			else {
+
+				for (var indice = 0; indice < this.json.informations.length; indice++) {
+
+					var elements = this.json.informations[indice];
+
 					for (var cle in this.map_renderers) {
+
 						if (elements[cle]) {
+
 							for (var index = 0; index < elements[cle].length; index++) {
-								info_found = true;
-								var infoToRender = elements[cle][index];
-								if (this.infoIsRendable(infoToRender)) {
-									try {
-										this.map_renderers[cle](infoToRender, this, this.map_time[cle]);
-									} catch(err) {
-										console.log(init_renderer);
-										debug.add_message("Error in loading renderer : "+cle+" : "+err);
-									}
-								}
+
+								this.lancer_render(cle, elements[cle][index]);
 								
 							}
+
 						}
+
 					}
+					
 				}
-				// If no info to display
-				if(!info_found)
-					this.empty_zone();
-			
-				try {
-					this.initBehaviour();
-				} catch(err) {
-					debug.add_message("Error in loading behaviour : "+this.anim_func.name+" : "+err);
-				}
-			}else {
-				this.reset_zone();
+
 			}
-		}else {
-			this.reset_zone();
-		}
-	},
-	
-	infoIsRendable: function(infoToRender) {
-		if (!(infoToRender instanceof Object)) {
-			console.log("info to render is not an object");
-			return false;
+
+			// On initialise le comportement
+			this.initBehaviour();
+
 		} else {
-			if (infoToRender instanceof Array) {
-				return (infoToRender.length > 0);
-			} else {
-				return (infoToRender !== {});
-			}
+			this.reset_zone();
+
+			// On cache la zone
+			self.cacherZone();
+
 		}
+
 	},
 	
-	/*
-	* It just creates an Ajax.Request object with the appropriate callback and url.
-	*/
+	/**
+	 *	Cette méthode récupère le fichier des alertes grâce à une requête AJAX et envoie à la fonction receive 
+	 *	ce qu'elle a obtenue pour analyse.
+	 */
 	request: function() {
+
+		// Stocke le this
 		var self = this;
-		new Ajax.Request(this.url,
-		{
+
+		// On arrête le comportement
+		self.stopComportement();
+
+		// Effecture la requête Ajax
+		new Ajax.Request(this.url, {
+
+			// On utilise un get
 			method:'get',
+
+			// Si la requête est un succès
 			onSuccess: function(transport) {
+
+				// On vérifie que le status est bon
 				if (transport.status == 200) {
+
+					// On récupère la réponse du JSon
 					var textContent = transport.responseText;
-					var json = JSON.parse(textContent);	
-					self.specificActionWhenRequestWorks();
-					self.receive(json);
+
+					// On essaie de le traiter
+					try {
+						var json = JSON.parse(textContent);
+						
+						// On stocke le nouveau JSon
+						self.json = json;
+
+						// On appelle la méthode receive
+						self.receive();
+
+					}
+
+					// Un erreur est survenue
+					catch (e) {
+						console.log(e);
+
+						// On stop le comportement
+						self.comportement.stop();
+
+						// On cache la zone
+						self.cacherZone();
+					}
+
 				} else {
-					self.actionOnRequestFailure("Statut : "+transport.status);
+
+					// Création d'une exception
+					throw new Exception("[moteur/js/controler_zone.js] request", transport.statusText);
+
 				}
 			},
+
 			onFailure: function(transport) { 
-				self.actionOnRequestFailure(transport); 
+
+				// On cache la zone
+				self.cacherZone();
+
+				// Création d'une exception
+				throw new Exception("[moteur/js/controler_zone.js] request", "La requête vers l'url donné a échouée.");
+
+			},
+
+			onException: function(transport, exception) {
+
+				// Création d'une exception
+				throw new Exception("[moteur/js/controler_zone.js] request", exception.message);
+
+			},
+
+			onComplete: function(transport) {
+				
+				// TODO Relancer le comportement
+
 			}
+
 		});
-	},
-	
-	setSpecificActionsForRequest: function(fWhenWorks, fWhenFails) {
-		this.specificActionWhenRequestWorks = fWhenWorks;
-		this.specificActionWhenRequestFails = fWhenFails;
-	},
-	
-	actionOnRequestFailure: function(err) {
-		this.specificActionWhenRequestFails();
-		debug.add_message("Error when getting informations: "+err);
-		set_timeout("requestTimeout", function() { self.request(); }, self.request_timeout);
-	},
-	
-	// reset the zone
-	reset_zone: function() {
-		if (this.timeout_list.timeoutBehav) 
-			this.clear_timeout("timeoutBehav");
-		this.infoList = new Array();
-		this.changeContent("");
-		this.counterInfo = 0;
-		this.img_loaded = 0;
-		this.array_img = {};
+
 	},
 
-	// no information to display
-	empty_zone: function() {
-		if (this.timeout_list.timeoutBehav) 
-			this.clear_timeout("timeoutBehav");
-		this.infoList = new Array();
-		this.changeContent("<div class='noinfo'><div>Aucune information disponible pour le moment.</di></div>");
-		this.counterInfo = 0;
-		this.img_loaded = 0;
-		this.array_img = {};
-	},	
+	/**
+	 *	Cette méthode permet d'afficher la zone entière.
+	 *
+	 *	Dans cette méthode, on peut définir plusieurs
+	 *	éléments à afficher qui peuvent être en relation
+	 *	avec la zone en plus de la zone.
+	 */
+	afficherZone: function() {
+
+		// On affiche la zone
+		$(this.id).show();
+
+	},
+
+	/**
+	 *	Cette méthode permet de cacher la zone entière.
+	 *
+	 *	Dans cette méthode, on peut définir plusieurs
+	 *	éléments à cacher qui peuvent être en relation
+	 *	avec la zone en plus de la zone.
+	 */
+	cacherZone: function() {
+
+		// On cache la zone
+		$(this.id).hide();
+
+	},
+
+	/**
+	 *	Cette méthode permet de cacher la zone entière.
+	 *
+	 *	Dans cette méthode, on peut définir plusieurs
+	 *	éléments à cacher qui peuvent être en relation
+	 *	avec la zone en plus de la zone.
+	 */
+	runComportement: function() {
+
+		// Stocke le this
+		var self = this;
+
+		// On test si c'est une classe ou une fonction
+		if(self.comportement instanceof Comportement) {
+
+			// On test si la zone est entré
+			if(self.comportement.zone_concerne == null) {
+
+				// On lui donne la zone en question
+				self.comportement.setZone(self);
+
+			}
+
+			// On clear le comportement
+			self.comportement.run();
+
+		} else {
+
+			// Clear le timeout
+			self.clear_timeout("timeoutBehav");
+			
+			// Si le timeout est null
+			if (self.timeout === null)
+
+				// timeout on the request
+				self.timeout = setInterval(function() { self.request(); }, self.request_timeout);
+			
+			// S'il est maître
+			if (self.is_master)
+
+				// hide the logo loading
+				document.getElementById("logo_loading").style.display = 'none';
+
+			// Lance la fonction
+			self.comportement(self, true);
+			
+		}
+
+	},
+
+	/**
+	 *	Cette méthode permet de cacher la zone entière.
+	 *
+	 *	Dans cette méthode, on peut définir plusieurs
+	 *	éléments à cacher qui peuvent être en relation
+	 *	avec la zone en plus de la zone.
+	 */
+	stopComportement: function() {
+
+		// Stocke le this
+		var self = this;
+
+		// On test si c'est une classe ou une fonction
+		if(self.comportement instanceof Function) {
+
+			// Clear le timeout
+			self.clear_timeout("timeoutBehav");
+			
+		}
+
+		else {
+
+			// On clear le comportement
+			self.comportement.pause();
+
+		} 
+
+	},
+
+	/**
+	 *	Cette méthode permet de reset la zone entière.
+	 *
+	 *	Lorsque le comportement est en marche, il vaut mieux la stopper 
+	 *	pour éviter des erreurs.
+	 *	Ce reset n'est pas effectué lorsque l'application est en pause.
+	 */
+	reset_zone: function() {
+
+		// Test si le comportement est en pause
+		if(this.comportement.isRunning()) {
+
+			// Retro-compatibilité
+			if(this.comportement instanceof Comportement)
+				this.comportement.stop();
+			else
+				this.stopComportement();
+
+			this.infoList = new Array();
+			this.changeContent("");
+			this.counterInfo = 0;
+			this.img_loaded = 0;
+			this.array_img = {};
+
+		}
+
+	},
+	
+	lancer_render: function(cle, element) {
+
+		// On appelle la fonction du render
+		try {
+
+			// Test si le map_time existe
+			if(typeof this.map_time === 'undefined')
+				this.map_renderers[cle](element, this);
+
+			// Sinon
+			else
+				this.map_renderers[cle](element, this, this.map_time[cle]);
+
+		} catch(err) {
+
+			debug.add_message("Error in loading renderer : " + cle + " : " + err);
+			
+		}
+
+	},
 
 	// stop the request by the delete of the interval
 	stop_request: function() {
@@ -314,118 +605,19 @@ Zone.prototype = {
 		if (this.timeout_list[name]) {
 			clearTimeout(this.timeout_list[name]);
 		}
-	}
-	
-	
-};
-
-// class alert overwriting the zone class
-var AlertZone = Class.create(Zone, {
-	// initialize the zone by calling the $super element and store the others zone
-	initialize: function($super, id, map_renderers, map_time, path, anim_func, request_timeout, all_zone) {
-		$super(id, map_renderers, map_time, path, anim_func, request_timeout);
-		this.all_zone = all_zone;
-		document.getElementById(this.id).style.visibility="hidden";
 	},
 	
-	// reset the zone by calling the $super element, hide the alert zone and do the reset and the request for all the others zone
-	reset_zone: function($super) {
-		$super();
-		document.getElementById(this.id).style.visibility="hidden";
-		for(var i in this.all_zone){
-			this.all_zone[i].reset_zone();
-			this.all_zone[i].request();
-		}
+	getInfos: function() {
+		return this.infoList;
 	}
+
 });
 
 
-//class notif overwriting the zone class
-var NotifZone = Class.create(Zone, {
-	
-	initialize: function($super, id, map_renderers, map_time, path, anim_func, request_timeout, allZone) {
-		$super(id, map_renderers, map_time, path, anim_func, request_timeout);
-		this.all_zone = allZone;
-		this.tabNotif = new Array();
-		document.getElementById(this.id).style.visibility="hidden";
-	},
-	
-	// reset the zone by calling the $super element, hide the alert zone and do the reset and the request for all the others zone
-	reset_zone: function($super) {
-		$super();
-		document.getElementById(this.id).style.visibility="hidden";
-		for(var i in this.all_zone){
-			this.all_zone[i].reset_zone();
-		}
-	},
 
-	receive: function(transport) {
-		var self = this;
-		// if the timeout is null, launch the request for a define interval
-		if (this.timeout === null)
-			this.timeout = setInterval(function() { self.request(); }, this.request_timeout);
-		var textContent = transport.responseText;
-		var json = JSON.parse(textContent);
-		this.tabNotif = new Array();
-		for (var indice = 0; indice < json.informations.length; indice++) {
-			var information = json.informations[indice];
-			for(var cle in information){
-				var element = information[cle];
-				this.tabNotif.push(element);
-			}
-		}
-		setInterval(function(){self.check_notifTab();}, 60000);
-	},	
-	
-	check_notifTab: function(){
-		for(var i=0; i<this.tabNotif.length; i++){
-			console.log("dedans");
-			var date_notif = get_date_from_timestamp_int(this.tabNotif[i].begin);
-			var date_current = get_current_date_int();
-			
-			var d1 = new Date(date_notif.year, date_notif.month - 1, date_notif.day, date_notif.hour, date_notif.min, 0);
-			var d2 = new Date(date_current.year, date_current.month - 1, date_current.day, date_current.hour, date_current.min, 0);
-			
-			if(date_notif.day == date_current.day && date_notif.month == date_current.month && date_notif.year == date_current.year && date_notif.hour == date_current.hour && date_notif.min == date_current.min){
-				var json = this.tabNotif[i].info;
-				var init_renderer = false;
-				this.reset_zone();
-				if (json.length !== 0) {
-					// put the zone in visible
-					document.getElementById(this.id).style.visibility="visible";
-					// for all the others zone, we reset, stop the behaviour and stop the request
-					for(var j = 0; j<this.all_zone.length; j++){
-						this.all_zone[j].reset_zone();
-						this.all_zone[j].anim_func(this, false);
-						this.all_zone[j].stop_request();
-					}
-					for (var indice = 0; indice < json.length; indice++) {
-						elements = json[indice];
-						for (var cle in this.map_renderers) {
-							if (elements[cle]) {
-								try {
-									this.map_renderers[cle](elements[cle], this, this.map_time[cle]);
-								} catch(err) {
-									console.log(init_renderer);
-									debug.add_message("Error in loading renderer : "+cle+" : "+err);
-								}
-							}
-						}
-					}
-				
-					try {
-						this.initBehaviour();
-					} catch(err) {
-						new debug.add_message("Error in loading behaviour : "+this.anim_func.name+" : "+err);
-					}
-				}else {
-					this.reset_zone();
-				}
-				
-			}
-		}
-	}
-});
+// =================================================== 
+//  Création de la classe de debug
+// =================================================== 
 
 var Debug = Class.create({
 	initialize: function(type) {

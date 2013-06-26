@@ -19,7 +19,7 @@ init_$zoneName = function() {
 	var map = {$callIdRendererMap}; 
 	var map_time = {$callIdTimeMap};
 	var url = '/$providerPath/rest/';
-	var anim_func = $behaviorFunction;
+	var anim_func = new $behaviorFunction();
 	var request_timeout = $requestTimeout;
 	var z1 = new Zone(id, map, map_time, url, anim_func, request_timeout);
 	z1.request();
