@@ -9,6 +9,8 @@
  *    Simon Urli (simon.urli@gmail.com) - Main contributor
  */
 
+loadScript(JS_ROOT+'/comportement.js');
+
 var Zone = Class.create({	
 
 	/* 

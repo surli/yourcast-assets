@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodlayout:Layout xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodlayout="prodlayout.yourcast.fr" name="choralies_jour1">
   <index name="index-jour1.html" type="html"/>
-  <resources name="js/date.js" path="js/date.js"/>
   <resources name="img/background_choralies.png" type="image" path="img/background_choralies.png"/>
   <resources name="img/experimentation_yourcast_supralog1.png" type="image" path="img/experimentation_yourcast_supralog1.png"/>
   <resources name="img/yourcast_background.png" type="image" path="img/yourcast_background.png"/>
