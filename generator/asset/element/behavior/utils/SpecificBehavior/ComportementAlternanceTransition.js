@@ -37,16 +37,16 @@ var ComportementAlternance = Class.create(ComportementTransition, {
      *  est égal à 0, le style est noir; si l'indice 
      *  est égal à 1, le style est jaune.
      */
-    initialize: function($super, nombre_alternance, time_trans, indice_debut) {
+    initialize: function($super) {
         
         // Constructeur par défaut
-        $super(time_trans, indice_debut);
+        $super();
 
         // Initialisation de l'indice d'alternance
         this.indice_alternance = 0;
 
         // Nombre d'alternance
-        this.nombre_alternance = typeof nombre_alternance === 'undefined' ? 2 : nombre_alternance;
+        this.nombre_alternance = 2;
 
     },
 

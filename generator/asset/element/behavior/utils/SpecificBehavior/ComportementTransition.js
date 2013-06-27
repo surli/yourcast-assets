@@ -55,22 +55,10 @@ var ComportementTransition = Class.create(Comportement, {
 	 *	début du comportement. Si aucune information
 	 *	n'est renseignée, l'indice est égal à 0.
 	 */
-	initialize: function(temps_transition, indice_debut) {
+	initialize: function($super) {
 
 		/** Zone concernée */
-        this.zone_concerne = null;
-
-		/** Indice actuel du comportement */
-		this.indice = typeof indice_debut != 'undefined' ? indice_debut : 0;
-
-		/** Timeout du comportement */
-		this.timout = null;
-
-        /** Stocke si l'animation est en marche */
-        this.marche = false;
-
-        /** Timestamp de la dernière requête */
-        this.last_request = new Date().getTime();
+        $super();
 
         /** Stocke le temps de transition entre deux diapositives */
         this.time_trans = typeof temps_transition != 'undefined' ? temps_transition : 0;
