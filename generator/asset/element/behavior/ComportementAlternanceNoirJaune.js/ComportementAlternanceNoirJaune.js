@@ -26,7 +26,11 @@
  *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
-var ComportementAlternanceNoirJaune = Class.create(Comportement, {
+// Chargement du comportement
+loadScript(BEHAVIOUR_PATH + "/utils/ComportementAlternanceTransition.js");
+
+// Classe
+var ComportementAlternanceNoirJaune = Class.create(ComportementAlternanceTransition, {
 
     /**
      *  Constructeur par défaut

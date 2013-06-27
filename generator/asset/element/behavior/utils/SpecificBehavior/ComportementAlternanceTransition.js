@@ -25,6 +25,9 @@
  *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
+// Chargement du comportement
+loadScript(BEHAVIOUR_PATH + "/utils/ComportementTransition.js");
+
 var ComportementAlternance = Class.create(ComportementTransition, {
 
     /**
