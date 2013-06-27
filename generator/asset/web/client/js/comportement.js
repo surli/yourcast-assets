@@ -390,13 +390,3 @@ function enleverAnimation(id) {
 
 }
 
-/**
- *  Cette fonction met la position de l'élément récupérée
- *  par rapport à l'id en "absolute".
- */
-function testPositionAbsolute(id) {
-
-    // On test si l'élément est en position "absolute"
-    console.log($(id).getStyle('position'));
-
-}
