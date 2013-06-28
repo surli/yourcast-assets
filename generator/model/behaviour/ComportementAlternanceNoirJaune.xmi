@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="ComportementAlternanceNoirJaune.js">
+  <function name="ComportementAlternanceNoirJaune"/>
+  <resource name="../utils/YourcastAnim/apparition.js" path="./js/behaviours/utils/YourcastAnim/apparition.js"/>
+  <resource name="../utils/SpecificBehavior/ComportementTransition.js" path="./js/behaviours/utils/ComportementTransition.js"/>
+  <resource name="../utils/SpecificBehavior/ComportementAlternanceTransition.js" path="./js/behaviours/utils/ComportementAlternanceTransition.js"/>
+</prodbehavior:Behavior>
