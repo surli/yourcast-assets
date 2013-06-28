@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Weather2" id="Weather2">
+  <service name="sources-weather2.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Weather2_915f5d25-61b2-48a3-bd03-a146f34b3483.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Weather2" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Weather2" editMessage="Editer Meteo avec le service Weather2 Weather2">
+      <parameters name="Longitude" type="DOUBLE" constraint="NONE" dbName="lon"/>
+      <parameters name="Latitude" type="DOUBLE" constraint="NONE" dbName="lat"/>
+      <parameters name="Cl√© d'API" type="STRING" constraint="NONE" dbName="apikey"/>
+    </methods>
+    <list name="Longitude" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Latitude" parameters="//@personalization/@methods/@parameters.1"/>
+    <list name="Cl√© d'API" parameters="//@personalization/@methods/@parameters.2"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-weather2" version="1.0.0-SNAPSHOT"/>
+  <rateLimit requests="20" minutes="60"/>
+</prodsource:Source>
