@@ -58,17 +58,20 @@ var ComportementSmoothTimerSlide = Class.create(Comportement, {
 		// On récupère les informations
 		var info = self.zone_concerne.getInfos()[self.indice];
 
+		var content = info;
+		content.content = "<div id='"+this.zone_concerne.id+"_new_appear'>"+info.content+"</div>";
+
 		// On change le content
-		self.zone_concerne.changeContent(info);
+		self.zone_concerne.changeContent(content);
 		
 		// On cache le logo et le titre
 		$(this.zone_concerne.id + "_logo").hide();
 		$(this.zone_concerne.id + "_title").hide();
 
 		// Met le nouveau block en opacité 0
-		if($(self.zone_concerne.id + "_content")) {
+		if($(self.zone_concerne.id)) {
 
-			$(self.zone_concerne.id + "_content").setOpacity(0);
+			$(self.zone_concerne.id).setOpacity(0);
 
 			enleverAnimation('progressbar');
 			$('progressbar').setStyle({
@@ -77,8 +80,8 @@ var ComportementSmoothTimerSlide = Class.create(Comportement, {
 
 			// Transition d'apparition des informations
 			this.timeout_progressbar = setTimeout(function() { scaleY('progressbar', '100%', info.time, "linear"); }, 1);
-			this.timeout_fadeIn = setTimeout(function() { fadeIn(self.zone_concerne.id + "_content", info.time/4, "linear"); }, 1);
-			this.timeout_fadeOut = setTimeout(function() { fadeOut(self.zone_concerne.id + "_content", info.time/4, "linear"); }, (1000*2.9*info.time)/4);
+			this.timeout_fadeIn = setTimeout(function() { fadeIn(self.zone_concerne.id, info.time/4, "linear"); }, 1);
+			this.timeout_fadeOut = setTimeout(function() { fadeOut(self.zone_concerne.id, info.time/4, "linear"); }, (1000*2.9*info.time)/4);
 
 		}
 
@@ -102,10 +105,8 @@ var ComportementSmoothTimerSlide = Class.create(Comportement, {
         // On execute le super
         $super(nouvelle_zone);
 
-        // On ajoute un nouveau div
-        this.zone_concerne.addContent('<div id="' + this.zone_concerne.id + '_content" ></div>');
-
     }
 
 });
+
 
