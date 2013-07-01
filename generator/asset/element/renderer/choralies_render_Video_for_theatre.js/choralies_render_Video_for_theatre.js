@@ -73,7 +73,7 @@ function choralies_render_Video_for_theatre(tableau, zone, timeInfo) {
 		
 		for (var i=0; i<videoList.videos.length; i++){
         // On stock les élements
-        var elements = videoList.videos[i];
+        var elements = videoList.videos[i].video;
 
         // Récupération des dimensions
         var width = window.innerWidth;// * 0.9;
