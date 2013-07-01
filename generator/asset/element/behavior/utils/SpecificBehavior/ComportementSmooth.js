@@ -1,87 +1,82 @@
 /**
- *	Rights :
+ *  Rights :
  *
- * 		Copyright (c) 2013 YourCast - I3S/CNRS ADAM/INRIA.
+ *      Copyright (c) 2013 YourCast - I3S/CNRS ADAM/INRIA.
  *
- * 		All rights reserved. This program and the 
- *		accompanying materials are made available under the 
- *		terms of the GNU Public License v3.0 which accompanies 
- *		this distribution, and is available at
- * 		http://www.gnu.org/licenses/gpl.html
+ *      All rights reserved. This program and the 
+ *      accompanying materials are made available under the 
+ *      terms of the GNU Public License v3.0 which accompanies 
+ *      this distribution, and is available at
+ *      http://www.gnu.org/licenses/gpl.html
  *
- *	Informations :
+ *  Informations :
  *
- *		La classe comportement smooth reprend les mêmes
- *		principes que comportement mais rajoute entre chaque
- *		passage d'information, une transition d'opacité qui
- *		rend visuellement comme une transition "smooth".
+ *      La classe comportement alternance réutilise la classe
+ *      comportement et alterne deux styles différends de
+ *      couleur pour la maquette de Clément Ader.
  *
- *	Versions :
+ *  Versions :
  *
- *		1.0.0 : Création d'une classe fonctionnelle, avec des
- *				tests unitaires fonctionnels.
+ *      1.0.0 : Création d'une classe fonctionnelle.
  *
- *	Contributors :
+ *  Contributors :
  *
- *		Simon Urli (simon.urli@gmail.com)
- *		Guillaume Golfieri (golfieri.guillaume@gmail.com)
+ *      Simon Urli (simon.urli@gmail.com)
+ *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
+// Load le script d'apparition
+loadScript(BEHAVIOUR_PATH + "/utils/YourcastAnim/apparition.js");
+
+// Classe
 var ComportementSmooth = Class.create(Comportement, {
 
-	initialize: function($super, temps_transition) {
-
-		/** Zone concernée */
-        $super();
-
-        /** Stocke le temps de transition entre deux diapositives */
-        this.time_trans = typeof temps_transition != 'undefined' ? temps_transition : 4;
-
-        /** Initialisation du tableau des timeouts des transitions */
-        this.timeout_trans = null;
-
-	},
-
-	clear: function($super) {
-
-		$super();
-
-		clearTimeout(this.timeout_trans);
-
-	},
-
+	/**
+	 *	Boucle du comportement
+	 *
+	 *	La boucle sert à changer les éléments d'une zone par 
+	 *	rapport aux informations que contient la zone. Pour 
+	 *	cela, elle récupère les enfants de la zone et compare
+	 *	leur id au tableau info de la zone. Si un id n'est 
+	 *	pas défini, alors on cache l'élément.
+	 */
 	loop: function() {
-
-		// On stocke le this
-		var self = this;
 
 		// Sécurité
 		this.securiteInfosZone();
 
+		// On stocke le this
+		var self = this;
+
 		// On clear tout d'abord les timeouts stockés
-		this.clear();
+		clearTimeout(this.timeout);
+		clearTimeout(this.timeout_fadeIn);
+		clearTimeout(this.timeout_fadeOut);
 
 		// On récupère les informations
-		var info = self.zone_concerne.getInfos()[self.indice];
+		var info = this.zone_concerne.getInfos()[this.indice];
 
-		// On enlève l'autre diapo directement
-		$(self.zone_concerne.id).setOpacity(0);
+		// On change le content
+		this.zone_concerne.changeContent(info);
+		
+		// Met le nouveau block en opacité 0
+		if($(this.zone_concerne.id + "_content")) {
 
-		// 1 seconde après on change l'élément
-		this.timeout_trans = setTimeout(function() { 
+			$(this.zone_concerne.id + "_content").setStyle({
+				opacity: 0
+			});
 
-			// On change le content
-			self.zone_concerne.changeContent(info);
+			// Transition d'apparition des informations
+			this.timeout_fadeIn = setTimeout(function() { fadeIn(self.zone_concerne.id + "_content", info.time/4, "linear"); }, 1);
+			this.timeout_fadeOut = setTimeout(function() { fadeOut(self.zone_concerne.id + "_content", info.time/4, "linear"); }, (1000*2.9*info.time)/4);
 
-			// On remet l'opacity
-			$(self.zone_concerne.id).setOpacity(1);
+		}
 
-		 	// On test si le comportement est en marche
-		 	if(self.isRunning())
-		 		self.timeout = setTimeout(function() { self.next(); }, info.time * 1000);
-
-		}, self.time_trans * 500);
+		// On test si le comportement est en marche
+		if(this.isRunning())
+			self.timeout = setTimeout(function() { self.next(); }, info.time * 1000);
 
 	}
-	
+
 });
+

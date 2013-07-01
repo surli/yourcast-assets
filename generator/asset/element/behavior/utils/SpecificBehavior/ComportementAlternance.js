@@ -89,5 +89,6 @@ var ComportementAlternance = Class.create(Comportement, {
         }
 
     }
+    
 });
 
