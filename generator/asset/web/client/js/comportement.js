@@ -31,9 +31,6 @@
  *		pour éviter le surchargement de réseau pour les
  *		petits comportements.
  *
- *		Cette classe peut bien sûr être hérité pour permettre
- *		une alternance de couleur par exemple.
- *
  *	Versions :
  *
  *		1.0.0 : Création d'une classe fonctionnelle, avec des
@@ -49,12 +46,8 @@ var Comportement = Class.create({
 
 	/**
 	 *	Constructeur par défaut
-	 *
-	 *	@param indice_debut : permet de préciser le 
-	 *	début du comportement. Si aucune information
-	 *	n'est renseignée, l'indice est égal à 0.
 	 */
-	initialize: function() {
+	initialize: function(time_smooth) {
 
 		/** Zone concernée */
         this.zone_concerne = null;
@@ -87,11 +80,8 @@ var Comportement = Class.create({
 		// Sécurité
 		this.securiteInfosZone();
 
-		// On stocke le this
-		var self = this;
-
 		// On incrémente l'indice
-		self.indice = (self.indice + 1) % self.zone_concerne.getInfos().length;
+		this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
 
         // Si on est au début de l'application
         if(this.indice == 0) {
@@ -110,7 +100,7 @@ var Comportement = Class.create({
         }
 
 		// On appelle le changement d'élément
-		self.goto(self.indice);
+		this.goto(this.indice);
 
 	},
 
@@ -128,18 +118,15 @@ var Comportement = Class.create({
 		// Sécurité
 		this.securiteInfosZone();
 
-		// On stocke le this
-		var self = this;
-
 		// On incrémente l'indice
-		self.indice = (self.indice - 1) % self.zone_concerne.getInfos().length;
+		this.indice = (this.indice - 1) % this.zone_concerne.getInfos().length;
 
 		// Test si l'indice est passé en négatif
-		if(self.indice < 0)
-			self.indice = self.zone_concerne.getInfos().length - 1;
+		if(this.indice < 0)
+			this.indice = this.zone_concerne.getInfos().length - 1;
 
 		// On appelle le changement d'élément
-		self.goto(self.indice);
+		this.goto(this.indice);
 
 	},
 
@@ -197,7 +184,7 @@ var Comportement = Class.create({
 		this.marche = false;
 
 		// On clear le timeout
-		clearTimeout(this.timeout);
+		this.clear();
 
 	},
 
@@ -228,6 +215,20 @@ var Comportement = Class.create({
 	},
 
 	/**
+	 *	Clear le comportement
+	 *
+	 *	Clear uniquement les timeouts du comportement. 
+	 *	Cette fonction n'intervient pas dans la boucle 
+	 *	next -> goto.
+	 */
+	clear: function() {
+
+		// Clear le timeout principal
+		clearTimeout(this.timeout);
+
+	}
+
+	/**
 	 *	Reset le comportement
 	 *
 	 *	Reset juste l'indice de navigation. Si le 
@@ -235,7 +236,7 @@ var Comportement = Class.create({
 	 * 	vous désirez arrêter le comportement, utilisez
 	 *	la fonction stop.
 	 */
-	clear: function() {
+	reset: function() {
 
 		// On réinitialise l'indice
 		this.indice = 0;
@@ -252,13 +253,13 @@ var Comportement = Class.create({
 	stop: function() {
 
 		// On réinitialise l'indice
-		this.indice = 0;
+		this.reset();
 
 		// On réinitialise
 		this.marche = false;
 
 		// On clear le timeout
-		clearTimeout(this.timeout);
+		this.clear();
 
 	},
 
@@ -269,7 +270,10 @@ var Comportement = Class.create({
 	 *  if it not.
 	 */
 	isRunning: function() {
+
+		// Retourne la valeur de la variable marche
 		return this.marche;
+
 	},
 
 	/**
@@ -290,17 +294,18 @@ var Comportement = Class.create({
 		var self = this;
 
 		// On clear tout d'abord les timeouts stockés
-		clearTimeout(this.timeout);
+		this.clear();
 
 		// On récupère les informations
 		var info = self.zone_concerne.getInfos()[self.indice];
 
 		// On change le content
 		self.zone_concerne.changeContent(info);
-		
+
 		// On test si le comportement est en marche
-		if(self.isRunning())
+		if(self.isRunning()) {
 			self.timeout = setTimeout(function() { self.next(); }, info.time * 1000);
+		}
 
 	},
 

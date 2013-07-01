@@ -7,42 +7,46 @@ function pullDown(id, value, duration) {
 
 }
 
-function moveTop(id, value, duration) {
+/**
+ *  Déplace la zone par rapport au haut du père
+ */
+function moveTop(id, value, duration, transition) {
 	
-    ajouterAnimation(id, duration+"s", 'top', 'ease-out');
+    transition = typeof transition === 'undefined' ? 'ease-out' : transition;
+    ajouterAnimation(id, duration+"s", 'top', transition);
     $(id).setStyle({ 'top': value+"px" });
 
 }
 
-function moveBot(id, value, duration) {
+/**
+ *  Déplace la zone par rapport au bas du père
+ */
+function moveBot(id, value, duration, transition) {
 
-    ajouterAnimation(id, duration+"s", 'bottom', 'ease-out');
+    transition = typeof transition === 'undefined' ? 'ease-out' : transition;
+    ajouterAnimation(id, duration+"s", 'bottom', transition);
     $(id).setStyle({ 'bottom': value+"px" });
 
 }
 
-function moveLeft(id, value, duration) {
+/**
+ *  Déplace la zone par rapport à la gauche du père
+ */
+function moveLeft(id, value, duration, transition) {
 
-    if(transition == "Lineaire") {
-        ajouterAnimation(id, duration+"s", 'left', 'linear');
-    }
-    else {
-        ajouterAnimation(id, duration+"s", 'left', 'ease-out');
-    }
-    
+    transition = typeof transition === 'undefined' ? 'ease-out' : transition;
+    ajouterAnimation(id, duration+"s", 'left', transition);
     $(id).setStyle({ 'left': value+"px" });
 
 }
 
-function moveRight(id, value, transition, duration) {
+/**
+ *  Déplace la zone par rapport à la droite du père
+ */
+function moveRight(id, value, duration, transition) {
 
-    if(transition == "Lineaire") {
-        ajouterAnimation(id, duration+"s", 'right', 'linear');
-    }
-    else {
-        ajouterAnimation(id, duration+"s", 'right', 'ease-out');
-    }
-
+    transition = typeof transition === 'undefined' ? 'ease-out' : transition;
+    ajouterAnimation(id, duration+"s", 'right', transition);
     $(id).setStyle({ 'right': value+"px" });
 
 }
