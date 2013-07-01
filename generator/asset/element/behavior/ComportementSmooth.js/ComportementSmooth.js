@@ -52,12 +52,15 @@ var ComportementSmooth = Class.create(Comportement, {
 		clearTimeout(this.timeout);
 		clearTimeout(this.timeout_fadeIn);
 		clearTimeout(this.timeout_fadeOut);
-
+		
 		// On récupère les informations
-		var info = this.zone_concerne.getInfos()[this.indice];
+		var info = self.zone_concerne.getInfos()[self.indice];
+
+		var content = info;
+		content.content = "<div id='"+this.zone_concerne.id+"_new_appear'>"+info.content+"</div>";
 
 		// On change le content
-		this.zone_concerne.changeContent(info);
+		self.zone_concerne.changeContent(content);
 		
 		// Met le nouveau block en opacité 0
 		if($(this.zone_concerne.id + "_content")) {
