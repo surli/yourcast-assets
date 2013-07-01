@@ -10,14 +10,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="styles/65abceb5.main.css">
-      <link rel="stylesheet" href="styles/tooltipsy.css">
-      <link rel="stylesheet" href="styles/contextMenu.css">
-      <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-      <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-    <!--<link href="styles/tipsy.css" rel="stylesheet" type="text/css" />-->
+    <link rel="stylesheet" href="styles/main.css">
+      <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   </head>
-  <body ng-app="tocsinApp">
+  <body ng-app="personalizerApp">
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -27,19 +24,35 @@
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- Add your site or application content here http://code.jquery.com/jquery-1.6.2.min.js -->
+    <!-- Add your site or application content here -->
     <div class="container" ng-view=""></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-cookies.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-sanitize.min.js"></script>
+    <script src="components/angular/angular.js"></script>
+    <script src="components/angular-resource/angular-resource.js"></script>
+    <script src="components/angular-cookies/angular-cookies.js"></script>
+    <script src="components/angular-sanitize/angular-sanitize.js"></script>
     <script src="components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="components/d3/d3.min.js" charset="utf-8"></script>
-    <script src="components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="components/jquery/jquery.js"></script>
 
-    <script src="scripts/0a8634b9.scripts.js"></script>
+
+    <!-- build:js scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/onglet.js"></script>
+    <script src="scripts/controllers/start.js"></script>
+    <script src="scripts/services/constants.js"></script>
+    <script src="scripts/services/mongo_Service.js"></script>
+
+    <script src="scripts/services/manager.js"></script>
+    <script src="scripts/services/Manager.js"></script>
+    <script src="scripts/controllers/zone.js"></script>
+    <script src="scripts/directives/tabs.js"></script>
+    <script src="scripts/controllers/add.js"></script>
+    <script src="scripts/controllers/edit.js"></script>
+    <script src="scripts/services/db.js"></script>
+    <script src="scripts/services/bridge.js"></script>
+    <script src="scripts/directives/tooltip.js"></script>
+    <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -48,6 +61,5 @@
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
-    <h5>Version {{version}}</h5>
   </body>
 </html>
