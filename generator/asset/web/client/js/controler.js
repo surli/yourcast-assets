@@ -156,9 +156,8 @@ var Zone = Class.create({
 
 	 	// S'il n'existe pas alors, on ajoute le content directement dans la zone
 	 	if(!($(this.id + "_content"))) {
-
-	 		this.divMarquee.innerHTML = this.htmlinit + info.content;
-
+	 		if(info.content && info.content != "")
+	 			this.divMarquee.innerHTML = this.htmlinit + info.content;
 		}
 
 	 	// Boucle sur les clés de l'info

@@ -58,12 +58,25 @@ var ComportementPush = Class.create(Comportement, {
         // On récupère les informations
         var info = self.zone_concerne.getInfos()[self.indice];
 
-        // Pas de block supplémentaire inutile
-        if($$('.' + this.id_push).length > 6)
-            $$('.' + this.id_push)[6].remove();
+        // Test si bloc est défini dans le renderer
+        if(info.bloc) {
 
-        // On change le contenu de l'info
-        content_push = '<div class="' + this.id_push + '">' + info.content + '</div>';
+            // On enlève le content
+            if(this.main_zone)
+                this.main_zone.remove();
+
+        }
+
+        else {
+
+            // Pas de block supplémentaire inutile
+            if($$('.' + this.id_push).length > 6)
+                $$('.' + this.id_push)[6].remove();
+
+            // On change le contenu de l'info
+            content_push = '<div class="' + this.id_push + '">' + info.content + '</div>';
+
+        }
 
         // Enlève les animations
         enleverAnimation(this.main_zone.id);
@@ -80,7 +93,6 @@ var ComportementPush = Class.create(Comportement, {
         // On place le content au bon endroit
         this.main_zone.setStyle({
             'top': hauteur_content_ajout+"px"
-            // 'transform': "translateY(" + hauteur_content_ajout + "px)"
         });
 
         // On déplace le contenu
