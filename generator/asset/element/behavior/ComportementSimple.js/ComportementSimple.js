@@ -11,9 +11,7 @@
  *
  *  Informations :
  *
- *      La classe comportement alternance réutilise la classe
- *      comportement et alterne deux styles différends de
- *      couleur pour la maquette de Clément Ader.
+ *      Comportement par défaut.
  *
  *  Versions :
  *
@@ -24,9 +22,6 @@
  *      Simon Urli (simon.urli@gmail.com)
  *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
-
-// Load le script d'apparition
-loadScript(BEHAVIOUR_PATH + "/utils/YourcastAnim/apparition.js");
 
 // Classe
 var ComportementSimple = Class.create(Comportement, {
