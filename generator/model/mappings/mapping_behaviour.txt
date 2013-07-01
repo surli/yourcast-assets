@@ -1,9 +1,8 @@
 ByInformation,Time,Logo,Animation,Number,Behaviour,Elements,Scrolling,All,Content,Global,RightToLeft:./behaviour/ComportementScrollingEachLogoLeft.xmi
 Appearance,Time,Animation,Number,Smooth,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSmoothTimer.xmi
-Animation,Logo,Number,Behaviour,Individual,Title,Repetition,Time,Appearance,DarkThenClear,Elements,Content,One:./behaviour/ComportementAlternanceNoirJaune.xmi
-Appearance,Time,Animation,Number,Smooth,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSmoothTimerSlide.xmi
+Animation,Logo,Number,Behaviour,Individual,Title,Repetition,Time,Appearance,DarkThenClear,Elements,Content,One:./behaviour/ComportementAlternanceSmoothCA.xmi
+Slide,Appearance,Time,Animation,Number,Smooth,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSmoothTimerSlide.xmi
 Appearance,Time,Animation,Number,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSimple.xmi
 Time,Logo,Animation,Number,Behaviour,Elements,Static,Scrolling,All,Content,Global,RightToLeft:./behaviour/ComportementScrollingLeftLogoLeft.xmi
 Time,Animation,Number,Behaviour,Elements,Scrolling,All,Content,Global,RightToLeft:./behaviour/ComportementScrollingLeft.xmi
 Time,Animation,Number,Behaviour,Elements,Individual,One,Content,Push,TopDown:./behaviour/ComportementPush.xmi
-Appearance,Time,Animation,Number,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSimpleAppearance.xmi
