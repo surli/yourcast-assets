@@ -26,9 +26,9 @@
  */
 
 // Chargement du comportement
-loadScript(BEHAVIOUR_PATH + "/utils/ComportementTransition.js");
+loadScript(BEHAVIOUR_PATH + "/utils/SpecificBehavior/ComportementSmooth.js");
 
-var ComportementAlternance = Class.create(ComportementTransition, {
+var ComportementAlternance = Class.create(ComportementSmooth, {
 
     /**
      *  Constructeur par défaut
@@ -62,13 +62,10 @@ var ComportementAlternance = Class.create(ComportementTransition, {
      *  des informations de la zone, elle retourne au 
      *  début. Elle alterne deux styles différends.
      */
-    next: function($super) {
+        next: function($super) {
 
         // Sécurité
         this.securiteInfosZone();
-
-        // On stocke le this
-        var self = this;
 
         // Test si l'élément est dans le tableau
         if(!this.zone_concerne.getInfos()[this.indice].alternance) {
@@ -79,18 +76,18 @@ var ComportementAlternance = Class.create(ComportementTransition, {
         else {
 
             // Test si on change d'indice
-            if(self.indice_alternance == (this.nombre_alternance - 1)) {
+            if(this.indice_alternance == (this.nombre_alternance - 1)) {
 
                 // On incrémente l'indice
-                self.indice = (self.indice + 1) % self.zone_concerne.getInfos().length;
+                this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
 
             }
 
             // On incrémente l'indice alternance
-            self.indice_alternance = (self.indice_alternance + 1) % this.nombre_alternance;
+            this.indice_alternance = (this.indice_alternance + 1) % this.nombre_alternance;
 
             // On change la couleur
-            self.changerCouleur();
+            this.changeDesign();
 
             // Si on est au début de l'application
             if(this.indice == 0 && this.indice_alternance == 0) {
@@ -109,11 +106,11 @@ var ComportementAlternance = Class.create(ComportementTransition, {
             }
 
             // On appelle le changement d'élément
-            self.goto(self.indice);
+            this.goto(this.indice);
 
         }
 
-    },
+    }
 
 });
 
