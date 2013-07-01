@@ -226,7 +226,7 @@ var Comportement = Class.create({
 		// Clear le timeout principal
 		clearTimeout(this.timeout);
 
-	}
+	},
 
 	/**
 	 *	Reset le comportement
