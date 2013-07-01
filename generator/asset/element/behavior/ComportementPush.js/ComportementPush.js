@@ -55,12 +55,12 @@ var ComportementPush = Class.create(Comportement, {
         // On clear tout d'abord les timeouts stockés
         clearTimeout(this.timeout);
 
+        // On récupère les informations
+        var info = self.zone_concerne.getInfos()[self.indice];
+
         // Pas de block supplémentaire inutile
         if($$('.' + this.id_push).length > 6)
             $$('.' + this.id_push)[6].remove();
-
-		// On récupère les informations
-		var info = self.zone_concerne.getInfos()[self.indice];
 
         // On change le contenu de l'info
         content_push = '<div class="' + this.id_push + '">' + info.content + '</div>';

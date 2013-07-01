@@ -27,17 +27,7 @@
 
 var ComportementAlternance = Class.create(Comportement, {
 
-    /**
-     *  Constructeur par défaut
-     *
-     *  @param indice_debut : permet de préciser le 
-     *  début du comportement. Si aucune information
-     *  n'est renseignée, l'indice est égal à 0. On
-     *  stocke un indice pour l'aternance. Si l'indice
-     *  est égal à 0, le style est noir; si l'indice 
-     *  est égal à 1, le style est jaune.
-     */
-    initialize: function($super) {
+    initialize: function($super, nombre_alternance) {
         
         // Constructeur par défaut
         $super();
@@ -50,22 +40,10 @@ var ComportementAlternance = Class.create(Comportement, {
 
     },
 
-    /**
-     *  Passage à l'élément suivant
-     *
-     *  Le passage à l'élément suivant ne peut se faire
-     *  que si le comportement est en route. Sinon elle
-     *  ne fait rien. Lorsque la boucle arrive à la fin
-     *  des informations de la zone, elle retourne au 
-     *  début. Elle alterne deux styles différends.
-     */
     next: function($super) {
 
         // Sécurité
         this.securiteInfosZone();
-
-        // On stocke le this
-        var self = this;
 
         // Test si l'élément est dans le tableau
         if(!this.zone_concerne.getInfos()[this.indice].alternance) {
@@ -76,18 +54,18 @@ var ComportementAlternance = Class.create(Comportement, {
         else {
 
             // Test si on change d'indice
-            if(self.indice_alternance == (this.nombre_alternance - 1)) {
+            if(this.indice_alternance == (this.nombre_alternance - 1)) {
 
                 // On incrémente l'indice
-                self.indice = (self.indice + 1) % self.zone_concerne.getInfos().length;
+                this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
 
             }
 
             // On incrémente l'indice alternance
-            self.indice_alternance = (self.indice_alternance + 1) % this.nombre_alternance;
+            this.indice_alternance = (this.indice_alternance + 1) % this.nombre_alternance;
 
             // On change la couleur
-            self.changerCouleur();
+            this.changeDesign();
 
             // Si on est au début de l'application
             if(this.indice == 0 && this.indice_alternance == 0) {
@@ -106,11 +84,10 @@ var ComportementAlternance = Class.create(Comportement, {
             }
 
             // On appelle le changement d'élément
-            self.goto(self.indice);
+            this.goto(this.indice);
 
         }
 
-    },
-
+    }
 });
 

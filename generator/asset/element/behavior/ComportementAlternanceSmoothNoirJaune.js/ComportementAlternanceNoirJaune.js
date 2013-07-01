@@ -30,7 +30,7 @@
 loadScript(BEHAVIOUR_PATH + "/utils/ComportementAlternanceTransition.js");
 
 // Classe
-var ComportementAlternanceNoirJaune = Class.create(ComportementAlternanceTransition, {
+var ComportementAlternanceSmoothNoirJaune = Class.create(ComportementAlternanceSmooth, {
 
     /**
      *  Constructeur par défaut
@@ -42,78 +42,10 @@ var ComportementAlternanceNoirJaune = Class.create(ComportementAlternanceTransit
      *  est égal à 0, le style est noir; si l'indice 
      *  est égal à 1, le style est jaune.
      */
-    initialize: function($super) {
+    initialize: function($super, 2) {
         
         // Constructeur par défaut
-        $super();
-
-        // Initialisation de l'indice d'alternance
-        this.indice_alternance = 0;
-
-        // Nombre d'alternance
-        this.nombre_alternance = 2;
-
-    },
-
-    /**
-     *  Passage à l'élément suivant
-     *
-     *  Le passage à l'élément suivant ne peut se faire
-     *  que si le comportement est en route. Sinon elle
-     *  ne fait rien. Lorsque la boucle arrive à la fin
-     *  des informations de la zone, elle retourne au 
-     *  début. Elle alterne deux styles différends.
-     */
-    next: function($super) {
-
-        // Sécurité
-        this.securiteInfosZone();
-
-        // On stocke le this
-        var self = this;
-
-        // Test si l'élément est dans le tableau
-        if(!this.zone_concerne.getInfos()[this.indice].alternance) {
-            $super();
-        }
-
-        // Sinon on alterne
-        else {
-
-            // Test si on change d'indice
-            if(self.indice_alternance == (this.nombre_alternance - 1)) {
-
-                // On incrémente l'indice
-                self.indice = (self.indice + 1) % self.zone_concerne.getInfos().length;
-
-            }
-
-            // On incrémente l'indice alternance
-            self.indice_alternance = (self.indice_alternance + 1) % this.nombre_alternance;
-
-            // On change la couleur
-            self.changerCouleur();
-
-            // Si on est au début de l'application
-            if(this.indice == 0 && this.indice_alternance == 0) {
-
-                // Si on est revenu au début on test si ca on peut faire une requete
-                if((new Date().getTime() - this.last_request) > 120000) {
-
-                    // On stocke la nouvelle requete
-                    this.last_request = new Date().getTime();
-
-                    // On lance la requête
-                    this.zone_concerne.request();
-
-                }
-
-            }
-
-            // On appelle le changement d'élément
-            self.goto(self.indice);
-
-        }
+        $super(2);
 
     },
 

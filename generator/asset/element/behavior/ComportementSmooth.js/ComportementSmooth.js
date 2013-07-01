@@ -27,10 +27,9 @@
 
 // Load le script d'apparition
 loadScript(BEHAVIOUR_PATH + "/utils/YourcastAnim/apparition.js");
-loadScript(BEHAVIOUR_PATH + "/utils/YourcastAnim/transformation.js");
 
 // Classe
-var ComportementSimpleAppearanceTimer = Class.create(Comportement, {
+var ComportementSmooth = Class.create(Comportement, {
 
 	/**
 	 *	Boucle du comportement
@@ -53,55 +52,31 @@ var ComportementSimpleAppearanceTimer = Class.create(Comportement, {
 		clearTimeout(this.timeout);
 		clearTimeout(this.timeout_fadeIn);
 		clearTimeout(this.timeout_fadeOut);
-		clearTimeout(this.timeout_progressbar);
 
 		// On récupère les informations
-		var info = self.zone_concerne.getInfos()[self.indice];
+		var info = this.zone_concerne.getInfos()[this.indice];
 
 		// On change le content
-		self.zone_concerne.changeContent(info);
+		this.zone_concerne.changeContent(info);
 		
 		// Met le nouveau block en opacité 0
-		if($(self.zone_concerne.id + "_content")) {
+		if($(this.zone_concerne.id + "_content")) {
 
-			$(self.zone_concerne.id + "_content").setOpacity(0);
-
-			enleverAnimation('progressbar');
-			$('progressbar').setStyle({
-				"height" : "0%"
+			$(this.zone_concerne.id + "_content").setStyle({
+				opacity: 0
 			});
 
 			// Transition d'apparition des informations
-			this.timeout_progressbar = setTimeout(function() { scaleY('progressbar', '100%', info.time, "linear"); }, 1);
 			this.timeout_fadeIn = setTimeout(function() { fadeIn(self.zone_concerne.id + "_content", info.time/4, "linear"); }, 1);
 			this.timeout_fadeOut = setTimeout(function() { fadeOut(self.zone_concerne.id + "_content", info.time/4, "linear"); }, (1000*2.9*info.time)/4);
 
 		}
 
 		// On test si le comportement est en marche
-		if(self.isRunning())
+		if(this.isRunning())
 			self.timeout = setTimeout(function() { self.next(); }, info.time * 1000);
 
-	},
-
-    /**
-     *  Setter de la zone
-     *
-     *  Permet de chancer la zone du comportement. 
-     *
-     *  /!\ Cette fonction doit être appelée lors du 
-     *  lancement du comportement sous peine d'avoir 
-     *  une erreur critique.
-     */
-    setZone: function($super, nouvelle_zone) {
-
-        // On execute le super
-        $super(nouvelle_zone);
-
-        // On ajoute un nouveau div
-        this.zone_concerne.addContent('<div id="' + this.zone_concerne.id + '_content" ></div>');
-
-    }
+	}
 
 });
 
