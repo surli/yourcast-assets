@@ -6,7 +6,7 @@
  */
 
 loadLess(LESS_ROOT+"/choralies_render_Breves_for_right_push.less"); 
- 
+
 function choralies_render_Breves_for_right_push(tableau, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 4;
 	var time = timeInfo;
@@ -18,7 +18,7 @@ function choralies_render_Breves_for_right_push(tableau, zone, timeInfo) {
 		var contentBreve = elements.texte_court.replace(reg, "<br/>");
 		var content = "";
 		
-		content += "<div id='"+zone.id+"_new_push' class='push_div_zone breve' style='display:none;'>";
+		content += "<div id='"+zone.id+"_new_push' class='push_div_zone breve'>";
 			content += "<div class='breve_body'>";
 				if(elements.titre!="")
 					content += "<b>"+elements.titre+"</b> - ";
@@ -26,8 +26,9 @@ function choralies_render_Breves_for_right_push(tableau, zone, timeInfo) {
 			content += "</div>";
 		content += "</div>";		
 		
-		var dico = {"content": content, "logo": '', "title": '', "time": time};
+		var dico = {"content": content, "logo": '', "title": '', "time": time, "bloc": true};
 		zone.pushInfo(dico);
 
 	}
 }
+
