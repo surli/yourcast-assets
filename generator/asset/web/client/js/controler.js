@@ -10,6 +10,7 @@
  */
 
 loadScript(JS_ROOT + "/comportement.js");
+loadScript(JS_ROOT + "/exception.js");
 
 var Zone = Class.create({	
 
@@ -216,8 +217,6 @@ var Zone = Class.create({
 		// On stocke le this
 		var self = this;
 
-		self.runComportement();
-
 		// On test si les images sont chargés et que on a des infos à afficher
 		if (self.imagesAreLoaded() && self.infoList.length > 0) {
 
@@ -311,16 +310,18 @@ var Zone = Class.create({
 
 			}
 
-			// On initialise le comportement
-			this.initBehaviour();
-
 		} else {
+
+			// On reset la zone
 			this.reset_zone();
 
 			// On cache la zone
 			self.cacherZone();
 
 		}
+
+		// On initialise le comportement
+		this.initBehaviour();
 
 	},
 	
