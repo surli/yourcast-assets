@@ -184,7 +184,7 @@ var Zone = Class.create({
 	 *	deux manières. La première en ajoutant l'html avant le content et la deuxième 
 	 *	en ajoutant l'html après le content.
 	 */
-	addContent: function(html) {
+	addContent: function(html, order_content) {
 
 		// Récupération du content
 	 	if($(this.id + "_content"))
@@ -193,7 +193,7 @@ var Zone = Class.create({
 			var content = document.getElementById(this.id);
 
 		// Pas d'inversement dans l'ajout des données
-		if(!this.order_content)
+		if(typeof order_content === 'undefined')
 			content.innerHTML = content.innerHTML + html;
 		
 		// Inversement dans l'ajout des données

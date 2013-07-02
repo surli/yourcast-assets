@@ -62,8 +62,36 @@ var ComportementPush = Class.create(Comportement, {
         if(info.bloc) {
 
             // On enlève le content
-            if(this.main_zone)
+            if(this.main_zone && this.main_zone != null){
                 this.main_zone.remove();
+                this.main_zone = null;
+                this.zone_main = $(this.zone_concerne.id);
+                this.zone_main.show();
+            }
+
+            // Pas de block supplémentaire inutile
+            if($$('.' + "push_div_zone").length > 6)
+                $$('.' + "push_div_zone")[6].remove();
+
+            // Enlève les animations
+            enleverAnimation(this.zone_main.id);
+
+            // On prend la hauteur courante
+            hauteur_content = this.zone_main.getHeight();
+
+            // On ajoute l'information
+            self.zone_concerne.addContent(info.content, true);
+            
+            // On calcule la hauteur de l'information ajoutée
+            hauteur_content_ajout = hauteur_content - this.zone_main.getHeight();
+
+            // On place le content au bon endroit
+            this.zone_main.setStyle({
+                'top': hauteur_content_ajout+"px"
+            });
+
+            // On déplace le contenu
+            setTimeout(function() { moveTop(self.zone_concerne.id, 0, 4) }, 10);
 
         }
 
@@ -76,27 +104,27 @@ var ComportementPush = Class.create(Comportement, {
             // On change le contenu de l'info
             content_push = '<div class="' + this.id_push + '">' + info.content + '</div>';
 
+            // Enlève les animations
+            enleverAnimation(this.main_zone.id);
+
+            // On prend la hauteur courante
+            hauteur_content = this.main_zone.getHeight();
+
+            // On ajoute l'information
+            self.zone_concerne.addContent(content_push);
+
+            // On calcule la hauteur de l'information ajoutée
+            hauteur_content_ajout = hauteur_content - this.main_zone.getHeight();
+
+            // On place le content au bon endroit
+            this.main_zone.setStyle({
+                'top': hauteur_content_ajout+"px"
+            });
+
+            // On déplace le contenu
+            setTimeout(function() { moveTop(self.main_zone.id, 0, 4) }, 10);
+
         }
-
-        // Enlève les animations
-        enleverAnimation(this.main_zone.id);
-
-        // On prend la hauteur courante
-        hauteur_content = this.main_zone.getHeight();
-
-        // On ajoute l'information
-        self.zone_concerne.addContent(content_push);
-
-        // On calcule la hauteur de l'information ajoutée
-        hauteur_content_ajout = hauteur_content - this.main_zone.getHeight();
-
-        // On place le content au bon endroit
-        this.main_zone.setStyle({
-            'top': hauteur_content_ajout+"px"
-        });
-
-        // On déplace le contenu
-        setTimeout(function() { moveTop(self.main_zone.id, 0, 4) }, 10);
 
         // On test si le comportement est en marche
         if(self.isRunning())
@@ -121,7 +149,10 @@ var ComportementPush = Class.create(Comportement, {
         // Style nécessaire au bon fonctionnement du push
         $(this.zone_concerne.id).setStyle({
             "overflow": "hidden",
-            "position": "absolute"
+            "position": "absolute",
+            "top": "0px",
+            "left": "0px",
+            "width": "100%"
         });
 
         // On ajoute un nouveau div
@@ -136,4 +167,3 @@ var ComportementPush = Class.create(Comportement, {
     }
 
 });
-
