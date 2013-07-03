@@ -352,8 +352,9 @@ function render_date_announce(elements) {
 	if (elements.debut == 0 || elements.fin == 0){
 		return "";
 	} else {
-		var start = get_date_from_date(elements.debut);
-		var end = get_date_from_date(elements.fin);
+		var start = get_date_from_timestamp(elements.debut);
+		var startInt = get_date_from_timestamp_int(elements.debut);
+		var end = get_date_from_timestamp(elements.fin);
 		var today = get_current_date();
 		
         var startDate = start.day + " " + start.month;
@@ -371,9 +372,9 @@ function render_date_announce(elements) {
 	    if(start.day == today.day && start.month==today.month)
 	    	content = "Aujourd'hui : "+startTime+" - "+endTime;
 	    else{
-	    	var currentDate = new Date(start.year, start.month, start.day);
+	    	var currentDate = new Date(startInt.year, startInt.month, startInt.day);
     		var currentDay = get_a_day(currentDate.getDay());
-	    	content = currentDay+" "+dayString+" : "+startTime+" - "+endTime;
+	    	content = currentDay+" "+dayString+" : "+startTime+" - "+endTime;	
 	    }
 	
 	    return content;

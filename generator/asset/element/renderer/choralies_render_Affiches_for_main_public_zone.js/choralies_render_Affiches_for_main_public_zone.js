@@ -23,7 +23,7 @@ function choralies_render_Affiches_for_main_public_zone(tableau, zone, timeInfo)
 		
 		content += "<div id='affiches' class='main_div_zone'>";
 			content += "<div class='affiche_body'>";
-				content += "<div class='affiche_Dates'>"+render_hour_announce(elements)+"</div>";
+				content += "<div class='affiche_Dates'>"+render_date_announce(elements)+"</div>";
 				content += "<div class='affiche_Title'>"+elements.titre+"</div>";
 				content += "<div class='affiche_Price'>"+elements.tarif+"</div>";
 				content += "<div class='affiche_Subtitle'>"+elements.soustitre+"</div>";
