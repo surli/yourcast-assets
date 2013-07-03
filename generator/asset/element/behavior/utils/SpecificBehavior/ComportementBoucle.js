@@ -11,11 +11,7 @@
  *
  *	Informations :
  *
- *		La classe comportement smooth reprend les mêmes
- *		principes que comportement mais au lieu de faire une
- *		requête chaque fois qu'on revient au début du 
- *		comportement, on effectue une requête toutes les x
- *		secondes.
+ *
  *
  *	Versions :
  *
@@ -48,56 +44,69 @@ var ComportementBoucle = Class.create(Comportement, {
 		// On réinitialise
 		$super();
 
-		// On clear le timeout
-		clearTimeout(this.timeout_loop_request);
-
 	},
 
-	run: function($super) {
+	/**
+	 *	Lance le comportement
+	 *
+	 *	Cette fonction est lancée que si le comportement
+	 *	est arrêtée. Elle repasse la variable marche à
+	 * 	true et appelle la fonction goto à l'indice où
+	 *	le comportement s'était arrêté.
+	 */
+	run: function() {
 
-		// On stocke le this
-		var self = this;
-
-		// Si on est pas déjà en route
-		if(!self.isRunning()) {
-
-			// Changement
-			self.marche = true;
-
-			// Loop des requêtes
-			this.loop_request();
-
-			// On appelle le changement d'élément
-			self.goto(self.indice);
-
-		}
+		this.next();
 
 	},
 
 	next: function() {
 
 		// Sécurité
-		this.securiteInfosZone();
+		if(this.securiteInfosZone()) {
 
-		// On incrémente l'indice
-		this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
+			// On incrémente l'indice
+			this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
 
-		// On appelle le changement d'élément
-		this.goto(this.indice);
+			// On appelle le changement d'élément
+			this.goto(this.indice);
+
+		}
 
 	},
 
+	/**
+	 *	Boucle des requêtes
+	 *
+	 *	Permet de lancer une requête toutes les x secondes.
+	 */
 	loop_request: function() {
 
-		if(isRunning()) {
+		this.zone_concerne.request();
 
-			var self = this;
+	},
 
-			this.zone_concerne.request();
+	/**
+	 *	Setter de la zone
+	 *
+	 *	Permet de chancer la zone du comportement. 
+	 *
+	 *	/!\ Cette fonction doit être appelée lors du 
+	 *	lancement du comportement sous peine d'avoir 
+	 *	une erreur critique.
+	 */
+	setZone: function($super, nouvelle_zone) {
 
-			this.timeout_loop_request = setInterval(function() { self.loop_request(); }, self.time_loop_request * 1000);
+		// Stockage de la nouvelle zone
+		$super(nouvelle_zone);
 
-		}
+		// Le comportement est arrêté
+		this.marche = false;
+
+		var self = this;
+
+		// Lance la loop
+		this.timeout_loop_request = setInterval(function() { self.loop_request(); }, self.time_loop_request * 1000);
 
 	}
 

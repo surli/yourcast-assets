@@ -44,7 +44,6 @@ var Zone = Class.create({
 			this.id = id;
 
         }
-
         // Sinon Exception
         else {
         	throw new Exception("[moteur/js/controler_zone.js] initialize", "L'id de la zone n'a pas été trouvée dans le code html.");	
@@ -218,7 +217,7 @@ var Zone = Class.create({
 		var self = this;
 
 		// On test si les images sont chargés et que on a des infos à afficher
-		if (self.imagesAreLoaded() && self.infoList.length > 0) {
+		if (self.imagesAreLoaded()) {
 
 			// On lance le comportement
 			self.runComportement();
