@@ -314,9 +314,6 @@ var Zone = Class.create({
 			// On reset la zone
 			this.reset_zone();
 
-			// On cache la zone
-			self.cacherZone();
-
 		}
 
 		// On initialise le comportement
