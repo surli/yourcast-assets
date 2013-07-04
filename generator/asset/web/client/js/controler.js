@@ -379,9 +379,6 @@ var Zone = Class.create({
 
 			onFailure: function(transport) { 
 
-				// On cache la zone
-				self.cacherZone();
-
 				// Création d'une exception
 				throw new Exception("[moteur/js/controler_zone.js] request", "La requête vers l'url donné a échouée.");
 
