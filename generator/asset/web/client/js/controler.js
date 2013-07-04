@@ -367,8 +367,6 @@ var Zone = Class.create({
 						// On stop le comportement
 						self.comportement.stop();
 
-						// On cache la zone
-						self.cacherZone();
 					}
 
 				} else {
