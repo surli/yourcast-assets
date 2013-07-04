@@ -48,51 +48,57 @@ var ComportementScrollingLeft = Class.create(Comportement, {
 
         // Contenu de la barre de scrolling
         var content = "";
-
-        // Temps d'affichage de la barre de scrolling
         var time = 0;
+        var info;
 
-		// On récupère les informations
-		for (var i = 0; i < this.zone_concerne.getInfos().length ; i++) {
-			
-			// On stocke l'info
-			info = this.zone_concerne.getInfos()[i];
+        // On récupère les informations
+        for (var i = 0; i < this.zone_concerne.counterInfo ; i++) {
+            
+            // On stocke l'info
+            info = this.zone_concerne.getInfos()[i];
 
-			// On ajoute le content au content
-			content += info.content;
+            // On ajoute le content au content
+            content += info.content;
 
-			// On ajoute le temps d'affichage
-			time += info.time;
+            // On ajoute le temps d'affichage
+            time += info.time;
 
-		}
+        }
 
-		content = "<div class='scrollContentLeft'><span class='scrollContent toLeft' id='scrollcontent_"+this.zone_concerne.id+"'>"+content+"</span></div>";
-		var dicoInfo = { "content":content };
-		this.zone_concerne.changeContent(dicoInfo);
-			
-		var tailleSpan = document.getElementById('scrollcontent_'+this.zone_concerne.id).offsetWidth;
+        content = "<div class='scrollContentLeft'><span class='scrollContent toLeft' id='scrollcontent_"+this.zone_concerne.id+"'>"+content+"</span></div>";
+        var dicoInfo = { "content":content };
+        this.zone_concerne.changeContent(dicoInfo);
 
-		var leftPourcent = (tailleSpan * 100) / this.zone_concerne.divMarquee.offsetWidth;
+        // Récupération de la taille du span
+        var tailleSpan = document.getElementById('scrollcontent_' + this.zone_concerne.id).offsetWidth;
 
-		var style = create_or_replace_behaviour_style_zone();
-		
-		style.innerHTML = "#"+this.zone_concerne.id+" span#scrollcontent_"+this.zone_concerne.id+"{ ";
-		style.innerHTML += " -moz-animation-name: marquee;";
-		style.innerHTML += " -webkit-animation-name: marquee;";
-		style.innerHTML += " -moz-animation-duration: "+time+"s;";
-		style.innerHTML += " -webkit-animation-duration: "+time+"s;";
-		style.innerHTML += " -moz-animation-iteration-count: infinite;";
-		style.innerHTML += " -webkit-animation-iteration-count: infinite;";
-		style.innerHTML += " -moz-animation-timing-function: linear;";
-		style.innerHTML += " -webkit-animation-timing-function: linear; } ";
+        // Calcule du pourcentage pour la scrollbar
+        var leftPourcent = (tailleSpan * 100) / this.zone_concerne.divMarquee.offsetWidth;
 
-		style.innerHTML += "@-webkit-keyframes marquee{ from { left: 100%; } to { left: -"+leftPourcent+"%; } }";
-		style.innerHTML += "  @-moz-keyframes marquee{ from { left: 100%; } to { left: -"+leftPourcent+"%; } }";
+        // Crée un nouveau style
+        var style = create_or_replace_behaviour_style_zone();
+        
+        // Ajout des animations
+        style.innerHTML = "#" + this.zone_concerne.id+" span#scrollcontent_" + this.zone_concerne.id+" { ";
 
-		document.head.appendChild(style);
+        style.innerHTML += " -webkit-animation: fromLeft " + time + "s linear 0s infinite;";
+        style.innerHTML += " -moz-animation: fromLeft " + time + "s linear 0s infinite;";
+        style.innerHTML += " -ms-animation: fromLeft " + time + "s linear 0s infinite;";
+        style.innerHTML += " -o-animation: fromLeft " + time + "s linear 0s infinite;";
+        style.innerHTML += " animation: fromLeft " + time + "s linear 0s infinite; }";
+
+        // Ajout des keyframes left et right
+        style.innerHTML += "@-webkit-keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-moz-keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-ms-keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-o-keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+
+        // Ajout du style au head
+        document.head.appendChild(style);
 
     }
-
+    
 });
 
 
