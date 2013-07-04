@@ -36,33 +36,36 @@ var SILENT_DEBUG = "silent";
 //	FONCTIONS
 // ====================================================
 
-function loadScriptCallback(url, callback)
-{
-  // adding the script tag to the head as suggested before
-  var head = document.getElementsByTagName('head')[0];
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = url;
-
-  if(typeof callback !== 'undefined') {
-    
-    // then bind the event to the callback function 
-    // there are several events for cross browser compatibility
-    script.onreadystatechange = callback;
-    script.onload = callback;
-
-  }
-
-  // fire the loading
-  head.appendChild(script);
-}
-
 /**
- *	Charge un script javascript
+ *	Charge un fichier Javascript
+ *
+ *	Callback non définit => Synchrone : On attend la fin du 
+ *	chargement pour continuer.
+ *	Callback définit => A-synchrone : On n'attend pas la fin du
+ *	chargement pour continuer.
  */
-function loadScript(url) {
-	loadScriptCallback(url);
+function loadScript(url, callback) {
+
+	// Callback définit
+	if(callback) {
+
+		// adding the script tag to the head as suggested before
+		var head = document.getElementsByTagName('head')[0];
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = url;
+
+		// fire the loading
+		head.appendChild(script);
+
+	} else {
+
+		document.write('<script type="text/javascript" src="' +  url + '"></script>');
+		
+	}
+
 }
+
 
 /**
  *	Méthode qui permet d'ajouter une feuille de style dans le document
