@@ -1,3 +1,5 @@
+source=Source
+target=Renderer
 rule RS_TypeInfo_Sel :
 	SELECTED TypeInfo.$X => SELECT TypeInfo.$X ;
 	

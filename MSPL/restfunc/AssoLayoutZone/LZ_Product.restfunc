@@ -1,3 +1,5 @@
+source=Layout
+target=Zone
 rule :
 	SELECTED Design.$A => SELECT Design.$A ;
 
