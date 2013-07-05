@@ -29,16 +29,6 @@ loadScript(BEHAVIOUR_PATH+"/ComportementBoucle.js");
 var ComportementAlerte = Class.create(ComportementBoucle, {
 
     /**
-     *  Initialise le temps entre chaque requête à 10
-     *  secondes.
-     */
-    intialize: function($super) {
-
-        $super(10);
-
-    },
-
-    /**
      *  Met l'alerte zone en z-index obligatoirement.
      *
      *  On met l'alerte en position absolute car le 
@@ -47,6 +37,8 @@ var ComportementAlerte = Class.create(ComportementBoucle, {
      *  position).
      */
     setZone: function($super, nouvelle_zone) {
+
+        this.time_loop_request = typeof nouvelle_zone.request_timeout === 'undefined' ? 10 : nouvelle_zone.request_timeout;
 
         $super(nouvelle_zone);
 
