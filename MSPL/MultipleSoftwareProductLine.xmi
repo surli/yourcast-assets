@@ -28,76 +28,77 @@
   </domainElements>
   <domainElements
       belongs_to="//@associations.3"
-      id="layout">
-    <MultiplicityElement
-        lowerBound="1"
-        upperBound="1"/>
-  </domainElements>
-  <domainElements
-      belongs_to="//@associations.2"
       id="behaviour">
     <MultiplicityElement
         lowerBound="1"
         upperBound="-1"/>
   </domainElements>
+  <domainElements
+      belongs_to="//@associations.2"
+      id="layout">
+    <MultiplicityElement
+        lowerBound="1"
+        upperBound="1"/>
+  </domainElements>
   <associations
-      id="AssoSourceRenderer">
-    <source
+      id="AssoRendererSource">
+    <extremity
+        apply_on="//@domainElements.1"
+        id="">
+      <LinkMultiplicity
+          lowerBound="1"
+          upperBound="1"/>
+    </extremity>
+    <extremity
         apply_on="//@domainElements.0">
       <LinkMultiplicity
           lowerBound="1"
           upperBound="1"/>
-    </source>
-    <target
-        apply_on="//@domainElements.1">
-      <LinkMultiplicity
-          lowerBound="1"
-          upperBound="1"/>
-    </target>
+    </extremity>
   </associations>
   <associations
       id="AssoRendererZone">
-    <source
+    <extremity
         apply_on="//@domainElements.1">
       <LinkMultiplicity
           lowerBound="1"
           upperBound="-1"/>
-    </source>
-    <target
+    </extremity>
+    <extremity
         apply_on="//@domainElements.2">
       <LinkMultiplicity
           lowerBound="1"
           upperBound="1"/>
-    </target>
+    </extremity>
   </associations>
   <associations
-      id="AssoBehaviourZone">
-    <source
+      id="AssoLayoutZone">
+    <extremity
         apply_on="//@domainElements.4">
       <LinkMultiplicity
           lowerBound="1"
           upperBound="1"/>
-    </source>
-    <target
-        apply_on="//@domainElements.2">
-      <LinkMultiplicity
-          lowerBound="1"
-          upperBound="1"/>
-    </target>
-  </associations>
-  <associations
-      id="AssoLayoutZone">
-    <source
-        apply_on="//@domainElements.3">
-      <LinkMultiplicity
-          lowerBound="1"
-          upperBound="1"/>
-    </source>
-    <target
+    </extremity>
+    <extremity
         apply_on="//@domainElements.2">
       <LinkMultiplicity
           lowerBound="1"
           upperBound="-1"/>
-    </target>
+    </extremity>
+  </associations>
+  <associations
+      id="AssoBehaviourZone">
+    <extremity
+        apply_on="//@domainElements.3">
+      <LinkMultiplicity
+          lowerBound="1"
+          upperBound="1"/>
+    </extremity>
+    <extremity
+        apply_on="//@domainElements.2">
+      <LinkMultiplicity
+          lowerBound="1"
+          upperBound="1"/>
+    </extremity>
   </associations>
 </msplm:MultipleSoftwareProductLine>

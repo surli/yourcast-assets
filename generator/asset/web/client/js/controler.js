@@ -314,9 +314,6 @@ var Zone = Class.create({
 			// On reset la zone
 			this.reset_zone();
 
-			// On cache la zone
-			self.cacherZone();
-
 		}
 
 		// On initialise le comportement
@@ -370,8 +367,6 @@ var Zone = Class.create({
 						// On stop le comportement
 						self.comportement.stop();
 
-						// On cache la zone
-						self.cacherZone();
 					}
 
 				} else {
@@ -383,9 +378,6 @@ var Zone = Class.create({
 			},
 
 			onFailure: function(transport) { 
-
-				// On cache la zone
-				self.cacherZone();
 
 				// Création d'une exception
 				throw new Exception("[moteur/js/controler_zone.js] request", "La requête vers l'url donné a échouée.");

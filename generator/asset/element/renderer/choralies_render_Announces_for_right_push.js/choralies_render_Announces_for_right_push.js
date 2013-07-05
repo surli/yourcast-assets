@@ -26,7 +26,7 @@ function choralies_render_Announces_for_right_push(tableau, zone, timeInfo) {
 		if (contentAnnounces.length > 500) {contentAnnounces = contentAnnounces.substring(0, 500); contentAnnounces += " ...";}
 		var content = "";
 		
-		content += "<div id='"+zone.id+"_new_push' class='push_div_zone' style='display:none;'>";
+		content += "<div id='"+zone.id+"_new_push' class='push_div_zone'>";
 			content += "<div class='announce_body'>";
 				content += "<div class='announce_Title'>"+elements.titre+"</div>";
 				if (isPropertyDefined(elements.image)){
