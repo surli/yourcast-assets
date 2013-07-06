@@ -15,6 +15,7 @@ zone13 = FM(Zone: Product Elements Orientation Design; Product: mobileMainZone_c
 zone14 = FM(Zone: Product Elements Orientation Design; Product: jourUnRightZone_choralies; Elements: Content Title; Content: Text; Orientation: Portrait; Design: Choralies;)
 zone15 = FM(Zone: Product Elements Orientation Design; Product: HeaderZone_glc; Elements: Content; Content: Graphic; Graphic: Thumbnails; Orientation: Landscape; Design: GLC;)
 zone16 = FM(Zone: Product Elements Orientation Design; Product: counterZone_choralies; Elements: Content; Content: Counter; Orientation: Portrait; Design: Choralies;)
-zone17 = FM(Zone: Product Elements Orientation Design; Product: theatreMainZone_choralies; Elements: Content Title; Content: Text Graphic; Graphic: Thumbnails Full; Orientation: Landscape; Design: Choralies Theatre;)
+zone17 = FM(Zone: Product Elements Orientation Design; Product: alertZone_choralies; Elements: Content; Content: Text; Orientation: Landscape; Design: Choralies;)
+zone18 = FM(Zone: Product Elements Orientation Design; Product: theatreMainZone_choralies; Elements: Content Title; Content: Text Graphic; Graphic: Thumbnails Full; Orientation: Landscape; Design: Choralies Theatre;)
 
 fm_zone = merge sunion zone*

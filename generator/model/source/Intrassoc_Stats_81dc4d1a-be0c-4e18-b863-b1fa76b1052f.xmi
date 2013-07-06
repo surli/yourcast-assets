@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Intrassoc_Stats" id="Intrassoc_Stats">
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Intrassoc_Stats_81dc4d1a-be0c-4e18-b863-b1fa76b1052f.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Intrassoc_Stats" pathPrefix="stats/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Intrassoc_Stats" editMessage="Editer Statistiques vari√©es sur les Choralies Intrassoc_Stats">
+      <parameters name="Nombre d'√©l√©ments" tip="Nombre max d'informations r√©cup√©r√©es." constraint="NONE" dbName="limit"/>
+      <parameters name="Th√®me" type="STRING" tip="Th√®me des statistiques parmi &quot;repas&quot;, &quot;departement&quot;, &quot;structure&quot;, &quot;role&quot;, &quot;activite&quot;." constraint="NONE" dbName="theme"/>
+    </methods>
+    <list name="Nombre d'√©l√©ments" tip="Nombre max d'informations r√©cup√©r√©es." parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Th√®me" tip="Th√®me des statistiques parmi &quot;repas&quot;, &quot;departement&quot;, &quot;structure&quot;, &quot;role&quot;, &quot;activite&quot;." parameters="//@personalization/@methods/@parameters.1"/>
+  </personalization>
+</prodsource:Source>
