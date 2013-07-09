@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="6" name="choralies_render_Ateliers_for_main.js" infoType="Events">
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="30" name="choralies_render_Ateliers_for_main.js" infoType="Events">
   <function name="choralies_render_Ateliers_for_main"/>
   <resource name="../utils/calendar.js" path="js/renderers/utils/calendar.js"/>
   <resource name="img/atelier_arrow.png" type="image" path="img/atelier_arrow.png"/>
