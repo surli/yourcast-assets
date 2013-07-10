@@ -372,7 +372,7 @@ function render_date_announce(elements) {
 	    if(start.day == today.day && start.month==today.month)
 	    	content = "Aujourd'hui : "+startTime+" - "+endTime;
 	    else{
-	    	var currentDate = new Date(startInt.year, startInt.month, startInt.day);
+	    	var currentDate = new Date(startInt.year, startInt.month-1, startInt.day);
     		var currentDay = get_a_day(currentDate.getDay());
 	    	content = currentDay+" "+dayString+" : "+startTime+" - "+endTime;	
 	    }
@@ -438,7 +438,7 @@ function render_day_atelier(elements) {
 		    //if(elements - currentTimestamp.getTime() < 2764800001) return "demain";
 		    if(add_zero_if_need(tomorrow.getDate())==start.day && get_a_month(tomorrow.getMonth())==start.month) return "demain";
 		    else {
-		    	var currentDate = new Date(startInt.year, startInt.month, startInt.day);
+		    	var currentDate = new Date(startInt.year, startInt.month-1, startInt.day);
     			var currentDay = get_a_day(currentDate.getDay());
 	    		return currentDay+" "+start.day;
 		    }

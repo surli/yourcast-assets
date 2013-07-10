@@ -4,6 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
 		
 		<title>YourCast Choralies - Version mobile</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 
 		<script type="text/javascript" src="js/libs/prototype.js"></script>
 		<script type="text/javascript" src="js/utils.js"></script>
@@ -39,8 +40,14 @@
 		
 	</head>
 
-	<body onload="$onLoadContent; loadScript('js/libs/less.js');" class="mobile">
+	<body onload="$onLoadContent; loadScript('js/libs/less.js',true);" class="mobile">
 
+	<div id="headerZone">
+		<span class="logo" id="headerZone_logo"></span>
+		<span class="title" id="headerZone_title"></span>
+		<span class="year">2013</span>
+	</div>
+		
 		$layoutBody
 				
 		<div id="logo_loading">

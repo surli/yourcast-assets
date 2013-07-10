@@ -1,0 +1,13 @@
+<div class="hero-unit" xmlns="http://www.w3.org/1999/html">
+    <tabs></tabs>
+</div>
+<div>
+    <div>
+        <h3>Il y a actuellement {{numberCalls}} appels <b>Toutes zones confondues </b></h3> 
+
+        <p><h3> Lister ou ajouter un appel dans une des zones suivantes </h3></p>
+        <ul ng-repeat="zone in zones">
+           <li><h4><a href="#/tab/{{tab}}/{{zone}}">{{zone}}</a></h4></li>
+        </ul>
+    </div>
+</div>

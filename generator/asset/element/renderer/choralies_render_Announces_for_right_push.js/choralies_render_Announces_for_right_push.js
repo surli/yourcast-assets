@@ -38,7 +38,7 @@ function choralies_render_Announces_for_right_push(tableau, zone, timeInfo) {
 			content += "</div>";
 		content += "</div>";		
 		
-		var dico = {"content": content, "logo": '', "title": '', "time": time};
+		var dico = {"content": content, "logo": '', "title": '', "time": time, "bloc": true};
 		zone.pushInfo(dico);
 
 	}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="4" name="choralies_render_Pictures_full_for_main.js" infoType="PictureAlbum">
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="10" name="choralies_render_Pictures_full_for_main.js" infoType="PictureAlbum">
   <function name="choralies_render_Pictures_full_for_main"/>
   <resource name="../utils/pictures.js" path="js/renderers/utils/pictures.js"/>
   <resource name="less/choralies_render_Pictures_full_for_main.less" type="css" path="less/choralies_render_Pictures_full_for_main.less"/>

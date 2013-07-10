@@ -6,13 +6,14 @@ jourUnMainZone_choralies,Orientation,Product,Graphic,Landscape,Choralies,Title,D
 Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,GLC,Full,Elements,Zone,Content,MainZone_glc,Thumbnails:./zone/mainZone_glc.xmi
 Orientation,Product,Graphic,Choralies,Title,Design,publicLeftZone_choralies,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/publicLeftZone_choralies.xmi
 Orientation,Product,Logo,Graphic,Landscape,Design,Text,GLC,Elements,BottomZone_glc,Zone,Content,Thumbnails:./zone/bottomZone_glc.xmi
-Orientation,Product,Bloc,Graphic,Choralies,publicRightZone_choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/publicRightZone_choralies.xmi
+Orientation,Product,Graphic,Bloc,Choralies,publicRightZone_choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/publicRightZone_choralies.xmi
 Orientation,Product,Graphic,Landscape,Choralies,Title,Design,attenteMainZone_choralies,Text,Full,Elements,Zone,Content,Thumbnails:./zone/attenteMainZone_choralies.xmi
 Orientation,Product,Graphic,Landscape,atelierMainZone_choralies,Choralies,Title,Design,Text,Full,Elements,Zone,Content,Thumbnails:./zone/atelierMainZone_choralies.xmi
-Orientation,Product,Bloc,Graphic,rightZone_choralies,Choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_choralies.xmi
+Orientation,Product,Graphic,Bloc,rightZone_choralies,Choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_choralies.xmi
 IRSAM,Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,Full,Elements,MainZone_irsam,Zone,Content:./zone/mainZone_irsam.xmi
 Text,Orientation,Product,Graphic,Elements,Portrait,Choralies,Zone,Content,mobileMainZone_choralies,Thumbnails,Design:./zone/mobileMainZone_choralies.xmi
 Text,Orientation,Product,Elements,Portrait,Choralies,Zone,jourUnRightZone_choralies,Content,Title,Design:./zone/jour1RightZone_choralies.xmi
-Orientation,Product,Graphic,GLC,Landscape,Elements,Zone,Content,Thumbnails,HeaderZone_glc,Design:./zone/headerZone_glc.xmi
+Orientation,Product,Graphic,GLC,Landscape,Elements,Zone,Content,HeaderZone_glc,Thumbnails,Design:./zone/headerZone_glc.xmi
 Orientation,Product,Elements,Portrait,Counter,Choralies,Zone,counterZone_choralies,Content,Design:./zone/counterZone_choralies.xmi
+Text,Orientation,Product,Landscape,alertZone_choralies,Elements,Choralies,Zone,Content,Design:./zone/alertZone_choralies.xmi
 Orientation,Product,Graphic,theatreMainZone_choralies,Landscape,Choralies,Title,Design,Theatre,Text,Full,Elements,Zone,Content,Thumbnails:./zone/theatreMainZone_choralies.xmi

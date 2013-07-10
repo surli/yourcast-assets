@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="150" name="choralies_render_Alerts_for_scrolling.js" infoType="Alertes">
+  <function name="choralies_render_Alerts_for_scrolling"/>
+  <resource name="less/choralies_render_Alerts_for_scrolling.less" type="css" path="less/choralies_render_Alerts_for_scrolling.less"/>
+</prodrenderer:Renderer>
