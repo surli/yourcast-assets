@@ -15,11 +15,11 @@
           <div style="text-align: right"> <button class="btn" ng-click="addNewCall(call.callID)"><i class="icon-plus"></i> Ajouter un appel</button></div>
         </caption>
         <tr>
-            <th ng-repeat="param in call.params">{{param.humanName}}</th> <!-- TODO use call's properties instead of param's -->
+            <th>{{call.provider.name}}</th> <!-- TODO use call's properties instead of param's -->
             <th> Action</th>
         </tr>
         <tr>
-            <td ng-repeat="par in call.params">{{par.type}}, {{par.id}}</td>
+            <td>{{call.service.name}}</td>
             <td><button class="btn btn-small" ng-click="removeCall(call.callID)"> <i class="icon-trash"></i>Supprimer</button> <button class="btn btn-small" ng-click="editCall(call.callID)"><i class="icon-pencil"></i> Modifier</button></td>
         </tr>
     </table>
