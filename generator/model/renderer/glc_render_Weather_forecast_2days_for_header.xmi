@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="600" name="glc_render_Weather_forecast_2days_for_header.js" infoType="Forecast">
+  <function name="glc_render_Weather_forecast_2days_for_header"/>
+  <resource name="../utils/meteo.js" path="js/renderers/utils/meteo.js"/>
+  <resource name="img/logos/weather.png" type="image" path="img/logos/weather.png"/>
+  <resource name="img/climacons-font/webfont/climacons-font.css" type="image" path="img/climacons-font/webfont/climacons-font.css"/>
+  <resource name="img/climacons-font/webfont/climacons-webfont.svg" type="image" path="img/climacons-font/webfont/climacons-webfont.svg"/>
+  <resource name="img/climacons-font/webfont/climacons-webfont.eot" type="image" path="img/climacons-font/webfont/climacons-webfont.eot"/>
+  <resource name="img/climacons-font/webfont/climacons-webfont.ttf" type="image" path="img/climacons-font/webfont/climacons-webfont.ttf"/>
+  <resource name="img/climacons-font/webfont/climacons-webfont.woff" type="image" path="img/climacons-font/webfont/climacons-webfont.woff"/>
+  <resource name="less/glc_render_Weather_current_for_main_different_title_Rennes.less" type="css" path="less/glc_render_Weather_current_for_main_different_title_Rennes.less"/>
+</prodrenderer:Renderer>

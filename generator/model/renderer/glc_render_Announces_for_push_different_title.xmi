@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="20" name="glc_render_Announces_for_push_different_title.js" infoType="News">
+  <function name="glc_render_Announces_for_push_different_title"/>
+  <resource name="../utils/calendar.js" path="js/renderers/utils/calendar.js"/>
+  <resource name="img/logos/announce.png" type="image" path="img/logos/announce.png"/>
+  <resource name="less/glc_render_Announces_for_push_different_title.less" type="css" path="less/glc_render_Announces_for_push_different_title.less"/>
+</prodrenderer:Renderer>
