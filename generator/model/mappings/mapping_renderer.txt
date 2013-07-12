@@ -1,10 +1,11 @@
 IRSAM,Discretization,Logo,FromSource,Location,Calendar,Title,Design,TypeInfo,Renderer,Elements,FrenchDate,Content,ByOne:./renderer/irsam_render_ICalReader_for_irsam.xmi
-TypeInfo,Renderer,Discretization,StatCounter,Elements,Counter,Choralies,Content,ByOne,Design:./renderer/choralies_render_Counter_for_right_zone.xmi
-TypeInfo,Renderer,PictureAlbum,Discretization,Graphic,Full,Elements,Choralies,Content,Title,ByOne,Design:./renderer/choralies_render_Pictures_full_for_theatre.xmi
-AnnounceTitle,Discretization,Logo,Graphic,FilterByDate,FromSource,News,Title,Design,TypeInfo,Text,Renderer,GLC,Elements,Content,ByOne:./renderer/glc_render_Announces_for_main_different_title.xmi
 Discretization,Graphic,Bloc,SupraLink_News,Choralies,Title,Design,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Announces_for_right_push.xmi
+TypeInfo,Renderer,Discretization,StatCounter,Elements,Counter,Choralies,Content,ByOne,Design:./renderer/choralies_render_Counter_for_right_zone.xmi
+AnnounceTitle,Discretization,Logo,Graphic,FilterByDate,FromSource,News,Title,Design,TypeInfo,Text,Renderer,GLC,Elements,Content,ByOne:./renderer/glc_render_Announces_for_main_different_title.xmi
+TypeInfo,Renderer,PictureAlbum,Discretization,Graphic,Full,Elements,Choralies,Content,Title,ByOne,Design:./renderer/choralies_render_Pictures_full_for_theatre.xmi
 Discretization,Graphic,Choralies,Title,Design,Article,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Articles_for_main_zone.xmi
 Discretization,Graphic,SupraLink_News,Choralies,Title,Design,TypeInfo,Renderer,Text,Full,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Announces_for_main_zone.xmi
+RSSFeed,Discretization,Graphic,Title,Design,TypeInfo,Renderer,Text,UNS,GLC,Elements,Content,ByOne:./renderer/glc_render_RSS_for_main_universite.xmi
 TypeInfo,Renderer,Discretization,Graphic,Elements,Choralies,Forecast,Content,Thumbnails,ByOne,Design:./renderer/choralies_render_Weather_Forecast_for_header.xmi
 TypeInfo,Text,Renderer,Discretization,BySix,Events,Elements,Choralies,Content,Title,Design:./renderer/choralies_render_Ateliers_for_main.xmi
 Discretization,Logo,Graphic,FromSource,By6,Title,Design,TypeInfo,Renderer,PictureAlbum,FixedNumber,GLC,Elements,AlbumName,Content,Thumbnails:./renderer/glc_render_Pictures_for_main_mosaic.xmi
@@ -19,8 +20,8 @@ PlaylistVideo,Discretization,Graphic,Choralies,Title,Design,Theatre,TypeInfo,Ren
 Discretization,Graphic,Affiche,Choralies,Title,Design,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Affiches_for_left_zone.xmi
 Discretization,SourceTitle,Logo,Graphic,FilterByDate,FromSource,MainZone,News,Title,Design,TypeInfo,Text,Renderer,GLC,Elements,Content,ByOne:./renderer/glc_render_Announces_for_main_same_title.xmi
 IRSAM,Discretization,Logo,FromSource,Title,Design,PredefinedTitle,TypeInfo,Renderer,Birthday,Elements,FirstName,Content,ByOne:./renderer/irsam_render_birthday_for_irsam.xmi
-IRSAM,Discretization,Logo,Graphic,FromSource,Title,Design,TypeInfo,Renderer,PictureAlbum,Full,Elements,AlbumName,Content,ByOne:./renderer/irsam_render_Pictures_for_main_fullArea.xmi
 TypeInfo,Text,Renderer,Discretization,Elements,Choralies,All,Content,Tweets,Design:./renderer/choralies_render_Twitter_for_scrolling.xmi
+IRSAM,Discretization,Logo,Graphic,FromSource,Title,Design,TypeInfo,Renderer,PictureAlbum,Full,Elements,AlbumName,Content,ByOne:./renderer/irsam_render_Pictures_for_main_fullArea.xmi
 PlaylistVideo,Discretization,Graphic,Choralies,Title,Design,TypeInfo,Renderer,Text,Full,Elements,Content,ByOne:./renderer/choralies_render_Video_for_main.xmi
 TypeInfo,Renderer,Discretization,Header,Graphic,GLC,Elements,Forecast,Content,Thumbnails,ByOne,Design:./renderer/glc_render_Weather_forecast_2days_for_header.xmi
 Discretization,Graphic,Affiche,Choralies,Title,Design,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Affiches_for_main_zone.xmi

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="30" name="glc_render_Video_for_main.js" infoType="Video">
+  <function name="glc_render_Video_for_main"/>
+  <resource name="img/tv.png" type="image" path="img/tv.png"/>
+  <resource name="less/glc_render_Video_for_main.less" type="css" path="less/glc_render_Video_for_main.less"/>
+</prodrenderer:Renderer>
