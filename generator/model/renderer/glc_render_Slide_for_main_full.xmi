@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="15" name="glc_render_Slide_for_main_full.js" infoType="Slide">
+  <function name="glc_render_Slide_for_main_full"/>
+  <resource name="../utils/pictures.js" path="js/renderers/utils/pictures.js"/>
+</prodrenderer:Renderer>

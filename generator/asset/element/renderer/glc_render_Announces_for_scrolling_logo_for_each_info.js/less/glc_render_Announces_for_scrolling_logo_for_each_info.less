@@ -1,0 +1,174 @@
+@import "functions.less";
+@import "variables.less";
+
+#scrollingZone {
+    height:10%;
+    margin-top:1%;
+    overflow:hidden;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    position:relative;
+   
+}
+
+#scrollingZone .scrollContentEachLogoLeft{
+    margin-left:10px;
+    margin-right:10px;
+    height:90%;
+    color:@white;
+    overflow:hidden;
+    span{
+    	line-height:135%;
+    }
+    position:relative;
+}
+
+#scrollingZone .scrollContentEachLogoLeft .scrollContent{
+	font-size:120%;
+	white-space: nowrap;
+	display: inline-block;
+	line-height:135%;
+	height:100%;
+		
+	/* announce */
+	.announce{
+		padding:0px 10px 0 10px;
+		margin-right:40px;
+		.blackAlpha;
+		display: inline-block;
+	  	line-height:220%;
+	  	height:100%;
+		.announces_Dates{
+			color:@green;
+			display:inline-block;
+			margin:0 10px 0 10px;
+	    i {
+	        font-weight:500;
+	        font-style:normal;
+	    }
+    	.date;
+		}
+	}
+	
+	/* calendar */
+	.calendar_event{
+		padding:0px 20px 0px 10px;
+		margin-right:40px;
+		.blackAlpha;
+		display: inline-block;
+	  	line-height:220%;
+	  	height:100%;	
+	}
+	.calendar_Dates{
+		display:inline-block;
+		color:@red;
+		margin:0 10px 0 10px;
+        i {
+            font-weight:500;
+            font-style:normal;
+        }
+        .date;
+	}
+	.calendar_location{
+		display:inline-block;
+		.location;
+	}
+		
+
+	/* Twitter */
+	.logo_user{
+		margin-top:0.3em;
+		height:80%;		
+	}
+	.tweet{
+		moz-box-shadow: none;
+	  	-webkit-box-shadow: none;
+	    box-shadow: none;
+		padding:0px 10px 0 10px;
+		margin-right:20px;
+		.blackAlpha;
+		display: inline-block;
+	  	line-height:220%;
+	  	height:100%;
+		
+		.twitter_title{
+			background-color:transparent;
+			color:@white;
+			padding-top:0em;
+			i { color:@grayLight;}
+			img {
+		  		float:none;
+		  		border-radius : 3px;
+		  		height:80%;
+		  		margin-top:8px;
+		  	}
+		}
+		.twitter_Content{
+			margin-left:0em;
+			padding-right:0em;
+			a{
+				color:@blue;
+				text-decoration:none;
+			}
+			b{ font-weight:400; }
+			s{
+				text-decoration:none;
+			}
+		}		
+	}
+	
+	
+		
+}
+
+/* announces */
+.announces_title{
+  font-size: 135%;
+  margin-bottom:0.7em;
+}
+
+.announces_body{
+  margin-right:2.5em;
+  font-weight:300;
+  .announces_Dates{
+    font-size: 100%;
+    text-align: left;
+    i {
+      font-weight:500;
+      font-style:normal;
+    }
+    .date;
+  }
+  .announces_Content{
+    font-size: 120%;
+    position: relative;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    i {
+      font-weight:500;
+      font-style:normal;
+    }
+  }
+  .announces_Image{
+    position : relative;
+    display:block;
+    text-align:center;
+    margin:0.7em auto;
+    img {
+      max-height: 250px;
+    }
+  }
+  .announces_Author{
+    font-size: 100%;
+    font-weight:400;
+    color:@gray;
+    position : absolute;
+    bottom : 0.5em;
+    left : 0%;
+    width:90%;
+    text-align:right;
+    z-index:101;
+  }
+}

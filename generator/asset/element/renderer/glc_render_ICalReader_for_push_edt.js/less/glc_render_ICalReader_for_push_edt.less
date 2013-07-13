@@ -1,0 +1,62 @@
+.push_div_zone4 {
+	margin-bottom:0px;
+	border:1px solid rgba(0, 0, 0, 0.75);
+	border-bottom:5px solid @black;
+	.blackAlpha;
+	width:95%;
+	color:@white;
+	font-size:50%;
+	
+	/* calendar */
+	.calendar_body{
+		margin:10px 10px 10px 10px;
+		img {
+			float:right;
+			width:7%;
+		}		
+		.calendar_title{
+			font-weight:600;
+		}
+		.calendar_edt_events {
+			position : relative;
+		   	margin-top: 0.3em;
+		   	margin-bottom : 0.5em;
+			width: 100%;
+			.calendar_edt_header {
+				.edt-header-background;
+				color:@gray;
+				.calendar_edt_hours{
+					.date_edt_small;
+					display:inline-block;
+					i{font-style:normal;}
+				}
+				.calendar_edt_hours.inProgress{
+					.date_edt_in_progress_small;
+					display:inline-block;
+					color:@white;
+					i{font-style:normal;}
+				}
+				.calendar_edt_location {
+					float : right;
+					display:inline-block;
+					.location_edt_small;
+					margin-right:5px;
+				}
+			}
+			.calendar_edt_header.inProgress {
+				.edt-header-background_in_progress;
+			}
+						
+			.calendar_edt_summary{
+				color:@black;
+				-moz-box-shadow: 0px 0px 0px #ccc;
+    			-webkit-box-shadow: 0px 0px 0px #ccc;
+    			box-shadow: 0px 0px 0px #ccc;
+	    		padding-top:1em;	
+			}
+		}
+		.calendar_dates_multiple_element_hour_top{
+			color:@white;
+		}		
+	}
+}

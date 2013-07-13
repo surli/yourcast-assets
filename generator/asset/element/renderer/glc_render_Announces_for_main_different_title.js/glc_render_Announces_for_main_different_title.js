@@ -1,3 +1,7 @@
+
+loadScript(RENDERER_PATH+"/utils/calendar.js");
+loadLess(LESS_ROOT+"/glc_render_Announces_for_main_different_title.less");
+
 /*
  * work on announces1 source
  * display the announces on the zone1 (main)
@@ -12,9 +16,6 @@
  * - announces_Author
  * - smooth
  */
-loadScript(RENDERER_PATH+"/utils/calendar.js");
-loadLess(LESS_ROOT+"/glc_render_Announces_for_main_different_title.less");
-
 function glc_render_Announces_for_main_different_title(tableau, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 4;
 	var logo = '<img src="img/logos/announce.png"/>';

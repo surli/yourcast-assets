@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="150" name="glc_render_Twitter_for_push_different_title.js" infoType="Tweet">
+  <function name="glc_render_Twitter_for_push_different_title"/>
+  <resource name="../utils/twitter.js" path="../utils/twitter.js"/>
+  <resource name="img/logos/twitter.png" type="image" path="img/logos/twitter.png"/>
+  <resource name="less/glc_render_Twitter_for_push_different_title.less" type="css" path="less/glc_render_Twitter_for_push_different_title.less"/>
+</prodrenderer:Renderer>

@@ -1,16 +1,16 @@
+
+loadScript(RENDERER_PATH+"/utils/pictures.js");
+
 /*
  * work on picasamontana source
  * display pictures in mosaic on the zone1 (main)
  * the content is modified, the logo is the same and the title is the album's name
  * only 6 pictures are displayed (3x3)
  *
- * CSS classes :
+ * CSS classes : 
  * - main_div_zone1
- * - mosaicPictures
+ * - mosaicPictures 
  */
-
-loadLess(LESS_ROOT+"/glc_render_Pictures_for_main_mosaic.less");
-
 function glc_render_Pictures_for_main_mosaic(collection, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 7;
 	var logo = '<img src="img/logos/picture.png"/>';
@@ -19,11 +19,11 @@ function glc_render_Pictures_for_main_mosaic(collection, zone, timeInfo) {
 	if (title.length > 30) {title = title.substring(0, 30); title += " ...";}
 	var time = timeInfo;
 	var tableau = collection.pictures;
-
+	
 	var zoneHeight = $(zone.id).getHeight() - 135;
-
-	var content = "<div class='main_div_zone1 mosaicPictures' style='height:"+zoneHeight+"px;'>";
-
+	
+	var content = "<div class='main_div_zone1 mosaicPictures' style='height:"+zoneHeight+"px;'>";	
+	
 	for (var indice = 0; indice < tableau.length; indice++){
 		elements = tableau[indice].thumbs[2].url;
 		zone.loadImage(elements);
