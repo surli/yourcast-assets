@@ -23,9 +23,9 @@
                          <input ng-switch-when="NONE" type="number" step="0.50" ng-model="values[param.id]">
                     </span>
                     <span ng-switch-when="DOUBLE" ng-switch="param.typeCST">
-                        <input ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="values[param.id]">
-                        <input ng-switch-when="NUMBER" type="number" step="1" ng-model="values[param.id]">
-                         <input ng-switch-when="NONE" type="number" step="0.1" ng-model="values[param.id]">
+                        <input ng-switch-when="POSITIVE_NUMBER" type="number" ng-model="values[param.id]">
+                        <input ng-switch-when="NUMBER" type="number" ng-model="values[param.id]">
+                         <input ng-switch-when="NONE" type="number" ng-model="values[param.id]">
                     </span>
                     <select ng-switch-when="list" ng-model="myOption" ng-options="element for element in param.values" ng-checked="setOption(param.id,myOption)"></select>
                 </div>
