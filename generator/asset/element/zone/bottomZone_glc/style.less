@@ -8,5 +8,32 @@
     -webkit-transition: all .5s ease-in;
     -moz-transition: all .5s ease-in;
     transition: all .5s ease-in;
-    position:relative;
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#${zoneName} .noinfo{
+	display:table;
+	.lightBackground;
+	margin-left:1%;
+	margin-right:1%;
+	width:98%;
+	font-size:95%;
+	font-weight:400;
+	height:90%;
+
+	text-align:center;
+	div{
+		display:table-cell;
+		vertical-align:middle;
+	}
+}
+
+#${zoneName} span {
+  position: relative;
+}
+
+#${zoneName} .title{
+	display:none;
 }
