@@ -28,7 +28,7 @@
         </tr>
         <tr ng-repeat="params in call.parameters">
             <td>{{params}}</td>
-            <td><button class="btn btn-small" ng-click="removeCall(call.callID)"> <i class="icon-trash"></i>Supprimer</button> <button class="btn btn-small" ng-click="editCall(call.callID)"><i class="icon-pencil"></i> Modifier</button></td>
+            <td><button class="btn btn-small" ng-click="removeCall(call.callID, params.id)"> <i class="icon-trash"></i>Supprimer</button> <button class="btn btn-small" ng-click="editCall(params.id, call.callID)"><i class="icon-pencil"></i> Modifier</button></td>
         </tr>
     </table>
         

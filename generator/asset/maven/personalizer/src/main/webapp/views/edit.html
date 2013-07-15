@@ -2,19 +2,32 @@
     <tabs></tabs>
 </div>
 <div>
-    <h3>Modifier l' appel dans la zone {{zone}} avec le callID {{callID}}</h3>
+    <h3>Modification de l'appel {{callID}} </h3>
     <div>
         <form class="form-horizontal">
             <div class="control-group" ng-repeat="param in parameters.params">
-                <label class="control-label"><h4>{{param.humanName}}</h4></label>
+                <label class="control-label"><h4>{{param.humanName}} <span tooltip-animation="true" tooltip="{{param.help}}" tooltip-placement="bottom"><a><i class="icon-question-sign"></i></a></span></h4></label>
                 <div class="controls" ng-switch="param.type">
-                    <input ng-switch-when="string" type="text" ng-model="values[param.id]">
-                    <span ng-switch-when="int" ng-switch="param.typeCST">
+                    <span ng-switch-when="STRING">
+                    <input type="text" placeholder="Saisissez la valeur" ng-model="values[param.id]">
+                    </span>
+                    <!--<input  ng-switch-when="int" type="text" ng-model="humanNameValue" placeholder="Nom de l'appel"> -->
+                    <span ng-switch-when="INT" ng-switch="param.typeCST">
+                        <input ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="values[param.id]">
+                        <input ng-switch-when="NUMBER" type="number" min="0" step="1" ng-model="values[param.id]">
+                        <input ng-switch-when="NONE" type="number" min="0" step="1" ng-model="values[param.id]">
+                    </span>
+                     <span ng-switch-when="LONG" ng-switch="param.typeCST">
                         <input ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="values[param.id]">
                         <input ng-switch-when="NUMBER" type="number" step="1" ng-model="values[param.id]">
+                         <input ng-switch-when="NONE" type="number" step="0.50" ng-model="values[param.id]">
                     </span>
-                    <select ng-switch-when="list" ng-model="myOption" ng-options="element for element in param.values" ng-checked="setOption(param.id,myOption)" ng-model="values[param.id]"></select>
-                    <a id="{{param.id}}" data-toggle="tooltip" title="{{param.help}}"><i class="icon-question-sign icon-2x"></i></a>
+                    <span ng-switch-when="DOUBLE" ng-switch="param.typeCST">
+                        <input ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="values[param.id]">
+                        <input ng-switch-when="NUMBER" type="number" step="1" ng-model="values[param.id]">
+                         <input ng-switch-when="NONE" type="number" step="0.1" ng-model="values[param.id]">
+                    </span>
+                    <select ng-switch-when="list" ng-model="myOption" ng-options="element for element in param.values" ng-checked="setOption(param.id,myOption)"></select>
                 </div>
             </div>
         </form>
