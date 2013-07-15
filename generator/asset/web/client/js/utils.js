@@ -67,17 +67,6 @@ function loadScript(url, callback) {
 }
 
 /**
- *	Charge un script javascript
- *	
- *	@param url L'adresse du script
- *	@param callback Booléen qui indique si on doit attendre que le script
- *	soit chargé
- */
-function loadScript(url, callback) {
-    loadScriptCallback(url, callback);
-}
-
-/**
  *	Méthode qui permet d'ajouter une feuille de style dans le document
  *	
  *	@param url L'adresse du style less
