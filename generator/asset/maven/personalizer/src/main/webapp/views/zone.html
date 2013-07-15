@@ -1,3 +1,4 @@
+<div>
 <div class="hero-unit" xmlns="http://www.w3.org/1999/html">
     <tabs></tabs>
     
@@ -7,22 +8,52 @@
         <span ng-show="hasOtherZone()"><select ng-model="myZone" ng-options="element for element in getOtherZones()" ng-checked="changeZone(myZone)"></select>Changer de zone</span></span>
     </div>
     <div style="text-align: center"><h3><b> Zone : '{{zone}}'</b></h3></div>
+    <div style="text-align: right"> <button class="btn" ng-click="openAddNewCall()"><i class="icon-plus"></i> Ajouter un appel</button></div>
+    <div ng-show="newModal" style="text-align: right">
+        <span>Choisir un CallID <select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select></span>
+        <div><button class="btn btn-warning cancel" ng-click="cancelAddCall()"> Cancel </button>
+        <button class="btn btn-success" ng-click="validateAddCall()"> Validate </button>
+        </div>
+
+    </div>
 </div>
 <div>
     <div ng-repeat="call in calls"> <!-- TODO use calls will set to calls[callID] = callOfCallID -->
     <table class="table table-bordered">
-        <caption> <h3 style="text-align: center">{{call.callID}}</h3>
-          <div style="text-align: right"> <button class="btn" ng-click="addNewCall(call.callID)"><i class="icon-plus"></i> Ajouter un appel</button></div>
+        <caption> <h3 style="text-align: center">Liste des appels de la zone '{{zone}}'</h3>
         </caption>
         <tr>
-            <th>{{call.provider.name}}</th> <!-- TODO use call's properties instead of param's -->
+            <th>{{call.callID}}</th>
             <th> Action</th>
         </tr>
-        <tr>
-            <td>{{call.service.name}}</td>
+        <tr ng-repeat="params in call.parameters">
+            <td>{{params}}</td>
             <td><button class="btn btn-small" ng-click="removeCall(call.callID)"> <i class="icon-trash"></i>Supprimer</button> <button class="btn btn-small" ng-click="editCall(call.callID)"><i class="icon-pencil"></i> Modifier</button></td>
         </tr>
     </table>
         
     </div>
+
+</div>
+
+<!-- Modal opened to add new Call -->
+<!--<div modal="newModal" options="options">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancelAddCall()">×</button>
+        <h4>Choix d'un CallID </h4>
+    </div>
+    <div class="modal-body">
+        <div class="control-group">
+            <div class="controls">
+                <span><select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select> Choisir un CallID</span>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning cancel" ng-click="cancelAddCall()"> Cancel </button>
+        <button class="btn btn-success" ng-click="validateAddCall()"> Validate </button>
+    </div>
+</div>-->
+
 </div>
