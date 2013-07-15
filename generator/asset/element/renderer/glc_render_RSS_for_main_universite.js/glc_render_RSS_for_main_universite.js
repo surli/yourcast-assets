@@ -47,7 +47,7 @@ function glc_render_RSS_for_main(collection, zone, logo, timeInfo) {
 /*
  * work on rss feed source universite
  */
-function render_RSS_for_main_universite(collection, zone, timeInfo){
+function glc_render_RSS_for_main_universite(collection, zone, timeInfo){
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 5;
 	return render_RSS_for_main(collection, zone, "img/logos/rss.png", timeInfo);
 }
