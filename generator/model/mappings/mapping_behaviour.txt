@@ -6,4 +6,4 @@ Slide,Appearance,Time,Animation,Number,Smooth,Behaviour,Elements,Individual,One,
 Appearance,Time,Animation,Number,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSimple.xmi
 Time,Animation,Logo,Number,Behaviour,Elements,Static,Scrolling,All,Content,Global,RightToLeft:./behaviour/ComportementScrollingLeftLogoLeft.xmi
 Time,Animation,Number,Behaviour,Elements,Scrolling,All,Content,Global,RightToLeft:./behaviour/ComportementScrollingLeft.xmi
-Time,Animation,Bloc,Number,Behaviour,Elements,Individual,One,Content,Push,TopDown:./behaviour/ComportementPush.xmi
+Time,Animation,Number,Behaviour,Elements,Individual,One,Content,TopDown,Push:./behaviour/ComportementPush.xmi
