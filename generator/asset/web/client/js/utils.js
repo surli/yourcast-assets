@@ -36,6 +36,8 @@ var PROD = false;
 // Speed up calls to hasOwnProperty
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
+var page_charge = false;
+
 // ====================================================
 //	FONCTIONS
 // ====================================================
