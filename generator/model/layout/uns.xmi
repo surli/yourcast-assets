@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<prodlayout:Layout xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodlayout="prodlayout.yourcast.fr" name="glc">
+<prodlayout:Layout xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodlayout="prodlayout.yourcast.fr" name="uns">
   <index name="index.html" type="html"/>
   <resources name="img/yc_loading.gif" type="image" path="img/yc_loading.gif"/>
   <resources name="img/yourcast_background.png" type="image" path="img/yourcast_background.png"/>
