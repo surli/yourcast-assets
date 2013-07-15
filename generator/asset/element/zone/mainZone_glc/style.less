@@ -1,117 +1,16 @@
 @import "../less/functions.less";
 @import "../less/variables.less";
 
-#mainZone {    
-	position:relative;
+#${zoneName} {    
+    position:relative;
     font-size:100%;
     /*margin-top: 1%;    */
     height : 76%;
-	  width : 65%;
+    width : 65%;
     padding-left: 5%;
     .zone1Background;
     -moz-box-shadow: 1px 1px 1px #ccc;
     -webkit-box-shadow: 1px 1px 1px #ccc;
     box-shadow: 1px 1px 1px #ccc;
     overflow:hidden;
-}
-
-#mainZone .logo{
-	width:85px;
-	height:85px;
-	display:block;
-	float:right;
-	text-align:right;
-	img {
-	    margin-right: 10px;
-	    margin-top:10px;
-	    background : transparent no-repeat;
-	}
-}
-
-#mainZone .title {
-  	color: @grayDark;
-  	font-weight:500;
-	font-size:135%;
-	line-height:135%;
-	margin-top:5%;
-	margin-bottom:0.5em;
-	display:block;
-	margin-right:90px;
-	text-shadow:2px 2px 5px #aaa;
-}
-
-
-/*#mainZone .timer{
-	width:82%;
-	margin-left:6%;
-	height:10px;
-	position:absolute;
-	left:10px;
-	top:15px;
-	border-radius:3px;
-	background-color:@grayLighter;
-	
-	#progressbar{
-		background-color:@grayLight;
-		width:100%;
-		height:100%;
-		display:inline-block;
-		position:absolute;
-		top:0;
-		left:0;
-		border-radius:3px;
-	}
-}*/
-#mainZone .timer{
-	width:10px;
-	height:95%;
-	position:absolute;
-	left:10px;
-	top:15px;
-	border-radius:3px;
-	background-color:@grayLightPlus;
-	
-	#progressbar{
-		background-color:@grayLighter;
-		width:100%;
-		height:100%;
-		display:inline-block;
-		position:absolute;
-		top:0;
-		left:0;
-		border-radius:3px;
-	}
-}
-
-#mainZone .smooth{
-	.smooth;
-	position: absolute;
-    left: 0;
-    bottom:0px;
-    height:100px;
-	width : 100%;
-}
-
-#mainZone .main_div_zone1 {
-}
-
-#mainZone .menus_content{
- 	margin-right:2.5em;
-  font-weight:300;
-	font-size : 100%;
-	text-align : center;
-	i {
-	    color:@grayLight;
-	    font-style:normal;
-	}
-}
-#mainZone .menus_header{
- 	width:90%;
-  font-weight:500;
-	font-size : 120%;
-	text-align : center;
-}
-
-#mainZone #twitter{
-	margin-right:2.5em;
 }
