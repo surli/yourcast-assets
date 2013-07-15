@@ -36,22 +36,34 @@ var PROD = false;
 //	FONCTIONS
 // ====================================================
 
-function loadScriptCallback(url, callback) {
-
-    // On ajoute l'élément au head
-    document.write('<script type="text/javascript" src="' + url + '"></script>');
-
-}
-
 /**
- *	Charge un script javascript
- *	
- *	@param url L'adresse du script
- *	@param callback Booléen qui indique si on doit attendre que le script
- *	soit chargé
+ *	Charge un fichier Javascript
+ *
+ *	Callback non définit => Synchrone : On attend la fin du 
+ *	chargement pour continuer.
+ *	Callback définit => A-synchrone : On n'attend pas la fin du
+ *	chargement pour continuer.
  */
 function loadScript(url, callback) {
-    loadScriptCallback(url, callback);
+
+	// Callback définit
+	if(callback) {
+
+		// adding the script tag to the head as suggested before
+		var head = document.getElementsByTagName('head')[0];
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = url;
+
+		// fire the loading
+		head.appendChild(script);
+
+	} else {
+
+		document.write('<script type="text/javascript" src="' +  url + '"></script>');
+		
+	}
+
 }
 
 /**
