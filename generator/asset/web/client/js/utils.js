@@ -7,6 +7,7 @@
  *
  *	Contributors:
  *    	Simon Urli (simon.urli@gmail.com) - Main contributor
+ *    	Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
 // ====================================================
@@ -15,61 +16,92 @@
 
 var ROOT = document.location.pathname;
 
-var LESS_ROOT = ROOT + "/less";
-var JS_ROOT = ROOT + "/js";
-var IMG_PATH = ROOT + "/img";
+var LESS_ROOT       = ROOT + "/less";
+var JS_ROOT         = ROOT + "/js";
+var IMG_PATH        = ROOT + "/img";
 
-var RENDERER_PATH = JS_ROOT + "/renderers";
-var BEHAVIOUR_PATH = JS_ROOT + "/behaviours";
+var RENDERER_PATH   = JS_ROOT + "/renderers";
+var BEHAVIOUR_PATH  = JS_ROOT + "/behaviours";
 
-var DOMAIN_PATH = "http://" + document.location.host;
-//DOMAIN_PATH = "Sites/yourcast/client/generated/ihm";
+var DOMAIN_PATH     = "http://" + document.location.host;
 var DEFAULT_REQUEST_TIMEOUT = 60000;
 
-var VERBOSE_DEBUG = "verbose";
+// Variables de debug
+var VERBOSE_DEBUG   = "verbose";
+var SILENT_DEBUG    = "silent";
 
-var SILENT_DEBUG = "silent";
-
+// Variable avec des fonctions de debug
 var PROD = false;
+
+// Speed up calls to hasOwnProperty
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+var page_charge = false;
 
 // ====================================================
 //	FONCTIONS
 // ====================================================
+//  - loadScript (url : string, callback : boolean)
+//  - loadLess (url : string)
+//  - specificActionWhenRequestWorksForGlc
+//  - specificActionWhenRequestFailsForGlc
+//  - is_empty (obj : object)
+//  - isPropertyDefined (prop : string)
+//  - firstLettertoUpperCase (string)
+// ====================================================
 
 /**
- *	Charge un fichier Javascript
+ *  <b>LoadScript</b>
+ *  
+ *  Charge un fichier Javascript en synchrone ou en asynchrone.
  *
- *	Callback non définit => Synchrone : On attend la fin du 
- *	chargement pour continuer.
- *	Callback définit => A-synchrone : On n'attend pas la fin du
- *	chargement pour continuer.
+ *  Callback non définit => Synchrone : On attend la fin du chargement pour 
+ *  continuer.
+ *  Callback définit => A-synchrone : On n'attend pas la fin du chargement pour 
+ *  continuer.
+ *	
+ *  @param url Lien du fichier javascript
+ *  @param callback Asynchrone
  */
 function loadScript(url, callback) {
 
-	// Callback définit
-	if(callback) {
+    try {
 
-		// adding the script tag to the head as suggested before
-		var head = document.getElementsByTagName('head')[0];
-		var script = document.createElement('script');
-		script.type = 'text/javascript';
-		script.src = url;
+        // Callback définit
+        if (callback || page_charge) {
 
-		// fire the loading
-		head.appendChild(script);
+            // adding the script tag to the head as suggested before
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
 
-	} else {
+            // fire the loading
+            head.appendChild(script);
 
-		document.write('<script type="text/javascript" src="' +  url + '"></script>');
-		
-	}
+        } else {
+
+            document.write('<script type="text/javascript" src="' + url + '"></script>');
+
+        }
+
+    } catch (exception) {
+        
+        // Si on est en développement on affiche une exception
+        if(!PROD) {
+            new Exception("[Utils] LoadScript", "L'url est incorrect : " + url);
+        }
+        
+    }
 
 }
 
 /**
- *	Méthode qui permet d'ajouter une feuille de style dans le document
+ *  <b>LoadLess</b>
+ *  
+ *  Méthode qui permet d'ajouter une feuille de style dans le document
  *	
- *	@param url L'adresse du style less
+ *  @param url L'adresse du style less
  */
 function loadLess(url) {
 
@@ -79,7 +111,8 @@ function loadLess(url) {
         lien_less = document.createElement('link');
 
         // On met l'url donné en paramêtre
-        lien_less.rel = "stylesheet/less";
+        lien_less.rel = "stylesheet";
+        lien_less.type = "text/less";
         lien_less.href = url;
 
         // On ajoute le lien css dans le head
@@ -96,6 +129,11 @@ function loadLess(url) {
 
 }
 
+/**
+ *  <b>SpecificActionWhenRequestWorksForGlc</b>
+ *  
+ *  Actions spécifiques lorsque le client fonctionne parfaitement
+ */
 function specificActionWhenRequestWorksForGlc() {
     console.log("specif action blabla");
     if (document.getElementById('Weather_current_header')) {
@@ -104,19 +142,24 @@ function specificActionWhenRequestWorksForGlc() {
     console.log("fin de specif action blabla");
 }
 
+/**
+ *  Actions spécifiques lorsque le client ne fonctionne pas
+ */
 function specificActionWhenRequestFailsForGlc() {
     if (document.getElementById('Weather_current_header')) {
         document.getElementById('Weather_current_header').style.background = "transparent url('./img/yourcast_small_red.png') no-repeat right 10px;";
     }
 }
 
-// Speed up calls to hasOwnProperty
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-
+/**
+ *  Return if the object is empty or not.
+ *  @param {type} obj An object
+ *  @returns {Boolean} True : the object is empty
+ */
 function is_empty(obj) {
 
     // null and undefined are empty
-    if (obj == null)
+    if (obj === null)
         return true;
     // Assume if it has a length property with a non-zero value
     // that that property is correct.
@@ -133,6 +176,12 @@ function is_empty(obj) {
     return true;
 }
 
+/**
+ * Return if the object is defined
+ * 
+ * @param {type} prop
+ * @returns {@exp;@call;is_empty|Boolean}
+ */
 function isPropertyDefined(prop) {
     if (prop === undefined) {
         return false;
@@ -149,8 +198,18 @@ function isPropertyDefined(prop) {
     }
 }
 
+/**
+ * First letter in uppercase
+ * 
+ * @param {type} str String to modify
+ * @returns {unresolved} The new string
+ */
 function firstLettertoUpperCase(str) {
-    var newstr = str.charAt(0).toUpperCase();
-    newstr += str.substr(1, str.length);
+    
+    // Récupère la première lettre et la met en majuscule
+    var newstr = str.charAt(0).toUpperCase() + str.substr(1, str.length);
+    
+    // Retourne la nouvelle chaîne
     return newstr;
+    
 }
