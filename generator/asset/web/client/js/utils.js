@@ -159,7 +159,7 @@ function specificActionWhenRequestFailsForGlc() {
 function is_empty(obj) {
 
     // null and undefined are empty
-    if (obj === null)
+    if (obj === null || obj === undefined)
         return true;
     // Assume if it has a length property with a non-zero value
     // that that property is correct.
