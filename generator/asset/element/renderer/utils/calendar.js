@@ -31,7 +31,7 @@ function pastEvent(element) {
 
 // return if the element is in progress or not
 function inProgress(element) {
-	if (element.start == 0 || element.end == 0){
+	if (element.start == 0 ){
 		return false;
 	} else {
 		
@@ -73,15 +73,15 @@ function inProgress(element) {
 
 // return if the element has to be displayed or not
 function inProgressToDisplay(element){
-	
-	if (element.start == 0 || element.end == 0){
+
+	if (element.start == 0){
 		return false;
 	} else {
 		
 		var currentDate = get_current_date_int();
 		var currentTimestamp = new Date().getTime();
 			
-		if(currentTimestamp >= element.start && currentTimestamp <= element.end) return true;
+		if (currentTimestamp >= element.start && ((currentTimestamp <= element.end) || (element.end == 0))) return true;
 	    	
 		return false; 
 	}	
