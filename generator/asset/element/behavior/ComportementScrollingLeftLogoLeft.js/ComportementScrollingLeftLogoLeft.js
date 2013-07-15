@@ -25,6 +25,7 @@
 
 // Chargement des fonctions
 loadScript(BEHAVIOUR_PATH+"/utils/functions.js");
+loadLess(LESS_ROOT + "/ComportementScrollingLeftLogoLeft.less");
 
 // Classe
 var ComportementScrollingLeftLogoLeft = Class.create(Comportement, {
@@ -66,7 +67,7 @@ var ComportementScrollingLeftLogoLeft = Class.create(Comportement, {
 
 		}
 
-		content = "<div class='scrollContentLogoLeftBefore'> </div><div class='scrollContentLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_"+this.zone_concerne.id+"'>"+content+"</span></div>";
+		content = "<div class='scrollContentLogoLeftBefore'></div><div class='scrollContentLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_"+this.zone_concerne.id+"'>"+content+"</span></div>";
 		var dicoInfo = { "content":content };
 		this.zone_concerne.changeContent(dicoInfo);
 			
@@ -86,8 +87,8 @@ var ComportementScrollingLeftLogoLeft = Class.create(Comportement, {
 		style.innerHTML += " -moz-animation-timing-function: linear;";
 		style.innerHTML += " -webkit-animation-timing-function: linear; } ";
 
-		style.innerHTML += "@-webkit-keyframes marquee{ from { left: 100%; } to { left: -"+leftPourcent+"%; } }";
-		style.innerHTML += "  @-moz-keyframes marquee{ from { left: 100%; } to { left: -"+leftPourcent+"%; } }";
+        style.innerHTML += "@-webkit-keyframes marquee{ from { left: 10%; } to { left: -100%; } }";
+        style.innerHTML += "  @-moz-keyframes marquee{ from { left: 10%; } to { left: -100%; } }";
 
 		document.head.appendChild(style);
 
