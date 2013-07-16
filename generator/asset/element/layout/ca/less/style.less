@@ -1,0 +1,84 @@
+/**
+ * Style du client de Clément Ader
+ *
+ * Contributors :
+ *      Guillaume Golfieri
+ *
+ */
+
+body {
+  font-family: Tahoma;
+  font-weight: bold;
+  background-attachment:fixed;
+  overflow: hidden;
+  background-color: black;
+  
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -ms-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -ms-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+}
+
+#date_time {
+
+  // Position
+  z-index: 5;
+  position: absolute;
+  top : 0px;
+  left: 0px;
+  font-size: 2em;
+
+  // Dimenstion
+  width: 100%;
+
+  border-bottom: 20px red solid;
+
+  // Texte
+  text-align: center;
+  color: #ffffff;
+
+}
+
+@media (max-height: 768px) {
+
+  body { 
+    font-size: 80px; 
+  } 
+
+}
+
+@media (min-height: 769px) {
+
+  body { 
+    font-size: 90px; 
+  }
+
+}
+
+@media (min-height: 1024px) {
+  
+  body { 
+    font-size: 100px; 
+  }
+
+}
+
+@media (min-height: 1060px) {
+
+  body { 
+    font-size: 110px; 
+  } 
+
+}
+
+img {
+  height: 90%;
+}
+
