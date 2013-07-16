@@ -11,6 +11,14 @@
  */
 
 // ====================================================
+//	SCRIPTS PRINCIPAUX
+// ====================================================
+
+// Chargement des fichiers nécessaires
+loadScript(JS_ROOT + "/comportement.js");
+loadScript(JS_ROOT + "/exception.js");
+
+// ====================================================
 //	VARIABLES
 // ====================================================
 
@@ -32,11 +40,13 @@ var SILENT_DEBUG    = "silent";
 
 // Variable avec des fonctions de debug
 var PROD = true;
+var PAGE_CHARGE = false;
+
+// Controlergeneral
+var cg = ControlerGeneral.getInstance();
 
 // Speed up calls to hasOwnProperty
 var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-var page_charge = false;
 
 // ====================================================
 //	FONCTIONS
@@ -68,7 +78,7 @@ function loadScript(url, callback) {
     try {
 
         // Callback dÃ©finit
-        if (callback || page_charge) {
+        if (callback || PAGE_CHARGE) {
 
             // adding the script tag to the head as suggested before
             var head = document.getElementsByTagName('head')[0];
@@ -193,7 +203,7 @@ function isPropertyDefined(prop) {
             return (prop !== "");
         } else if (typeof prop === "object") {
             return !(is_empty(prop));
-        } else if (typeof prop === "array")Â {
+        } else if (typeof prop === "array") {
             return !(is_empty(prop));
         } else {
             return true;
