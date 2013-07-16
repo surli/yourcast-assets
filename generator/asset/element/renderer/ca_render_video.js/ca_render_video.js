@@ -54,11 +54,11 @@ loadLess(LESS_ROOT + '/renderers/ca_render_video.less');
 function ca_render_video(tableau, zone, timeInfo) {
 
     // Test si la collection est null ou indéfini
-    if(typeof tableau === 'undefined' || tableau === null || tableau.length == 0)
+    if(typeof tableau === 'undefined' ||�tableau === null || tableau.length === 0)
         throw new Exception("The informations are not correct");
 
     // Test si la zone est null ou indéfini
-    if(typeof zone === 'undefined' || zone === null)
+    if(typeof zone === 'undefined' ||�zone === null)
         throw new Exception("The zone is undefined or null");
 
     // Si le temps d'affichage n'est pas défini, on en stocke une par défaut
@@ -87,10 +87,10 @@ function ca_render_video(tableau, zone, timeInfo) {
          */
 
         // Youtube
-        if(elements.type == 'youtube') {
+        if(elements.type === 'youtube') {
 
             // Test si on a une url absolu ou juste l'id
-            var url = elements.urls.player.search("youtube") == -1 ? 'https://www.youtube.com/v/' + elements.urls.player : elements.urls.player;
+            var url = elements.urls.player.search("youtube") === -1 ? 'https://www.youtube.com/v/' + elements.urls.player : elements.urls.player;
 
             // Ajout du lecteur avec l'API Youtube
             content += '<object width="' + width + '" height="' + height + '">';
@@ -106,7 +106,7 @@ function ca_render_video(tableau, zone, timeInfo) {
         }
 
         // Dailymotion
-        else if(elements.type == 'dailymotion') {
+        else if(elements.type === 'dailymotion') {
 
             content += '<object width="' + width + '" height="' + height + '">';
             content += '    <param name="movie" value="http://www.dailymotion.com/swf/video/' + elements.urls['player']+ '?autoPlay=1&chromeless=1"></param>';
@@ -121,30 +121,30 @@ function ca_render_video(tableau, zone, timeInfo) {
         }
 
         // Specifique
-        else if(elements.type == 'specific') {
+        else if(elements.type === 'specific') {
 
             // Déclaration de l'url
             var url = "";
 
             // Mozilla
             if(window.mozRequestAnimationFrame) {
-                url = typeof elements.urls.webm === 'undefined' || elements.urls.webm == '' ? url : elements.urls.webm;
-                url = typeof elements.urls.ogv === 'undefined' || elements.urls.ogv == '' ? url : elements.urls.ogv;
+                url = typeof elements.urls.webm === 'undefined' || elements.urls.webm === '' ? url : elements.urls.webm;
+                url = typeof elements.urls.ogv === 'undefined' || elements.urls.ogv === '' ? url : elements.urls.ogv;
             }
 
             // Chrome
             else if(requestAnimationFrame) {
-                url = typeof elements.urls.webm === 'undefined' || elements.urls.webm == '' ? url : elements.urls.webm;
-                url = typeof elements.urls.ogv === 'undefined' || elements.urls.ogv == '' ? url : elements.urls.ogv;
+                url = typeof elements.urls.webm === 'undefined' || elements.urls.webm === '' ? url : elements.urls.webm;
+                url = typeof elements.urls.ogv === 'undefined' || elements.urls.ogv === '' ? url : elements.urls.ogv;
             }
 
             // Safari
             else if(window.webkitRequestAnimationFrame) {
-                url = typeof elements.urls.mp4 === 'undefined' || elements.urls.mp4 == '' ? url : elements.urls.mp4;
+                url = typeof elements.urls.mp4 === 'undefined' || elements.urls.mp4 === '' ? url : elements.urls.mp4;
             }
 
             // Si l'url n'est pas vide
-            if(url != '') {
+            if(url !== '') {
 
                 content += '<video width="' + width + '" height="' + height + '" src="' + url + '" autoplay>';
                 content += '</video>';

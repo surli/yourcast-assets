@@ -1,16 +1,16 @@
 
 // Chargement du style
-loadLess(LESS_ROOT + '/renderers/ca_render_birthdays.less');
+loadLess(LESS_ROOT + '/ca_render_birthdays.less');
 
 // Rendu des anniversaires
 function ca_render_birthdays(datas, zone, timeInfo) {
 
     // Test si la collection est null ou indéfini
-    if(typeof datas === 'undefined' || datas === null || datas.length == 0)
+    if(typeof datas === 'undefined' ||�datas === null || datas.length === 0)
         throw new InformationsError("The informations are not correct");
 
     // Test si la collection est null ou indéfini
-    if(typeof zone === 'undefined' || zone === null)
+    if(typeof zone === 'undefined' ||�zone === null)
         throw new ZoneError("The zone is undefined or null");
 
 
@@ -34,7 +34,7 @@ function ca_render_birthdays(datas, zone, timeInfo) {
         var name = (datas[indice].name);
 
         // Récupération de l'age
-        if(typeof datas[indice].age !== 'undefined' && datas[indice].age != "")
+        if(typeof datas[indice].age !== 'undefined' && datas[indice].age !== "")
 
             // Ajout dans l'html
             content = "<div class='main_div_mainzone'><div id='birthdays'>" + name.substr(0, 1).toUpperCase()+name.substr(1, name.length)+" - " + (datas[indice].age) + " ans</div></div>";

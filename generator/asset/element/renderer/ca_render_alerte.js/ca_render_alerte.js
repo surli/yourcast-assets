@@ -20,11 +20,11 @@ loadLess(LESS_ROOT + '/ca_render_alerte.less');
 function ca_render_alerte(tableau, zone, timeInfo) {
 
     // Test si la collection est null ou indéfini
-    if(typeof tableau === 'undefined' || tableau === null || tableau.length == 0)
+    if(typeof tableau === 'undefined' ||�tableau === null || tableau.length === 0)
         throw new InformationsError("The informations are not correct");
 
     // Test si la collection est null ou indéfini
-    if(typeof zone === 'undefined' || zone === null)
+    if(typeof zone === 'undefined' ||�zone === null)
         throw new ZoneError("The zone is undefined or null");
 
     // Si le temps d'affichage n'est pas défini, on en stocke une par défaut

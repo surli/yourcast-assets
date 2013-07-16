@@ -14,7 +14,7 @@
 loadScript(JS_ROOT+"/utils/meteo.js");
 
 // Chargement du style
-loadLess(LESS_ROOT + '/renderers/ca_render_weather.less');
+loadLess(LESS_ROOT + '/ca_render_weather.less');
 
 // launch the forecast and current weather with the renderer "same title"
 function render_Weather_both_same_title_Rennes(collection, zone, timeInfo) {
@@ -470,11 +470,11 @@ function render_Weather_forecast_irsam(collection, zone, timeInfo) {
 function ca_render_weather(collection, zone, timeInfo) {
 
 	// Test si la collection est null ou indéfini
-    if(typeof collection === 'undefined' ||collection === null || collection.length == 0)
+    if(typeof collection === 'undefined' ||collection === null || collection.length === 0)
         throw new InformationsError("The informations are not correct");
 
     // Test si la collection est null ou indéfini
-    if(typeof zone === 'undefined' || zone === null)
+    if(typeof zone === 'undefined' ||�zone === null)
         throw new ZoneError("The zone is undefined or null");
 
     // Si le temps d'affichage n'est pas défini, on en stocke une par défaut
@@ -557,7 +557,7 @@ function ca_render_weather_today(collection, zone, logo, timeInfo) {
 }
 
 /**
- *	Méthode pour afficher la météo du lendemain
+ *	Méthode pour afficher la m�t�o du lendemain
  */
 function ca_render_weather_tomorrow(collection, zone, logo, timeInfo) {
 

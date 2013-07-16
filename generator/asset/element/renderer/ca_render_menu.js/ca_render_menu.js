@@ -25,7 +25,7 @@
 */
 
 // Chargement du style
-loadLess(LESS_ROOT + '/renderers/ca_render_menu.less');
+loadLess(LESS_ROOT + '/ca_render_menu.less');
 
 /*
  * work on menus source
@@ -42,9 +42,9 @@ function ca_render_menu(tableau, zone, timeInfo) {
 	for (var indice = 0; indice < tableau.length; indice++) {
 		var elements = tableau[indice];
 		var contentMenus = "";
-		var i = 0 ;
+		var i = 0;
 
-		if (elements.nom != undefined) 
+		if (elements.nom !== undefined) 
 			title = elements.nom ;
 
 		if(elements.repas.entree){

@@ -9,7 +9,7 @@
  */
 
 // Chargement du style
-loadLess(LESS_ROOT + '/renderers/ca_render_album.less');
+loadLess(LESS_ROOT + '/ca_render_album.less');
 
 /**
  * Méthode qui permet d'ajouter toutes les images à la zone.
@@ -21,11 +21,11 @@ loadLess(LESS_ROOT + '/renderers/ca_render_album.less');
 function ca_render_album(collection, zone, timeInfo) {
 
     // Test si la collection est null ou indéfini
-    if(typeof collection === 'undefined' || collection === null || collection.length == 0)
+    if(typeof collection === 'undefined' ||�collection === null || collection.length === 0)
         throw new InformationsError("The informations are not correct");
 
     // Test si la collection est null ou indéfini
-    if(typeof zone === 'undefined' || zone === null)
+    if(typeof zone === 'undefined' ||�zone === null)
         throw new ZoneError("The zone is undefined or null");
 
     // Chargement de l'image de zone
@@ -42,7 +42,7 @@ function ca_render_album(collection, zone, timeInfo) {
     var tableau_album = collection.pictures;
 
     // Test si le tableau n'est pas erroné
-    if(typeof tableau_album === 'undefined' || tableau_album === null || tableau_album.length == 0)
+    if(typeof tableau_album === 'undefined' ||�tableau_album === null || tableau_album.length === 0)
         throw new InformationsError("The images' informations are not correct");
 
     // Déclaration du dictionnaire

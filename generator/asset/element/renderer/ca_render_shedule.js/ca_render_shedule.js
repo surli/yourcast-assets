@@ -18,14 +18,14 @@
 loadScript(JS_ROOT+"/utils/calendar.js");
 
 // Chargement du style
-loadLess(LESS_ROOT + '/renderers/ca_render_shedule.less');
+loadLess(LESS_ROOT + '/ca_render_shedule.less');
 
 // On lit le fichier JSon pour les exceptions concernant les lieux
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.open("GET", "/yourcast-CA-client/data/filtreCalendar.json", false);
 xmlhttp.send(null);
 
-if(xmlhttp.readyState != 4 || xmlhttp.status!=200)
+if(xmlhttp.readyState !== 4 || xmlhttp.status!== 200)
     xmlhttp = null;
 
 /* affichage classique evenement par evenement
@@ -38,12 +38,7 @@ if(xmlhttp.readyState != 4 || xmlhttp.status!=200)
 function getLocation(location, doc) {
 
     // Test des paramètres
-    if (typeof location === 'undefined' || 
-        location == null || 
-        (location == " ") || 
-        !(location) || 
-        typeof doc === 'undefined' ||
-        doc == null)
+    if (typeof location === 'undefined' || location === null || (location === " ") || !(location) || typeof doc === 'undefined' || doc === null)
 
         // Retourne une chaîne vide
         return "";
@@ -61,7 +56,7 @@ function getLocation(location, doc) {
     for(var j = 0; j < nb ; j++) {
 
         // Vérifier si la sous chaîne d'exception est contenu dans le lieu
-        if(location.indexOf(doc.location[j]) != -1) {
+        if(location.indexOf(doc.location[j]) !== -1) {
 
             // Enlever les mots non affichés
             lieu = lieu.replace(doc.location[j],"");
@@ -87,11 +82,11 @@ function getLocation(location, doc) {
 function ca_render_shedule(evenement, zone, timeInfo) {
 
     // Test si la collection est null ou indéfini
-    if(typeof evenement === 'undefined' || evenement === null || evenement.length == 0)
+    if(typeof evenement === 'undefined' ||�evenement === null || evenement.length == 0)
         throw new InformationsError("The informations are not correct");
 
     // Test si la collection est null ou indéfini
-    if(typeof zone === 'undefined' || zone === null)
+    if(typeof zone === 'undefined' ||�zone === null)
         throw new ZoneError("The zone is undefined or null");
 
     // Chargement de l'image de zone
@@ -107,7 +102,7 @@ function ca_render_shedule(evenement, zone, timeInfo) {
     // Stockage des évènements
     var tableau = evenement.events;
 
-    if (xmlhttp != null){
+    if (xmlhttp !== null){
         var doc = JSON.parse(xmlhttp.responseText);
 
         var eventsByDays = transform_in_days(tableau);
