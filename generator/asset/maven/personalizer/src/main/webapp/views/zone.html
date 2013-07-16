@@ -10,7 +10,7 @@
     <div style="text-align: center"><h3><b> Zone : '{{zone}}'</b></h3></div>
     <div style="text-align: right"> <button class="btn" ng-click="openAddNewCall()"><i class="icon-plus"></i> Ajouter un appel</button></div>
     <div ng-show="newModal" style="text-align: right">
-        <span>Choisir un CallID <select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select></span>
+        <span>Choisir un identifiant d'appel <select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select></span>
         <div><button class="btn btn-warning cancel" ng-click="cancelAddCall()"> Cancel </button>
         <button class="btn btn-success" ng-click="validateAddCall()"> Validate </button>
         </div>

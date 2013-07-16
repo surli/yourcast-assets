@@ -7,7 +7,7 @@
 
     <div>
         <form class="form-horizontal">
-            <div class="control-group" ng-repeat="param in parameters.params">
+            <div class="control-group" ng-repeat="param in parameters.params">           <!-- href="" data-toggle="popover" title="" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title" -->
                 <label class="control-label"><h4>{{param.humanName}} <span tooltip-animation="true" tooltip="{{param.help}}" tooltip-placement="bottom"><a><i class="icon-question-sign"></i></a></span></h4></label>
                 <div class="controls" ng-switch="param.type">
                     <span ng-switch-when="STRING">
