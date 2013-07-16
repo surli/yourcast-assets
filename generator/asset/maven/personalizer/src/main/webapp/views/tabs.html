@@ -1,6 +1,6 @@
 <div class="navbar">
     <div class="navbar-inner">
-        <ul class="nav nav-tabs">
+        <ul class="nav">
             <li ng-repeat="tab in tabs" ng-class="isActive(tab)"><a href="#/tab/{{tab}}" ng-click="activate(tab)">{{tab}}</a></li>
             <li ng-class="isActive(client)"><a href="#/client" ng-click="activate(client)"> Client </a></li>
         </ul>
