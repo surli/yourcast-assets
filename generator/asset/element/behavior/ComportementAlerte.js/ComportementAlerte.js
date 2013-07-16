@@ -23,7 +23,7 @@
  *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
-loadScript(BEHAVIOUR_PATH+"/ComportementBoucle.js");
+loadScript(BEHAVIOUR_PATH+"/utils/ComportementBoucle.js");
 
 // Classe
 var ComportementAlerte = Class.create(ComportementBoucle, {

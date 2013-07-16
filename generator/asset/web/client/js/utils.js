@@ -105,6 +105,11 @@ function loadScript(url, callback) {
  */
 function loadLess(url) {
 
+    // Si on est en prod, il n'y a plus de less
+    if(PROD) {
+        return true;
+    }
+
     try {
 
         // On crée un lien pour une feuille de style
@@ -121,9 +126,7 @@ function loadLess(url) {
     } catch (exception) {
         
         // Si on est en développement on affiche une exception
-        if(!PROD) {
-            new Exception("[Utils] LoadLess", "L'url est incorrect : " + url);
-        }
+        new Exception("[Utils] LoadLess", "L'url est incorrect : " + url + " exception : " + exception);
         
     }
 
