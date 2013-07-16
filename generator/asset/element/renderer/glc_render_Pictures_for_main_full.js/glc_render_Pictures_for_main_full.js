@@ -30,7 +30,8 @@ function glc_render_Pictures_for_main_full(collection, zone, timeInfo) {
 		if (description.length > 60) {description = description.substring(0, 60); description += " ...";}
 
 		var url = elements.url ;
-		var zoneHeight = $(zone.id).getHeight() - 135;
+		
+		var zoneHeight = $(zone.id).getHeight() - ($(zone.id).getHeight()*15/100);
 
 		content ="<div id='Pictures' class='main_div_zone1' style='height:"+zoneHeight+"px;'>";
 				content += "<div class='Picturesimage'><span class='imageLegende'><img src='"+url+"'/>";
