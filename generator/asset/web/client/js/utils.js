@@ -31,7 +31,7 @@ var VERBOSE_DEBUG   = "verbose";
 var SILENT_DEBUG    = "silent";
 
 // Variable avec des fonctions de debug
-var PROD = false;
+var PROD = true;
 
 // Speed up calls to hasOwnProperty
 var hasOwnProperty = Object.prototype.hasOwnProperty;
