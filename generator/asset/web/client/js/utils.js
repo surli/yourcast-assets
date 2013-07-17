@@ -14,9 +14,10 @@
 //	SCRIPTS PRINCIPAUX
 // ====================================================
 
-// Chargement des fichiers nécessaires
-loadScript(JS_ROOT + "/comportement.js");
-loadScript(JS_ROOT + "/exception.js");
+// Chargement des fichiers n?cessaires
+loadScript("js/comportement.js");
+loadScript("js/exception.js");
+loadScript("js/controlergeneral.js");
 
 // ====================================================
 //	VARIABLES
@@ -43,7 +44,7 @@ var PROD = true;
 var PAGE_CHARGE = false;
 
 // Controlergeneral
-var cg = ControlerGeneral.getInstance();
+//var cg = ControlerGeneral.getInstance();
 
 // Speed up calls to hasOwnProperty
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -65,9 +66,9 @@ var hasOwnProperty = Object.prototype.hasOwnProperty;
  *  
  *  Charge un fichier Javascript en synchrone ou en asynchrone.
  *
- *  Callback non dÃ©finit => Synchrone : On attend la fin du chargement pour 
+ *  Callback non définit => Synchrone : On attend la fin du chargement pour 
  *  continuer.
- *  Callback dÃ©finit => A-synchrone : On n'attend pas la fin du chargement pour 
+ *  Callback définit => A-synchrone : On n'attend pas la fin du chargement pour 
  *  continuer.
  *	
  *  @param url Lien du fichier javascript
@@ -77,7 +78,7 @@ function loadScript(url, callback) {
 
     try {
 
-        // Callback dÃ©finit
+        // Callback définit
         if (callback || PAGE_CHARGE) {
 
             // adding the script tag to the head as suggested before
@@ -97,7 +98,7 @@ function loadScript(url, callback) {
 
     } catch (exception) {
         
-        // Si on est en dÃ©veloppement on affiche une exception
+        // Si on est en développement on affiche une exception
         if(!PROD) {
             new Exception("[Utils] LoadScript", "L'url est incorrect : " + url);
         }
@@ -109,7 +110,7 @@ function loadScript(url, callback) {
 /**
  *  <b>LoadLess</b>
  *  
- *  MÃ©thode qui permet d'ajouter une feuille de style dans le document
+ *  Méthode qui permet d'ajouter une feuille de style dans le document
  *	
  *  @param url L'adresse du style less
  */
@@ -122,10 +123,10 @@ function loadLess(url) {
 
     try {
 
-        // On crÃ©e un lien pour une feuille de style
+        // On crée un lien pour une feuille de style
         lien_less = document.createElement('link');
 
-        // On met l'url donnÃ© en paramÃªtre
+        // On met l'url donné en paramêtre
         lien_less.rel = "stylesheet";
         lien_less.type = "text/less";
         lien_less.href = url;
@@ -135,7 +136,7 @@ function loadLess(url) {
 
     } catch (exception) {
         
-        // Si on est en dÃ©veloppement on affiche une exception
+        // Si on est en développement on affiche une exception
         new Exception("[Utils] LoadLess", "L'url est incorrect : " + url + " exception : " + exception);
         
     }
@@ -145,7 +146,7 @@ function loadLess(url) {
 /**
  *  <b>SpecificActionWhenRequestWorksForGlc</b>
  *  
- *  Actions spÃ©cifiques lorsque le client fonctionne parfaitement
+ *  Actions spécifiques lorsque le client fonctionne parfaitement
  */
 function specificActionWhenRequestWorksForGlc() {
     console.log("specif action blabla");
@@ -156,7 +157,7 @@ function specificActionWhenRequestWorksForGlc() {
 }
 
 /**
- *  Actions spÃ©cifiques lorsque le client ne fonctionne pas
+ *  Actions spécifiques lorsque le client ne fonctionne pas
  */
 function specificActionWhenRequestFailsForGlc() {
     if (document.getElementById('Weather_current_header')) {
@@ -203,7 +204,7 @@ function isPropertyDefined(prop) {
             return (prop !== "");
         } else if (typeof prop === "object") {
             return !(is_empty(prop));
-        } else if (typeof prop === "array") {
+        } else if (typeof prop === "array") {
             return !(is_empty(prop));
         } else {
             return true;
@@ -219,10 +220,10 @@ function isPropertyDefined(prop) {
  */
 function firstLettertoUpperCase(str) {
     
-    // RÃ©cupÃ¨re la premiÃ¨re lettre et la met en majuscule
+    // Récupère la première lettre et la met en majuscule
     var newstr = str.charAt(0).toUpperCase() + str.substr(1, str.length);
     
-    // Retourne la nouvelle chaÃ®ne
+    // Retourne la nouvelle chaîne
     return newstr;
     
 }
