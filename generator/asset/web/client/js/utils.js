@@ -11,13 +11,75 @@
  */
 
 // ====================================================
+//	CONTROLER GENERAL
+// ====================================================
+
+// Création de la zone singleton
+function ControlerGeneral() {
+
+    // Tableau des zones
+    this.zones = new Array;
+
+    // Test si le controler général est instancié
+    if (ControlerGeneral.caller !== ControlerGeneral.getInstance) {
+        throw new Exception("Le controleur général ne peux pas être instancié. Veuillez utiliser getInstance");
+    }
+
+    /**
+     * Push
+     * 
+     * @returns ControlerGeneral L'instance du controler général
+     */
+    this.push = function(zone) {
+
+        // Ajoute la nouvelle zone
+        if (zone && zone !== null) {
+            this.zones.push(zone);
+        }
+
+    };
+
+    /**
+     * GetZones
+     * 
+     * @returns ControlerGeneral L'instance du controler général
+     */
+    this.getZones = function() {
+
+        // Retourne les zones
+        return this.zones;
+
+    };
+
+};
+
+// Propriété statique qui contient l'instance unique  
+ControlerGeneral.instance = null;
+
+/**
+ * GetInstance
+ * 
+ * @returns ControlerGeneral L'instance du controler général
+ */
+ControlerGeneral.getInstance = function() {
+
+    // Test s'il y a une instance enregistré
+    if (this.instance === null) {
+        this.instance = new ControlerGeneral();
+    }
+
+    // Retourne l'instance
+    return this.instance;
+
+};
+
+// ====================================================
 //	SCRIPTS PRINCIPAUX
 // ====================================================
 
 // Chargement des fichiers n?cessaires
 loadScript("js/comportement.js");
 loadScript("js/exception.js");
-loadScript("js/controlergeneral.js");
 
 // ====================================================
 //	VARIABLES
@@ -25,29 +87,29 @@ loadScript("js/controlergeneral.js");
 
 var ROOT = document.location.pathname;
 
-var LESS_ROOT       = ROOT + "/less";
-var JS_ROOT         = ROOT + "/js";
-var IMG_PATH        = ROOT + "/img";
+var LESS_ROOT               = ROOT + "/less";
+var JS_ROOT                 = ROOT + "/js";
+var IMG_PATH                = ROOT + "/img";
 
-var RENDERER_PATH   = JS_ROOT + "/renderers";
-var BEHAVIOUR_PATH  = JS_ROOT + "/behaviours";
+var RENDERER_PATH           = JS_ROOT + "/renderers";
+var BEHAVIOUR_PATH          = JS_ROOT + "/behaviours";
 
-var DOMAIN_PATH     = "http://" + document.location.host;
+var DOMAIN_PATH             = "http://" + document.location.host;
 var DEFAULT_REQUEST_TIMEOUT = 60000;
 
 // Variables de debug
-var VERBOSE_DEBUG   = "verbose";
-var SILENT_DEBUG    = "silent";
+var VERBOSE_DEBUG           = "verbose";
+var SILENT_DEBUG            = "silent";
 
 // Variable avec des fonctions de debug
-var PROD = true;
-var PAGE_CHARGE = false;
+var PROD                    = true;
+var PAGE_CHARGE             = false;
 
 // Controlergeneral
-//var cg = ControlerGeneral.getInstance();
+var CG                      = ControlerGeneral.getInstance();
 
 // Speed up calls to hasOwnProperty
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+var hasOwnProperty          = Object.prototype.hasOwnProperty;
 
 // ====================================================
 //	FONCTIONS
@@ -97,12 +159,12 @@ function loadScript(url, callback) {
         }
 
     } catch (exception) {
-        
+
         // Si on est en développement on affiche une exception
-        if(!PROD) {
+        if (!PROD) {
             new Exception("[Utils] LoadScript", "L'url est incorrect : " + url);
         }
-        
+
     }
 
 }
@@ -117,7 +179,7 @@ function loadScript(url, callback) {
 function loadLess(url) {
 
     // Si on est en prod, il n'y a plus de less
-    if(PROD) {
+    if (PROD) {
         return true;
     }
 
@@ -135,10 +197,10 @@ function loadLess(url) {
         document.getElementsByTagName('head')[0].appendChild(lien_less);
 
     } catch (exception) {
-        
+
         // Si on est en développement on affiche une exception
         new Exception("[Utils] LoadLess", "L'url est incorrect : " + url + " exception : " + exception);
-        
+
     }
 
 }
@@ -219,11 +281,11 @@ function isPropertyDefined(prop) {
  * @returns {unresolved} The new string
  */
 function firstLettertoUpperCase(str) {
-    
+
     // Récupère la première lettre et la met en majuscule
     var newstr = str.charAt(0).toUpperCase() + str.substr(1, str.length);
-    
+
     // Retourne la nouvelle chaîne
     return newstr;
-    
+
 }
