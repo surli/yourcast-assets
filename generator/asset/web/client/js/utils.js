@@ -11,32 +11,105 @@
  */
 
 // ====================================================
+//	CONTROLER GENERAL
+// ====================================================
+
+// Création de la zone singleton
+function ControlerGeneral() {
+
+    // Tableau des zones
+    this.zones = new Array;
+
+    // Test si le controler général est instancié
+    if (ControlerGeneral.caller !== ControlerGeneral.getInstance) {
+        throw new Exception("Le controleur général ne peux pas être instancié. Veuillez utiliser getInstance");
+    }
+
+    /**
+     * Push
+     * 
+     * @returns ControlerGeneral L'instance du controler général
+     */
+    this.push = function(zone) {
+
+        // Ajoute la nouvelle zone
+        if (zone && zone !== null) {
+            this.zones.push(zone);
+        }
+
+    };
+
+    /**
+     * GetZones
+     * 
+     * @returns ControlerGeneral L'instance du controler général
+     */
+    this.getZones = function() {
+
+        // Retourne les zones
+        return this.zones;
+
+    };
+
+};
+
+// Propriété statique qui contient l'instance unique  
+ControlerGeneral.instance = null;
+
+/**
+ * GetInstance
+ * 
+ * @returns ControlerGeneral L'instance du controler général
+ */
+ControlerGeneral.getInstance = function() {
+
+    // Test s'il y a une instance enregistré
+    if (this.instance === null) {
+        this.instance = new ControlerGeneral();
+    }
+
+    // Retourne l'instance
+    return this.instance;
+
+};
+
+// ====================================================
+//	SCRIPTS PRINCIPAUX
+// ====================================================
+
+// Chargement des fichiers n?cessaires
+loadScript("js/comportement.js");
+loadScript("js/exception.js");
+
+// ====================================================
 //	VARIABLES
 // ====================================================
 
 var ROOT = document.location.pathname;
 
-var LESS_ROOT       = ROOT + "/less";
-var JS_ROOT         = ROOT + "/js";
-var IMG_PATH        = ROOT + "/img";
+var LESS_ROOT               = ROOT + "/less";
+var JS_ROOT                 = ROOT + "/js";
+var IMG_PATH                = ROOT + "/img";
 
-var RENDERER_PATH   = JS_ROOT + "/renderers";
-var BEHAVIOUR_PATH  = JS_ROOT + "/behaviours";
+var RENDERER_PATH           = JS_ROOT + "/renderers";
+var BEHAVIOUR_PATH          = JS_ROOT + "/behaviours";
 
-var DOMAIN_PATH     = "http://" + document.location.host;
+var DOMAIN_PATH             = "http://" + document.location.host;
 var DEFAULT_REQUEST_TIMEOUT = 60000;
 
 // Variables de debug
-var VERBOSE_DEBUG   = "verbose";
-var SILENT_DEBUG    = "silent";
+var VERBOSE_DEBUG           = "verbose";
+var SILENT_DEBUG            = "silent";
 
 // Variable avec des fonctions de debug
-var PROD = true;
+var PROD                    = true;
+var PAGE_CHARGE             = false;
+
+// Controlergeneral
+var CG                      = ControlerGeneral.getInstance();
 
 // Speed up calls to hasOwnProperty
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-var page_charge = false;
+var hasOwnProperty          = Object.prototype.hasOwnProperty;
 
 // ====================================================
 //	FONCTIONS
@@ -55,9 +128,9 @@ var page_charge = false;
  *  
  *  Charge un fichier Javascript en synchrone ou en asynchrone.
  *
- *  Callback non dÃ©finit => Synchrone : On attend la fin du chargement pour 
+ *  Callback non définit => Synchrone : On attend la fin du chargement pour 
  *  continuer.
- *  Callback dÃ©finit => A-synchrone : On n'attend pas la fin du chargement pour 
+ *  Callback définit => A-synchrone : On n'attend pas la fin du chargement pour 
  *  continuer.
  *	
  *  @param url Lien du fichier javascript
@@ -67,8 +140,8 @@ function loadScript(url, callback) {
 
     try {
 
-        // Callback dÃ©finit
-        if (callback || page_charge) {
+        // Callback définit
+        if (callback || PAGE_CHARGE) {
 
             // adding the script tag to the head as suggested before
             var head = document.getElementsByTagName('head')[0];
@@ -86,12 +159,12 @@ function loadScript(url, callback) {
         }
 
     } catch (exception) {
-        
-        // Si on est en dÃ©veloppement on affiche une exception
-        if(!PROD) {
+
+        // Si on est en développement on affiche une exception
+        if (!PROD) {
             new Exception("[Utils] LoadScript", "L'url est incorrect : " + url);
         }
-        
+
     }
 
 }
@@ -99,23 +172,23 @@ function loadScript(url, callback) {
 /**
  *  <b>LoadLess</b>
  *  
- *  MÃ©thode qui permet d'ajouter une feuille de style dans le document
+ *  Méthode qui permet d'ajouter une feuille de style dans le document
  *	
  *  @param url L'adresse du style less
  */
 function loadLess(url) {
 
     // Si on est en prod, il n'y a plus de less
-    if(PROD) {
+    if (PROD) {
         return true;
     }
 
     try {
 
-        // On crÃ©e un lien pour une feuille de style
+        // On crée un lien pour une feuille de style
         lien_less = document.createElement('link');
 
-        // On met l'url donnÃ© en paramÃªtre
+        // On met l'url donné en paramêtre
         lien_less.rel = "stylesheet";
         lien_less.type = "text/less";
         lien_less.href = url;
@@ -124,10 +197,10 @@ function loadLess(url) {
         document.getElementsByTagName('head')[0].appendChild(lien_less);
 
     } catch (exception) {
-        
-        // Si on est en dÃ©veloppement on affiche une exception
+
+        // Si on est en développement on affiche une exception
         new Exception("[Utils] LoadLess", "L'url est incorrect : " + url + " exception : " + exception);
-        
+
     }
 
 }
@@ -135,7 +208,7 @@ function loadLess(url) {
 /**
  *  <b>SpecificActionWhenRequestWorksForGlc</b>
  *  
- *  Actions spÃ©cifiques lorsque le client fonctionne parfaitement
+ *  Actions spécifiques lorsque le client fonctionne parfaitement
  */
 function specificActionWhenRequestWorksForGlc() {
     console.log("specif action blabla");
@@ -146,7 +219,7 @@ function specificActionWhenRequestWorksForGlc() {
 }
 
 /**
- *  Actions spÃ©cifiques lorsque le client ne fonctionne pas
+ *  Actions spécifiques lorsque le client ne fonctionne pas
  */
 function specificActionWhenRequestFailsForGlc() {
     if (document.getElementById('Weather_current_header')) {
@@ -193,7 +266,7 @@ function isPropertyDefined(prop) {
             return (prop !== "");
         } else if (typeof prop === "object") {
             return !(is_empty(prop));
-        } else if (typeof prop === "array")Â {
+        } else if (typeof prop === "array") {
             return !(is_empty(prop));
         } else {
             return true;
@@ -208,11 +281,11 @@ function isPropertyDefined(prop) {
  * @returns {unresolved} The new string
  */
 function firstLettertoUpperCase(str) {
-    
-    // RÃ©cupÃ¨re la premiÃ¨re lettre et la met en majuscule
+
+    // Récupère la première lettre et la met en majuscule
     var newstr = str.charAt(0).toUpperCase() + str.substr(1, str.length);
-    
-    // Retourne la nouvelle chaÃ®ne
+
+    // Retourne la nouvelle chaîne
     return newstr;
-    
+
 }
