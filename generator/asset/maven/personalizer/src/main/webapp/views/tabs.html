@@ -1,8 +1,9 @@
 <div class="navbar">
     <div class="navbar-inner">
-        <ul class="nav">
-            <li ng-repeat="tab in tabs" ng-class="isActive(tab)"><a href="#/tab/{{tab}}" ng-click="activate(tab)">{{tab}}</a></li>
-            <li ng-class="isActive(client)"><a href="#/client" ng-click="activate(client)"> Client </a></li>
+        <a ng-show="showClient" class="brand" href="#/client">Client</a>
+        <ul class="nav" ng-repeat="tab in tabs">
+            <li ng-class="isActive(tab)"><a href="#/tab/{{tab}}" ng-click="activate(tab)">{{tab}}</a></li>
+           <!-- <li ng-show="showClient" ng-class="isActive(client)"><a href="#/client" ng-click="activate(client)"> Client </a></li> -->
         </ul>
     </div>
 </div>

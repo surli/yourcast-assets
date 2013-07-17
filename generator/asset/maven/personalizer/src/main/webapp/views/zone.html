@@ -8,27 +8,29 @@
         <span ng-show="hasOtherZone()"><select ng-model="myZone" ng-options="element for element in getOtherZones()" ng-checked="changeZone(myZone)"></select>Changer de zone</span></span>
     </div>
     <div style="text-align: center"><h3><b> Zone : '{{zone}}'</b></h3></div>
-    <div style="text-align: right"> <button class="btn" ng-click="openAddNewCall()"><i class="icon-plus"></i> Ajouter un appel</button></div>
-    <div ng-show="newModal" style="text-align: right">
+    <div style="text-align: right"> <button class="btn" ng-click="openAddNewCallModal()"><i class="icon-plus"></i> Ajouter un appel</button></div>
+    <!-- <div ng-show="newModal" style="text-align: right">
         <span>Choisir un identifiant d'appel <select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select></span>
         <div><button class="btn btn-warning cancel" ng-click="cancelAddCall()"> Cancel </button>
-        <button class="btn btn-success" ng-click="validateAddCall()"> Validate </button>
+        <button class="btn btn-success" ng-click="openAddNewCallModal()"> Validate </button> <!-- validateAddCall()
         </div>
 
-    </div>
+    </div> -->
 </div>
 <div>
     <div ng-repeat="call in calls"> <!-- TODO use calls will set to calls[callID] = callOfCallID -->
     <table class="table table-bordered">
-        <caption> <h3 style="text-align: center">Liste des appels de la zone '{{zone}}'</h3>
+        <caption> <h3 style="text-align: center">Liste des appels du call {{call.callID}}</h3>
         </caption>
         <tr>
-            <th style="text-align: center">{{call.callID}}</th>
+            <th>Call identifiant</th>
+            <th ng-repeat="name in getParamHumanNameByCallID(call.callID)">{{name}}</th>
             <th>Action</th>
         </tr>
 
-            <tr ng-repeat="parameter in call.parameters">
-            <td>id = {{parameter.id}} ; <span ng-repeat="(key, value) in parametersValuesByCall[parameter.id]">{{getParamHumanNameByID(call.callID, key)}} = {{value}} ; </span></td>
+            <tr ng-repeat="parameter in call.parameters | orderBy: 'id'">
+            <td>{{parameter.id}}</td>
+            <td ng-repeat="(key, value) in parametersValuesByCall[parameter.id]"> {{value}}</td>
             <td><button class="btn btn-small" ng-click="removeCall(call.callID, parameter.id)"> <i class="icon-trash"></i>Supprimer</button> <button class="btn btn-small" ng-click="editCall(parameter.id, call.callID)"><i class="icon-pencil"></i> Modifier</button></td>
 
             <!--
@@ -42,6 +44,68 @@
 
 </div>
 
+
+    <!-- Modal opened to add a new Call -->
+    <div>
+        <div modal="addNewCallModal" options="" data-backdrop="false">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancelAddNewCall()">×</button>
+                <h4>Ajout d'un nouveau appel dans {{zone}} </h4>
+            </div>
+            <div class="modal-body">
+                <div ng-show="showSelectCallID" style="text-align: right">
+                    <span>Choisissez un identifiant d'appel <select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select></span>
+                    <div>
+                    <button class="btn btn-success" ng-click="validateSelectedCallID()"> Validate </button> <!-- validateAddCall() -->
+                 </div>
+                </div>
+
+                <!-- start form -->
+                <div ng-show="showAddNewCallForm">
+                    <h3 style="text-align: center; color: green"> {{zone}} : identifiant des appels  {{mySelectedCallID}}</h3>
+                    <h3 style="text-align: center">Ajout d'un nouveau appel </h3>
+
+                    <div>
+                        <form class="form-horizontal">
+                            <div class="control-group" ng-repeat="param in newCallParameters.params">           <!-- href="" data-toggle="popover" title="" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title" -->
+                                <label class="control-label"><h4>{{param.humanName}} <span tooltip-animation="true" tooltip="{{param.help}}" tooltip-placement="bottom"><a><i class="icon-question-sign"></i></a></span></h4></label>
+                                <div class="controls" ng-switch="param.type">
+                    <span ng-switch-when="STRING">
+                    <input type="text" placeholder="Saisissez la valeur" ng-model="newCallvalues[param.id]">
+                    </span>
+                                    <!--<input  ng-switch-when="int" type="text" ng-model="humanNameValue" placeholder="Nom de l'appel"> -->
+                    <span ng-switch-when="INT" ng-switch="param.typeCST">
+                        <input ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="newCallvalues[param.id]">
+                        <input ng-switch-when="NUMBER" type="number" min="0" step="1" ng-model="newCallvalues[param.id]">
+                        <input ng-switch-when="NONE" type="number" min="0" step="1" ng-model="newCallvalues[param.id]">
+                    </span>
+                     <span ng-switch-when="LONG" ng-switch="param.typeCST">
+                        <input ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="newCallvalues[param.id]">
+                        <input ng-switch-when="NUMBER" type="number" step="1" ng-model="newCallvalues[param.id]">
+                         <input ng-switch-when="NONE" type="number" step="0.50" ng-model="newCallvalues[param.id]">
+                    </span>
+                    <span ng-switch-when="DOUBLE" ng-switch="param.typeCST">
+                        <input ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="newCallvalues[param.id]">
+                        <input ng-switch-when="NUMBER" type="number" step="1" ng-model="newCallvalues[param.id]">
+                         <input ng-switch-when="NONE" type="number" step="0.1" ng-model="newCallvalues[param.id]">
+                    </span>
+                                    <select ng-switch-when="list" ng-model="myOption" ng-options="element for element in param.values" ng-checked="setOptionInNewCall(param.id, myOption)"></select>
+                                    <!--<a id="help-{{param.id}}" rel="popover"><i class="icon-question-sign icon-2x"></i></a>
+                                    <a rel="tooltip" tooltip="param.help"><i class="icon-question-sign"></i></a> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- end form -->
+            </div>
+            <div ng-show="showAddNewCallForm" class="modal-footer">
+                <button class="btn btn-success" type="submit" ng-click="validateAddNewCall()"> <i class="icon-save"></i> Valider </button>
+                <button class="btn btn-inverse" ng-click="cancelAddNewCall()"> <i class="icon-eraser"></i> Annuler </button>
+            </div>
+        </div>
+    </div>
 <!-- Modal opened to add new Call -->
 <!--<div modal="newModal" options="options">
     <div class="modal-header">
