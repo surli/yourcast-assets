@@ -23,13 +23,18 @@
         <caption> <h3 style="text-align: center">Liste des appels de la zone '{{zone}}'</h3>
         </caption>
         <tr>
-            <th>{{call.callID}}</th>
-            <th> Action</th>
+            <th style="text-align: center">{{call.callID}}</th>
+            <th>Action</th>
         </tr>
-        <tr ng-repeat="params in call.parameters">   <!--<tr ng-repeat="params in parameters[call.callID].params">
-            <td>{{params.humanName}} = {{getValueByID(call.callID, param.id)}}</td> -->
-            <td>{{params}}</td>
-            <td><button class="btn btn-small" ng-click="removeCall(call.callID, params.id)"> <i class="icon-trash"></i>Supprimer</button> <button class="btn btn-small" ng-click="editCall(params.id, call.callID)"><i class="icon-pencil"></i> Modifier</button></td>
+
+            <tr ng-repeat="parameter in call.parameters">
+            <td>id = {{parameter.id}} ; <span ng-repeat="(key, value) in parametersValuesByCall[parameter.id]">{{getParamHumanNameByID(call.callID, key)}} = {{value}} ; </span></td>
+            <td><button class="btn btn-small" ng-click="removeCall(call.callID, parameter.id)"> <i class="icon-trash"></i>Supprimer</button> <button class="btn btn-small" ng-click="editCall(parameter.id, call.callID)"><i class="icon-pencil"></i> Modifier</button></td>
+
+            <!--
+            <tr ng-repeat="params in call.parameters">
+            <td>{{params}}</td> -->
+
         </tr>
     </table>
         
