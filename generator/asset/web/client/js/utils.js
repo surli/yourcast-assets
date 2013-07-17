@@ -28,6 +28,7 @@ function ControlerGeneral() {
     /**
      * Push
      * 
+     * @param zone Nouvelle zone
      * @returns ControlerGeneral L'instance du controler général
      */
     this.push = function(zone) {
@@ -85,7 +86,7 @@ loadScript("js/exception.js");
 //	VARIABLES
 // ====================================================
 
-var ROOT = document.location.pathname;
+var ROOT                    = document.location.pathname;
 
 var LESS_ROOT               = ROOT + "/less";
 var JS_ROOT                 = ROOT + "/js";
