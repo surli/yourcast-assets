@@ -32,7 +32,7 @@ var ComportementBoucle = Class.create(Comportement, {
         $super();
 
         /** Stocke le temps de transition entre deux diapositives */
-        this.time_loop_request = typeof time_loop_request != 'undefined' ? time_loop_request : 10;
+        this.time_loop_request = typeof time_loop_request !== 'undefined' ? time_loop_request : 10;
 
         /** Initialisation du timeout pour la loop de request */
         this.timeout_loop_request = null;
@@ -125,7 +125,7 @@ var ComportementAlerte = Class.create(ComportementBoucle, {
      */
     setZone: function($super, nouvelle_zone) {
 
-        this.time_loop_request = typeof nouvelle_zone.request_timeout === 'undefined' ? 10 : nouvelle_zone.request_timeout;
+        this.time_loop_request = 10; // 10 Secondes entre chaque requêtes
 
         $super(nouvelle_zone);
 
