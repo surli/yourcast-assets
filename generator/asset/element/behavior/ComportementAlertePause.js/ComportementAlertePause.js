@@ -109,7 +109,7 @@ var ComportementBoucle = Class.create(Comportement, {
 });
 
 // Classe
-var ComportementAlerte = Class.create(ComportementBoucle, {
+var ComportementAlertePause = Class.create(ComportementBoucle, {
     /**
      *  Met l'alerte zone en z-index obligatoirement.
      *
