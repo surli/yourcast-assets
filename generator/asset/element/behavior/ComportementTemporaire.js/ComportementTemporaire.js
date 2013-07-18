@@ -25,10 +25,9 @@
 
 
 var ComportementBoucle = Class.create(Comportement, {
+    initialize: function($super, time_loop_request) {
 
-	initialize: function($super, time_loop_request) {
-
-		/** Zone concernée */
+        /** Zone concernée */
         $super();
 
         /** Stocke le temps de transition entre deux diapositives */
@@ -37,84 +36,80 @@ var ComportementBoucle = Class.create(Comportement, {
         /** Initialisation du timeout pour la loop de request */
         this.timeout_loop_request = null;
 
-	},
+    },
+    clear: function($super) {
 
-	clear: function($super) {
+        // On réinitialise
+        $super();
 
-		// On réinitialise
-		$super();
+    },
+    /**
+     *	Lance le comportement
+     *
+     *	Cette fonction est lancée que si le comportement
+     *	est arrêtée. Elle repasse la variable marche à
+     * 	true et appelle la fonction goto à l'indice où
+     *	le comportement s'était arrêté.
+     */
+    run: function() {
 
-	},
+        this.next();
 
-	/**
-	 *	Lance le comportement
-	 *
-	 *	Cette fonction est lancée que si le comportement
-	 *	est arrêtée. Elle repasse la variable marche à
-	 * 	true et appelle la fonction goto à l'indice où
-	 *	le comportement s'était arrêté.
-	 */
-	run: function() {
+    },
+    next: function() {
 
-		this.next();
+        // Sécurité
+        if (this.securiteInfosZone()) {
 
-	},
+            // On incrémente l'indice
+            this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
 
-	next: function() {
+            // On appelle le changement d'élément
+            this.goto(this.indice);
 
-		// Sécurité
-		if(this.securiteInfosZone()) {
+        }
 
-			// On incrémente l'indice
-			this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
+    },
+    /**
+     *	Boucle des requêtes
+     *
+     *	Permet de lancer une requête toutes les x secondes.
+     */
+    loop_request: function() {
 
-			// On appelle le changement d'élément
-			this.goto(this.indice);
+        this.zone_concerne.request();
 
-		}
+    },
+    /**
+     *	Setter de la zone
+     *
+     *	Permet de chancer la zone du comportement. 
+     *
+     *	/!\ Cette fonction doit être appelée lors du 
+     *	lancement du comportement sous peine d'avoir 
+     *	une erreur critique.
+     */
+    setZone: function($super, nouvelle_zone) {
 
-	},
+        // Stockage de la nouvelle zone
+        $super(nouvelle_zone);
 
-	/**
-	 *	Boucle des requêtes
-	 *
-	 *	Permet de lancer une requête toutes les x secondes.
-	 */
-	loop_request: function() {
+        // Le comportement est arrêté
+        this.marche = false;
 
-		this.zone_concerne.request();
+        var self = this;
 
-	},
+        // Lance la loop
+        this.timeout_loop_request = setInterval(function() {
+            self.loop_request();
+        }, self.time_loop_request * 1000);
 
-	/**
-	 *	Setter de la zone
-	 *
-	 *	Permet de chancer la zone du comportement. 
-	 *
-	 *	/!\ Cette fonction doit être appelée lors du 
-	 *	lancement du comportement sous peine d'avoir 
-	 *	une erreur critique.
-	 */
-	setZone: function($super, nouvelle_zone) {
-
-		// Stockage de la nouvelle zone
-		$super(nouvelle_zone);
-
-		// Le comportement est arrêté
-		this.marche = false;
-
-		var self = this;
-
-		// Lance la loop
-		this.timeout_loop_request = setInterval(function() { self.loop_request(); }, self.time_loop_request * 1000);
-
-	}
+    }
 
 });
 
 // Classe
-var ComportementAlerte = Class.create(ComportementBoucle, {
-
+var ComportementTemporaire = Class.create(ComportementBoucle, {
     /**
      *  Met l'alerte zone en z-index obligatoirement.
      *
@@ -129,13 +124,12 @@ var ComportementAlerte = Class.create(ComportementBoucle, {
 
         $super(nouvelle_zone);
 
-        $(this.zone_concerne.id).setStyle({ 
-            "z-index" : "100",
-            "position": "absolute" 
+        $(this.zone_concerne.id).setStyle({
+            "z-index": "100",
+            "position": "absolute"
         });
 
     },
-
     /**
      *  Si la zone contient des information on l'affiche
      *  sinon on la cache.
@@ -146,7 +140,7 @@ var ComportementAlerte = Class.create(ComportementBoucle, {
         this.securiteInfosZone();
 
         // On incrémente l'indice
-        if(this.zone_concerne.getInfos().length > 0) {
+        if (this.zone_concerne.getInfos().length > 0) {
 
             // On montre la zone
             $(this.zone_concerne.id).show();
