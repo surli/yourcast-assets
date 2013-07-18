@@ -27,11 +27,11 @@
                         <input ng-switch-when="NUMBER" type="number" ng-model="values[param.id]">
                          <input ng-switch-when="NONE" type="number" ng-model="values[param.id]">
                     </span>
-                    <select ng-switch-when="list" ng-model="myOption" ng-options="element for element in param.values" ng-checked="setOption(param.id,myOption)"></select>
+                    <select ng-switch-when="list" ng-model="myOption" ng-options="element for element in param.values" ng-checked="setOption(param.id, myOption)"></select>
                 </div>
             </div>
         </form>
-        <button class="btn btn-success" type="submit" ng-click="validate()"> <i class="icon-save"></i> Valider </button>
-        <button class="btn btn-inverse" ng-click="cancel()"> <i class="icon-eraser"></i> Annuler </button>
+        <button class="btn btn-success" type="submit" ng-click="validateUpdateCall()"> <i class="icon-save"></i> Valider </button>
+        <button class="btn btn-inverse" ng-click="cancelUpdateCall()"> <i class="icon-eraser"></i> Annuler </button>
     </div>
 </div>
