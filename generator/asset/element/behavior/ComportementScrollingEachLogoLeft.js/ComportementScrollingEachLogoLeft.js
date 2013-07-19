@@ -24,11 +24,10 @@
  */
 
 // Chargement des fonctions
-loadScript(BEHAVIOUR_PATH+"/utils/functions.js");
+loadScript(BEHAVIOUR_PATH + "/utils/functions.js");
 
 // Classe
 var ComportementScrollingEachLogoLeft = Class.create(Comportement, {
-    
     /**
      *  Boucle du comportement
      *
@@ -45,6 +44,7 @@ var ComportementScrollingEachLogoLeft = Class.create(Comportement, {
 
         // On clear tout d'abord les timeouts stockés
         clearTimeout(this.timeout);
+        clearTimeout(this.interval_timeout);
 
         // Contenu de la barre de scrolling
         var content = "";
@@ -52,44 +52,49 @@ var ComportementScrollingEachLogoLeft = Class.create(Comportement, {
         // Temps d'affichage de la barre de scrolling
         var time = 0;
 
-		// On récupère les informations
-		for (var i = 0; i < this.zone_concerne.getInfos(); i++) {
-			
-			// On stocke l'info
-			info = this.zone_concerne.getInfos[i];
+        // On récupère les informations
+        for (var i = 0; i < this.zone_concerne.getInfos(); i++) {
 
-			// On ajoute le content au content
-			content += info.content;
+            // On stocke l'info
+            info = this.zone_concerne.getInfos[i];
 
-			// On ajoute le temps d'affichage
-			time += info.time;
+            // On ajoute le content au content
+            content += info.content;
 
-		}
+            // On ajoute le temps d'affichage
+            time += info.time;
 
-		content = "<div class='scrollContentEachLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_"+this.zone_concerne.id+"'>"+content+"</span></div>";
-		var dicoInfo = { "content":content };
-		this.zone_concerne.changeContent(dicoInfo);
-			
-		var tailleSpan = document.getElementById('scrollcontent_'+this.zone_concerne.id).offsetWidth;
+        }
 
-		var leftPourcent = (tailleSpan * 100) / this.zone_concerne.divMarquee.offsetWidth;
+        content = "<div class='scrollContentEachLogoLeft'><span class='scrollContent toLeft' id='scrollcontent_" + this.zone_concerne.id + "'>" + content + "</span></div>";
+        var dicoInfo = {"content": content};
+        this.zone_concerne.changeContent(dicoInfo);
 
-		var style = create_or_replace_behaviour_style_zone();
-		
-		style.innerHTML = "#"+this.zone_concerne.id+" span#scrollcontent_"+this.zone_concerne.id+"{ ";
-		style.innerHTML += " -moz-animation-name: marquee;";
-		style.innerHTML += " -webkit-animation-name: marquee;";
-		style.innerHTML += " -moz-animation-duration: "+time+"s;";
-		style.innerHTML += " -webkit-animation-duration: "+time+"s;";
-		style.innerHTML += " -moz-animation-iteration-count: infinite;";
-		style.innerHTML += " -webkit-animation-iteration-count: infinite;";
-		style.innerHTML += " -moz-animation-timing-function: linear;";
-		style.innerHTML += " -webkit-animation-timing-function: linear; } ";
+        var tailleSpan = document.getElementById('scrollcontent_' + this.zone_concerne.id).offsetWidth;
 
-		style.innerHTML += "@-webkit-keyframes marquee{ from { left: 100%; } to { left: -"+leftPourcent+"%; } }";
-		style.innerHTML += "  @-moz-keyframes marquee{ from { left: 100%; } to { left: -"+leftPourcent+"%; } }";
+        var leftPourcent = (tailleSpan * 100) / this.zone_concerne.divMarquee.offsetWidth;
 
-		document.head.appendChild(style);
+        var style = create_or_replace_behaviour_style_zone();
+
+        style.innerHTML = "#" + this.zone_concerne.id + " span#scrollcontent_" + this.zone_concerne.id + "{ ";
+        style.innerHTML += " -moz-animation-name: marquee;";
+        style.innerHTML += " -webkit-animation-name: marquee;";
+        style.innerHTML += " -moz-animation-duration: " + time + "s;";
+        style.innerHTML += " -webkit-animation-duration: " + time + "s;";
+        style.innerHTML += " -moz-animation-iteration-count: infinite;";
+        style.innerHTML += " -webkit-animation-iteration-count: infinite;";
+        style.innerHTML += " -moz-animation-timing-function: linear;";
+        style.innerHTML += " -webkit-animation-timing-function: linear; } ";
+
+        style.innerHTML += "@-webkit-keyframes marquee{ from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "  @-moz-keyframes marquee{ from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+
+        document.head.appendChild(style);
+
+        var self = this;
+        this.interval_timeout = setTimeout(function() {
+            self.zone_concerne.request();
+        }, time * 1000);
 
     }
 
