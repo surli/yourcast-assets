@@ -1,5 +1,5 @@
+Appearance,Time,Alert,Animation,Number,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementTemporaire.xmi
 ByInformation,Time,Animation,Logo,Number,Behaviour,Elements,Scrolling,All,Content,Global,RightToLeft:./behaviour/ComportementScrollingEachLogoLeft.xmi
-Appearance,Time,Alert,Animation,Number,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementAlerte.xmi
 Appearance,Time,Animation,Number,Smooth,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSmoothTimer.xmi
 Logo,Animation,Number,Behaviour,Individual,Title,Repetition,Time,Appearance,DarkThenClear,Elements,Content,One:./behaviour/ComportementAlternanceSmoothCA.xmi
 Slide,Appearance,Time,Animation,Number,Smooth,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSmoothTimerSlide.xmi
