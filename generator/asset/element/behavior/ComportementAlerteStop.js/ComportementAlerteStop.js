@@ -167,6 +167,18 @@ var ComportementAlerteStop = Class.create(ComportementBoucle, {
 
         }
 
+    },
+    /**
+     *	Impossible d'arrêter une alerte
+     */
+    pause: function() {
+
+    },
+    /**
+     *	Impossible d'arrêter une alerte
+     */
+    stop: function() {
+        
     }
 
 });
