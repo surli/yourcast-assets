@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="ca_render_announcement.js" infoType="News">
+  <function name="ca_render_announcement"/>
+  <resource name="img/logos/internal.png" type="image" path="img/logos/internal.png"/>
+  <resource name="less/ca_render_announcement.less" type="css" path="less/ca_render_announcement.less"/>
+</prodrenderer:Renderer>
