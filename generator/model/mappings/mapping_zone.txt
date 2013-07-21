@@ -11,7 +11,7 @@ Orientation,Product,Graphic,Landscape,Choralies,Title,Design,attenteMainZone_cho
 Orientation,Product,Graphic,Landscape,atelierMainZone_choralies,Choralies,Title,Design,Text,Full,Elements,Zone,Content,Thumbnails:./zone/atelierMainZone_choralies.xmi
 Orientation,Product,Bloc,Graphic,rightZone_choralies,Choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_choralies.xmi
 IRSAM,Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,Full,Elements,MainZone_irsam,Zone,Content:./zone/mainZone_irsam.xmi
-Orientation,Product,Graphic,Choralies,mobileMainZone_choralies,Title,Design,Text,Full,Elements,Portrait,Zone,Content,Thumbnails:./zone/mobileMainZone_choralies.xmi
+Orientation,Product,Bloc,Graphic,Choralies,mobileMainZone_choralies,Title,Design,Text,Full,Elements,Portrait,Zone,Content,Thumbnails:./zone/mobileMainZone_choralies.xmi
 Text,Orientation,Product,Elements,Portrait,Choralies,Zone,jourUnRightZone_choralies,Content,Title,Design:./zone/jour1RightZone_choralies.xmi
 Orientation,Product,Graphic,GLC,Landscape,Elements,Zone,Content,HeaderZone_glc,Thumbnails,Design:./zone/headerZone_glc.xmi
 Orientation,Product,Elements,Portrait,Counter,Choralies,Zone,counterZone_choralies,Content,Design:./zone/counterZone_choralies.xmi
