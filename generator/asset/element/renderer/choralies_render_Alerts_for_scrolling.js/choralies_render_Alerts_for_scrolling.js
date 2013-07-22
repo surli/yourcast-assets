@@ -10,8 +10,8 @@ function choralies_render_Alerts_for_scrolling(tableau, zone, timeInfo) {
 	var content = "";
 	var time = timeInfo;
 	if (!(is_empty(tableau))) {
-		for (var indice = 0; indice < tableau.alertes.length; indice++) {
-			var elements = tableau.alertes[indice];
+		for (var indice = 0; indice < tableau.length; indice++) {
+			var elements = tableau[indice];
 
 			content += "<span class='alert'>";
 			content += "<span class='alert_Content'> - "+elements.contenu+" - </span>";
