@@ -61,11 +61,15 @@ var ComportementBoucle = Class.create(Comportement, {
         // Sécurité
         if (this.securiteInfosZone()) {
 
-            // On incrémente l'indice
-            this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
+            if(!isRunning()) {
 
-            // On appelle le changement d'élément
-            this.goto(this.indice);
+                // On incrémente l'indice
+                this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
+
+                // On appelle le changement d'élément
+                this.goto(this.indice);
+
+            }
 
         }
 
