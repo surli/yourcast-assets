@@ -14,7 +14,7 @@ function choralies_render_Alerts_for_scrolling(tableau, zone, timeInfo) {
 			var elements = tableau[indice];
 
 			content += "<span class='alert'>";
-			content += "<span class='alert_Content'> - "+elements.contenu+" - </span>";
+			content += "<span class='alert_Content'> - "+elements.texte_court+" - </span>";
 			content += "</span>";	
 		
 			$(zone.id).style.display="block";
