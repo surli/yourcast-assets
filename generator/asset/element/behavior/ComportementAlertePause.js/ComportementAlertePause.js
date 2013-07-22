@@ -129,6 +129,9 @@ var ComportementAlertePause = Class.create(ComportementBoucle, {
             "position": "absolute"
         });
 
+        // On cache la zone
+        $(this.zone_concerne.id).hide();
+
     },
     /**
      *  Si la zone contient des information on l'affiche
@@ -178,7 +181,7 @@ var ComportementAlertePause = Class.create(ComportementBoucle, {
      *	Impossible d'arrêter une alerte
      */
     stop: function() {
-        
+
     }
 
 });

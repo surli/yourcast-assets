@@ -128,7 +128,10 @@ var ComportementAlerteStop = Class.create(ComportementBoucle, {
             "z-index": "100",
             "position": "absolute"
         });
-
+        
+        // On cache la zone
+        $(this.zone_concerne.id).hide();
+        
     },
     /**
      *  Si la zone contient des information on l'affiche

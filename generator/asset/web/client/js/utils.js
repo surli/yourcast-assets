@@ -1,21 +1,25 @@
-/*
- *	Copyright (c) 2012 YourCast - I3S/CNRS ADAM/INRIA.
- *	All rights reserved. This program and the accompanying materials
- *	are made available under the terms of the GNU Public License v3.0
- *	which accompanies this distribution, and is available at
- *	http://www.gnu.org/licenses/gpl.html
- *
- *	Contributors:
- *    	Simon Urli (simon.urli@gmail.com) - Main contributor
+/**
+ *      <b>CONTROLER GENERAL</b>
+ * 
+ *  Informations :
+ * 
+ *      Le controler général permet de gérer toute l'application. Le controler 
+ *      général ne dépend pas de Prototype. Le système de classe est celui de 
+ *      base de Javascript.
+ *      
+ *  Fonctions :
+ * 
+ *      push - Pousse une nouvelle zone dans le Controler General
+ *      getZones - Retourne toutes les zones qui ont été push
+ *      refresh - Refresh la page du client lorsque le lien
+ *      
+ *  Contributors :
+ *  
  *    	Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
-// ====================================================
-//	CONTROLER GENERAL
-// ====================================================
-
 // Création de la zone singleton
-function ControlerGeneral() {
+function ControlerGeneral(url) {
 
     // Tableau des zones
     this.zones = new Array;
@@ -23,6 +27,25 @@ function ControlerGeneral() {
     // Test si le controler général est instancié
     if (ControlerGeneral.caller !== ControlerGeneral.getInstance) {
         throw new Exception("Le controleur général ne peux pas être instancié. Veuillez utiliser getInstance");
+    }
+
+    // Test si l'url est définit
+    if(isPropertyDefined(url)) {
+        
+        // Stockage de l'url
+        this.url = url;
+        
+        // Stockage du this
+        var self = this;
+        
+        // Refresh de la page
+        setInterval(function() { self.refresh(); }, 1000);
+        
+    } else {
+        
+        // Affichage en information
+        new Information("[ControlerGeneral] Refresh", "Erreur dans le parse du JSon");
+        
     }
 
     /**
@@ -43,12 +66,68 @@ function ControlerGeneral() {
     /**
      * GetZones
      * 
-     * @returns ControlerGeneral L'instance du controler général
+     * @returns Array Le tableau des zones du controler général
      */
     this.getZones = function() {
 
         // Retourne les zones
         return this.zones;
+
+    };
+    
+    /**
+     *  Refresh de la page
+     */
+    this.refresh = function() {
+        
+        // Effecture la requête Ajax
+        new Ajax.Request(this.url, {
+            
+            // On utilise un get
+            method: 'get',
+            
+            // Si la requête est un succès
+            onSuccess: function(transport) {
+
+                // On vérifie que le status est bon
+                if (transport.status === 200) {
+
+                    // On récupère la réponse du JSon
+                    var textContent = transport.responseText;
+
+                    // On essaie de le traiter
+                    try {
+
+                        // Parse le JSon
+                        var json = JSON.parse(textContent);
+
+                        // On test si on doit reload la page
+                        if(json.informations[0].reload) {
+                            location.reload();
+                        }
+
+                    }
+
+                    // Un erreur est survenue
+                    catch (e) {
+                        
+                        // Création d'une exception 
+                        new Exception("[ControlerGeneral] Refresh", "Erreur dans le parse du JSon");
+
+                    }
+
+                } else {
+
+                    // Création d'une exception
+                    new Exception("[ControlerGeneral] Refresh", "Erreur dans le transport des informations lors du refresh de la page");
+
+                }
+            },
+            onFailure: function() { },
+            onException: function() { },
+            onComplete: function() { }
+
+        });
 
     };
 
@@ -62,17 +141,34 @@ ControlerGeneral.instance = null;
  * 
  * @returns ControlerGeneral L'instance du controler général
  */
-ControlerGeneral.getInstance = function() {
+ControlerGeneral.getInstance = function(url) {
 
     // Test s'il y a une instance enregistré
     if (this.instance === null) {
-        this.instance = new ControlerGeneral();
+        this.instance = new ControlerGeneral(url);
     }
 
     // Retourne l'instance
     return this.instance;
 
 };
+
+/**
+ *      <b>UTILS</b>
+ *      
+ *  Rights :
+ *  
+ *	Copyright (c) 2012 YourCast - I3S/CNRS ADAM/INRIA.
+ *	All rights reserved. This program and the accompanying materials
+ *	are made available under the terms of the GNU Public License v3.0
+ *	which accompanies this distribution, and is available at
+ *	http://www.gnu.org/licenses/gpl.html
+ *
+ *  Contributors:
+ *  
+ *    	Simon Urli (simon.urli@gmail.com) - Main contributor
+ *    	Guillaume Golfieri (golfieri.guillaume@gmail.com)
+ */
 
 // ====================================================
 //	SCRIPTS PRINCIPAUX
@@ -105,9 +201,6 @@ var SILENT_DEBUG            = "silent";
 // Variable avec des fonctions de debug
 var PROD                    = true;
 var PAGE_CHARGE             = false;
-
-// Controlergeneral
-var CG                      = ControlerGeneral.getInstance();
 
 // Speed up calls to hasOwnProperty
 var hasOwnProperty          = Object.prototype.hasOwnProperty;
