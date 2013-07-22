@@ -44,6 +44,32 @@ var ComportementBoucle = Class.create(Comportement, {
 
     },
     /**
+     *	Boucle des requêtes
+     *
+     *	Permet de lancer une requête toutes les x secondes.
+     */
+    loop_request: function() {
+
+        clearTimeout(this.timeout_loop_request);
+
+        // Test si la zone_concerne est d�finit
+        if(this.zone_concerne) {
+            this.zone_concerne.request();
+        }
+
+        // Stockage du this
+        var self = this;
+
+        if (!this.isRunning()) {
+
+            this.timeout_loop_request = setTimeout(function() {
+                self.loop_request();
+            }, self.time_loop_request * 1000);
+
+        }
+
+    },
+    /**
      *	Lance le comportement
      *
      *	Cette fonction est lancée que si le comportement
@@ -71,27 +97,6 @@ var ComportementBoucle = Class.create(Comportement, {
 
     },
     /**
-     *	Boucle des requêtes
-     *
-     *	Permet de lancer une requête toutes les x secondes.
-     */
-    loop_request: function() {
-
-        this.zone_concerne.request();
-
-        // Stockage du this
-        var self = this;
-
-        if (!isRunning()) {
-
-            this.timeout_loop_request = setTimeout(function() {
-                self.loop_request();
-            }, self.time_loop_request * 1000);
-
-        }
-
-    },
-    /**
      *	Setter de la zone
      *
      *	Permet de chancer la zone du comportement. 
@@ -107,14 +112,6 @@ var ComportementBoucle = Class.create(Comportement, {
 
         // Le comportement est arrêté
         this.marche = false;
-        
-        // Stockage du this
-        var self = this;
-
-        // Lance la loop
-        this.timeout_loop_request = setTimeout(function() {
-            self.loop_request();
-        }, self.time_loop_request * 1000);
 
     }
 
@@ -196,6 +193,7 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
         // On clear tout d'abord les timeouts stockés
         clearTimeout(this.timeout);
         clearTimeout(this.interval_timeout);
+        clearTimeout(this.timeout_loop_request);
 
         // Contenu de la barre de scrolling
         var content = "";
@@ -225,8 +223,7 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
 
         // Calcule du pourcentage pour la scrollbar
         var leftPourcent = (tailleSpan * 100) / this.zone_concerne.divMarquee.offsetWidth;
-
-        // Crée un nouveau style
+        // Cr�e un nouveau style
         var style = create_or_replace_behaviour_style_zone();
 
         // Ajout des animations
