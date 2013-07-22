@@ -61,15 +61,11 @@ var ComportementBoucle = Class.create(Comportement, {
         // Sécurité
         if (this.securiteInfosZone()) {
 
-            if(!isRunning()) {
+            // On incrémente l'indice
+            this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
 
-                // On incrémente l'indice
-                this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
-
-                // On appelle le changement d'élément
-                this.goto(this.indice);
-
-            }
+            // On appelle le changement d'élément
+            this.goto(this.indice);
 
         }
 
@@ -82,6 +78,17 @@ var ComportementBoucle = Class.create(Comportement, {
     loop_request: function() {
 
         this.zone_concerne.request();
+
+        // Stockage du this
+        var self = this;
+
+        if (!isRunning()) {
+
+            this.timeout_loop_request = setTimeout(function() {
+                self.loop_request();
+            }, self.time_loop_request * 1000);
+
+        }
 
     },
     /**
@@ -100,11 +107,12 @@ var ComportementBoucle = Class.create(Comportement, {
 
         // Le comportement est arrêté
         this.marche = false;
-
+        
+        // Stockage du this
         var self = this;
 
         // Lance la loop
-        this.timeout_loop_request = setInterval(function() {
+        this.timeout_loop_request = setTimeout(function() {
             self.loop_request();
         }, self.time_loop_request * 1000);
 
@@ -149,6 +157,9 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
             // On montre la zone
             $(this.zone_concerne.id).show();
 
+            // Le comportement est lanc�
+            this.marche = true;
+
             // Effectue le next
             this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
 
@@ -158,6 +169,9 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
         }
 
         else {
+
+            // Le comportement est arr�t�
+            this.marche = false;
 
             // On cache la zone
             $(this.zone_concerne.id).hide();
@@ -181,7 +195,7 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
 
         // On clear tout d'abord les timeouts stockés
         clearTimeout(this.timeout);
-        clearTimeout(this.interval_timeout);
+        clearInterval(this.interval_timeout);
 
         // Contenu de la barre de scrolling
         var content = "";
@@ -236,7 +250,7 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
 
         var self = this;
         this.interval_timeout = setTimeout(function() {
-            self.zone_concerne.request();
+            self.loop_request();
         }, time * 1000);
 
     }
