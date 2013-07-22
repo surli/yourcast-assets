@@ -24,6 +24,7 @@ init_$zoneName = function() {
 	try {
 		var z1 = new Zone(id, map, map_time, url, anim_func, request_timeout);
 		z1.request();
+		ControlerGeneral.getInstance.push(z1);
 		return z1;
 	} catch(exception) {}
 };
