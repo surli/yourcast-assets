@@ -195,7 +195,7 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
 
         // On clear tout d'abord les timeouts stockés
         clearTimeout(this.timeout);
-        clearInterval(this.interval_timeout);
+        clearTimeout(this.interval_timeout);
 
         // Contenu de la barre de scrolling
         var content = "";
