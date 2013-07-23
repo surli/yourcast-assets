@@ -21,8 +21,11 @@ init_$zoneName = function() {
 	var url = '/$providerPath/rest/';
 	var anim_func = new $behaviorFunction();
 	var request_timeout = $requestTimeout;
-	var z1 = new Zone(id, map, map_time, url, anim_func, request_timeout);
-	z1.request();
-	return z1;
+	try {
+		var z1 = new Zone(id, map, map_time, url, anim_func, request_timeout);
+		z1.request();
+		ControlerGeneral.getInstance.push(z1);
+		return z1;
+	} catch(exception) {}
 };
 

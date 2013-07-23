@@ -74,10 +74,6 @@ function time_duration(intensity, contentSize, anim) {
 // if the element exist, it is deleted before created
 function create_or_replace_behaviour_style_zone() {
 	var styleZoneId = 'behaviourStyle';
-	if (document.getElementById(styleZoneId)) {
-		var head = document.getElementsByTagName("head")[0];
-		head.removeChild(document.getElementById(styleZoneId));
-	}
 	var elem = document.createElement('style');
 	elem.id = styleZoneId;
 	return elem;

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="10" name="ca_render_shedule.js" infoType="Calendar">
+  <function name="ca_render_shedule"/>
+  <resource name="../utils/calendar.js" path="../utils/calendar.js"/>
+  <resource name="img/logos/ical.png" type="image" path="img/logos/ical.png"/>
+  <resource name="less/ca_render_shedule.less" type="css" path="less/ca_render_shedule.less"/>
+</prodrenderer:Renderer>

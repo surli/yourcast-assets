@@ -2,70 +2,243 @@
 @import "../less/variables.less";
 
 #${zoneName} {
-	display:none;
-    height:9%;
-    margin-top:1%;
-    overflow:hidden;
-    -webkit-transition: all .5s ease-in;
-    -moz-transition: all .5s ease-in;
-    transition: all .5s ease-in;
-    position:absolute;
-    bottom:10%;
-    left:0;
-    width:100%;
-    background-color:@red;
-    color:@white;
-    font-weight:bold;
-    font-size:120%;
-    line-height:200%;
-    z-index:200;
-    /*text-align:center;*/
+    height: 9%;
+    margin-top: 1%;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    background-color: #be3132;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 120%;
+    line-height: 200%;
+    z-index: 200;
 }
-
-#${zoneName} .noinfo{
-	display:table;
-	.lightBackground;
-	margin-left:1%;
-	margin-right:1%;
-	width:98%;
-	font-size:95%;
-	font-weight:400;
-	height:90%;
-
-	text-align:center;
-	div{
-		display:table-cell;
-		vertical-align:middle;
-	}
+#${zoneName} .noinfo {
+  display: table;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #222222;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  font-size: 95%;
+  font-weight: 400;
+  height: 90%;
+  text-align: center;
 }
-
+#${zoneName} .noinfo div {
+  display: table-cell;
+  vertical-align: middle;
+}
 #${zoneName} span {
   position: relative;
 }
-
-#${zoneName} .title{
-	display:none;
+#${zoneName} .title {
+  display: none;
 }
-
-
-#${zoneName} .scrollContentAlert{
-    margin-left:10px;
-    margin-right:10px;
-    height:90%;
-    color:@white;
-    overflow:hidden;
-    span{
-    	line-height:135%;
-    }
-    position:relative;
+#${zoneName} .scrollContentLogoLeftBefore {
+  float: left;
+  height: 90%;
+  background: transparent url('../img/left_arrow.png') no-repeat left center;
+  text-indent: -20px;
+  overflow: hidden;
+  width: 20px;
 }
-
-#${zoneName} .scrollContentAlert .scrollContent{
-	font-size:120%;
-	white-space: nowrap;
-	display: inline-block;
-	line-height:135%;
-	height:100%;
+#${zoneName} .scrollContentLeft {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 90%;
+  color: #ffffff;
+  overflow: hidden;
+  background-color: #E53B3B;
 }
+#${zoneName} .scrollContentLeft span {
+  line-height: 135%;
+}
+#${zoneName} .scrollContentLogoLeft {
+  margin-left: 100px;
+  margin-right: 10px;
+  height: 90%;
+  color: #ffffff;
+  overflow: hidden;
+  background-color: #3a9fdf;
+}
+#${zoneName} .scrollContentLogoLeft span {
+  line-height: 135%;
+}
+#${zoneName} .scrollContentEachLogoLeft {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 90%;
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+#${zoneName} .scrollContentEachLogoLeft span {
+  line-height: 135%;
+}
+#${zoneName} .scrollContentEachLogoLeft span span {
+  line-height: 220%;
+}
+#${zoneName} .scrollContentLeft .scrollContent {
+  font-size: 120%;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 135%;
+  height: 100%;
+  /* Twitter */
 
+}
+#${zoneName} .scrollContentLeft .scrollContent .tweet {
+  moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 0px 20px 0px 0;
+  margin-right: 10px;
+  display: inline-block;
+  line-height: 220%;
+  height: 100%;
+  border-left: 10px solid #51369b;
+}
+#${zoneName} .scrollContentLeft .scrollContent .twitter_title {
+  background-color: transparent;
+  color: #ffffff;
+  padding-top: 0em;
+}
+#${zoneName} .scrollContentLeft .scrollContent .twitter_title i {
+  color: #ffffff;
+}
+#${zoneName} .scrollContentLeft .scrollContent .twitter_title img {
+  float: none;
+  border-radius: 3px;
+  height: 80%;
+}
+#${zoneName} .scrollContentLeft .scrollContent .twitter_Content {
+  margin-left: 0em;
+  padding-right: 0em;
+}
+#${zoneName} .scrollContentLeft .scrollContent .twitter_Content a {
+  color: #3a9fdf;
+  text-decoration: none;
+}
+#${zoneName} .scrollContentLeft .scrollContent .twitter_Content s {
+  text-decoration: none;
+}
+#${zoneName} .scrollContentLeft .scrollContent .twitter_Content b {
+  font-weight: 400;
+}
+#${zoneName} .scrollContentLogoLeft .scrollContent {
+  font-size: 120%;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 135%;
+  height: 100%;
+  /* Twitter */
 
+}
+#${zoneName} .scrollContentLogoLeft .scrollContent .tweet {
+  moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 0px 20px 0px 0;
+  margin-right: 10px;
+  display: inline-block;
+  line-height: 220%;
+  height: 100%;
+  border-left: 10px solid #51369b;
+}
+#${zoneName} .scrollContentLogoLeft .scrollContent .twitter_title {
+  background-color: transparent;
+  color: #ffffff;
+  padding-top: 0em;
+}
+#${zoneName} .scrollContentLogoLeft .scrollContent .twitter_title i {
+  color: #ffffff;
+}
+#${zoneName} .scrollContentLogoLeft .scrollContent .twitter_title img {
+  float: none;
+  border-radius: 3px;
+  height: 80%;
+}
+#${zoneName} .scrollContentLogoLeft .scrollContent .twitter_Content {
+  margin-left: 0em;
+  padding-right: 0em;
+}
+#${zoneName} .scrollContentLogoLeft .scrollContent .twitter_Content a {
+  color: #3a9fdf;
+  text-decoration: none;
+}
+#${zoneName} .scrollContentLogoLeft .scrollContent .twitter_Content s {
+  text-decoration: none;
+}
+#${zoneName} .scrollContentLogoLeft .scrollContent .twitter_Content b {
+  font-weight: 400;
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent {
+  font-size: 120%;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 135%;
+  height: 100%;
+  /* Twitter */
+
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent .logo_user {
+  margin-top: 0.3em;
+  height: 80%;
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent .tweet {
+  moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 0px 10px 0 10px;
+  margin-right: 20px;
+  background-color: #3a9fdf;
+  display: inline-block;
+  line-height: 220%;
+  height: 100%;
+  border-left: 10px solid #51369b;
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent .tweet .twitter_title {
+  background-color: transparent;
+  color: #ffffff;
+  padding-top: 0em;
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent .tweet .twitter_title i {
+  color: #ffffff;
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent .tweet .twitter_title img {
+  float: none;
+  border-radius: 3px;
+  height: 80%;
+  margin-top: 8px;
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent .tweet .twitter_Content {
+  margin-left: 0em;
+  padding-right: 0em;
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent .tweet .twitter_Content a {
+  color: #3a9fdf;
+  text-decoration: none;
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent .tweet .twitter_Content b {
+  font-weight: 400;
+}
+#${zoneName} .scrollContentEachLogoLeft .scrollContent .tweet .twitter_Content s {
+  text-decoration: none;
+}
+#${zoneName} #${zoneName}_logo {
+  float: left;
+  width: 80px;
+  overflow: hidden;
+  z-index: 1;
+  margin-left: 10px;
+}
+#${zoneName} #${zoneName}_logo img {
+  margin-top: 8px;
+}

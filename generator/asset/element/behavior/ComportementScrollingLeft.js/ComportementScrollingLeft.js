@@ -24,11 +24,10 @@
  */
 
 // Chargement des fonctions
-loadScript(BEHAVIOUR_PATH+"/utils/functions.js");
+loadScript(BEHAVIOUR_PATH + "/utils/functions.js");
 
 // Classe
 var ComportementScrollingLeft = Class.create(Comportement, {
-    
     /**
      *  Boucle du comportement
      *
@@ -45,6 +44,7 @@ var ComportementScrollingLeft = Class.create(Comportement, {
 
         // On clear tout d'abord les timeouts stockés
         clearTimeout(this.timeout);
+        clearTimeout(this.interval_timeout);
 
         // Contenu de la barre de scrolling
         var content = "";
@@ -52,8 +52,8 @@ var ComportementScrollingLeft = Class.create(Comportement, {
         var info;
 
         // On récupère les informations
-        for (var i = 0; i < this.zone_concerne.counterInfo ; i++) {
-            
+        for (var i = 0; i < this.zone_concerne.counterInfo; i++) {
+
             // On stocke l'info
             info = this.zone_concerne.getInfos()[i];
 
@@ -65,8 +65,8 @@ var ComportementScrollingLeft = Class.create(Comportement, {
 
         }
 
-        content = "<div class='scrollContentLeft'><span class='scrollContent toLeft' id='scrollcontent_"+this.zone_concerne.id+"'>"+content+"</span></div>";
-        var dicoInfo = { "content":content };
+        content = "<div class='scrollContentLeft'><span class='scrollContent toLeft' id='scrollcontent_" + this.zone_concerne.id + "'>" + content + "</span></div>";
+        var dicoInfo = {"content": content};
         this.zone_concerne.changeContent(dicoInfo);
 
         // Récupération de la taille du span
@@ -77,9 +77,9 @@ var ComportementScrollingLeft = Class.create(Comportement, {
 
         // Crée un nouveau style
         var style = create_or_replace_behaviour_style_zone();
-        
+
         // Ajout des animations
-        style.innerHTML = "#" + this.zone_concerne.id+" span#scrollcontent_" + this.zone_concerne.id+" { ";
+        style.innerHTML = "#" + this.zone_concerne.id + " span#scrollcontent_" + this.zone_concerne.id + " { ";
 
         style.innerHTML += " -webkit-animation: fromLeft " + time + "s linear 0s infinite;";
         style.innerHTML += " -moz-animation: fromLeft " + time + "s linear 0s infinite;";
@@ -97,8 +97,13 @@ var ComportementScrollingLeft = Class.create(Comportement, {
         // Ajout du style au head
         document.head.appendChild(style);
 
+        var self = this;
+        this.interval_timeout = setTimeout(function() {
+            self.zone_concerne.request();
+        }, time * 1000);
+
     }
-    
+
 });
 
 

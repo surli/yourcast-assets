@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="20" name="glc_render_ICalReader_for_push_edt.js" infoType="Calendar">
+  <function name="glc_render_ICalReader_for_push_edt"/>
+  <resource name="../utils/calendar.js" path="../utils/calendar.js"/>
+  <resource name="img/logos/calendar.png" type="image" path="img/logos/calendar.png"/>
+</prodrenderer:Renderer>

@@ -2,6 +2,4 @@
 <prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="ComportementAlternanceSmoothCA.js">
   <function name="ComportementAlternanceSmoothCA"/>
   <resource name="../utils/YourcastAnim/apparition.js" path="./js/behaviours/utils/YourcastAnim/apparition.js"/>
-  <resource name="../utils/SpecificBehavior/ComportementSmooth.js" path="./js/behaviours/utils/ComportementSmooth.js"/>
-  <resource name="../utils/SpecificBehavior/ComportementAlternanceSmooth.js" path="./js/behaviours/utils/ComportementAlternanceSmooth.js"/>
 </prodbehavior:Behavior>

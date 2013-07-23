@@ -24,7 +24,7 @@ function glc_render_ICalReader_for_main_same_title(collection, zone, timeInfo) {
 	var logo = '<img src="img/logos/calendar.png"/>';
 	zone.loadImage("img/logos/calendar.png");
 	var time = timeInfo;
-	var title = Collection.name;
+	var title = collection.name;
 	var tableau = collection.events;
 	
 	var eventsByDays = transform_in_days(tableau);

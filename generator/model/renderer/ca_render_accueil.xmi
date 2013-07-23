@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="15" name="ca_render_accueil.js" infoType="News">
+  <function name="ca_render_accueil"/>
+  <resource name="less/ca_render_accueil.less" type="css" path="less/ca_render_accueil.less"/>
+</prodrenderer:Renderer>

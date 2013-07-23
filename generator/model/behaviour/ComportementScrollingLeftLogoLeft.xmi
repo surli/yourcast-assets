@@ -2,4 +2,5 @@
 <prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="ComportementScrollingLeftLogoLeft.js">
   <function name="ComportementScrollingLeftLogoLeft"/>
   <resource name="../utils/functions.js" path="./js/behaviours/utils/functions.js"/>
+  <resource name="less/ComportementScrollingLeftLogoLeft.less" type="css" path="./less/ComportementScrollingLeftLogoLeft.less"/>
 </prodbehavior:Behavior>

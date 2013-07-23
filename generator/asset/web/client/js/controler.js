@@ -10,10 +10,6 @@
  *	 	Golfieri Guillaume (golfieri.guillaume@gmail.com)
  */
 
-// Chargement des fichiers nécessaires
-loadScript(JS_ROOT + "/comportement.js");
-loadScript(JS_ROOT + "/exception.js");
-
 // Création de la zone
 var Zone = Class.create({
     

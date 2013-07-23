@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="ComportementAlerte.js">
-  <function name="ComportementAlerte"/>
-  <resource name="../utils/SpecificBehavior/ComportementBoucle.js" path="./js/behaviours/utils/ComportementBoucle.js"/>
-</prodbehavior:Behavior>

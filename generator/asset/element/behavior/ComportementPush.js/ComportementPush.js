@@ -58,9 +58,6 @@ var ComportementPush = Class.create(Comportement, {
         // On récupère les informations
         var info = self.zone_concerne.getInfos()[self.indice];
 
-        // Test si bloc est défini dans le renderer
-        if(info.bloc) {
-
             // Pas de block supplémentaire inutile
             if($$('.' + "push_div_zone").length > 6)
                 $$('.' + "push_div_zone")[6].remove();
@@ -73,28 +70,6 @@ var ComportementPush = Class.create(Comportement, {
 
             // On ajoute l'information
             self.zone_concerne.addContent(info.content, true);
-
-        }
-
-        else {
-
-            // Pas de block supplémentaire inutile
-            if($$('.' + this.id_push).length > 6)
-                $$('.' + this.id_push)[6].remove();
-
-            // On change le contenu de l'info
-            content_push = '<div class="' + this.id_push + '">' + info.content + '</div>';
-
-            // Enlève les animations
-            enleverAnimation(this.main_zone.id);
-
-            // On prend la hauteur courante
-            hauteur_content = this.main_zone.getHeight();
-
-            // On ajoute l'information
-            self.zone_concerne.addContent(content_push);
-
-        }
 
         // On calcule la hauteur de l'information ajoutée
         hauteur_content_ajout = hauteur_content - this.main_zone.getHeight();
@@ -126,16 +101,6 @@ var ComportementPush = Class.create(Comportement, {
 
         // On execute le super
         $super(nouvelle_zone);
-
-        // Style nécessaire au bon fonctionnement du push
-        $(this.zone_concerne.id).setStyle({
-            "overflow": "hidden",
-            "position": "absolute",
-            "top": "10%",
-            "left": "0px",
-            "width": "100%",
-            "height": "100%"
-        });
 
         // On ajoute un nouveau div
         this.zone_concerne.addContent('<div id="' + this.zone_concerne.id + '_content" ></div>');
