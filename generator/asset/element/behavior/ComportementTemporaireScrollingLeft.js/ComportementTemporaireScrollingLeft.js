@@ -173,6 +173,12 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
             // On cache la zone
             $(this.zone_concerne.id).hide();
 
+            var self = this;
+            
+            this.timeout_loop_request = setTimeout(function() {
+                self.loop_request();
+            }, self.time_loop_request * 1000);
+
         }
 
     },
