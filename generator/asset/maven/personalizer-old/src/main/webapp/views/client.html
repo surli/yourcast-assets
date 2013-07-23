@@ -1,0 +1,12 @@
+<div class="hero-unit" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <tabs></tabs>
+</div>
+<div>
+    <div>
+
+        <p><h3> Les requêtes disponibles </h3></p>
+        <ul ng-repeat="element in zones">
+            <li><h3><a href="#/client/{{element.service}}/{{element.zone}}"><span tooltip-animation="true" tooltip="Zone :{{element.zone}}" tooltip-placement="bottom">{{element.zone}}</span></a></h3></li>
+        </ul>
+    </div>
+</div>
