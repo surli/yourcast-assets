@@ -33,8 +33,7 @@ function choralies_render_Weather_Forecast_for_header(collection, zone, timeInfo
 
 		if (temp == 0) {temp = "n/a";};
 		if (temp_unit == "c") {temp_unit = "°C";};
-		
-		content = "<div id='Weather_current_header'>";
+			content = "<div id='Weather_current_header'>";
 
 			content += "<div class='weatherHeaderDay'>";
 			if (currentDate.getHours() <= 18) {
@@ -47,7 +46,10 @@ function choralies_render_Weather_Forecast_for_header(collection, zone, timeInfo
 		content += "</div>";
 
 		/* forecast on 2 days */
+				
 		content +="<div class='weatherHeaderForecast'>";
+		
+		
 		for (var indice = 0; indice < 2; indice++) {
 			elements = forecast[indice];
 			//currentDay = dayOfWeek(elements.date);
@@ -65,8 +67,10 @@ function choralies_render_Weather_Forecast_for_header(collection, zone, timeInfo
 						content += "<span class='fs1 climacon "+currentCodeDay.day_icon+"' aria-hidden='true'></span><small>"+tempDay+temp_unit+"</small>";
 			content += "</div>";
 		}
+		
 		content +="</div>";
 				
+		content += "<div class='logo_meteo' >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>";		
 		content += "</div>";
 		
 		var dico = {"content": content, "logo": "", "title": "", "time" : time, "weather" : content};
