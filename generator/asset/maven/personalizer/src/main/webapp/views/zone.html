@@ -4,10 +4,10 @@
     
     <p></p>
     <div>
-        <span><a class="btn btn-large" href="#/tab/{{tab}}"><i class="icon-bold icon-hand-left"></i>Retour</a>
-        <span ng-show="hasOtherZone()"><select ng-model="myZone" ng-options="element for element in getOtherZones()" ng-checked="changeZone(myZone)"></select>Changer de zone</span></span>
+        <span>
+            <a class="btn btn-large" href="#/tab/{{tab}}"><i class="icon-bold icon-hand-left"></i>Retour</a>
+        </span>
     </div>
-    <div style="text-align: center"><h3><b> Zone : '{{zone}}'</b></h3></div>
     <div style="text-align: right"> <button class="btn" ng-click="openAddNewCallModal()"><i class="icon-plus"></i> Ajouter un appel</button></div>
     <!-- <div ng-show="newModal" style="text-align: right">
         <span>Choisir un identifiant d'appel <select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select></span>
@@ -18,30 +18,44 @@
     </div> -->
 </div>
 <div>
-    <div ng-repeat="call in calls"> <!-- TODO use calls will set to calls[callID] = callOfCallID -->
-    <table class="table table-bordered">
-        <caption> <h3 style="text-align: center">Liste des appels du call {{call.callID}}</h3>
-        </caption>
-        <tr>
-            <th>Call identifiant</th>
-            <th ng-repeat="name in getParamHumanNameByCallID(call.callID) | orderBy: 'id'">{{name.humanName}}</th>
-            <th>Action</th>
-        </tr>
+   <div ng-repeat="zone in zones" style="border-radius: 6px; padding: 10px; background-color: #F2F2F2; border-style: solid; border-color: dodgerblue">
+        <h3 style="text-align: left"> {{zone}}</h3>
+       <div ng-repeat="call in calls[zone]">
 
-            <tr ng-repeat="parameter in call.parameters | orderBy: 'id'">
-            <td>{{parameter.id}}</td>
-            <td ng-repeat="(key, value) in parametersValuesByCall[parameter.id] "> {{value}}</td>
-            <td><button class="btn btn-small" ng-click="removeCall(call.callID, parameter.id)"> <i class="icon-trash"></i>Supprimer</button> <button class="btn btn-small" ng-click="openEditCallModal(call.callID, parameter.id)"><i class="icon-pencil"></i> Modifier</button></td>
+           <table class="table table-striped table-bordered">
 
-            <!--
-            <tr ng-repeat="params in call.parameters">
-            <td>{{params}}</td> -->
+               <caption> <h3 style="text-align: center">Liste des appels avec l'identifiant {{call.callID}}</h3>
 
-        </tr>
-    </table>
-        
+               </caption>
+
+               <tr>
+
+                   <th>Call identifiant</th>
+
+                   <th ng-repeat="row in getRowParams(zone, call.callID) | orderBy: 'id'">{{row.humanName}}</th>
+
+                   <th>Action</th>
+
+               </tr>
+
+
+               <tr ng-repeat="parameter in call.parameters | orderBy: 'id'">
+
+                   <td>{{parameter.id}}</td>
+
+                   <td ng-repeat="(key, value) in parametersValuesByCall[parameter.id] | orderBy: key "> {{value}}</td>
+
+                   <td><button class="btn btn-small" ng-click="removeCall(call.callID, parameter.id)"> <i class="icon-trash"></i>Supprimer</button> <button class="btn btn-small" ng-click="openEditCallModal(zone, call.callID, parameter.id)"><i class="icon-pencil"></i> Modifier</button></td>
+
+               </tr>
+
+            </table>
+
+           
+
     </div>
-
+      
+    </div>
 </div>
 
 
@@ -50,20 +64,35 @@
         <div modal="addNewCallModal" options="options">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancelAddNewCall()">×</button>
-                <h4>Ajout d'un nouveau appel dans {{zone}} </h4>
+                <h4 ng-show="showSelectZone" style="text-align: center"> Ajout d'un nouveau appel </h4>
+                <h4 ng-show="!showSelectZone" style="text-align: center"> Ajout d'un nouveau appel dans {{mySelectedZone}} </h4>
             </div>
             <div class="modal-body">
-                <div ng-show="showSelectCallID" style="text-align: right">
-                    <span>Choisissez un identifiant d'appel <select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select></span>
+                <div ng-show="showSelectZone" style="text-align: center">
+                 <span>
+                     <select ng-model="mySelectedZone" ng-options="zone for zone in zones" ng-checked="changeZone(mySelectedZone)">
+                     <option value="">- - Choisir une zone - -</option>
+                 </select>
+                </span>
+                    <div>
+                        <button class="btn btn-success" ng-click="validateSelectedZone()"> Validate </button> <!-- validateAddCall() -->
+                    </div>
+                </div>
+                <div ng-show="showSelectCallID" style="text-align: center">
+                    <span> <select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource(mySelectedZone)" ng-checked="setChoice(mySelectedCallID)">
+                        <option value="">- - Choisir un ID d'appel - -</option>
+                    </select>
+                    </span>
                     <div>
                     <button class="btn btn-success" ng-click="validateSelectedCallID()"> Validate </button> <!-- validateAddCall() -->
                  </div>
                 </div>
+                <div ng-show="showAddNewCallForm">
+                    <h3 style="text-align: center; color: green"> identifiant des appels  {{mySelectedCallID}}</h3>
+                </div>
 
                 <!-- start form -->
                 <div ng-show="showAddNewCallForm">
-                    <h3 style="text-align: center; color: green"> {{zone}} : identifiant des appels  {{mySelectedCallID}}</h3>
-                    <h3 style="text-align: center">Ajout d'un nouveau appel </h3>
 
                     <div>
                         <form name="formAdd" class="form-horizontal" ng-submit="validateAddNewCall({});">
@@ -79,7 +108,7 @@
                         <input name="paramInt" ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="newCallValues[param.id]" required="">
                         <input name="paramInt" ng-switch-when="NUMBER" type="number" min="0" step="1" ng-model="newCallValues[param.id]" required="">
                         <input name="paramInt" ng-switch-when="NONE" type="number" min="0" step="1" ng-model="newCallValues[param.id]" required="">
-                          <span class="error" ng-show="formAdd.paramInt.$error.required"> Requis !</span>
+                          <span style="text-align: right" class="error" ng-show="formAdd.paramInt.$error.required"> Requis !</span>
                     </span>
                      <span ng-switch-when="LONG" ng-switch="param.typeCST">
                         <input name="paramLong" ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="newCallValues[param.id]" required="">
