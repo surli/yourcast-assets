@@ -22,8 +22,9 @@
                     <td>{{getCallNumber(call)}}</td>
                     <td>{{call.callID}}</td>
                     <td>{{call.service.name}}</td>
-                    <td></td>
-                    <td></td>
+                    <td> <a ng-click="showTimeOutEdition(call.callID)"></a></td>
+                    <td><button class="btn btn-small" ng-click="sortDown(call.callID)"> <i class="icon-arrow-down"></i></button> <button class="btn btn-small" ng-click="sortUp(call.callID)"> <i class="icon-arrow-up"></i></button></td>
+                    <span ng-show="showTimeOut[call.callID]"><input type="number" min="0" step="1"></span>
             </tr></table>
             
         </div>

@@ -3,7 +3,7 @@
   <index name="index-attente.html" type="html"/>
   <resources name="img/background_choralies.png" type="image" path="img/background_choralies.png"/>
   <resources name="img/experimentation_yourcast_supralog1.png" type="image" path="img/experimentation_yourcast_supralog1.png"/>
-  <resources name="img/yourcast_background.png" type="image" path="img/yourcast_background.png"/>
+  <resources name="img/yourcast_background.jpg" type="image" path="img/yourcast_background.jpg"/>
   <resources name="img/yc_loading.gif" type="image" path="img/yc_loading.gif"/>
   <resources name="less/functions.less" type="css" path="less/functions.less"/>
   <resources name="style.css" type="css" path="style.css"/>
