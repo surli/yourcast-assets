@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="15" name="choralies_render_RSS_for_header.js" infoType="Flux RSS">
+  <function name="choralies_render_RSS_for_header"/>
+  <resource name="img/TV5.png" type="image" path="img/TV5.png"/>
+  <resource name="less/choralies_render_RSS_for_header.less" type="css" path="less/choralies_render_RSS_for_header.less"/>
+</prodrenderer:Renderer>

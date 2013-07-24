@@ -1,4 +1,4 @@
-zone0 = FM(Zone: Product Elements Orientation Design; Product: headerZone_choralies; Elements: Content; Content: Graphic; Graphic: Thumbnails; Orientation: Landscape; Design: Choralies;)
+zone0 = FM(Zone: Product Elements Orientation Design; Product: headerZone_choralies; Elements: Content Text Logo; Content: Graphic; Graphic: Thumbnails; Orientation: Landscape; Design: Choralies;)
 zone1 = FM(Zone: Product Elements Orientation Design; Product: RightZone_glc; Elements: Logo Title Content; Content: Graphic Text; Graphic: Thumbnails; Orientation: Portrait; Design: GLC;)
 zone2 = FM(Zone: Product Elements Orientation Design; Product: publicMainZone_choralies; Elements: Content Title; Content: Text Graphic; Graphic: Full Thumbnails; Orientation: Portrait; Design: Choralies;)
 zone3 = FM(Zone: Product Elements Orientation Design; Product: scrollingBottomZone_choralies; Elements: Content; Content: Text; Orientation: Landscape; Design: Choralies;)
