@@ -115,19 +115,19 @@ var Zone = Class.create({
                             var json_conf = JSON.parse(textContent);
 
                             // Si la zone est la zone principale
-                            self.is_master = typeof json_conf.informations[0].isMaster === 'undefined' ? false : json_conf.informations[0].isMaster;
+                            self.is_master = typeof json_conf.isMaster === 'undefined' ? false : json_conf.isMaster;
                             
                             // Test du timeout
-                            self.request_timeout = typeof json_conf.informations[0].request_timeout === 'undefined' ? 60000 : json_conf.informations[0].request_timeout;
+                            self.request_timeout = typeof json_conf.requestTimeout === 'undefined' ? 60000 : json_conf.requestTimeout;
 
                             // Test si l'ordre des renderers a été donné
-                            if (typeof json_conf.informations[0].map_ordre !== 'undefined' ) {
+                            if (typeof json_conf.mapOrder !== 'undefined' ) {
 
                                 // On initialise le tableau de renderers
                                 self.tab_renderers = new Array();
 
                                 // On récupère tous les renderers
-                                for (var cle in map_ordre) {
+                                for (var cle in mapOrder) {
                                     self.tab_renderers.push(cle);
                                 }
 
@@ -139,7 +139,7 @@ var Zone = Class.create({
                             }
 
                             // Stocke le temps d'affichage de chaque renderers
-                            self.map_time = typeof json_conf.informations[0].map_time === 'undefined' ? 60000 : json_conf.informations[0].map_time;
+                            self.map_time = typeof json_conf.mapTime === 'undefined' ? 60000 : json_conf.mapTime;
 
                         }
 
