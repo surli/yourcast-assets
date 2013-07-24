@@ -230,23 +230,23 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
         // Calcule du pourcentage pour la scrollbar
         var leftPourcent = (tailleSpan * 100) / this.zone_concerne.divMarquee.offsetWidth;
         // Crée un nouveau style
-        var style = create_or_replace_behaviour_style_zone();
+        var style = create_or_replace_behaviour_style_zone(this.zone_concerne.id);
 
         // Ajout des animations
         style.innerHTML = "#" + this.zone_concerne.id + " span#scrollcontent_" + this.zone_concerne.id + " { ";
 
-        style.innerHTML += " -webkit-animation: fromLeft " + time + "s linear 0s infinite;";
-        style.innerHTML += " -moz-animation: fromLeft " + time + "s linear 0s infinite;";
-        style.innerHTML += " -ms-animation: fromLeft " + time + "s linear 0s infinite;";
-        style.innerHTML += " -o-animation: fromLeft " + time + "s linear 0s infinite;";
-        style.innerHTML += " animation: fromLeft " + time + "s linear 0s infinite; }";
+        style.innerHTML += " -webkit-animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards;";
+        style.innerHTML += " -moz-animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards;";
+        style.innerHTML += " -ms-animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards;";
+        style.innerHTML += " -o-animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards;";
+        style.innerHTML += " animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards; }";
 
         // Ajout des keyframes left et right
-        style.innerHTML += "@-webkit-keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
-        style.innerHTML += "@-moz-keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
-        style.innerHTML += "@-ms-keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
-        style.innerHTML += "@-o-keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
-        style.innerHTML += "@keyframes fromLeft { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-webkit-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-moz-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-ms-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-o-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
 
         // Ajout du style au head
         document.head.appendChild(style);

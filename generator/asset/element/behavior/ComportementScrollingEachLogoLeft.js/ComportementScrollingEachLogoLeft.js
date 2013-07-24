@@ -74,20 +74,23 @@ var ComportementScrollingEachLogoLeft = Class.create(Comportement, {
 
         var leftPourcent = (tailleSpan * 100) / this.zone_concerne.divMarquee.offsetWidth;
 
-        var style = create_or_replace_behaviour_style_zone();
+        var style = create_or_replace_behaviour_style_zone(this.zone_concerne.id);
 
-        style.innerHTML = "#" + this.zone_concerne.id + " span#scrollcontent_" + this.zone_concerne.id + "{ ";
-        style.innerHTML += " -moz-animation-name: marquee;";
-        style.innerHTML += " -webkit-animation-name: marquee;";
-        style.innerHTML += " -moz-animation-duration: " + time + "s;";
-        style.innerHTML += " -webkit-animation-duration: " + time + "s;";
-        style.innerHTML += " -moz-animation-iteration-count: infinite;";
-        style.innerHTML += " -webkit-animation-iteration-count: infinite;";
-        style.innerHTML += " -moz-animation-timing-function: linear;";
-        style.innerHTML += " -webkit-animation-timing-function: linear; } ";
+        // Ajout des animations
+        style.innerHTML = "#" + this.zone_concerne.id + " span#scrollcontent_" + this.zone_concerne.id + " { ";
 
-        style.innerHTML += "@-webkit-keyframes marquee{ from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
-        style.innerHTML += "  @-moz-keyframes marquee{ from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += " -webkit-animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards;";
+        style.innerHTML += " -moz-animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards;";
+        style.innerHTML += " -ms-animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards;";
+        style.innerHTML += " -o-animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards;";
+        style.innerHTML += " animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards; }";
+
+        // Ajout des keyframes left et right
+        style.innerHTML += "@-webkit-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-moz-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-ms-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-o-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
 
         document.head.appendChild(style);
 

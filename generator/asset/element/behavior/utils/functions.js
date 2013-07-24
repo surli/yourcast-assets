@@ -72,11 +72,18 @@ function time_duration(intensity, contentSize, anim) {
 
 // this function create a style element for the css3 animation
 // if the element exist, it is deleted before created
-function create_or_replace_behaviour_style_zone() {
-	var styleZoneId = 'behaviourStyle';
-	var elem = document.createElement('style');
-	elem.id = styleZoneId;
-	return elem;
+function create_or_replace_behaviour_style_zone(id) {
+    
+    // Test si l'id existe
+    if($(id + "_style")) {
+        head.removeChild(document.getElementById(id + "_style"));
+    }
+    
+    // On ajoute le style
+    var elem = document.createElement('style');
+    elem.id = id + "_style";
+    return elem;
+    
 }
 
 // use by the IRSAM layout, remove the less styles
