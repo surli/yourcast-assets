@@ -26,7 +26,14 @@
 // Classe
 var ComportementInactivite = Class.create(Comportement, {
 
-
+    /**
+     * Réfléchissons au moyen de faire ce comportement. Dans tous les cas on
+     * effectue une boucle toutes les minutes. Si on détecte des informations 
+     * qui peuvent être affichées, on les affiche et à la fin de la boucle de
+     * rendu, lance un request qui revient à la boucle de départ.
+     */
+    
+    // TODO
 
 });
 
