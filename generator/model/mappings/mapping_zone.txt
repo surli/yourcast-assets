@@ -1,4 +1,4 @@
-headerZone_choralies,Orientation,Product,Graphic,Landscape,Elements,Choralies,Zone,Content,Thumbnails,Design:./zone/headerZone_choralies.xmi
+Orientation,Product,Logo,Graphic,Landscape,Choralies,Design,Text,headerZone_choralies,Elements,Zone,Content,Thumbnails:./zone/headerZone_choralies.xmi
 Orientation,Product,Logo,Graphic,Title,Design,Text,GLC,RightZone_glc,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_glc.xmi
 Orientation,Product,Graphic,Choralies,Title,Design,publicMainZone_choralies,Text,Full,Elements,Portrait,Zone,Content,Thumbnails:./zone/publicMainZone_choralies.xmi
 Text,Orientation,scrollingBottomZone_choralies,Product,Landscape,Elements,Choralies,Zone,Content,Design:./zone/scrollingBottomZone_choralies.xmi

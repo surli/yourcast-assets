@@ -1,1 +1,0 @@
-<g:select name="renderer" from="${listOfRenderers}" value="${current}"/>
