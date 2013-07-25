@@ -14,7 +14,7 @@ function choralies_render_Twitter_for_scrolling(tableau, zone, timeInfo) {
 		var elements = tableau.tweets[indice];
 		
 		zone.loadImage(elements.user.profile_image_url);
-		var titleTwitter = "<img src='"+elements.user.profile_image_url+"' align='top'/> "+elements.user.screen_name+" <i>(@"+elements.user.name+")</i> :&nbsp;";
+		var titleTwitter = "<img src='"+elements.user.profile_image_url+"' align='top'/> "+elements.user.screen_name+" <i>(@"+elements.user.name+")</i>";
 		var reg=new RegExp("(\n)", "g");
 		var contentTwitter = elements.text.replace(reg, " ");
 
@@ -22,7 +22,7 @@ function choralies_render_Twitter_for_scrolling(tableau, zone, timeInfo) {
 			content += "<span class=\"info\"> Participez via Twitter (#choralies2013) ou envoyez Choralies par SMS au 3 10 37 ! &nbsp;</span>";	
 			
 		content += "<span class='tweet'>";
-		content += "&nbsp;&nbsp;<span class='twitter_title'>"+titleTwitter+"</span>";
+		content += "&nbsp;&nbsp;<span class='twitter_title'>"+titleTwitter+"</span>&nbsp;:&nbsp;";
 		content += "<span class='twitter_Content'>"+contentTwitter+" &nbsp;&nbsp;</span>";
 		content += "</span>";
 

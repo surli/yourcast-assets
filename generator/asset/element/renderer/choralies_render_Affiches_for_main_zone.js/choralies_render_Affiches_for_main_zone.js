@@ -32,10 +32,11 @@ function choralies_render_Affiches_for_main_zone(tableau, zone, timeInfo) {
 					zone.loadImage(elements.image);
 					content += "<img src="+elements.image+">";
 				}
-				
+				content += "<hr>";
 				content += "<div class='affiche_Price'>"+elements.tarif+"</div>";
 				
 				content += "<div class='affiche_Loc'>"+elements.lieu+"</div>";		
+				content += "<hr>";
 				//content += "<div style='clear:both;'> </div>";
 					
 				content += "<div class='affiche_Title'>"+elements.titre+"</div>";

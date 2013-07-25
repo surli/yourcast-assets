@@ -25,10 +25,11 @@ function choralies_render_Affiches_for_main_public_zone(tableau, zone, timeInfo)
 			content += "<div class='affiche_body'>";
 				content += "<div class='affiche_Dates'>"+render_date_announce(elements)+"</div>";
 
+				content +="<hr>"
 				content += "<div class='affiche_Price'>"+elements.tarif+"</div>";
 				
 				content += "<div class='affiche_Loc'>"+elements.lieu+"</div>";		
-				content += "<div style='clear:both;'> </div>";
+				content += "<hr>";
 	
 					if (isPropertyDefined(elements.image)){
 					zone.loadImage(elements.image);
