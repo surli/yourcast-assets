@@ -44,7 +44,7 @@ function ControlerGeneral(url) {
     } else {
         
         // Affichage en information
-        new Information("[ControlerGeneral] Refresh", "Erreur dans le parse du JSon");
+        new Information("[ControlerGeneral] Refresh", "Aucun lien donnée pour le refresh de la page");
         
     }
 
@@ -102,7 +102,7 @@ function ControlerGeneral(url) {
                         var json = JSON.parse(textContent);
 
                         // On test si on doit reload la page
-                        if(json.informations[0].reload) {
+                        if(json.reload) {
                             location.reload();
                         }
 
