@@ -17,7 +17,7 @@ function choralies_render_SMS_for_scrolling(tableau, zone, timeInfo) {
 		var contentSMS = elements.texte_court.replace(reg, " ");
 
 		if(indice%3==0)
-			content += "<span class=\"info\"> Participez via Twitter (#choralies2013) ou par SMS (06.01.02.03.04) ! &nbsp;</span>";
+			content += "<span class=\"info\"> Participez via Twitter (#choralies2013) ou envoyez Choralies par SMS au 3 10 37 ! &nbsp;</span>";
 			
 		content += "<span class='sms'>";
 			content += "<span class='sms_Content'>&nbsp;&nbsp;";
