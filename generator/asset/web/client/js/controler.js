@@ -45,7 +45,7 @@ var Zone = Class.create({
 
             // On récupère le code de départ
             this.htmlinit = this.divMarquee.innerHTML;
-            self.map_time = map_time;
+            this.map_time = map_time;
 
         }
 
