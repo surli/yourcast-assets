@@ -8,6 +8,6 @@
   <resource name="img/climacons-font/webfont/climacons-webfont.eot" type="image" path="img/climacons-font/webfont/climacons-webfont.eot"/>
   <resource name="img/climacons-font/webfont/climacons-webfont.ttf" type="image" path="img/climacons-font/webfont/climacons-webfont.ttf"/>
   <resource name="img/climacons-font/webfont/climacons-webfont.woff" type="image" path="img/climacons-font/webfont/climacons-webfont.woff"/>
-  <resource name="img/meteo.png" type="image" path="img/meteo.png"/>
+  <resource name="img/logos/meteo.png" type="image" path="img/logos/meteo.png"/>
   <resource name="less/choralies_render_Weather_Forecast_for_header.less" type="css" path="less/choralies_render_Weather_Forecast_for_header.less"/>
 </prodrenderer:Renderer>
