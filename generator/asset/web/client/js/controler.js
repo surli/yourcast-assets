@@ -45,6 +45,7 @@ var Zone = Class.create({
 
             // On récupère le code de départ
             this.htmlinit = this.divMarquee.innerHTML;
+            self.map_time = map_time;
 
         }
 
@@ -127,26 +128,27 @@ var Zone = Class.create({
                                 self.tab_renderers = new Array();
 
                                 // On récupère tous les renderers
-                                for (var cle in mapOrder) {
+                                for (var cle in json_conf.mapOrder) {
                                     self.tab_renderers.push(cle);
                                 }
 
                                 // On trie le tableau des renderers
                                 self.tab_renderers.sort(function(a, b) {
-                                    return map_ordre[a] - map_ordre[b];
+                                    return json_conf.mapOrder[a] - json_conf.mapOrder[b];
                                 });
 
                             }
 
-                            // Stocke le temps d'affichage de chaque renderers
-                            self.map_time = typeof json_conf.mapTime === 'undefined' ? 60000 : json_conf.mapTime;
-
+                             // Stocke le temps d'affichage de chaque renderers
+                            if (typeof json_conf.mapTime !== 'undefined') {
+                            	 self.map_time = json_conf.mapTime;
+                            }
                         }
 
                         // Un erreur est survenue
                         catch (e) {
                             
-                            throw new Exception("[Controler de la zone] Constructeur", "Le fichier JSon de configuration n'est pas correct.");
+                            throw new Exception("[Controler de la zone] Constructeur", "Le fichier JSon de configuration n'est pas correct."+e);
                             
                         }
                     
