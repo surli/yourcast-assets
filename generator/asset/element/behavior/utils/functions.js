@@ -76,7 +76,7 @@ function create_or_replace_behaviour_style_zone(id) {
     
     // Test si l'id existe
     if($(id + "_style")) {
-        head.removeChild(document.getElementById(id + "_style"));
+        document.getElementsByTagName('head')[0].removeChild(document.getElementById(id + "_style"));
     }
     
     // On ajoute le style
