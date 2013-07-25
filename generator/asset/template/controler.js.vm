@@ -21,9 +21,9 @@ init_$zoneName = function() {
 	var url = '/$providerPath/rest/';
 	var anim_func = new $behaviorFunction();
 	var request_timeout = $requestTimeout;
-	//var url_client_personalizer = $personalizerName/client;
+	var url_client_personalizer = '$personalizerName/client/'+id;
 	try {
-		var z1 = new Zone(id, map, map_time, url, anim_func, request_timeout);
+		var z1 = new Zone(id, map, map_time, url, anim_func, request_timeout, url_client_personalizer);
 		z1.request();
 		ControlerGeneral.getInstance.push(z1);
 		return z1;
