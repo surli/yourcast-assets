@@ -4,7 +4,7 @@
  * the content is modified 
  */
 
-loadLess(LESS_ROOT+"/choralies_render_Affiches_for_main_zone.less"); 
+loadLess(LESS_ROOT+"/choralies_render_Affiches_for_main_public_zone.less"); 
 loadScript(RENDERER_PATH+"/utils/calendar.js");
  
 function choralies_render_Affiches_for_main_public_zone(tableau, zone, timeInfo) {
@@ -19,20 +19,23 @@ function choralies_render_Affiches_for_main_public_zone(tableau, zone, timeInfo)
 		var contentAnnounces = elements.contenu.replace(reg, "<br/>");
 		var content = "";
 		
-		content += "<div class='affiches_number'>"+tableau.length+" soir&eacute;es &agrave; venir</div>";	
+		//content += "<div class='affiches_number'>"+tableau.length+" soir&eacute;es &agrave; venir</div>";	
 		
 		content += "<div id='affiches' class='main_div_zone'>";
 			content += "<div class='affiche_body'>";
 				content += "<div class='affiche_Dates'>"+render_date_announce(elements)+"</div>";
-				content += "<div class='affiche_Title'>"+elements.titre+"</div>";
+
 				content += "<div class='affiche_Price'>"+elements.tarif+"</div>";
-				content += "<div class='affiche_Subtitle'>"+elements.soustitre+"</div>";
+				
 				content += "<div class='affiche_Loc'>"+elements.lieu+"</div>";		
 				content += "<div style='clear:both;'> </div>";
-				if (isPropertyDefined(elements.image)){
+	
+					if (isPropertyDefined(elements.image)){
 					zone.loadImage(elements.image);
 					content += "<img src="+elements.image+">";
-				}	
+				}
+				content += "<div class='affiche_Title'>"+elements.titre+"</div>";
+				content += "<div class='affiche_Subtitle'>"+elements.soustitre+"</div>";
 				content += "<div class='affiche_Content'>"+contentAnnounces+"</div>";
 			content += "</div>";
 			

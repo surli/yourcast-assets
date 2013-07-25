@@ -19,20 +19,27 @@ function choralies_render_Affiches_for_main_zone(tableau, zone, timeInfo) {
 		var contentAnnounces = elements.contenu.replace(reg, "<br/>");
 		var content = "";
 		
-		content += "<div class='affiches_number'>"+tableau.length+" &eacute;v&egrave;nements &agrave; venir</div>";	
+		//content += "<div class='affiches_number'>"+tableau.length+" &eacute;v&egrave;nements &agrave; venir</div>";	
+		
+		title = "Aujourd'hui : "+render_hour_announce(elements);
 		
 		content += "<div id='affiches' class='main_div_zone'>";
 			content += "<div class='affiche_body'>";
-				content += "<div class='affiche_Dates'>"+render_hour_announce(elements)+"</div>";
-				content += "<div class='affiche_Title'>"+elements.titre+"</div>";
-				content += "<div class='affiche_Price'>"+elements.tarif+"</div>";
-				content += "<div class='affiche_Subtitle'>"+elements.soustitre+"</div>";
-				content += "<div class='affiche_Loc'>"+elements.lieu+"</div>";		
-				content += "<div style='clear:both;'> </div>";
+				//content += "<div class='affiche_Dates'>"+render_hour_announce(elements)+"</div>";
+				
+				
 				if (isPropertyDefined(elements.image)){
 					zone.loadImage(elements.image);
 					content += "<img src="+elements.image+">";
-				}		
+				}
+				
+				content += "<div class='affiche_Price'>"+elements.tarif+"</div>";
+				
+				content += "<div class='affiche_Loc'>"+elements.lieu+"</div>";		
+				//content += "<div style='clear:both;'> </div>";
+					
+				content += "<div class='affiche_Title'>"+elements.titre+"</div>";
+				content += "<div class='affiche_Subtitle'>"+elements.soustitre+"</div>";
 				content += "<div class='affiche_Content'>"+contentAnnounces+"</div>";
 			content += "</div>";
 			
