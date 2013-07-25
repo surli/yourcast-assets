@@ -19,16 +19,16 @@
                     <th> Order </th>
                     <th></th>
                 </tr>
-                <tr ng-repeat="call in calls">
-                    <td>{{mapOrder[call.callID]}}</td>
-                    <td>{{call.callID}}</td>
-                    <td>{{call.service.name}}</td>
+                <tr ng-repeat="(callID, order) in mapOrder">
+                    <td>{{order}}</td>
+                    <td>{{callID}}</td>
+                    <td>{{source}}</td>
                     <td> <a ng-click="showTimeEdition(call.callID)">{{mapTime[call.callID]}}</a></td>
-                    <td><button class="btn btn-small" ng-click="sortDown(call.callID)"> <i class="icon-arrow-down"></i></button> <button class="btn btn-small" ng-click="sortUp(call.callID)"> <i class="icon-arrow-up"></i></button></td>
+                    <td><button class="btn btn-small" ng-click="sortDown(callID)"> <i class="icon-arrow-down"></i></button> <button class="btn btn-small" ng-click="sortUp(callID)"> <i class="icon-arrow-up"></i></button></td>
                     <td>
-                        <span ng-show="showTime[call.callID]">
-                            <input ng-model="mapTime[call.callID]" type="number" min="0" step="1">
-                            </span><button ng-show="showTime[call.callID]" class="btn btn-small" ng-click="setTime(call.callID)">Valider </button>
+                        <span ng-show="showTime[callID]">
+                            <input ng-model="mapTime[callID]" type="number" min="0" step="1">
+                            </span><button ng-show="showTime[callID]" class="btn btn-small" ng-click="setTime(callID)">Valider </button>
                         
                    </td>
             </tr></table>
