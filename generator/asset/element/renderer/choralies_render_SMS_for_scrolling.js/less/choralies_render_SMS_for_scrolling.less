@@ -24,6 +24,9 @@
 			s{
 				text-decoration:none;
 			}
+			img{
+				height:90%;
+			}
 		}		
 	}
 	
@@ -33,6 +36,7 @@
 	}
 		
 }
+
 
 	span.sms{
 		moz-box-shadow: none;
@@ -54,6 +58,9 @@
 			s{
 				text-decoration:none;
 			}
+			img{
+				height:90%;
+			}			
 		}		
 	}
 	
@@ -61,3 +68,33 @@
 		color:@grayLightPlus;
 		font-style:italic;
 	}
+	
+	
+@media (max-width: 768px) 	{
+	#${zoneName} .scrollContentEachLogoLeft .scrollContent{
+		font-size:55%;
+		line-height:auto;
+	}
+
+	.scrollContentEachLogoLeft span.scrollContent{
+		span.sms{	  	
+			line-height:100%;	
+			.sms_Content{
+				img{
+					height:70%;
+				}			
+			}	
+		}
+	}
+	
+	span.sms{	  	
+		line-height:100%;	
+		.sms_Content{
+			img{
+				height:70%;
+			}			
+		}			
+	}
+
+}
+	

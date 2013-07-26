@@ -1,17 +1,6 @@
 @import "style";
 
 
- .scrollContentEachLogoLeft{
-    margin-left:10px;
-    margin-right:10px;
-    height:90%;
-    color:@white;
-    overflow:hidden;
-    span{
-    	line-height:135%;
-    }
-    position:relative;
-}
 
 .scrollContentEachLogoLeft .scrollContent{
 
@@ -30,8 +19,8 @@
 		display: inline-block;
 	  	line-height:220%;
 	  	height:100%;
-	  	background-color:transparent;
-	  	border:0px;
+	  	background-color:@blue;
+	    border-left:10px solid @purple;
 		
 		.twitter_title{
 			background-color:transparent;
@@ -120,6 +109,35 @@
 
 @media (max-width: 768px) 	{
 	#${zoneName} .scrollContentEachLogoLeft .scrollContent{
-		font-size:75%;
+		font-size:55%;
+		line-height:auto;
 	}
+	
+	.scrollContentEachLogoLeft{
+	    span{
+	    	line-height:100%;
+	    }
+	}	
+	
+	.scrollContentEachLogoLeft .scrollContent{
+		.tweet{  	
+			line-height:100%;	
+			.twitter_title{
+				img {
+		  		height:50%;
+		  		margin-top:4px;
+		  	}
+			}
+		}
+	}
+	.tweet{  	
+		line-height:100%;	
+		.twitter_title{
+			img {
+	  		height:50%;
+	  		margin-top:4px;
+	  	}
+		}
+	}
+	
 }
