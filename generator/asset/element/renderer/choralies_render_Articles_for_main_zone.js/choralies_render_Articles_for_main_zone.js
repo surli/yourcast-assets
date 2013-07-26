@@ -51,8 +51,8 @@ function choralies_render_Articles_for_main_zone(tableau, zone, timeInfo) {
 				content += "<div id='articles' class='main_div_zone'>";
 					content += "<div class='article_body'>";
 						//content += "<i>[Page "+(i+1)+"/"+elements.contenu.length+"]</i>";
-						content += "<i>[…]</i>";
-						content += "<div class='article_Content'>"+contentAnnounces+"</div>";
+						//content += "<i>[…]</i>";
+						content += "<div class='article_Content'><i>[…]</i> "+contentAnnounces+"</div>";
 						
 						if(i==elements.contenu.length-1)
 							content +="<br><b>"+elements.auteur+"</b>";

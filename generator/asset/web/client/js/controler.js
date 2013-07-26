@@ -247,12 +247,16 @@ var Zone = Class.create({
             
     // function call to load the image before the launch
     loadImage: function(imgsrc) {
-        this.array_img[imgsrc] = new Image();
-        var self = this;
-        this.array_img[imgsrc].onload = function() {
-            self.incrementImageLoadedAndLaunchBehaviour();
-        };
-        this.array_img[imgsrc].src = imgsrc;
+        try {
+            this.array_img[imgsrc] = new Image();
+            var self = this;
+            this.array_img[imgsrc].onload = function() {
+                self.incrementImageLoadedAndLaunchBehaviour();
+            };
+            this.array_img[imgsrc].src = imgsrc;
+        } catch (err) {
+            new Exception("[Controler de la zone] LoadImage", err);
+        }
     },
             
     // increment the number of images we need to load
@@ -281,6 +285,10 @@ var Zone = Class.create({
         // Tout va bien
         else {
             
+            // On rajoute une information au dico pour savoir � quoi correspond
+            // l'information ajout�e
+            dico.callId = this.cle;
+
             // Ajoute la nouvelle info au tableau des données
             this.infoList.push(dico);
 
@@ -492,8 +500,10 @@ var Zone = Class.create({
 
         // Effecture la requête Ajax
         new Ajax.Request(this.url, {
+            
             // On utilise un get
             method: 'get',
+            
             // Si la requête est un succès
             onSuccess: function(transport) {
 
@@ -534,13 +544,13 @@ var Zone = Class.create({
             onFailure: function(transport) {
 
                 // Création d'une exception
-                throw new Exception("[moteur/js/controler_zone.js] request", "La requête vers l'url donné a échouée.");
+                throw new Exception("[moteur/js/controler_zone.js] Request", transport);
 
             },
             onException: function(transport, exception) {
 
                 // Création d'une exception
-                throw new Exception("[moteur/js/controler_zone.js] request", exception.message);
+                throw new Exception("[moteur/js/controler_zone.js] Request", exception.message);
 
             },
             onComplete: function(transport) {
@@ -675,6 +685,9 @@ var Zone = Class.create({
     },
     lancer_render: function(cle, element) {
 
+        // Stockage de la cl� en cours
+        this.cle = cle;
+
         // On appelle la fonction du render
         try {
 
@@ -689,7 +702,7 @@ var Zone = Class.create({
         } catch (err) {
             
             // Création d'une exeception
-            throw new Exception("[Controler de la zone] Lancer_Render", "La fonction n'a pas été trouvé pour " + cle + ".");
+            throw new Exception("[Controler de la zone] Lancer_Render", err);
             
         }
 
