@@ -137,6 +137,7 @@ function choralies_render_Video_for_main(tableau, zone, timeInfo) {
             else if(requestAnimationFrame) {
                 url = typeof elements.urls.webm === 'undefined' || elements.urls.webm == '' ? url : elements.urls.webm;
                 url = typeof elements.urls.ogv === 'undefined' || elements.urls.ogv == '' ? url : elements.urls.ogv;
+                url = typeof elements.urls.mp4 === 'undefined' || elements.urls.mp4 == '' ? url : elements.urls.mp4; // only h264 codec
             }
 
             // Safari
