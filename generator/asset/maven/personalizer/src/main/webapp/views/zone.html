@@ -3,22 +3,11 @@
     <tabs></tabs>
     
     <p></p>
-    <div>
-        <span>
-            <a class="btn btn-large" href="#/tab/{{tab}}"><i class="icon-bold icon-hand-left"></i>Retour</a>
-        </span>
-    </div>
-    <div style="text-align: right"> <button class="btn" ng-click="openAddNewCallModal()"><i class="icon-plus"></i> Ajouter un appel</button></div>
-    <!-- <div ng-show="newModal" style="text-align: right">
-        <span>Choisir un identifiant d'appel <select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select></span>
-        <div><button class="btn btn-warning cancel" ng-click="cancelAddCall()"> Cancel </button>
-        <button class="btn btn-success" ng-click="openAddNewCallModal()"> Validate </button> <!-- validateAddCall()
-        </div>
+    <div style="text-align: left"> <button class="btn" ng-click="openAddNewCallModal()"><i class="icon-plus"></i> Ajouter un appel</button></div>
 
-    </div> -->
 </div>
 <div>
-   <div ng-repeat="zone in zones" style="border-radius: 6px; padding: 10px; background-color: #F2F2F2; border-style: solid; border-color: dodgerblue">
+   <div ng-repeat="zone in zones" style="border-radius: 2px; padding: 5px; background-color: #F2F2F2; border-style: solid solid none solid; border-color: dodgerblue">
         <h3 style="text-align: left"> {{zone}}</h3>
        <div ng-repeat="call in calls[zone]">
 
@@ -195,24 +184,5 @@
                 <button class="btn btn-inverse" ng-click="cancelEditCall()"> <i class="icon-eraser"></i> Annuler </button>
             </div>
         </div>
-<!-- Modal opened to add new Call -->
-<!--<div modal="newModal" options="options">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancelAddCall()">×</button>
-        <h4>Choix d'un CallID </h4>
-    </div>
-    <div class="modal-body">
-        <div class="control-group">
-            <div class="controls">
-                <span><select ng-model="mySelectedCallID" ng-options="element for element in  getCallIDFromResource()" ng-checked="setChoice(mySelectedCallID)"></select> Choisir un CallID</span>
-
-            </div>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-warning cancel" ng-click="cancelAddCall()"> Cancel </button>
-        <button class="btn btn-success" ng-click="validateAddCall()"> Validate </button>
-    </div>
-</div>-->
 
 </div>

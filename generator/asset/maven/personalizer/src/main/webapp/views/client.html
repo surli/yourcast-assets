@@ -1,33 +1,29 @@
-<div class="hero-unit" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<div class="hero-unit" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <tabs></tabs>
+    <!--<h3 style="text-align: center;"> Personalisation des différentes zones </h3> -->
 </div>
 <div>
-    <!--<div style="background-color: #F2F2F2;">
 
-        <p><h3 style="text-align: center"> Les requêtes disponibles </h3></p>
-        <ul ng-repeat="element in zones">
-            <li><h3><a href="#/client/{{element.service}}/{{element.zone}}"><span tooltip-animation="true" tooltip="Source : {{element.service}}, Zone :{{element.zone}}" tooltip-placement="right">{{element.service}} : {{element.zone}}</span></a></h3></li>
-        </ul>
-    </div> -->
     <div>
-        <div ng-repeat="zone in zones" style="border-radius: 6px; padding: 10px; background-color: #F2F2F2; border-style: solid; border-color: dodgerblue">
+        <div ng-repeat="zone in zones" style="border-radius: 3px; padding: 5px; background-color: #F2F2F2; border-style: solid dashed none dashed ; border-color: wheat">
             <table class="table table-bordered">
                 <caption> <h3 style="text-align: center">Personalisation de  '{{zone}}'</h3>
                 </caption>
                 <tr>
                     <th> # </th>
-                    <th> CAll ID </th>
-                    <th> Source </th>
+                    <th> Call ID </th>
+                    <!--<th> Source </th> -->
                     <th> Temps </th>
                     <th> Order </th>
                     <th></th>
                 </tr>
-                <tr ng-repeat="(callID, order) in mapOrder[zone]">
+                <tr ng-repeat="(order, callID) in sortMapByOrder(mapOrder[zone])">
                     <td>{{order}}</td>
                     <td>{{callID}}</td>
-                    <td>{{source}}</td>
+                    <!--<td>{{source}}</td> -->
                     <td> <a ng-click="showTimeEdition(callID)">{{mapTime[zone][callID]}}</a></td>
-                    <td><button class="btn btn-small" ng-click="sortDown(zone, callID)"> <i class="icon-arrow-down"></i></button> <button class="btn btn-small" ng-click="sortUp(zone, callID)"> <i class="icon-arrow-up"></i></button></td>
+                    <td><button ng-show="isNotLast(zone, callID)" class="btn btn-small" ng-click="sortDown(zone, callID)"> <i class="icon-arrow-down"></i>
+                    </button> <button ng-show="isNotFirst(order)" class="btn btn-small" ng-click="sortUp(zone, callID)"> <i class="icon-arrow-up"></i></button></td>
                     <td>
                         <span ng-show="showTime[callID]">
                             <input ng-model="mapTime[zone][callID]" type="number" min="0" step="1">
@@ -36,7 +32,22 @@
                     </td>
                 </tr>
             </table>
-            
+            <div>
+               <div style="text-align: left" ng-show="hasTimeout(zone)">
+                   <h4>Timeout :<a href="" ng-click="showTimeoutEdition(zone)"> {{requestTimeout[zone]}}</a></h4> 
+                    <span ng-show="showSetTimeout[zone]">
+                            <input ng-model="requestTimeout[zone]" type="text">
+                            </span><button ng-show="showSetTimeout[zone]" class="btn btn-small" ng-click="setRequestTimeout(zone, requestTimeout[zone], requestUrl[zone])">Valider </button>
+                        
+               </div>
+                <div style="text-align:left" ng-show="hasRequestUrl(zone)">
+                    <h4>URL de la requête  :<a href="" ng-click="showRequestEdition(zone)"> {{requestUrl[zone]}}</a></h4> 
+                    <span ng-show="showSetRequest[zone]">
+                            <input ng-model="requestUrl[zone]" type="text">
+                            </span><button ng-show="showSetRequest[zone]" class="btn btn-small" ng-click="setRequestTimeout(zone, requestTimeout[zone], requestUrl[zone])">Valider </button>
+                        
+                </div>
+            </div>
         </div>
 
     </div>
