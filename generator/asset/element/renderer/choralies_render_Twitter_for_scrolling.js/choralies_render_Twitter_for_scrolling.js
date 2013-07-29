@@ -19,14 +19,15 @@ function choralies_render_Twitter_for_scrolling(tableau, zone, timeInfo) {
 		var contentTwitter = elements.text.replace(reg, " ");
 
 		if(indice%3==0)
-			content += "<span class=\"info\"> Participez via Twitter (#choralies2013) ou envoyez Choralies par SMS au 3 10 37 ! &nbsp;</span>";	
+			content += "<span class=\"info\"> Participez via Twitter (#choralies2013) ou envoyez Choralies suivi de votre message par SMS au 3 10 37 (coût d'un sms) ! &nbsp;</span>";
 			
 		content += "<span class='tweet'>";
 		content += "&nbsp;&nbsp;<span class='twitter_title'>"+titleTwitter+"</span>&nbsp;:&nbsp;";
 		content += "<span class='twitter_Content'>"+contentTwitter+" &nbsp;&nbsp;</span>";
 		content += "</span>";
 
-
+		if(indice%3==2)
+			content += "<span class=\"info\"> Participez via Twitter avec le hashtag #choralies2013 ! &nbsp;</span>";
 		
 	}
 

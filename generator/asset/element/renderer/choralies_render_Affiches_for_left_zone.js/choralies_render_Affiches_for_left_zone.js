@@ -23,7 +23,7 @@ function choralies_render_Affiches_for_left_zone(tableau, zone, timeInfo) {
 		
 		content += "<div id='affiches' class='left_div_zone'>";
 			content += "<div class='affiche_body'>";
-				content += "<div class='affiche_Dates'>"+render_hour_announce(elements)+"</div>";
+				//content += "<div class='affiche_Dates'>"+render_hour_announce(elements)+"</div>";
 				content += "<div class='affiche_Title'>"+elements.titre+"</div>";
 				content += "<hr>";
 				content += "<div class='affiche_Price'>"+elements.tarif+"</div>";
@@ -36,7 +36,7 @@ function choralies_render_Affiches_for_left_zone(tableau, zone, timeInfo) {
 					content += "<img src="+elements.image+">";
 				}		
 				content += "<div class='affiche_Subtitle'>"+elements.soustitre+"</div>";
-				content += "<div class='affiche_Content'>"+contentAnnounces+"</div>";
+				//content += "<div class='affiche_Content'>"+contentAnnounces+"</div>";
 			content += "</div>";
 			
 			

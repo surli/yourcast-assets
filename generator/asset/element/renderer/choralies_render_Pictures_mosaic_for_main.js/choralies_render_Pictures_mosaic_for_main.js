@@ -19,7 +19,7 @@
 	var heightScreen = window.outerHeight;
 	var zoneHeight = (heightScreen * 70 / 100) - 130;
 	
-	var content = "<span class='pictureInfo'>Envoyez vos photos par email &agrave; contact@choralies.org !</span>";
+	var content = "<span class='pictureInfo'>Envoyez vos photos par email &agrave; photo@choralies.org !</span>";
 	content += "<div class='mosaicPictures' style='height:"+zoneHeight+"px;'>";	
 	
 	for (var indice = 0; indice < tableau.length; indice++){
