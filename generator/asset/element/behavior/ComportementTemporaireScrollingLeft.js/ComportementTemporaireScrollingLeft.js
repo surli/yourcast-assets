@@ -131,7 +131,7 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
 
         $super(nouvelle_zone);
 
-        this.time_loop_request = this.zone_concerne.request_timeout;
+        this.time_loop_request = typeof this.zone_concerne.request_timeout === 'undefined' ? 20 : this.zone_concerne.request_timeout;
 
         $(this.zone_concerne.id).setStyle({
             "z-index": "100",
