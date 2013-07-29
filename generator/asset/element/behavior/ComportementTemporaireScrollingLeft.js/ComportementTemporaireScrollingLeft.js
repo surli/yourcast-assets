@@ -30,7 +30,7 @@ var ComportementBoucle = Class.create(Comportement, {
         /** Zone concernÃ©e */
         $super();
 
-        /** Stocke le temps de transition entre deux diapositives */
+        /** Stocke le temps de transition entre deux requetes */
         this.time_loop_request = typeof time_loop_request !== 'undefined' ? time_loop_request : 10;
 
         /** Initialisation du timeout pour la loop de request */
@@ -129,9 +129,9 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
      */
     setZone: function($super, nouvelle_zone) {
 
-        this.time_loop_request = 10; // 10 Secondes entre chaque requêtes
-
         $super(nouvelle_zone);
+
+        this.time_loop_request = typeof this.zone_concerne.request_timeout === 'undefined' ? 20 : this.zone_concerne.request_timeout;
 
         $(this.zone_concerne.id).setStyle({
             "z-index": "100",
