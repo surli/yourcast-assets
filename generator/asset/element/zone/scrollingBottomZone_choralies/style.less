@@ -2,9 +2,9 @@
 @import "../less/variables.less";
 
 #${zoneName} {
-    height:9%;
-    margin-top:1%;
-    overflow:hidden;
+    height: 9%;
+    margin-top: 1%;
+    overflow: hidden;
     -webkit-transition: all .5s ease-in;
     -moz-transition: all .5s ease-in;
     transition: all .5s ease-in;
@@ -12,38 +12,38 @@
     .blueAlpha;
 }
 @media (max-width: 768px) 	{
-	#${zoneName} {
-		height:11%;
-		font-size:110%;
-		margin-bottom:2%;
-	}
+    #${zoneName} {
+        height:11%;
+        font-size:110%;
+        margin-bottom:2%;
+    }
 }
 #${zoneName} .noinfo{
-	display:table;
-	.lightBackground;
-	margin-left:1%;
-	margin-right:1%;
-	width:98%;
-	font-size:95%;
-	font-weight:400;
-	height:90%;
+    display:table;
+    .lightBackground;
+    margin-left:1%;
+    margin-right:1%;
+    width:98%;
+    font-size:95%;
+    font-weight:400;
+    height:90%;
 
-	text-align:center;
-	div{
-		display:table-cell;
-		vertical-align:middle;
-	}
+    text-align:center;
+    div{
+        display:table-cell;
+        vertical-align:middle;
+    }
 }
 
 #${zoneName} span {
-  position: relative;
+    position: relative;
 }
 
 #${zoneName} .title{
-	display:none;
+    display: none;
 }
 
-.scrollContentEachLogoLeft{
+#${zoneName} .scrollContentLeft{
     margin-left:10px;
     margin-right:10px;
     height:90%;
@@ -52,32 +52,32 @@
     span{
     	line-height:135%;
     	span{
-    		line-height:220%;
+            line-height:220%;
     	}
     }
     position:relative;
 }
 @media (max-width: 768px) 	{
-	.scrollContentEachLogoLeft{
-		height:100%;
-		span{
-    	line-height:100%;
-    	span{
-    		line-height:100%;
-    	}
+    #${zoneName} .scrollContentLeft{
+        height:100%;
+        span{
+            line-height:100%;
+            span{
+                line-height:100%;
+            }
+        }
     }
-	}
 }
-#${zoneName} .scrollContentEachLogoLeft .scrollContent{
-	font-size:120%;
-	white-space: nowrap;
-	display: inline-block;
-	line-height:135%;
-	height:100%;
+#${zoneName} .scrollContentLeft .scrollContent{
+    font-size:120%;
+    white-space: nowrap;
+    display: inline-block;
+    line-height:135%;
+    height:100%;
 }
 @media (max-width: 768px) 	{
-	#${zoneName} .scrollContentEachLogoLeft .scrollContent{
-		line-height:100%;
-	}
+    #${zoneName} .scrollContentLeft .scrollContent{
+        line-height:100%;
+    }
 }
 
