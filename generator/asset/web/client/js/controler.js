@@ -495,9 +495,6 @@ var Zone = Class.create({
         // Stocke le this
         var self = this;
 
-        // On arrête le comportement
-        self.stopComportement();
-
         // Effecture la requête Ajax
         new Ajax.Request(this.url, {
             
