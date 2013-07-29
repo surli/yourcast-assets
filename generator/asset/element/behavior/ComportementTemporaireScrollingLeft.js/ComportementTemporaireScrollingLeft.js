@@ -166,6 +166,9 @@ var ComportementTemporaireScrollingLeft = Class.create(ComportementBoucle, {
         }
 
         else {
+            
+            // Clear le timeout
+            clearTimeout(this.timeout_loop_request);
 
             // Le comportement est arrêté
             this.marche = false;

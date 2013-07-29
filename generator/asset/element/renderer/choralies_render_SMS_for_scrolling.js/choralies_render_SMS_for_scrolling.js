@@ -22,7 +22,7 @@ function choralies_render_SMS_for_scrolling(tableau, zone, timeInfo) {
 		content += "<span class='sms'>";
 			content += "<span class='sms_Content'>&nbsp;&nbsp;";
 				zone.loadImage('img/SMS.png');
-				content += "&nbsp;<img src=\"img/SMS.png\" height=\"90%\" align=\"top\">&nbsp;&nbsp;";			
+				content += "&nbsp;<img src=\"img/SMS.png\" align=\"top\">&nbsp;&nbsp;";			
 				//if(elements.titre!="")
 				//	content += "<b>"+elements.titre+"</b> - ";	
 			content += contentSMS+" </span>";
