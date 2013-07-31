@@ -11,13 +11,13 @@
  *
  *  Informations :
  *
- *      La classe comportement alternance r√©utilise la classe
- *      comportement et alterne deux styles diff√©rends de
- *      couleur pour la maquette de Cl√©ment Ader.
+ *      La classe comportement alternance rÈutilise la classe
+ *      comportement et alterne deux styles diffÈrends de
+ *      couleur pour la maquette de ClÈment Ader.
  *
  *  Versions :
  *
- *      1.0.0 : Cr√©ation d'une classe fonctionnelle.
+ *      1.0.0 : CrÈation d'une classe fonctionnelle.
  *
  *  Contributors :
  *
@@ -25,8 +25,7 @@
  *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
-// Chargement du comportement
-loadScript(BEHAVIOUR_PATH + "/utils/functions.js");
+// Load le script d'apparition
 loadScript(BEHAVIOUR_PATH + "/utils/YourcastAnim/apparition.js");
 
 // Classe
@@ -34,32 +33,32 @@ var ComportementSmooth = Class.create(Comportement, {
     /**
      *	Boucle du comportement
      *
-     *	La boucle sert √† changer les √©l√©ments d'une zone par 
+     *	La boucle sert ‡ changer les ÈlÈments d'une zone par 
      *	rapport aux informations que contient la zone. Pour 
-     *	cela, elle r√©cup√®re les enfants de la zone et compare
+     *	cela, elle rÈcupËre les enfants de la zone et compare
      *	leur id au tableau info de la zone. Si un id n'est 
-     *	pas d√©fini, alors on cache l'√©l√©ment.
+     *	pas dÈfini, alors on cache l'ÈlÈment.
      */
     loop: function() {
 
-        // S√©curit√©
+        // SÈcuritÈ
         this.securiteInfosZone();
 
         // On stocke le this
         var self = this;
 
-        // On clear tout d'abord les timeouts stock√©s
+        // On clear tout d'abord les timeouts stockÈs
         clearTimeout(this.timeout);
         clearTimeout(this.timeout_fadeIn);
         clearTimeout(this.timeout_fadeOut);
 
-        // On r√©cup√®re les informations
+        // On rÈcupËre les informations
         var info = this.zone_concerne.getInfos()[this.indice];
 
         // On change le content
         this.zone_concerne.changeContent(info);
 
-        // Met le nouveau block en opacit√© 0
+        // Met le nouveau block en opacitÈ 0
         if ($(this.zone_concerne.id + "_content")) {
 
             $(this.zone_concerne.id + "_content").setStyle({
@@ -99,9 +98,122 @@ var ComportementSmooth = Class.create(Comportement, {
  *
  *  Informations :
  *
+ *      La classe comportement alternance r?utilise la classe
+ *      comportement et alterne deux styles diff?rends de
+ *      couleur pour la maquette de Cl?ment Ader.
+ *
+ *  Versions :
+ *
+ *      1.0.0 : Cr?ation d'une classe fonctionnelle.
+ *
+ *  Contributors :
+ *
+ *      Simon Urli (simon.urli@gmail.com)
+ *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
+ */
+
+var ComportementAlternanceSmooth = Class.create(ComportementSmooth, {
+    /**
+     *  Constructeur par d?faut
+     *  
+     *  @param $super HÈritage
+     *  @param nombre_alternance Nombre d'alternance
+     */
+    initialize: function($super, nombre_alternance) {
+
+        // Constructeur par d?faut
+        $super();
+
+        // Initialisation de l'indice d'alternance
+        this.indice_alternance = 0;
+
+        // Nombre d'alternance
+        this.nombre_alternance = typeof nombre_alternance === 'undefined' ? 2 : nombre_alternance;
+
+    },
+    /**
+     *  Passage ? l'?l?ment suivant
+     *
+     *  Le passage ? l'?l?ment suivant ne peut se faire
+     *  que si le comportement est en route. Sinon elle
+     *  ne fait rien. Lorsque la boucle arrive ? la fin
+     *  des informations de la zone, elle retourne au 
+     *  d?but. Elle alterne deux styles diff?rends.
+     *  
+     *  @param $super HÈritage
+     */
+    next: function($super) {
+
+        // S?curit?
+        this.securiteInfosZone();
+
+        // Test si l'?l?ment est dans le tableau
+        var alternance = this.zone_concerne.getInfos()[this.indice].alternance;
+        
+        // Test si l'alternance est dÈfinit
+        if (typeof alternance !== 'undefined' && alternance === false) {
+            $super();
+        }
+
+        // Sinon on alterne
+        else {
+
+            // Test si on change d'indice
+            if (this.indice_alternance === (this.nombre_alternance - 1)) {
+
+                // On incr?mente l'indice
+                this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
+
+            }
+
+            // On incr?mente l'indice alternance
+            this.indice_alternance = (this.indice_alternance + 1) % this.nombre_alternance;
+
+            // On change la couleur
+            this.changeDesign();
+
+            // Si on est au d?but de l'application
+            if (this.indice === 0 && this.indice_alternance === 0) {
+
+                // Si on est revenu au d?but on test si ca on peut faire une requete
+                if ((new Date().getTime() - this.last_request) > 120000) {
+
+                    // On stocke la nouvelle requete
+                    this.last_request = new Date().getTime();
+
+                    // On lance la requ?te
+                    this.zone_concerne.request();
+
+                }
+
+            }
+
+            // On appelle le changement d'?l?ment
+            this.goto(this.indice);
+
+        }
+
+    }
+
+});
+
+/**
+ *  Rights :
+ *
+ *      Copyright (c) 2013 YourCast - I3S/CNRS ADAM/INRIA.
+ *
+ *      All rights reserved. This program and the 
+ *      accompanying materials are made available under the 
+ *      terms of the GNU Public License v3.0 which accompanies 
+ *      this distribution, and is available at
+ *      http://www.gnu.org/licenses/gpl.html
+ *
+ *  Informations :
+ *
  *      La classe comportement alternance rÈutilise la classe
- *      comportement et alterne deux styles diffÈrends de
- *      couleur pour la maquette de ClÈment Ader.
+ *      comportement et alterne une infinitÈ de styles diffÈrends.
+ *      Par exemple pour la maquette de ClÈment Ader, on alterne
+ *      un style noir avec un style Jaune.
  *
  *  Versions :
  *
@@ -113,144 +225,87 @@ var ComportementSmooth = Class.create(Comportement, {
  *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
-var ComportementAlternanceSmooth = Class.create(ComportementSmooth, {
+// Classe
+var ComportementAlternanceSmoothIrsam = Class.create(ComportementAlternanceSmooth, {
     /**
      *  Constructeur par dÈfaut
      *
-     *  @param indice_debut : permet de prÈciser le 
-     *  dÈbut du comportement. Si aucune information
-     *  n'est renseignÈe, l'indice est Ègal ‡ 0. On
-     *  stocke un indice pour l'aternance. Si l'indice
-     *  est Ègal ‡ 0, le style est noir; si l'indice 
-     *  est Ègal ‡ 1, le style est jaune.
+     *  @param {type} $super HÈritage
      */
-    initialize: function($super, nombre_alternance) {
+    initialize: function($super) {
 
         // Constructeur par dÈfaut
-        $super();
-
-        // Initialisation de l'indice d'alternance
-        this.indice_alternance = 0;
-
-        // Nombre d'alternance
-        this.nombre_alternance = typeof nombre_alternance === 'undefined' ? 2 : nombre_alternance;
-
-    },
-    /**
-     *  Passage ‡ l'ÈlÈment suivant
-     *
-     *  Le passage ‡ l'ÈlÈment suivant ne peut se faire
-     *  que si le comportement est en route. Sinon elle
-     *  ne fait rien. Lorsque la boucle arrive ‡ la fin
-     *  des informations de la zone, elle retourne au 
-     *  dÈbut. Elle alterne deux styles diffÈrends.
-     */
-    next: function($super) {
-
-        // SÈcuritÈ
-        this.securiteInfosZone();
-
-        // Test si l'ÈlÈment est dans le tableau
-        if (!this.zone_concerne.getInfos()[this.indice].alternance) {
-            $super();
-        }
-
-        // Sinon on alterne
-        else {
-
-            // Test si on change d'indice
-            if (this.indice_alternance === (this.nombre_alternance - 1)) {
-
-                // On incrÈmente l'indice
-                this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
-
-            }
-
-            // On incrÈmente l'indice alternance
-            this.indice_alternance = (this.indice_alternance + 1) % this.nombre_alternance;
-
-            // On change la couleur
-            this.changeDesign();
-
-            // Si on est au dÈbut de l'application
-            if (this.indice === 0 && this.indice_alternance === 0) {
-
-                // Si on est revenu au dÈbut on test si ca on peut faire une requete
-                if ((new Date().getTime() - this.last_request) > 120000) {
-
-                    // On stocke la nouvelle requete
-                    this.last_request = new Date().getTime();
-
-                    // On lance la requÍte
-                    this.zone_concerne.request();
-
-                }
-
-            }
-
-            // On appelle le changement d'ÈlÈment
-            this.goto(this.indice);
-
-        }
-
-    }
-
-});
-
-// Classe
-var ComportementAlternanceSmoothIrsam = Class.create(ComportementAlternanceSmooth, {
-
-    /**
-     *  Constructeur par d√©faut
-     *
-     *  @param indice_debut : permet de pr√©ciser le 
-     *  d√©but du comportement. Si aucune information
-     *  n'est renseign√©e, l'indice est √©gal √† 0. On
-     *  stocke un indice pour l'aternance. Si l'indice
-     *  est √©gal √† 0, le style est noir; si l'indice 
-     *  est √©gal √† 1, le style est jaune.
-     */
-    initialize: function($super, 2) {
-        
-        // Constructeur par d√©faut
         $super(2);
 
     },
-
     /**
-     *	Cette fonction est appel√© pour l'alternance.
+     *	Cette fonction est appelÈ pour l'alternance.
      *
      *	Ici on alterne un style Jaune et un style Noir.
      */
     changeDesign: function() {
 
-        var lien_css;
-        removeLessStyles();
-        less.sheets = styles.clone();
+        // Variables du jaune et du bleu
+        var COLOR_YELLOW =      "#f4cb01";
+        var COLOR_BLUE =        "#282d65";
+        var COLOR_WHITE =       "#fff";
+        var COLOR_BLACK =       "#000";
 
         // Changer en jaune
-        if(this.indice_alternance == 1) {
+        if (this.indice_alternance === 1) {
 
-            lien_css = document.createElement('link');
-            lien_css.href = "less/black.less";
-            lien_css.rel = "stylesheet/less";
-            less.sheets.push(lien_css);
-            less.refresh(false);
+            for (var index = 0; index < document.styleSheets.length; index++) {
+                if (document.styleSheets[index].ownerNode.id.search('ca_render_menu') !== -1)
+                    var rules = (document.styleSheets[index].cssRules) ? document.styleSheets[index].cssRules : document.styleSheets[index].rules;
+                else
+                    var rules = new Array();
+            }
+
+            var i = 0;
+            while (rules[i]) {
+                if (rules[i].selectorText === 'hr') {
+                    rules[i].style.backgroundColor === COLOR_BLUE;
+                    break;
+                }
+                i++;
+            }
+
+            // On change le background en jaune
+            document.body.style.backgroundColor = COLOR_YELLOW;
+
+            // On change la couleur de texte en bleu
+            var zone = document.getElementById(this.zone_concerne.id);
+            zone.style.color = COLOR_BLUE;
 
         }
 
         // Changer en noir
         else {
 
-            lien_css = document.createElement('link');
-            lien_css.href = "less/yellow.less";
-            lien_css.rel = "stylesheet/less";
-            less.sheets.push(lien_css);
-            less.refresh(false);
+            for (var index = 0; index < document.styleSheets.length; index++) {
+                if (document.styleSheets[index].ownerNode.id.search('ca_render_menu') !== -1)
+                    var rules = (document.styleSheets[index].cssRules) ? document.styleSheets[index].cssRules : document.styleSheets[index].rules;
+                else
+                    var rules = new Array();
+            }
+
+            var i = 0;
+            while (rules[i]) {
+                if (rules[i].selectorText === 'hr') {
+                    rules[i].style.backgroundColor === COLOR_WHITE;
+                    break;
+                }
+                i++;
+            }
+
+            // On change le background en jaune
+            document.body.style.backgroundColor = COLOR_BLACK;
+
+            // On change la couleur de texte en bleu
+            document.getElementById(this.zone_concerne.id).style.color = COLOR_WHITE;
 
         }
 
     }
-
 
 });

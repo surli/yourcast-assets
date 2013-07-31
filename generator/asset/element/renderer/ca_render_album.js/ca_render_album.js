@@ -17,6 +17,10 @@ loadLess(LESS_ROOT + '/ca_render_album.less');
  * - Chargement de l'image
  * - Stockage des informations nécessaires à l'affichage de l'album
  * - Ajout des images à la zone
+ * 
+ * @param collection Informations
+ * @param zone Zone concern�e
+ * @param timeInfo Temps de l'information
  */
 function ca_render_album(collection, zone, timeInfo) {
 
