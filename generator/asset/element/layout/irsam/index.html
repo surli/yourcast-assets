@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
-        <title>IHM YourCast</title>
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
+
+        <title>YourCast Irsam</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
         <script type="text/javascript" src="js/libs/prototype.js"></script>
         <script type="text/javascript" src="js/utils.js"></script>
         <script type="text/javascript" src="js/date.js"></script>
         <script type="text/javascript" src="js/controler.js"></script>
 
-
-        <link href="less/als.css" type="text/css" rel="stylesheet" />
-        <link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
-
         $zoneScripts
 
-        <!-- import the less interpreter -->
-        <script type="text/javascript" src="js/libs/less.js"></script>
-    </head>		
+        <script type="text/javascript">
 
-    <body onload="$onLoadContent">
-        <!--  to manage alert, not used for now -->
-        <div id="conteneurAls">
-            <span id="alerte"></span>
-            <span id="alarme"></span>
-        </div>
+            /**
+             *  Fin de traitement des fichiers less
+             */
+            function finTraitementLess() {
+
+                // Cache le logo de chargement
+                $('logo_loading').hide();
+
+            }
+
+            less = {
+                env: "production",
+                async: false,
+                fileAsync: true
+            };
+
+        </script>
+
+    </head>
+
+    <body onload="$onLoadContent; loadScript('js/libs/less.js', true); init_date();" class="attente">
+
+        <div style="display: none;" id="date_time"></div>
 
         $layoutBody
 
-        <div id="logo_loading"><img src="img/logo_loading.jpg" /></div>
+        <div id="logo_loading">
+            <div>
+                <img id="loading_img" src="./img/yc_loading.gif" />
+            </div>
+        </div>
+
+        <span class="design_signature"><a href="http://c.line-design.fr">c.line-design.fr</a></span>
+
     </body>
+
 </html>
