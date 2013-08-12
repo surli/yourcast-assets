@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="100" name="glc_render_Twitter_for_scrolling_simple.js" infoType="Tweet">
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="20" name="glc_render_Twitter_for_scrolling_simple.js" infoType="Tweet">
   <function name="glc_render_Twitter_for_scrolling_simple"/>
   <resource name="../utils/twitter.js" path="../utils/twitter.js"/>
   <resource name="less/glc_render_Twitter_for_scrolling_simple.less" type="css" path="less/glc_render_Twitter_for_scrolling_simple.less"/>

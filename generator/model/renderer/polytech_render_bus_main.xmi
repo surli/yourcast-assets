@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="20" name="polytech_render_bus_main.js" infoType="List&lt;Passage>">
+  <function name="polytech_render_bus_main"/>
+  <resource name="../utils/calendar.js" path="../utils/calendar.js"/>
+  <resource name="less/polytech_render_bus_main.less" type="css" path="less/polytech_render_bus_main.less"/>
+</prodrenderer:Renderer>

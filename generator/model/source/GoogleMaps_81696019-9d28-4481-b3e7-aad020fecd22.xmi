@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="GoogleMaps" id="GoogleMaps">
+  <service name="sources-gmaps.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="GoogleMaps_81696019-9d28-4481-b3e7-aad020fecd22.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="getZoomedAndTypicalGMaps" pathPrefix="gmaps/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  GoogleMaps" editMessage="Editer Carte de traffic routier GoogleMaps">
+      <parameters name="Localisation" type="STRING" tip="Localisation" constraint="NONE" dbName="location"/>
+      <parameters name="Zoom" tip="Zoom de la carte" constraint="NONE" dbName="zoom"/>
+      <parameters name="Longitude" type="DOUBLE" tip="Longitude du centre de la carte" constraint="NONE" dbName="longitude"/>
+      <parameters name="Latitude" type="DOUBLE" tip="Latitude du centre de la carte" constraint="NONE" dbName="latitude"/>
+      <parameters name="Type de carte" type="STRING" tip="Type de carte List(ROADMAP,HYBRID, SATELITE)" constraint="NONE" dbName="type"/>
+      <parameters name="Clé d'API" type="STRING" tip="Clé d'API Google Maps" constraint="NONE" dbName="apikey"/>
+    </methods>
+    <list name="Localisation" tip="Localisation" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Zoom" tip="Zoom de la carte" parameters="//@personalization/@methods/@parameters.1"/>
+    <list name="Longitude" tip="Longitude du centre de la carte" parameters="//@personalization/@methods/@parameters.2"/>
+    <list name="Latitude" tip="Latitude du centre de la carte" parameters="//@personalization/@methods/@parameters.3"/>
+    <list name="Type de carte" tip="Type de carte List(ROADMAP,HYBRID, SATELITE)" parameters="//@personalization/@methods/@parameters.4"/>
+    <list name="Clé d'API" tip="Clé d'API Google Maps" parameters="//@personalization/@methods/@parameters.5"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-gmaps" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
