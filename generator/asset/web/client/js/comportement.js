@@ -43,20 +43,19 @@
  */
 
 var Comportement = Class.create({
+    /**
+     *	Constructeur par défaut
+     */
+    initialize: function(time_smooth) {
 
-	/**
-	 *	Constructeur par défaut
-	 */
-	initialize: function(time_smooth) {
-
-		/** Zone concernée */
+        /** Zone concernée */
         this.zone_concerne = null;
 
-		/** Indice actuel du comportement */
-		this.indice = 0;
+        /** Indice actuel du comportement */
+        this.indice = 0;
 
-		/** Timeout du comportement */
-		this.timout = null;
+        /** Timeout du comportement */
+        this.timout = null;
 
         /** Stocke si l'animation est en marche */
         this.marche = false;
@@ -64,30 +63,29 @@ var Comportement = Class.create({
         /** Timestamp de la dernière requête */
         this.last_request = new Date().getTime();
 
-	},
+    },
+    /**
+     *	Passage à l'élément suivant
+     *
+     *	Le passage à l'élément suivant ne peut se faire
+     *	que si le comportement est en route. Sinon elle
+     *	ne fait rien. Lorsque la boucle arrive à la fin
+     *	des informations de la zone, elle retourne au 
+     * 	début.
+     */
+    next: function() {
 
-	/**
-	 *	Passage à l'élément suivant
-	 *
-	 *	Le passage à l'élément suivant ne peut se faire
-	 *	que si le comportement est en route. Sinon elle
-	 *	ne fait rien. Lorsque la boucle arrive à la fin
-	 *	des informations de la zone, elle retourne au 
-	 * 	début.
-	 */
-	next: function() {
+        // Sécurité
+        this.securiteInfosZone();
 
-		// Sécurité
-		this.securiteInfosZone();
-
-		// On incrémente l'indice
-		this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
+        // On incrémente l'indice
+        this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
 
         // Si on est au début de l'application
-        if(this.indice == 0) {
+        if (this.indice == 0) {
 
             // Si on est revenu au début on test si ca on peut faire une requete
-            if((new Date().getTime() - this.last_request) > 120000) {
+            if ((new Date().getTime() - this.last_request) > 120000) {
 
                 // On stocke la nouvelle requete
                 this.last_request = new Date().getTime();
@@ -99,275 +97,261 @@ var Comportement = Class.create({
 
         }
 
-		// On appelle le changement d'élément
-		this.goto(this.indice);
+        // On appelle le changement d'élément
+        this.goto(this.indice);
 
-	},
+    },
+    /**
+     *	Passage à l'élément précédent
+     *
+     *	Le passage à l'élément précédent ne peut se
+     *	faire que si le comportement est en route. Sinon
+     *	elle ne fait rien. Lorsque la boucle au début
+     *	(indice égal à 0), elle retourne à la fin des
+     *  informations de la zone.
+     */
+    before: function() {
 
-	/**
-	 *	Passage à l'élément précédent
-	 *
-	 *	Le passage à l'élément précédent ne peut se
-	 *	faire que si le comportement est en route. Sinon
-	 *	elle ne fait rien. Lorsque la boucle au début
-	 *	(indice égal à 0), elle retourne à la fin des
-	 *  informations de la zone.
-	 */
-	before: function() {
+        // Sécurité
+        this.securiteInfosZone();
 
-		// Sécurité
-		this.securiteInfosZone();
+        // On incrémente l'indice
+        this.indice = (this.indice - 1) % this.zone_concerne.getInfos().length;
 
-		// On incrémente l'indice
-		this.indice = (this.indice - 1) % this.zone_concerne.getInfos().length;
+        // Test si l'indice est passé en négatif
+        if (this.indice < 0)
+            this.indice = this.zone_concerne.getInfos().length - 1;
 
-		// Test si l'indice est passé en négatif
-		if(this.indice < 0)
-			this.indice = this.zone_concerne.getInfos().length - 1;
+        // On appelle le changement d'élément
+        this.goto(this.indice);
 
-		// On appelle le changement d'élément
-		this.goto(this.indice);
+    },
+    /**
+     *	Changement d'élément à l'indice donné
+     *
+     *	Cette fonction doit être obligatoirement appelée
+     *	avant loop. Elle sert de sécurité pour éviter
+     *	tout type d'erreur dans la boucle.
+     *
+     *	Exception renvoyée :
+     *
+     *		- Aucune zone n'est définie
+     *		- Aucune informations dans la zone
+     *		- Aucune informatinos dans l'indice donné
+     *
+     *	Cette fonction peut être appelée n'importe où et
+     *	n'importe quand.
+     */
+    goto: function(indice) {
 
-	},
+        // Sécurité
+        this.securiteInfosZone();
 
-	/**
-	 *	Changement d'élément à l'indice donné
-	 *
-	 *	Cette fonction doit être obligatoirement appelée
-	 *	avant loop. Elle sert de sécurité pour éviter
-	 *	tout type d'erreur dans la boucle.
-	 *
-	 *	Exception renvoyée :
-	 *
-	 *		- Aucune zone n'est définie
-	 *		- Aucune informations dans la zone
-	 *		- Aucune informatinos dans l'indice donné
-	 *
-	 *	Cette fonction peut être appelée n'importe où et
-	 *	n'importe quand.
-	 */
-	goto: function(indice) {
+        // On stocke le this
+        var self = this;
 
-		// Sécurité
-		this.securiteInfosZone();
+        // Test si l'indice existe dans les informations données par la zone
+        if (typeof self.zone_concerne.getInfos()[indice] !== 'undefined') {
 
-		// On stocke le this
-		var self = this;
+            // On stocke l'indice
+            self.indice = indice;
 
-		// Test si l'indice existe dans les informations données par la zone
-		if(typeof self.zone_concerne.getInfos()[indice] !== 'undefined') {
+            // On change l'élément
+            self.loop();
 
-			// On stocke l'indice
-			self.indice = indice;
+        } else
+            // Création d'une exeception
+            throw new Exception("[moteur/class/comportement.js] goto", "L'information à l'indice donnée n'a pas été trouvée.");
 
-			// On change l'élément
-			self.loop();
+    },
+    /**
+     *	Met en pause le comportement
+     *
+     *	Le comportement est en pause et ne bougera plus
+     *	tant que la fonction run n'est pas appelée. Pour
+     *	cela la fonction réinitialise le timeout de la 
+     * 	boucle et passe la variable marche à false.
+     */
+    pause: function() {
 
-		} else
+        // On réinitialise
+        this.marche = false;
 
-			// Création d'une exeception
-	        throw new Exception("[moteur/class/comportement.js] goto", "L'information à l'indice donnée n'a pas été trouvée.");
+        // On clear le timeout
+        this.clear();
 
-	},
+    },
+    /**
+     *	Lance le comportement
+     *
+     *	Cette fonction est lancée que si le comportement
+     *	est arrêtée. Elle repasse la variable marche à
+     * 	true et appelle la fonction goto à l'indice où
+     *	le comportement s'était arrêté.
+     */
+    run: function() {
 
-	/**
-	 *	Met en pause le comportement
-	 *
-	 *	Le comportement est en pause et ne bougera plus
-	 *	tant que la fonction run n'est pas appelée. Pour
-	 *	cela la fonction réinitialise le timeout de la 
-	 * 	boucle et passe la variable marche à false.
-	 */
-	pause: function() {
+        // Si on est pas déjà en route
+        if (!this.isRunning()) {
 
-		// On réinitialise
-		this.marche = false;
+            // Changement
+            this.marche = true;
 
-		// On clear le timeout
-		this.clear();
+            this.zone_concerne.randomInfo(true);
 
-	},
+            // On appelle le changement d'élément
+            this.goto(this.indice);
 
-	/**
-	 *	Lance le comportement
-	 *
-	 *	Cette fonction est lancée que si le comportement
-	 *	est arrêtée. Elle repasse la variable marche à
-	 * 	true et appelle la fonction goto à l'indice où
-	 *	le comportement s'était arrêté.
-	 */
-	run: function() {
+        }
 
-		// On stocke le this
-		var self = this;
+    },
+    /**
+     *	Clear le comportement
+     *
+     *	Clear uniquement les timeouts du comportement. 
+     *	Cette fonction n'intervient pas dans la boucle 
+     *	next -> goto.
+     */
+    clear: function() {
 
-		// Si on est pas déjà en route
-		if(!self.isRunning()) {
+        // Clear le timeout principal
+        clearTimeout(this.timeout);
 
-			// Changement
-			self.marche = true;
+    },
+    /**
+     *	Reset le comportement
+     *
+     *	Reset juste l'indice de navigation. Si le 
+     *	comportement est en route, il continuera. Si
+     * 	vous désirez arrêter le comportement, utilisez
+     *	la fonction stop.
+     */
+    reset: function() {
 
-			// On appelle le changement d'élément
-			self.goto(self.indice);
+        // On réinitialise l'indice
+        this.indice = 0;
 
-		}
+    },
+    /**
+     *	Stop complètement le comportement
+     *
+     *	Cette fonction stoppe complètement le 
+     *	comportement et le remet au début. Pour
+     *	redémarrer, utilisez la méthode run.
+     */
+    stop: function() {
 
-	},
+        // On réinitialise l'indice
+        this.reset();
 
-	/**
-	 *	Clear le comportement
-	 *
-	 *	Clear uniquement les timeouts du comportement. 
-	 *	Cette fonction n'intervient pas dans la boucle 
-	 *	next -> goto.
-	 */
-	clear: function() {
+        // On réinitialise
+        this.marche = false;
 
-		// Clear le timeout principal
-		clearTimeout(this.timeout);
+        // On clear le timeout
+        this.clear();
 
-	},
+    },
+    /**
+     *	Getter variable marche
+     *
+     *	Return true if the behaviour is running or false
+     *  if it not.
+     */
+    isRunning: function() {
 
-	/**
-	 *	Reset le comportement
-	 *
-	 *	Reset juste l'indice de navigation. Si le 
-	 *	comportement est en route, il continuera. Si
-	 * 	vous désirez arrêter le comportement, utilisez
-	 *	la fonction stop.
-	 */
-	reset: function() {
+        // Retourne la valeur de la variable marche
+        return this.marche;
 
-		// On réinitialise l'indice
-		this.indice = 0;
+    },
+    /**
+     *	Boucle du comportement
+     *
+     *	La boucle sert à changer les éléments d'une zone par 
+     *	rapport aux informations que contient la zone. Pour 
+     *	cela, elle récupère les enfants de la zone et compare
+     *	leur id au tableau info de la zone. Si un id n'est 
+     *	pas défini, alors on cache l'élément.
+     */
+    loop: function() {
 
-	},
+        // Sécurité
+        this.securiteInfosZone();
 
-	/**
-	 *	Stop complètement le comportement
-	 *
-	 *	Cette fonction stoppe complètement le 
-	 *	comportement et le remet au début. Pour
-	 *	redémarrer, utilisez la méthode run.
-	 */
-	stop: function() {
+        // On stocke le this
+        var self = this;
 
-		// On réinitialise l'indice
-		this.reset();
+        // On clear tout d'abord les timeouts stockés
+        this.clear();
 
-		// On réinitialise
-		this.marche = false;
+        // On récupère les informations
+        var info = self.zone_concerne.getInfos()[self.indice];
 
-		// On clear le timeout
-		this.clear();
+        // On change le content
+        self.zone_concerne.changeContent(info);
 
-	},
+        // On test si le comportement est en marche
+        if (self.isRunning()) {
+            self.timeout = setTimeout(function() {
+                self.next();
+            }, info.time * 1000);
+        }
 
-	/**
-	 *	Getter variable marche
-	 *
-	 *	Return true if the behaviour is running or false
-	 *  if it not.
-	 */
-	isRunning: function() {
+    },
+    /**
+     *	Fonction de sécurité lié à la zone
+     *
+     *	Evite les erreurs 'undefined'. Teste si la 
+     *	zone est prête à être utilisée. Malgré
+     *	qu'il existe une fonction dédié à la
+     *	modification de la zone, on peut quand 
+     *	même la modifiée directement.
+     */
+    securiteZone: function() {
 
-		// Retourne la valeur de la variable marche
-		return this.marche;
+        // Test si c'est bien une zone
+        if (this.zone_concerne === 'undefined' || this.zone_concerne == null || !(this.zone_concerne instanceof Zone))
+            // Création de l'exception
+            throw new Exception("[moteur/class/comportement.js] setZone", "La zone est incorrect.");
 
-	},
+    },
+    /**
+     *	Fonction de sécurité lié aux infos de la 
+     *	zone
+     *
+     *	Evite les erreurs 'undefined'. Teste si les
+     *	informations transmises par la fonction
+     *	getInfos sont correctes est prêtes à être 
+     *	utilisées.
+     */
+    securiteInfosZone: function() {
 
-	/**
-	 *	Boucle du comportement
-	 *
-	 *	La boucle sert à changer les éléments d'une zone par 
-	 *	rapport aux informations que contient la zone. Pour 
-	 *	cela, elle récupère les enfants de la zone et compare
-	 *	leur id au tableau info de la zone. Si un id n'est 
-	 *	pas défini, alors on cache l'élément.
-	 */
-	loop: function() {
+        // Sécurité zone
+        this.securiteZone();
 
-		// Sécurité
-		this.securiteInfosZone();
+        // Test si les informations sont corrects
+        if (this.zone_concerne.getInfos() === 'undefined' || this.zone_concerne.getInfos() == null)
+            // Création de l'exception
+            throw new Exception("[moteur/class/comportement.js] setZone", "Les infos de la zone sont incorrects.");
 
-		// On stocke le this
-		var self = this;
+    },
+    /**
+     *	Setter de la zone
+     *
+     *	Permet de chancer la zone du comportement. 
+     *
+     *	/!\ Cette fonction doit être appelée lors du 
+     *	lancement du comportement sous peine d'avoir 
+     *	une erreur critique.
+     */
+    setZone: function(nouvelle_zone) {
 
-		// On clear tout d'abord les timeouts stockés
-		this.clear();
+        // Stockage de la nouvelle zone
+        this.zone_concerne = nouvelle_zone;
 
-		// On récupère les informations
-		var info = self.zone_concerne.getInfos()[self.indice];
+        // Sécurité
+        this.securiteZone();
 
-		// On change le content
-		self.zone_concerne.changeContent(info);
-
-		// On test si le comportement est en marche
-		if(self.isRunning()) {
-			self.timeout = setTimeout(function() { self.next(); }, info.time * 1000);
-		}
-
-	},
-
-	/**
-	 *	Fonction de sécurité lié à la zone
-	 *
-	 *	Evite les erreurs 'undefined'. Teste si la 
-	 *	zone est prête à être utilisée. Malgré
-	 *	qu'il existe une fonction dédié à la
-	 *	modification de la zone, on peut quand 
-	 *	même la modifiée directement.
-	 */
-	securiteZone: function() {
-
-		// Test si c'est bien une zone
-		if(this.zone_concerne === 'undefined' || this.zone_concerne == null || !(this.zone_concerne instanceof Zone))
-
-	 	// Création de l'exception
-		throw new Exception("[moteur/class/comportement.js] setZone", "La zone est incorrect.");
-
-	},
-
-	/**
-	 *	Fonction de sécurité lié aux infos de la 
-	 *	zone
-	 *
-	 *	Evite les erreurs 'undefined'. Teste si les
-	 *	informations transmises par la fonction
-	 *	getInfos sont correctes est prêtes à être 
-	 *	utilisées.
-	 */
-	securiteInfosZone: function() {
-
-		// Sécurité zone
-		this.securiteZone();
-
-		// Test si les informations sont corrects
-		if(this.zone_concerne.getInfos() === 'undefined' || this.zone_concerne.getInfos() == null)
-
-	 	// Création de l'exception
-		throw new Exception("[moteur/class/comportement.js] setZone", "Les infos de la zone sont incorrects.");
-
-	},
-
-	/**
-	 *	Setter de la zone
-	 *
-	 *	Permet de chancer la zone du comportement. 
-	 *
-	 *	/!\ Cette fonction doit être appelée lors du 
-	 *	lancement du comportement sous peine d'avoir 
-	 *	une erreur critique.
-	 */
-	setZone: function(nouvelle_zone) {
-
-		// Stockage de la nouvelle zone
-		this.zone_concerne = nouvelle_zone;
-
-		// Sécurité
-		this.securiteZone();
-
-	}
+    }
 
 });
 

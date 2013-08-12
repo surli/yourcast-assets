@@ -1,5 +1,5 @@
 /**
- * Classe Exception
+ * Fichier exception
  *
  * Contributors :
  *      Guillaume Golfieri
@@ -10,37 +10,50 @@
  *	Permet de créer une exception qui ira directement dans les logs du serveur.
  */
 var Exception = Class.create({
+    /**
+     *	Constructeur par défaut.
+     *
+     *	@param id : identifiant du fichier où s'est produite
+     *				l'erreur.
+     *	@param message : message de l'erreur.
+     */
+    initialize: function(fichier, erreur, ligne) {
 
-	/**
-	 *	Constructeur par défaut.
-	 *
-	 *	@param id : identifiant du fichier où s'est produite
-	 *				l'erreur.
-	 *	@param message : message de l'erreur.
-	 */
-	initialize: function(id, message) {
-		
-		// Stocke l'id où l'erreur s'est produite
-		this.id = id;
+        // Stocke le fichier de l'exception
+        this.fichier = fichier;
 
-		// Stocke le message de l'exception
-		this.message = message;
+        // Stocke l'errer de l'exception
+        this.erreur = erreur;
 
-		// Stocke la date de l'exception
-		this.date = new Date();
+        // Stocke la ligne de l'exception
+        this.ligne = ligne;
 
-		// Envoie à la console l'exception
-		console.warn(this.msg());
+        // Stocke la date de l'exception
+        this.date = new Date();
 
-	},
+        // Envoie à la console l'exception
+        console.warn(this.msg());
+        
+        // Ajout de l'exception
+        document.getElementById('msg_console').innerHTML = document.getElementById('msg_console').innerHTML + "<div class='exception'>" + this.msg().replace(/\n/gi, "<br/>") + "</div><br/>";
+        
+        // Défilement automatique
+        var div = document.getElementById('msg_console');
+        div.scrollTop = div.scrollHeight - div.clientHeight;
 
-	toString: function() {
-		return this.message;
-	},
+    },
+    toString: function() {
 
-	msg: function() {
-		return "Exception : " + this.id + " [" + this.date + "]\n" + "Message : " + this.message;
-	}
+        // Retourne le message
+        return this.msg();
+        
+    },
+    msg: function() {
+
+        // Retourne le message de l'exception
+        return "Exception\n\tFichier : " + this.fichier + "\n\tMessage : " + this.erreur + "\n\tLigne : " + this.ligne;
+        
+    }
 
 });
 
@@ -48,36 +61,98 @@ var Exception = Class.create({
  *	Permet de créer une information qui ira directement dans les logs du serveur.
  */
 var Information = Class.create({
+    /**
+     *	Constructeur par défaut.
+     *
+     *	@param id : identifiant du fichier où s'est produite l'erreur.
+     *	@param message : message de l'erreur.
+     */
+    initialize: function(fichier, erreur, ligne) {
 
-	/**
-	 *	Constructeur par défaut.
-	 *
-	 *	@param id : identifiant du fichier où s'est produite
-	 *				l'erreur.
-	 *	@param message : message de l'erreur.
-	 */
-	initialize: function(id, message) {
-		
-		// Stocke l'id où l'erreur s'est produite
-		this.id = id;
+        // Stocke le fichier de l'exception
+        this.fichier = fichier;
 
-		// Stocke le message de l'exception
-		this.message = message;
+        // Stocke l'errer de l'exception
+        this.erreur = erreur;
 
-		// Stocke la date de l'exception
-		this.date = new Date();
+        // Stocke la ligne de l'exception
+        this.ligne = ligne;
 
-		// Envoie à la console l'exception
-		console.info(this.msg());
+        // Stocke la date de l'exception
+        this.date = new Date();
 
-	},
+        // Envoie à la console l'exception
+        console.info(this.msg());
+        
+        // Ajout de l'exception
+        document.getElementById('msg_console').innerHTML = document.getElementById('msg_console').innerHTML + "<div class='information'>" + this.msg().replace(/\n/gi, "<br/>") + "</div><br/>";
 
-	toString: function() {
-		return this.message;
-	},
+        // Défilement automatique
+        var div = document.getElementById('msg_console');
+        div.scrollTop = div.scrollHeight - div.clientHeight;
 
-	msg: function() {
-		return "Information : " + this.id + " [" + this.date + "]\n" + "Message : " + this.message;
-	}
+    },
+    toString: function() {
+
+        // Retourne le message
+        return this.msg();
+        
+    },
+    msg: function() {
+
+        // Retourne le message de l'exception
+        return "Information\n\tFichier : " + this.fichier + "\n\tMessage : " + this.erreur + "\n\tLigne : " + this.ligne;
+        
+    }
+
+});
+
+/**
+ *	Permet de créer une erreur qui ira directement dans les logs du serveur.
+ */
+var Erreur = Class.create({
+    /**
+     *	Constructeur par défaut.
+     *
+     *	@param id : identifiant du fichier où s'est produite l'erreur.
+     *	@param message : message de l'erreur.
+     */
+    initialize: function(fichier, erreur, ligne) {
+
+        // Stocke le fichier de l'exception
+        this.fichier = fichier;
+
+        // Stocke l'errer de l'exception
+        this.erreur = erreur;
+
+        // Stocke la ligne de l'exception
+        this.ligne = ligne;
+
+        // Stocke la date de l'exception
+        this.date = new Date();
+
+        // Envoie à la console l'exception
+        console.info(this.msg());
+        
+        // Ajout de l'exception
+        document.getElementById('msg_console').innerHTML = document.getElementById('msg_console').innerHTML + "<div class='erreur'>" + this.msg().replace(/\n/gi, "<br/>") + "</div><br/>";
+
+        // Défilement automatique
+        var div = document.getElementById('msg_console');
+        div.scrollTop = div.scrollHeight - div.clientHeight;
+
+    },
+    toString: function() {
+
+        // Retourne le message
+        return this.msg();
+        
+    },
+    msg: function() {
+
+        // Retourne le message de l'exception
+        return "Erreur\n\tFichier : " + this.fichier + "\n\tMessage : " + this.erreur + "\n\tLigne : " + this.ligne;
+        
+    }
 
 });

@@ -1,18 +1,23 @@
-/*
- * 	Copyright (c) 2012 YourCast - I3S/CNRS ADAM/INRIA.
- * 	All rights reserved. This program and the accompanying materials
- * 	are made available under the terms of the GNU Public License v3.0
- * 	which accompanies this distribution, and is available at
- * 	http://www.gnu.org/licenses/gpl.html
- *
- * 	Contributors:
- * 		Simon Urli (simon.urli@gmail.com) - Main contributor
- *	 	Golfieri Guillaume (golfieri.guillaume@gmail.com)
+/**
+ *      <b>CONTROLER</b>
+ *      
+ *  <b>Informations :</b>
+ *      
+ *      Le controler est la classe qui gère une zone.
+ *      
+ *  <b>Fonctions :</b>
+ *      
+ *      
+ *      
+ *  <b>Contributors :</b>
+ *      
+ *    	Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
-// Création de la zone
+/**
+ *  Création de la zone
+ */
 var Zone = Class.create({
-    
     /* 
      *	Constructeur par défaut d'une zone.
      *
@@ -35,23 +40,32 @@ var Zone = Class.create({
          ***************************************************************/
 
         // Test si l'id est defini, est une chaîne et est déclaré dans la page html
-        if (id && !is_empty(id) && document.getElementById(id) !== null) {
+        if (id && !is_empty(id)) {
 
-            // On stocke l'identifiant
-            this.id = id;
+            if (document.getElementById(id) !== null) {
 
-            // On récupère le div html
-            this.divMarquee = $(id);
+                // On stocke l'identifiant
+                this.id = id;
 
-            // On récupère le code de départ
-            this.htmlinit = this.divMarquee.innerHTML;
-            this.map_time = map_time;
+                // On récupère le div html
+                this.divMarquee = $(id);
+
+                // On récupère le code de départ
+                this.htmlinit = this.divMarquee.innerHTML;
+                this.map_time = map_time;
+
+            }
+
+            // Paramètre obligatoire donc s'il y a une erreur on lève une exception
+            else {
+                throw new Exception("controler.js", "L'identifiant html de la zone est incorrect : " + id, new Error().lineNumber);
+            }
 
         }
 
         // Paramètre obligatoire donc s'il y a une erreur on lève une exception
         else {
-            throw new Exception("[Controler de la zone] initialize", "L'identifiant html de la zone est incorrect : " + id);
+            throw new Exception("controler.js", "L'identifiant html de la zone n'est pas définit", new Error().lineNumber);
         }
 
         // Test si l'url est défini, est une chaîne et est déclaré dans la page html
@@ -64,20 +78,20 @@ var Zone = Class.create({
 
         // Paramètre obligatoire donc s'il y a une erreur on lève une exception
         else {
-            throw new Exception("[Controler de la zone] initialize", "La map des renderers est incorrect.");
+            throw new Exception("controler.js", "La map des renderers est incorrect.", new Error().lineNumber);
         }
 
         // Test si l'url est défini, est une chaîne et est déclaré dans la page html
-        if (url_data && !is_empty(url_data) && url_data !== "") {
+        if (url_data) {
 
-            // On stocke l'identifiant
-            this.url = DOMAIN_PATH + url_data;
+            // Boucle sur les liens
+            this.url = url_data;
 
         }
 
         // Paramètre obligatoire donc s'il y a une erreur on lève une exception
         else {
-            throw new Exception("[Controler de la zone] initialize", "L'url des données est incorrect.");
+            throw new Exception("controler.js", "L'url des données est incorrect.", new Error().lineNumber);
         }
 
         /***************************************************************
@@ -92,17 +106,15 @@ var Zone = Class.create({
         var self = this;
 
         // Test si l'url de la configuration est remplie
-        if(!is_empty(url_conf) && url_conf) {
+        if (!is_empty(url_conf) && url_conf) {
 
             // Effecture la requête Ajax
             new Ajax.Request(url_conf, {
-                
                 // On utilise un get
                 method: 'get',
-
                 // Si la requête est un succès
                 onSuccess: function(transport) {
-                    
+
                     // On vérifie que le status est bon
                     if (transport.status === 200) {
 
@@ -111,18 +123,18 @@ var Zone = Class.create({
 
                         // On essaie de le traiter
                         try {
-                            
+
                             // On parse le JSon
                             var json_conf = JSON.parse(textContent);
 
                             // Si la zone est la zone principale
                             self.is_master = typeof json_conf.isMaster === 'undefined' ? false : json_conf.isMaster;
-                            
+
                             // Test du timeout
                             self.request_timeout = typeof json_conf.requestTimeout === 'undefined' ? 60000 : json_conf.requestTimeout;
 
                             // Test si l'ordre des renderers a été donné
-                            if (typeof json_conf.mapOrder !== 'undefined' ) {
+                            if (typeof json_conf.mapOrder !== 'undefined') {
 
                                 // On initialise le tableau de renderers
                                 self.tab_renderers = new Array();
@@ -139,38 +151,37 @@ var Zone = Class.create({
 
                             }
 
-                             // Stocke le temps d'affichage de chaque renderers
+                            // Stocke le temps d'affichage de chaque renderers
                             if (typeof json_conf.mapTime !== 'undefined') {
-                            	 self.map_time = json_conf.mapTime;
+                                self.map_time = json_conf.mapTime;
                             }
                         }
 
                         // Un erreur est survenue
                         catch (e) {
-                            
-                            throw new Exception("[Controler de la zone] Constructeur", "Le fichier JSon de configuration n'est pas correct."+e);
-                            
-                        }
-                    
-                    }
-                    
-                },
 
+                            throw new Exception("controler.js", "Le fichier JSon de configuration n'est pas correct." + e, new Error().lineNumber);
+
+                        }
+
+                    }
+
+                },
                 onFailure: function(transport) {
 
                     // Création d'une exception
-                    throw new Exception("[Controler de la zone] Constructeur", "L'url de la configuration n'est pas correct (" + transport + ") donc le chargement se fera par rapport aux paramètres.");
+                    throw new Exception("controler.js", "L'url de la configuration n'est pas correct (" + transport + ") donc le chargement se fera par rapport aux paramètres", new Error().lineNumber);
 
                 }
 
             });
 
-        } 
-        
+        }
+
         else {
 
             // Création d'une exception
-            new Information("[Controler de la zone] Constructeur", "Pas de lien de configuration donné pour la zone " + id + " donc le chargement se fera par rapport aux paramètres.");
+            new Information("controler.js", "Pas de lien de configuration donné pour la zone " + id + " donc le chargement se fera par rapport aux paramètres", new Error().lineNumber);
 
             // Si la zone est la zone principale
             this.is_master = false;
@@ -198,7 +209,7 @@ var Zone = Class.create({
 
             // Stocke le temps d'affichage de chaque renderers
             this.map_time = map_time;
-            
+
         }
 
         /***************************************************************
@@ -243,8 +254,10 @@ var Zone = Class.create({
         // Tableau de timeout
         this.timeout_list = {};
 
+        // Nombre de son
+        this.nb_son = 0;
+
     },
-            
     // function call to load the image before the launch
     loadImage: function(imgsrc) {
         try {
@@ -258,7 +271,6 @@ var Zone = Class.create({
             new Exception("[Controler de la zone] LoadImage", err);
         }
     },
-            
     // increment the number of images we need to load
     incrementImageLoadedAndLaunchBehaviour: function() {
         this.img_loaded++;
@@ -270,24 +282,102 @@ var Zone = Class.create({
     imagesAreLoaded: function() {
         return Object.keys(this.array_img).length === this.img_loaded;
     },
-            
     /**
-     *	Put the infos in the infoList of the zone for the behavior
-     *	@param dico Dictionnaire du renderer.
+     *  <b>NewSound</b>
+     * 
+     *  Annonce au controler qu'un son va �tre charg�
+     *  
+     *  @param contenu  Contenu du son � synth�tiser
      */
-    pushInfo: function(dico) {
+    newSound: function(contenu) {
+
+        // On incr�mente le nombre de son
+        this.nb_son++;
+
+        // Stockage du this
+        var self = this;
+
+        // On cr�e le nouveau son
+        soundManager.onready(function() {
+            self.loadSound(createSound(contenu), self.cle);
+        });
+
+    },
+    /**
+     *  <b>LoadSound</b>
+     *  
+     *  Charge un son dans l'infoList de la zone.
+     *  
+     *  @param sound    Son � ajouter.
+     *  @param cle      Cl� du renderer auquel appartient le son.
+     */
+    loadSound: function(sound, cle) {
+
+        // On push l'info
+        this.pushInfo(sound, cle);
+
+        // Si tous les sons sont charg�s
+        if (this.soundsAreLoaded()) {
+            this.initBehaviour();
+        }
+
+    },
+    /**
+     * 
+     * @return {Boolean} Si tous les sons ont �t�s charg�s
+     */
+    soundsAreLoaded: function() {
+        return (Object.keys(this.infoList).length === this.nb_son || this.nb_son === 0);
+    },
+    /**
+     *  Random des infos
+     *  
+     *  @param {type} ordonne Random ordonnee ou non
+     */
+    randomInfo: function(ordonne) {
+
+        // Si on demange un mélange ordonné
+        if (ordonne) {
+            this.infoList = this.shuffleArrayOrdonnee(this.infoList);
+        }
+
+        // Sinon cela déclare un mélange ordinnaire
+        else {
+            this.infoList = this.shuffleArray(this.infoList);
+        }
+
+    },
+    /**
+     *  <b>PushInfo</b>
+     * 
+     *	Put the infos in the infoList of the zone for the behavior
+     *	
+     *	@param dico     Dictionnaire du renderer.
+     *	@param cle      Cl� de l'info push
+     */
+    pushInfo: function(dico, cle) {
 
         // Test si le dictionnaire est correct
-        if(!dico && is_empty(dico)) {
-            throw new Exception("[Controler de la zone] pushInfo", "Le dictionnaire poussé n'est pas correct.");
+        if (!dico && is_empty(dico)) {
+            throw new Exception("controler.js", "Le dictionnaire poussé n'est pas correct", new Error().lineNumber);
         }
 
         // Tout va bien
         else {
-            
-            // On rajoute une information au dico pour savoir � quoi correspond
-            // l'information ajout�e
-            dico.callId = this.cle;
+
+            // Test si la clé est définie
+            if (cle && cle !== "") {
+
+                // On ajoute la clé
+                dico.callId = cle;
+
+            } else {
+
+                // On rajoute une information au dico pour savoir à quoi 
+                // correspond l'information ajoutée
+                dico.callId = this.cle;
+
+            }
 
             // Ajoute la nouvelle info au tableau des données
             this.infoList.push(dico);
@@ -299,19 +389,22 @@ var Zone = Class.create({
 
     },
     /**
-     *	Change content
+     *	<b>Change content</b>
      *
-     *	Cette fonction change le contenu d'une zone. Si "_content" existe elle mettra
-     *	ce qui existe dans info.content dedans, sinon elle le mettra dans la continuité
-     *	de la zone.
+     *	Cette fonction change le contenu d'une zone. Si "_content" existe elle 
+     *	mettra ce qui existe dans info.content dedans, sinon elle le mettra dans 
+     *	la continuité de la zone.
      *
-     *	Ensuite elle s'occupera de tous les paramètres et testera s'il existe un id
-     *	correspondant. Si tel est le cas, elle mettra les informations contenues 
-     *	dedans.
+     *	Ensuite elle s'occupera de tous les paramètres et testera s'il existe un 
+     *	id correspondant. Si tel est le cas, elle mettra les informations 
+     *	contenues dedans.
+     *	
+     *	@param {Tableau} info Les informations.
      */
     changeContent: function(info) {
 
-        // S'il n'existe pas alors, on ajoute le content directement dans la zone
+        // S'il n'existe pas alors, on ajoute le content directement dans la 
+        // zone
         if (!($(this.id + "_content"))) {
             if (info.content && info.content !== "")
                 this.divMarquee.innerHTML = this.htmlinit + info.content;
@@ -321,7 +414,7 @@ var Zone = Class.create({
         for (var cle in info) {
 
             // Test si l'info est un texte
-            if(typeof info[cle] === "string") {
+            if (typeof info[cle] === "string") {
 
                 // Stockage de l'enfant
                 var tmp = $(this.id + "_" + cle);
@@ -339,11 +432,14 @@ var Zone = Class.create({
 
     },
     /**
-     *	Add Content
+     *	<b>Add Content</b>
      *
-     *	Permet d'ajouter du contenu au content d'une zone. On peut l'ajouter selon
-     *	deux manières. La première en ajoutant l'html avant le content et la deuxième 
-     *	en ajoutant l'html après le content.
+     *	Permet d'ajouter du contenu au content d'une zone. On peut l'ajouter 
+     *	selon deux manières. La première en ajoutant l'html avant le content et 
+     *	la deuxième en ajoutant l'html après le content.
+     *	
+     *	@param html             Html à ajouter.
+     *	@param order_content    Ordre dans lequel on l'ajoute.
      */
     addContent: function(html, order_content) {
 
@@ -365,6 +461,7 @@ var Zone = Class.create({
     // set the zone to master for the loading state
     set_master: function() {
         this.is_master = true;
+        zone_master = this;
     },
     /*
      * This function is called by the callback of the request.
@@ -376,11 +473,15 @@ var Zone = Class.create({
         var self = this;
 
         // On test si les images sont chargés et que on a des infos à afficher
-        if (self.imagesAreLoaded()) {
+        if (self.imagesAreLoaded() && self.soundsAreLoaded()) {
 
-            // Suppression du logo
-            if (this.is_master)
-                $('logo_loading').hide();
+            // Fin du chargement de la zone master
+            if (this.is_master) {
+
+                // Fin du chargement de l'application
+                finChargementMaster();
+
+            }
 
             // On lance le comportement
             self.runComportement();
@@ -437,7 +538,8 @@ var Zone = Class.create({
 
                                 try {
                                     this.lancer_render(cle, elements[cpt][cle][index]);
-                                } catch (exception) { }
+                                } catch (exception) {
+                                }
 
                             }
 
@@ -460,10 +562,11 @@ var Zone = Class.create({
                         if (elements[cle]) {
 
                             for (var index = 0; index < elements[cle].length; index++) {
-                                
+
                                 try {
                                     this.lancer_render(cle, elements[cle][index]);
-                                } catch (exception) { }
+                                } catch (exception) {
+                                }
 
                             }
 
@@ -492,71 +595,179 @@ var Zone = Class.create({
      */
     request: function() {
 
-        // Stocke le this
-        var self = this;
+        // Réinitialiser le json stocké
+        this.json = null;
 
-        // Effecture la requête Ajax
-        new Ajax.Request(this.url, {
-            
-            // On utilise un get
-            method: 'get',
-            
-            // Si la requête est un succès
-            onSuccess: function(transport) {
+        // Boucle sur les liens
+        for (var url in this.url) {
 
-                // On vérifie que le status est bon
-                if (transport.status === 200) {
+            // Tant que le json est vide on test tous les liens
+            if (this.json === null) {
 
-                    // On récupère la réponse du JSon
-                    var textContent = transport.responseText;
+                // Stocke le this
+                var self = this;
 
-                    // On essaie de le traiter
-                    try {
-                        var json = JSON.parse(textContent);
+                // On arrête le comportement
+                self.stopComportement();
 
-                        // On stocke le nouveau JSon
-                        self.json = json;
+                // Effecture la requête Ajax
+                new Ajax.Request(DOMAIN_PATH + this.url[url], {
+                    // On utilise un get
+                    method: 'get',
+                    // Paramètres
+                    asynchronous: false,
+                    // Si la requête est un succès
+                    onSuccess: function(transport) {
 
-                        // On appelle la méthode receive
-                        self.receive();
+                        // On vérifie que le status est bon
+                        if (transport.status === 200) {
+
+                            // On récupère la réponse du JSon
+                            var textContent = transport.responseText;
+
+                            // On essaie de le traiter
+                            try {
+                                var json = JSON.parse(textContent);
+
+                                // On stocke le nouveau JSon
+                                self.json = json;
+
+                                // On appelle la méthode receive
+                                self.receive();
+
+                            }
+
+                            // Un erreur est survenue
+                            catch (e) {
+
+                                console.log(e);
+
+                                // On stop le comportement
+                                self.comportement.stop();
+
+                            }
+
+                        } else {
+
+                            // Création d'une exception
+                            throw new Exception("controler.js", transport.statusText, new Error().lineNumber);
+
+                        }
 
                     }
 
-                    // Un erreur est survenue
-                    catch (e) {
-                        console.log(e);
-
-                        // On stop le comportement
-                        self.comportement.stop();
-
-                    }
-
-                } else {
-
-                    // Création d'une exception
-                    throw new Exception("[moteur/js/controler_zone.js] request", transport.statusText);
-
-                }
-            },
-            onFailure: function(transport) {
-
-                // Création d'une exception
-                throw new Exception("[moteur/js/controler_zone.js] Request", transport);
-
-            },
-            onException: function(transport, exception) {
-
-                // Création d'une exception
-                throw new Exception("[moteur/js/controler_zone.js] Request", exception.message);
-
-            },
-            onComplete: function(transport) {
-
-                // TODO Relancer le comportement
+                });
 
             }
 
-        });
+        }
+
+        // Test si on a récupéré un fichier json valide
+        if (this.json === null) {
+
+            // On test le cache
+
+
+            // S'il est maitre le client est bloqué
+            if (this.is_master) {
+
+                // Notifie au client qu'il est bloqué
+                clientBloque();
+
+                // Création d'une exception
+                throw new Erreur("controler.js", "Erreur dans le request, aucun lien n'a abouti à un fichier de données json correct", new Error().lineNumber);
+
+            } else {
+
+                // Création d'une exception
+                throw new Exception("controler.js", "Erreur dans le request, aucun lien n'a abouti à un fichier de données json correct", new Error().lineNumber);
+
+            }
+
+        }
+
+    },
+    shuffleArray: function(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    },
+    /**
+     *  Mélange un tableau
+     */
+    shuffleArrayOrdonnee: function(array) {
+
+        // Tableaux
+        array_final = new Array();
+        new_array = new Array();
+        new_array_nombre = new Array();
+        var tableauInfoLiee = new Array();
+
+        // Boucle sur les clés
+        for (var i = 0; i < array.length; i++) {
+
+            if (!new_array[array[i].callId]) {
+                new_array[array[i].callId] = new Array();
+                new_array_nombre[array[i].callId] = 0;
+            }
+
+            var elementToAdd = array[i];
+
+            if (elementToAdd.keepOrder === true) {
+                tableauInfoLiee.push(elementToAdd);
+            } else {
+                if (is_empty(tableauInfoLiee)) {
+                    new_array[array[i].callId].push(elementToAdd);
+                    new_array_nombre[array[i].callId]++;
+                } else {
+                    tableauInfoLiee.push(elementToAdd);
+                    new_array[array[i].callId].push(tableauInfoLiee);
+                    new_array_nombre[array[i].callId] += tableauInfoLiee.length;
+                    tableauInfoLiee = new Array();
+                }
+            }
+
+
+        }
+
+        // On cherche quel est le plus grand nombre
+        plus_grd_nombre = 0;
+        for (var cle in new_array_nombre) {
+            plus_grd_nombre = (plus_grd_nombre < new_array_nombre[cle]) ? new_array_nombre[cle] : plus_grd_nombre;
+        }
+
+        // Boucle sur le tableau
+        for (var i = 0; i < plus_grd_nombre; i++) {
+
+            for (var cle in this.map_renderers) {
+
+                prochain_nombre = i; //% new_array_nombre[cle];
+
+                if (typeof new_array[cle] !== 'undefined') {
+                    var elt = new_array[cle][prochain_nombre];
+                    if (typeof elt !== 'undefined') {
+                        if (elt instanceof Array) {
+                            for (var j = 0; j < elt.length; j++) {
+                                array_final.push(elt[j]);
+                            }
+                        } else {
+                            array_final.push(elt);
+                        }
+                        
+                    }
+
+                }
+
+            }
+
+        }
+
+        // Retourne la tableau final
+        return array_final;
 
     },
     /**
@@ -682,7 +893,7 @@ var Zone = Class.create({
     },
     lancer_render: function(cle, element) {
 
-        // Stockage de la cl� en cours
+        // Stockage de la cl� en cours
         this.cle = cle;
 
         // On appelle la fonction du render
@@ -697,10 +908,12 @@ var Zone = Class.create({
                 this.map_renderers[cle](element, this, this.map_time[cle]);
 
         } catch (err) {
-            
+
             // Création d'une exeception
-            throw new Exception("[Controler de la zone] Lancer_Render", err);
-            
+            if (!(err instanceof Exception) && !(err instanceof Information)) {
+                throw new Exception("controler.js", this.cle + " " + err, 778);
+            }
+
         }
 
     },

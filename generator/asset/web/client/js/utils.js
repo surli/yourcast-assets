@@ -1,35 +1,42 @@
 /**
  *      <b>CONTROLER GENERAL</b>
  * 
- *  Informations :
+ *  <b>Informations :</b>
  * 
- *      Le controler général permet de gérer toute l'application. Le controler 
- *      général ne dépend pas de Prototype. Le système de classe est celui de 
+ *      Le controler gÃ©nÃ©ral permet de gÃ©rer toute l'application. Le controler 
+ *      gÃ©nÃ©ral ne dÃ©pend pas de Prototype. Le systÃ¨me de classe est celui de 
  *      base de Javascript.
  *      
- *  Fonctions :
+ *  <b>Fonctions :</b>
  * 
  *      push - Pousse une nouvelle zone dans le Controler General
- *      getZones - Retourne toutes les zones qui ont été push
+ *      getZones - Retourne toutes les zones qui ont Ã©tÃ© push
  *      refresh - Refresh la page du client lorsque le lien
  *      
- *  Contributors :
+ *  <b>Contributors :</b>
  *  
  *    	Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
-// Création de la zone singleton
+/**
+ *  <b>ControlerGeneral</b>
+ * 
+ *  @param {type} url Url du lien
+ */
 function ControlerGeneral(url) {
 
     // Tableau des zones
     this.zones = new Array;
 
-    // Test si le controler général est instancié
+    // Test si le controler gÃ©nÃ©ral est instanciÃ©
     if (ControlerGeneral.caller !== ControlerGeneral.getInstance) {
-        throw new Exception("Le controleur général ne peux pas être instancié. Veuillez utiliser getInstance");
+        
+        // Retourne une exception
+        throw new Exception("utils.js", "Le controleur gÃ©nÃ©ral ne peux pas Ãªtre instanciÃ©. Veuillez utiliser getInstance", new Error().lineNumber);
+        
     }
 
-    // Test si l'url est définit
+    // Test si l'url est dÃ©finit
     if(isPropertyDefined(url)) {
         
         // Stockage de l'url
@@ -44,15 +51,17 @@ function ControlerGeneral(url) {
     } else {
         
         // Affichage en information
-        new Information("[ControlerGeneral] Refresh", "Aucun lien donnée pour le refresh de la page");
+        new Information("utils.js", "Aucun lien donnÃ©e pour le refresh de la page", new Error().lineNumber);
         
     }
 
     /**
-     * Push
+     * <b>Push</b>
+     * 
+     * Push une nouvelle zone.
      * 
      * @param zone Nouvelle zone
-     * @returns ControlerGeneral L'instance du controler général
+     * @returns ControlerGeneral L'instance du controler gÃ©nÃ©ral
      */
     this.push = function(zone) {
 
@@ -64,9 +73,23 @@ function ControlerGeneral(url) {
     };
 
     /**
+     * <b>StopAllBehaviors</b>
+     * 
+     * Stop all behaviors of the client.
+     */
+    this.stopAllBehaviors = function() {
+
+        // Stop tous les comportements
+        for(var zone in this.zones) {
+            zone.comportement.pause();
+        }
+
+    };
+
+    /**
      * GetZones
      * 
-     * @returns Array Le tableau des zones du controler général
+     * @returns Array Le tableau des zones du controler gÃ©nÃ©ral
      */
     this.getZones = function() {
 
@@ -80,19 +103,19 @@ function ControlerGeneral(url) {
      */
     this.refresh = function() {
         
-        // Effecture la requête Ajax
+        // Effecture la requÃ©te Ajax
         new Ajax.Request(this.url, {
             
             // On utilise un get
             method: 'get',
             
-            // Si la requête est un succès
+            // Si la requï¿½te est un succï¿½s
             onSuccess: function(transport) {
 
-                // On vérifie que le status est bon
+                // On vï¿½rifie que le status est bon
                 if (transport.status === 200) {
 
-                    // On récupère la réponse du JSon
+                    // On rï¿½cupï¿½re la rï¿½ponse du JSon
                     var textContent = transport.responseText;
 
                     // On essaie de le traiter
@@ -111,15 +134,15 @@ function ControlerGeneral(url) {
                     // Un erreur est survenue
                     catch (e) {
                         
-                        // Création d'une exception 
-                        new Exception("[ControlerGeneral] Refresh", "Erreur dans le parse du JSon");
+                        // Crï¿½ation d'une exception 
+                        new Exception("utils.js", "Erreur dans le parse du JSon", new Error().lineNumber);
 
                     }
 
                 } else {
 
-                    // Création d'une exception
-                    new Exception("[ControlerGeneral] Refresh", "Erreur dans le transport des informations lors du refresh de la page");
+                    // CrÃ©ation d'une exception
+                    new Exception("utils.js", "Erreur dans le transport des informations lors du refresh de la page", new Error().lineNumber);
 
                 }
             },
@@ -133,17 +156,19 @@ function ControlerGeneral(url) {
 
 };
 
-// Propriété statique qui contient l'instance unique  
+// Propriï¿½tï¿½ statique qui contient l'instance unique  
 ControlerGeneral.instance = null;
 
 /**
  * GetInstance
  * 
- * @returns ControlerGeneral L'instance du controler général
+ * @param url Url du lien de refresh
+ * 
+ * @returns ControlerGeneral L'instance du controler gï¿½nï¿½ral
  */
 ControlerGeneral.getInstance = function(url) {
 
-    // Test s'il y a une instance enregistré
+    // Test s'il y a une instance enregistrï¿½
     if (this.instance === null) {
         this.instance = new ControlerGeneral(url);
     }
@@ -179,6 +204,12 @@ loadScript("js/comportement.js");
 loadScript("js/exception.js");
 
 // ====================================================
+//	MESSAGE GENERAL
+// ====================================================
+
+console.log("\t\t\t____________________________________________________________________________________________________\n\n\t\t\t\t\t\t\tYOURCAST Client - Console\n\n\t\t\tYourcast est un systÃ¨me de diffusion d'informations dÃ©veloppÃ© par le laboratoire i3S du CNRS.\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tVersion 2.0\n\t\t\t____________________________________________________________________________________________________\n\n");
+
+// ====================================================
 //	VARIABLES
 // ====================================================
 
@@ -199,11 +230,27 @@ var VERBOSE_DEBUG           = "verbose";
 var SILENT_DEBUG            = "silent";
 
 // Variable avec des fonctions de debug
-var PROD                    = true;
+var PROD                    = false;
 var PAGE_CHARGE             = false;
+var LESS_CHARGE             = false;
+var ZONE_MASTER_CHARGE      = false;
 
 // Speed up calls to hasOwnProperty
 var hasOwnProperty          = Object.prototype.hasOwnProperty;
+
+// Variable du less
+less = {
+    env: "production",
+    async: false,
+    fileAsync: true
+};
+
+// Chargement de la page
+if (window.addEventListener) {
+    window.addEventListener('load', pageCharge, false);
+} else {
+    window.attachEvent('onload', pageCharge);
+}
 
 // ====================================================
 //	FONCTIONS
@@ -217,14 +264,92 @@ var hasOwnProperty          = Object.prototype.hasOwnProperty;
 //  - firstLettertoUpperCase (string)
 // ====================================================
 
+function modifValues() {
+    
+    if(document.getElementById('chargement')) {
+        
+        val = document.getElementById('chargement').value;
+                
+        if(val>=100) {
+            val=5;
+        } else {
+            val += 2;
+        }
+        
+        document.getElementById('chargement').value = val;
+
+    }
+    
+} 
+
+var timeout_chargement = setInterval(function(){ modifValues(); }, 40);
+
+/**
+ *  <b>FinChargement</b>
+ *  
+ *  Fin du chargement. Test si le chargement des fichiers less et le chargement
+ *  de la zone "master" est terminÃ©.
+ */
+function finChargement() {
+
+    // Cache le logo de chargement
+    if(LESS_CHARGE && ZONE_MASTER_CHARGE) {
+        
+        // Cache le logo du chargements
+        $('logo_loading').hide();
+        
+    }
+
+}
+
+/**
+ *  <b>FinChargementLess</b>
+ *  
+ *  Fin du chargement des fichiers less.
+ */
+function finChargementLess() {
+
+    // Change la variable
+    LESS_CHARGE = true;
+
+    // Fin du chargement
+    finChargement();
+
+}
+
+/**
+ *  <b>FinChargementMaster</b>
+ *  
+ *  Fin du chargemenet de la zone master
+ */
+function finChargementMaster() {
+
+    // Change la variable
+    ZONE_MASTER_CHARGE = true;
+
+    // Fin du chargement
+    finChargement();
+
+}
+
+/**
+ *  
+ */
+function pageCharge() {
+    
+    // La page est chargÃ©
+    PAGE_CHARGE = true;
+    
+}
+
 /**
  *  <b>LoadScript</b>
  *  
  *  Charge un fichier Javascript en synchrone ou en asynchrone.
  *
- *  Callback non définit => Synchrone : On attend la fin du chargement pour 
+ *  Callback non dÃ©finit => Synchrone : On attend la fin du chargement pour 
  *  continuer.
- *  Callback définit => A-synchrone : On n'attend pas la fin du chargement pour 
+ *  Callback dÃ©finit => A-synchrone : On n'attend pas la fin du chargement pour 
  *  continuer.
  *	
  *  @param url Lien du fichier javascript
@@ -234,7 +359,7 @@ function loadScript(url, callback) {
 
     try {
 
-        // Callback définit
+        // Callback dÃ©finit
         if (callback || PAGE_CHARGE) {
 
             // adding the script tag to the head as suggested before
@@ -254,9 +379,9 @@ function loadScript(url, callback) {
 
     } catch (exception) {
 
-        // Si on est en développement on affiche une exception
+        // Si on est en dÃ©veloppement on affiche une exception
         if (!PROD) {
-            new Exception("[Utils] LoadScript", "L'url est incorrect : " + url);
+            throw new Exception("utils.js", "L'url est incorrect : " + url, new Error().lineNumber);
         }
 
     }
@@ -266,7 +391,7 @@ function loadScript(url, callback) {
 /**
  *  <b>LoadLess</b>
  *  
- *  Méthode qui permet d'ajouter une feuille de style dans le document
+ *  MÃ©thode qui permet d'ajouter une feuille de style dans le document
  *	
  *  @param url L'adresse du style less
  */
@@ -279,10 +404,10 @@ function loadLess(url) {
 
     try {
 
-        // On crée un lien pour une feuille de style
+        // On crÃ©e un lien pour une feuille de style
         lien_less = document.createElement('link');
 
-        // On met l'url donné en paramêtre
+        // On met l'url donnÃ© en paramï¿½tre
         lien_less.rel = "stylesheet";
         lien_less.type = "text/less";
         lien_less.href = url;
@@ -292,17 +417,33 @@ function loadLess(url) {
 
     } catch (exception) {
 
-        // Si on est en développement on affiche une exception
-        new Exception("[Utils] LoadLess", "L'url est incorrect : " + url + " exception : " + exception);
+        // Si on est en dÃ©veloppement on affiche une exception
+        new Exception("utils.js", exception, new Error().lineNumber);
 
     }
 
 }
 
 /**
+ * Le client bloquÃ©
+ */
+function clientBloque() {
+    
+    // On clear le timeout
+    clearTimeout(timeout_chargement);
+    
+    // RÃ©cupÃ©rer la valeur
+    val = document.getElementById('chargement').value;
+    
+    // Change le text
+    document.getElementById("progress").innerHTML = '<p style="color: red;">Erreur dans le chargement</p><progress id="chargement_bloque" value="' + val + '" max="100"></progress>';
+    
+}
+
+/**
  *  <b>SpecificActionWhenRequestWorksForGlc</b>
  *  
- *  Actions spécifiques lorsque le client fonctionne parfaitement
+ *  Actions spï¿½cifiques lorsque le client fonctionne parfaitement
  */
 function specificActionWhenRequestWorksForGlc() {
     console.log("specif action blabla");
@@ -313,7 +454,7 @@ function specificActionWhenRequestWorksForGlc() {
 }
 
 /**
- *  Actions spécifiques lorsque le client ne fonctionne pas
+ *  Actions spï¿½cifiques lorsque le client ne fonctionne pas
  */
 function specificActionWhenRequestFailsForGlc() {
     if (document.getElementById('Weather_current_header')) {
@@ -376,10 +517,10 @@ function isPropertyDefined(prop) {
  */
 function firstLettertoUpperCase(str) {
 
-    // Récupère la première lettre et la met en majuscule
+    // Rï¿½cupï¿½re la premiï¿½re lettre et la met en majuscule
     var newstr = str.charAt(0).toUpperCase() + str.substr(1, str.length);
 
-    // Retourne la nouvelle chaîne
+    // Retourne la nouvelle chaï¿½ne
     return newstr;
 
 }
