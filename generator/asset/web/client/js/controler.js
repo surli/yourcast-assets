@@ -598,91 +598,144 @@ var Zone = Class.create({
         // Réinitialiser le json stocké
         this.json = null;
 
+        // Stocke le this
+        var self = this;
+
+        // On arrête le comportement
+        self.stopComportement();
+
         // Boucle sur les liens
-        for (var url in this.url) {
+        if(typeof this.url === "array") {
 
-            // Tant que le json est vide on test tous les liens
-            if (this.json === null) {
+            for (var url in this.url) {
 
-                // Stocke le this
-                var self = this;
+                // Tant que le json est vide on test tous les liens
+                if (this.json === null) {
 
-                // On arrête le comportement
-                self.stopComportement();
+                    // Effecture la requête Ajax
+                    new Ajax.Request(DOMAIN_PATH + this.url[url], {
+                        // On utilise un get
+                        method: 'get',
+                        // Paramètres
+                        asynchronous: false,
+                        // Si la requête est un succès
+                        onSuccess: function(transport) {
 
-                // Effecture la requête Ajax
-                new Ajax.Request(DOMAIN_PATH + this.url[url], {
-                    // On utilise un get
-                    method: 'get',
-                    // Paramètres
-                    asynchronous: false,
-                    // Si la requête est un succès
-                    onSuccess: function(transport) {
+                            // On vérifie que le status est bon
+                            if (transport.status === 200) {
 
-                        // On vérifie que le status est bon
-                        if (transport.status === 200) {
+                                // On récupère la réponse du JSon
+                                var textContent = transport.responseText;
 
-                            // On récupère la réponse du JSon
-                            var textContent = transport.responseText;
+                                // On essaie de le traiter
+                                try {
+                                    var json = JSON.parse(textContent);
 
-                            // On essaie de le traiter
-                            try {
-                                var json = JSON.parse(textContent);
+                                    // On stocke le nouveau JSon
+                                    self.json = json;
 
-                                // On stocke le nouveau JSon
-                                self.json = json;
+                                    // On appelle la méthode receive
+                                    self.receive();
 
-                                // On appelle la méthode receive
-                                self.receive();
+                                }
+
+                                // Un erreur est survenue
+                                catch (e) {
+
+                                    console.log(e);
+
+                                    // On stop le comportement
+                                    self.comportement.stop();
+
+                                }
+
+                            } else {
+
+                                // Création d'une exception
+                                throw new Exception("controler.js", transport.statusText, new Error().lineNumber);
 
                             }
-
-                            // Un erreur est survenue
-                            catch (e) {
-
-                                console.log(e);
-
-                                // On stop le comportement
-                                self.comportement.stop();
-
-                            }
-
-                        } else {
-
-                            // Création d'une exception
-                            throw new Exception("controler.js", transport.statusText, new Error().lineNumber);
 
                         }
 
-                    }
+                    });
 
-                });
+                }
+
+            }
+
+            // Test si on a récupéré un fichier json valide
+            if (this.json === null) {
+
+                // S'il est maitre le client est bloqué
+                if (this.is_master) {
+
+                    // Notifie au client qu'il est bloqué
+                    clientBloque();
+
+                    // Création d'une exception
+                    throw new Erreur("controler.js", "Erreur dans le request, aucun lien n'a abouti à un fichier de données json correct", new Error().lineNumber);
+
+                } else {
+
+                    // Création d'une exception
+                    throw new Exception("controler.js", "Erreur dans le request, aucun lien n'a abouti à un fichier de données json correct", new Error().lineNumber);
+
+                }
 
             }
 
         }
+        
+        else {
 
-        // Test si on a récupéré un fichier json valide
-        if (this.json === null) {
+            // Effecture la requête Ajax
+            new Ajax.Request(DOMAIN_PATH + this.url, {
+                // On utilise un get
+                method: 'get',
+                // Paramètres
+                asynchronous: false,
+                // Si la requête est un succès
+                onSuccess: function(transport) {
 
-            // On test le cache
+                    // On vérifie que le status est bon
+                    if (transport.status === 200) {
 
+                        // On récupère la réponse du JSon
+                        var textContent = transport.responseText;
 
-            // S'il est maitre le client est bloqué
-            if (this.is_master) {
+                        // On essaie de le traiter
+                        try {
+                            var json = JSON.parse(textContent);
 
-                // Notifie au client qu'il est bloqué
-                clientBloque();
+                            // On stocke le nouveau JSon
+                            self.json = json;
 
-                // Création d'une exception
-                throw new Erreur("controler.js", "Erreur dans le request, aucun lien n'a abouti à un fichier de données json correct", new Error().lineNumber);
+                            // On appelle la méthode receive
+                            self.receive();
 
-            } else {
+                        }
 
-                // Création d'une exception
-                throw new Exception("controler.js", "Erreur dans le request, aucun lien n'a abouti à un fichier de données json correct", new Error().lineNumber);
+                        // Un erreur est survenue
+                        catch (e) {
 
-            }
+                            console.log(e);
+
+                            // On stop le comportement
+                            self.comportement.stop();
+
+                        }
+
+                    } else {
+
+                        // Création d'une exception
+                        throw new Exception("controler.js", transport.statusText, new Error().lineNumber);
+
+                    }
+
+                }
+
+            });
 
         }
 

@@ -5436,7 +5436,7 @@ function loadStyles() {
         }
     }
     
-    setTimeout(function() { finTraitementLess(); }, 2000);
+    setTimeout(function() { finChargementLess(); }, 2000);
 
 }
 
