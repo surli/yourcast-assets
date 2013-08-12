@@ -35,12 +35,17 @@ var Exception = Class.create({
         console.warn(this.msg());
         
         // Ajout de l'exception
+        if(document.getElementById('msg_console') !== null) {
+            
+            // Ajoute le message dans la console html
         document.getElementById('msg_console').innerHTML = document.getElementById('msg_console').innerHTML + "<div class='exception'>" + this.msg().replace(/\n/gi, "<br/>") + "</div><br/>";
-        
-        // Défilement automatique
-        var div = document.getElementById('msg_console');
-        div.scrollTop = div.scrollHeight - div.clientHeight;
 
+            // Défilement automatique
+            var div = document.getElementById('msg_console');
+            div.scrollTop = div.scrollHeight - div.clientHeight;
+
+        }
+        
     },
     toString: function() {
 
@@ -83,13 +88,17 @@ var Information = Class.create({
 
         // Envoie à la console l'exception
         console.info(this.msg());
-        
-        // Ajout de l'exception
-        document.getElementById('msg_console').innerHTML = document.getElementById('msg_console').innerHTML + "<div class='information'>" + this.msg().replace(/\n/gi, "<br/>") + "</div><br/>";
 
-        // Défilement automatique
-        var div = document.getElementById('msg_console');
-        div.scrollTop = div.scrollHeight - div.clientHeight;
+        // Ajout de l'exception
+        if(document.getElementById('msg_console') !== null) {
+
+            document.getElementById('msg_console').innerHTML = document.getElementById('msg_console').innerHTML + "<div class='information'>" + this.msg().replace(/\n/gi, "<br/>") + "</div><br/>";
+
+            // Défilement automatique
+            var div = document.getElementById('msg_console');
+            div.scrollTop = div.scrollHeight - div.clientHeight;
+
+        }
 
     },
     toString: function() {
@@ -133,13 +142,17 @@ var Erreur = Class.create({
 
         // Envoie à la console l'exception
         console.info(this.msg());
-        
-        // Ajout de l'exception
-        document.getElementById('msg_console').innerHTML = document.getElementById('msg_console').innerHTML + "<div class='erreur'>" + this.msg().replace(/\n/gi, "<br/>") + "</div><br/>";
 
-        // Défilement automatique
-        var div = document.getElementById('msg_console');
-        div.scrollTop = div.scrollHeight - div.clientHeight;
+        // Ajout de l'exception
+        if(document.getElementById('msg_console') !== null) {
+
+            document.getElementById('msg_console').innerHTML = document.getElementById('msg_console').innerHTML + "<div class='erreur'>" + this.msg().replace(/\n/gi, "<br/>") + "</div><br/>";
+
+            // Défilement automatique
+            var div = document.getElementById('msg_console');
+            div.scrollTop = div.scrollHeight - div.clientHeight;
+
+        }
 
     },
     toString: function() {
