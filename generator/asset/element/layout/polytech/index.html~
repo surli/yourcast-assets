@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
+		
+		<title>Ecran d'acceuil Polytech Nice-Sophia</title>
+		
+		<link rel="stylesheet" type="text/css" href="style.css" >
+		
+		<script type="text/javascript" src="js/libs/prototype.js"></script>
+		<script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/date.js"></script>
+        <script type="text/javascript" src="js/controler.js"></script>
+
+		<link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
+		
+		<!-- Main Zone Script & CSS -->
+		<script type="text/javascript" src="mainZone_polytech/controler.js"></script>
+	   	<link href="mainZone_polytech/style.less" rel="stylesheet/less" />
+	    
+	   	<!-- Bottom Scrolling Zone Script & CSS -->
+		<!--<script type="text/javascript" src="scrollingBottomZone_polytech/controler.js"></script>
+	    	<link href="scrollingBottomZone_polytech/style.less" rel="stylesheet/less" />-->
+	    
+		<!-- Header ZoneScript & CSS -->
+		<!--<script type="text/javascript" src="headerZone_polytech/controler.js"></script>-->
+	    	<!--<link href="headerZone_polytech/style.less" rel="stylesheet/less" />-->
+
+	    	<!-- Left Zone Script & CSS -->
+		<!--<script type="text/javascript" src="leftZone_polytech/controler.js"></script>
+	    	<link href="leftZone_polytech/style.less" rel="stylesheet/less" />-->
+
+
+	    
+
+		<script type="text/javascript">
+
+            /**
+             *  Fin de traitement des fichiers less
+             */
+            function finTraitementLess() {
+                
+                // Cache le logo de chargement
+                $('logo_loading').hide();
+
+            }
+                
+		    less = {
+		        env: "production",
+		        async: false,
+		        fileAsync: true
+		    };
+		    
+		</script>
+				
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600' rel='stylesheet' type='text/css'>
+		
+	</head>
+
+	<body onload="$onLoadContent; loadScript('js/libs/less.js',true); init_date();" class="public">
+
+		
+		
+		<div id="date_time"></div>
+		$layoutBody		
+				
+		<div id="logo_loading">
+			<div>
+				<img id="loading_img" src="./img/yc_loading.gif" />
+			</div>
+		</div>
+	</body>
+</html>
+

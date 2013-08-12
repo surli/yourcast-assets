@@ -1,0 +1,65 @@
+@import "style";
+
+.bus {
+  width:100% ;
+  font-size:120%;
+}
+.passageTable {
+  border-collapse: separate;
+  border-spacing: 0px 2px;
+  border-color:@gray;
+  width : 100%;
+  vertical-align : middle;
+  font-size : 100%;
+
+  .tableLine {
+    .passage-header-background;
+    color:@white;
+    text-align : center;
+    font-size:140%;
+    width : 13%;
+    font-weight : 500;
+    line-height:100%;
+    padding:0.5em 0.1em 0.5em 0.1em;
+    text-shadow: 1px 1px 2px #222;
+
+
+  }
+  .tableTerminus  {
+    background-color : @white;
+    -moz-box-shadow: 1px 1px 1px #ccc;
+    -webkit-box-shadow: 1px 1px 1px #ccc;
+    box-shadow: 1px 1px 1px #ccc;
+    padding:0.5em 0.5em 0.5em 1em;
+    font-weight:400;
+    .passage-terminus-table;
+  }
+  .tableTime  {
+    text-align : center;
+    width : 15%;
+    text-size:120%;
+    .location-edt-td;
+    padding:5px;
+  }
+  .tableColor{
+    width:2%;
+    background: @grayLighter;
+  }
+}
+.smooth{
+  background: transparent url('../img/smooth.png') repeat-x left top;
+  z-index:100;
+}
+.passage-header-background {
+  background:rgba(0, 0, 0, 0.56) 19%; /* FF3.6+ */
+}
+
+.time-passage-td{
+  background: @grayLighter url('../img/location_white.png') no-repeat center center;
+}
+
+.passage-terminus-table{
+  background-image: url('../img/left_arrow_edt_blue.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+}

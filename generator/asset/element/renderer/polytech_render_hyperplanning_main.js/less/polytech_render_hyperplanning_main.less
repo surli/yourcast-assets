@@ -1,0 +1,91 @@
+@import "style";
+
+
+.calendar_one_day_all_event {
+  width:100%;
+  font-size:120%;
+}
+.calendarTable {
+  border-collapse: separate;
+  border-spacing: 0px 2px;
+  border-color:@gray;
+  width : 100%;
+  vertical-align : middle;
+  font-size : 100%;
+
+  .tableDate {
+    .edt-header-background;
+    color:@white;
+    text-align : center;
+    width : 20%;
+    font-weight : 500;
+    line-height:100%;
+    padding:0.5em 0.1em 0.5em 0.1em;
+    font-size: 120%;
+    text-shadow: 1px 1px 2px #222;
+
+
+  }
+  .inProgress_synth .tableDate{
+    .edt-header-background_in_progress;
+  }
+  .tableSum  {
+    background-color : @white;
+    -moz-box-shadow: 1px 1px 1px #ccc;
+    -webkit-box-shadow: 1px 1px 1px #ccc;
+    box-shadow: 1px 1px 1px #ccc;
+    padding:0.5em 0.5em 0.5em 1em;
+    font-weight:400;
+    .edt-summary-table;
+
+    .tableProm{
+      display: inline;
+      color:@darkGreen;
+      font-weight:bold;
+
+    }
+  }
+  .inProgress_synth .tableSum{
+    background-color : @white;
+    .edt-summary-table_in_progress;
+  }
+  .tableLoc  {
+    text-align : center;
+    width : 15%;
+    .location-edt-td;
+    padding:5px;
+  }
+
+  #tableColor{
+    width:2%;
+    background: @grayLighter;
+  }
+}
+.smooth{
+  background: transparent url('../img/smooth.png') repeat-x left top;
+  z-index:100;
+}
+.edt-header-background {
+  background:rgba(0, 0, 0, 0.56) 19%;
+}
+.edt-header-background_in_progress {
+  background: -moz-linear-gradient(#b01f30 19%, #ec6c39 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient(#b01f30 19%,#ec6c39 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(#b01f30 19%, #ec6c39 100%);
+}
+
+.location-edt-td{
+  background: @grayLighter url('../img/location_white.png') no-repeat center center;
+}
+
+.edt-summary-table{
+  background-image: url('../img/left_arrow_edt_blue.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.edt-summary-table_in_progress{
+  background-image: url('../img/left_arrow_edt.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+}
