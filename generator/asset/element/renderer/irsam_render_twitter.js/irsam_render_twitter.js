@@ -14,7 +14,7 @@
  * work on twitter source
  * display the twitter in zone1 (main)
  */
-function render_Twitter_for_main_different_title(collection, zone, timeInfo) {
+function irsam_render_twitter(collection, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 4;
 	var logo = '<img src="img/logos/twitter.png"/>';
 	zone.loadImage("img/logos/twitter.png");
@@ -39,70 +39,6 @@ function render_Twitter_for_main_different_title(collection, zone, timeInfo) {
 		content += "</div>";
 		
 		var dico = {"content": content, "logo": logo, "title": title, "time" : time};
-		zone.pushInfo(dico);
-	}
-}
-
-/*
- * work on twitter source
- * display the twitter in zone2 (scrolling)
- * the content is modified but the logo is the same for the source 
- */
-function render_Twitter_for_scrolling_with_logo_twitter(tableau, zone, timeInfo) {
-	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 50;
-	var logo = "<img src='img/twitter.png'/>";
-	zone.loadImage('img/twitter.png');
-	
-	var time = timeInfo;
-	
-	for (var indice = 0; indice < tableau.tweets.length; indice++) {
-		elements = tableau.tweets[indice];
-
-		content = "<i class='atTwitter'>@"+elements.user.screen_name+" </i> - ";
-		var text = elements.text;
-		var linkText = text.indexOf("");
-		 content += elements.text;
-
-		var dico = {"content": content, "logo": logo, "time" : time};
-		zone.pushInfo(dico);
-	}
-}
-
-function render_Twitter_for_scrolling_with_logo_user_dynamic_time(tableau, zone, timeInfo) {
-	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 50;
-	var logo = "<img src='img/twitter.png'/>";
-	zone.loadImage('img/twitter.png');
-	
-	var ratio = timeInfo / 140;
-	//var time = timeInfo;
-	for (var indice = 0; indice < tableau.tweets.length; indice++) {
-		elements = tableau.tweets[indice];
-		content = "<span><img class='user_logo' src='"+elements.user.profile_image_url+"'/></span> - ";
-		content += "<i class='atTwitter'>@"+elements.user.screen_name+" </i> - ";
-		var text = elements.text;
-		var linkText = text.indexOf("");
-		 content += elements.text;
-		var time = ratio*text.length;
-		var dico = {"content": content, "logo": logo, "time" : time};
-		zone.pushInfo(dico);
-	}
-}
-
-function render_Twitter_for_scrolling_with_logo_user_fixed_time(tableau, zone, timeInfo) {
-	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 50;
-	var logo = "<img src='img/twitter.png'/>";
-	zone.loadImage('img/twitter.png');
-	
-	var time = timeInfo;
-	for (var indice = 0; indice < tableau.tweets.length; indice++) {
-		elements = tableau.tweets[indice];
-		content = "<span><img class='user_logo' src='"+elements.user.profile_image_url+"'/></span> - ";
-		content += "<i class='atTwitter'>@"+elements.user.screen_name+" </i> - ";
-		var text = elements.text;
-		var linkText = text.indexOf("");
-		 content += elements.text;
-		
-		var dico = {"content": content, "logo": logo, "time" : time};
 		zone.pushInfo(dico);
 	}
 }
