@@ -116,7 +116,7 @@ function polytech_render_bus_main(collection, zone, timeInfo) {
 
     var BUS_IMG_PATH="img/bus/";
     timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 20;
-    var tableau = collection.passages;
+    var tableau = collection;
     var time = timeInfo;
     var content;
     var eventsNum=0;
