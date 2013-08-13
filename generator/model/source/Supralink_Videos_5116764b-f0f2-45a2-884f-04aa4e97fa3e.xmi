@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Videos" id="Supralink_Videos">
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Supralink_Videos_5116764b-f0f2-45a2-884f-04aa4e97fa3e.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Supralink_Videos" pathPrefix="playlist/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Supralink_Videos" editMessage="Editer Vid√©os flumotion Supralink_Videos">
+      <parameters name="Nombre d'éléments" tip="Le nombre de vidéos à récupérer dans l'album." constraint="NONE" isPartOfPath="false" dbName="pagesize"/>
+      <parameters name="Catégorie" type="STRING" tip="La catégorie définissant la liste de lecture à récupérer dans SupraLink." constraint="NONE" isPartOfPath="false" dbName="fields"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods/@parameters.0 //@personalization/@methods/@parameters.1"/>
+    </methods>
+    <list name="Nombre d'éléments" tip="Le nombre de vidéos à récupérer dans l'album." parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Catégorie" tip="La catégorie définissant la liste de lecture à récupérer dans SupraLink." parameters="//@personalization/@methods/@parameters.1"/>
+  </personalization>
+</prodsource:Source>
