@@ -29,7 +29,6 @@ loadLess(LESS_ROOT+"/polytech_render_hyperplanning_main.less");
 loadScript(RENDERER_PATH+"/utils/calendar.js",true);
 
 
-
 /**
  * This method reduce (or not) th text on center div to optimize space
  * @param subject       a subject
@@ -233,17 +232,20 @@ function polytech_render_hyperplanning_main(collection, zone, timeInfo) {
                     var split1=groups.split(" : ");
                     if(json && split1.length>=0){
                          var color=json[split1[0]];
-                        var divColor=document.getElementById("tableColor");
-                        if(color && divColor){
+                        if(color){
 
-
-                            divColor.style.backgroundColor=color;
-                            content+="<td id='tableColor' style></td>"
+                            content+="<td id='tableColor' style='background:"+color+";'></td>"
 
 
                         }
+                        else{
+                            content+="<td id='tableColor'></td>";
+                        }
                     }
-                    content+="<td id='tableColor'></td>";
+                    else{
+                        content+="<td id='tableColor'></td>";
+                    }
+
                     if (elements.location) {
                         content += "<td class='tableSum'>"+optimize_center_div(summary,groups)+ "</td>";
                         content += "<td class='tableLoc'>" + elements.location.substring(0, 16) + "</td>";
@@ -286,7 +288,23 @@ function polytech_render_hyperplanning_main(collection, zone, timeInfo) {
                     else
                         content += "<tr >";
                     content += "<td class='tableDate'>" + render_date_edt_synth(elements) + "</td>";
-                    content+="<td id='tableColor'></td>";
+                    var split1=groups.split(" : ");
+                    if(json && split1.length>=0){
+                        var color=json[split1[0]];
+                        if(color){
+
+                            content+="<td id='tableColor' style='background:"+color+";'></td>"
+
+
+                        }
+                        else{
+                            content+="<td id='tableColor'></td>";
+                        }
+                    }
+                    else{
+                        content+="<td id='tableColor'></td>";
+                    }
+
                     if (elements.location) {
                         content += "<td class='tableSum'>"+optimize_center_div(summary,groups)+ "</td>";
                         content += "<td class='tableLoc'>" + elements.location.substring(0, 16) + "</td>";
@@ -296,23 +314,7 @@ function polytech_render_hyperplanning_main(collection, zone, timeInfo) {
                     }
                     content += "</tr>";
                 }
-                if(json){
-                    var split1=groups.split(" : ");
-                    if(split1.length>=0){
-                        var color=json[split1[0]];
-                        if(color){
-                            var divColor=document.getElementById("tableColor");
-                            alert("ok");
-                            if(divColor){
-                                alert("old : "+divColor.style.backgroundColor+" new : "+color);
-                                divColor.style.backgroundColor=color;
-                            }
-                        }
 
-
-
-                    }
-                }
             }
         }
     }

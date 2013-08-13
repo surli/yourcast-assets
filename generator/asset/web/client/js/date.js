@@ -21,6 +21,7 @@
  * @contributor 2009     Sebastien Mosser       [mosser@polytech.unice.fr]
  * @contributor 2010     Christophe Desclaux    [desclaux@polytech.unice.fr]
  * @contributor 2012     Damien Mostacchi		[damien.mostacchi@gmail.com]
+ * @contributor 2013     Clément DUFFAU         [duffau@polytech.unice.fr]
  **/
 
 var SPEED_DATE = 1000*60;
@@ -36,10 +37,22 @@ function clearTimer(){
 }
 
 function day_date(){
-    var date = get_time();
-    var hour = get_time();
-    //document.getElementById("date_time").innerHTML = date;
-    document.getElementById("date_time").innerHTML = "<big>" + hour + "</big>";
+    var date;
+    var hour;
+    if(document.getElementsByClassName("date_with_months").length>0 && typeof document.getElementsByClassName("date_with_months")!="undefined"){
+        hour = get_time();
+        date =get_current_date();
+        var day=date.day;
+        var month=date.month;
+        var year=date.year;
+        var dateString=get_day()+" "+day+" "+month;
+        document.getElementById("date_time").innerHTML = "<big>"+hour +"</big><br/>"+dateString;
+    }
+    else{
+        hour = get_time();
+        //document.getElementById("date_time").innerHTML = date;
+        document.getElementById("date_time").innerHTML = "<big>" + hour + "</big>";
+    }
 }
 
 function get_time(){
@@ -69,7 +82,7 @@ function get_a_month(month){
         case 4: return "mai";       
         case 5: return "juin";      
         case 6: return "juillet";   
-        case 7: return "aout";      
+        case 7: return "août";
         case 8: return "septembre"; 
         case 9:return "octobre";    
         case 10:return "novembre";  
@@ -162,10 +175,10 @@ function get_current_date_int() {
 	//var date = new Date(2012, 05, 29, 16, 22);
 	var date = new Date();
 	var year = date.getFullYear();
-	var month = date.getMonth()+1;
-	var day = date.getDate();
-	var hour = date.getHours();
-	var min = date.getMinutes();
+	var month = add_zero_if_need(date.getMonth()+1);
+	var day = add_zero_if_need(date.getDate());
+	var hour = add_zero_if_need(date.getHours());
+	var min = add_zero_if_need(date.getMinutes());
 	
 	return {'year':year,'month':month,'day':day,'hour':hour,'min':min};
 }
@@ -177,6 +190,7 @@ function is_same_date(date1, date2) {
 function display_date_and_hour(date) {
 	return date.day+" "+date.month+" &agrave; "+date.hour+"h "+date.min;
 }
+
 
 
 
