@@ -2,5 +2,6 @@
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="20" name="polytech_render_hyperplanning_main.js" infoType="Calendar">
   <function name="polytech_render_hyperplanning_main"/>
   <resource name="../utils/calendar.js" path="js/renderers/utils/calendar.js"/>
+  <resource name="./HP_colors.json" path="./js/HP_colors.json"/>
   <resource name="less/polytech_render_hyperplanning_main.less" type="css" path="less/polytech_render_hyperplanning_main.less"/>
 </prodrenderer:Renderer>

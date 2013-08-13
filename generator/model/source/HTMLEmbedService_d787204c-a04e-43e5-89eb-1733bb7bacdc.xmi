@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="HTMLEmbedService" id="HTMLEmbedService">
+  <service name="sources-HTMLEmbed.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="HTMLEmbedService_d787204c-a04e-43e5-89eb-1733bb7bacdc.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="getHTMLEmbed" pathPrefix="htmlembed/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  HTMLEmbedService" editMessage="Editer HTML embarqu√© HTMLEmbedService" type="POST">
+      <parameters name="Titre" type="STRING" tip="Titre de la page" constraint="NONE" dbName="title"/>
+      <parameters name="type" type="STRING" tip="type de HTML embarqué List(srcdoc, url)" constraint="NONE" dbName="type"/>
+      <parameters name="content" type="STRING" constraint="NONE" isPartOfPath="false" dbName="content"/>
+    </methods>
+    <list name="Titre" tip="Titre de la page" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="type" tip="type de HTML embarqué List(srcdoc, url)" parameters="//@personalization/@methods/@parameters.1"/>
+    <list name="content" parameters="//@personalization/@methods/@parameters.2"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-HTMLEmbed" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
