@@ -48,10 +48,10 @@
  */
 
 // Chargement du style
-loadLess(LESS_ROOT + '/renderers/ca_render_video.less');
+loadLess(LESS_ROOT + '/renderers/irsam_render_video.less');
 
 // Fonction du rendu vidéo
-function ca_render_video(tableau, zone, timeInfo) {
+function irsam_render_video(tableau, zone, timeInfo) {
 
     // Test si la collection est null ou indéfini
     if(typeof tableau === 'undefined' ||�tableau === null || tableau.length === 0)
