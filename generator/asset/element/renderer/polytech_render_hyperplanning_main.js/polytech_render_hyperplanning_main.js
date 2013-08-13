@@ -38,8 +38,8 @@ loadScript(RENDERER_PATH+"/utils/calendar.js",true);
 
 function optimize_center_div(subject,promos){
     var div="";
-    var basic_text_size=60;
-    var max_subject_size=25;
+    var basic_text_size=65;
+    var max_subject_size=30;
     var delim1=" : ";
     var delim2=" - "
     var current_size=promos.length+delim2.length+subject.length;
@@ -100,7 +100,7 @@ function optimize_center_div(subject,promos){
 
 
 
-function request_colors(url,callback) {
+function request_colors(url) {
 
     var res;
     // Effecture la requête Ajax
@@ -121,7 +121,6 @@ function request_colors(url,callback) {
                 // On essaie de le traiter
                 try {
                     var json = JSON.parse(textContent);
-                    callback(json);
                     res=json;
 
                 }
@@ -167,15 +166,13 @@ function request_colors(url,callback) {
 function polytech_render_hyperplanning_main(collection, zone, timeInfo) {
 
     timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 20;
-    var logo = '<img src="img/logos/calendar.png"/>';
-    zone.loadImage("img/logos/calendar.png");
     var name = collection.name;
     var tableau = collection.events;
     var eventsNum = 0;
     var time = timeInfo;
     var content;
     var elements_per_time=5;
-    var json=request_colors(DOMAIN_PATH+"/"+JS_ROOT+"/HP_colors.json",function(json){});
+    var json=request_colors(DOMAIN_PATH+"/"+JS_ROOT+"/HP_colors.json");
     var eventsByDays = transform_in_days(tableau);
 
     var daysSort = Object.keys(eventsByDays).sort();
@@ -261,7 +258,7 @@ function polytech_render_hyperplanning_main(collection, zone, timeInfo) {
                     content += "<div class='smooth'> </div>";
 
 
-                    var dico = {"content": content, "logo": logo, "title": title, "time": time};
+                    var dico = {"content": content, "title": title, "time": time};
                     zone.pushInfo(dico);
 
                     content = "<div id='ICalReader' class='main_div_zone1'>";
