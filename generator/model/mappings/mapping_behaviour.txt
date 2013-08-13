@@ -1,7 +1,8 @@
 Appearance,Time,ResetOtherZones,Animation,Alert,Number,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementAlerteStop.xmi
 Appearance,Time,Animation,Number,Smooth,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSmoothTimer.xmi
 Appearance,Time,PauseOtherZones,Animation,Alert,Number,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementAlertePause.xmi
-Logo,Animation,Number,Behaviour,Individual,Title,Repetition,Time,Appearance,DarkThenClear,Elements,Content,One:./behaviour/ComportementAlternanceSmoothCA.xmi
+Logo,Animation,Number,Behaviour,Individual,Title,CAStyle,Repetition,Time,Appearance,Contrasted,Elements,Content,One:./behaviour/ComportementAlternanceSmoothCA.xmi
+IRSAMStyle,Logo,Animation,Number,Behaviour,Individual,Title,Repetition,Time,Appearance,Contrasted,Elements,Content,One:./behaviour/ComportementAlternanceSmoothIrsam.xmi
 Appearance,Time,StopOtherZones,Animation,Number,Behaviour,Elements,Individual,One,Content,Notification:./behaviour/ComportementTemporaireVideo.xmi
 Appearance,Time,Animation,Number,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSimple.xmi
 Slide,Appearance,Time,Animation,Number,Smooth,Behaviour,Elements,Individual,One,Content:./behaviour/ComportementSmoothTimerSlide.xmi

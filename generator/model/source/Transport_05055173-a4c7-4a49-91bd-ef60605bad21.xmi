@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prodsource="prodsource.yourcast.fr" name="Transport" id="Transport">
+  <service name="sources-bus.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Transport_05055173-a4c7-4a49-91bd-ef60605bad21.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="getStop" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Transport" editMessage="Editer R√©cup√©ration des prochains passages de chaque ligne Transport">
+      <parameters name="Ville" type="STRING" tip="Ville des arrêts" constraint="NONE" dbName="city"/>
+      <parameters xsi:type="prodsource:ListParameter" name="liste des arrêts" type="LIST" tip="liste des arrêts de bus concernés" constraint="NONE" isPartOfPath="false" dbName="stops">
+        <values>String</values>
+      </parameters>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods/@parameters.1"/>
+    </methods>
+    <list name="Ville" tip="Ville des arrêts" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="liste des arrêts" tip="liste des arrêts de bus concernés" parameters="//@personalization/@methods/@parameters.1"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-bus" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
