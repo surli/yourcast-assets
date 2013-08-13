@@ -14,22 +14,7 @@
 
 		<link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
 		
-		<!-- Main Zone Script & CSS -->
-		<script type="text/javascript" src="mainZone_polytech/controler.js"></script>
-	   	<link href="mainZone_polytech/style.less" rel="stylesheet/less" />
-	    
-	   	<!-- Bottom Scrolling Zone Script & CSS -->
-		<!--<script type="text/javascript" src="scrollingBottomZone_polytech/controler.js"></script>
-	    	<link href="scrollingBottomZone_polytech/style.less" rel="stylesheet/less" />-->
-	    
-		<!-- Header ZoneScript & CSS -->
-		<!--<script type="text/javascript" src="headerZone_polytech/controler.js"></script>-->
-	    	<!--<link href="headerZone_polytech/style.less" rel="stylesheet/less" />-->
-
-	    	<!-- Left Zone Script & CSS -->
-		<!--<script type="text/javascript" src="leftZone_polytech/controler.js"></script>
-	    	<link href="leftZone_polytech/style.less" rel="stylesheet/less" />-->
-
+		$zoneScripts
 
 	    
 
