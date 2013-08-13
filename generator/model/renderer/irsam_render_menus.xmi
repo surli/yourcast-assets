@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="irsam_render_menus.js" infoType="Menu">
   <function name="irsam_render_menus"/>
-  <resource name="../utils/menu.js" path="./js/renderers/utils/menu.js"/>
+  <resource name="../utils/menus.js" path="./js/renderers/utils/menus.js"/>
   <resource name="img/logos/restaurant.png" type="image" path="img/logos/restaurant.png"/>
   <resource name="less/irsam_render_menus.less" type="css" path="less/irsam_render_menus.less"/>
 </prodrenderer:Renderer>
