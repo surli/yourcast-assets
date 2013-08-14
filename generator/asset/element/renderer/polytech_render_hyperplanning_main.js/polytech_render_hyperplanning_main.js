@@ -292,8 +292,16 @@ function polytech_render_hyperplanning_main(collection, zone, timeInfo) {
                     }
                     content += "</tr>";
 
-                    var dico = {"content": content, "title": title, "time": time};
-                    zone.pushInfo(dico);
+                }
+                if (indice + 1 == elementsArray.length) {
+                    if ((eventsNum) % elements_per_time != 0) {
+                        content += "</table>";
+                        content += "</div>";
+                        content += "</div>";
+                        content += "<div class='smooth'> </div>";
+                        var dico = {"content": content, "logo": logo, "title": title, "time": time};
+                        zone.pushInfo(dico);
+                    }
                 }
 
             }
