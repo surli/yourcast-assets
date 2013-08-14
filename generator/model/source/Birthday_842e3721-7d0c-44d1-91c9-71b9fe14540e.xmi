@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Birthday" id="Birthday">
+  <service name="sources-birthday.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Birthday_842e3721-7d0c-44d1-91c9-71b9fe14540e.properties"/>
+  <personalization image="">
+    <methods name="Add_Birthday_Calendar" pathPrefix="irsam" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Birthday" editMessage="Editer Anniversaire de l'irsam Birthday"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-birthday" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>

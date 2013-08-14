@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="FlickR" id="FlickR">
+  <actor name="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr" type="fr.yourcast.sources.flickr.ServiceActorCompositeFlickr"/>
+  <parameters name="FlickR_5f5ae893-b8a1-4cf9-aea5-c97ba0621465.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_FlickR_Album" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  FlickR" editMessage="Editer Photos publiques d'un album FlickR FlickR">
+      <parameters name="Nombre d'images" tip="Nombre limite de photos à afficher" constraint="NONE" isPartOfPath="false" dbName="per_page"/>
+      <parameters name="Clé d'API" type="STRING" tip="la clé d'API fournie par FlickR" constraint="NONE" isPartOfPath="false" dbName="api_key"/>
+      <parameters name="Identifiant de l'album à afficher" type="STRING" tip="L'identifiant de l'album est une chaîne de la forme &quot;72157632035599694&quot; que vous pouvez retrouver dans lien lorsque vous cliquez sur un album" constraint="NONE" isPartOfPath="false" dbName="photoset_id"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods/@parameters.0 //@personalization/@methods/@parameters.1 //@personalization/@methods/@parameters.2"/>
+    </methods>
+    <list name="Nombre d'images" tip="Nombre limite de photos à afficher" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Clé d'API" tip="la clé d'API fournie par FlickR" parameters="//@personalization/@methods/@parameters.1"/>
+    <list name="Identifiant de l'album à afficher" tip="L'identifiant de l'album est une chaîne de la forme &quot;72157632035599694&quot; que vous pouvez retrouver dans lien lorsque vous cliquez sur un album" parameters="//@personalization/@methods/@parameters.2"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-flickr" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>

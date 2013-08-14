@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Intrassoc_Compteur" id="Intrassoc_Compteur">
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Intrassoc_Compteur_0751e19d-7cde-4b24-b2eb-771f74d64294.properties"/>
+  <personalization image="">
+    <methods name="Add_Intrassoc_Compteur" pathPrefix="stats/decompte/1" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Intrassoc_Compteur" editMessage="Editer Compteur d'arriv√©e pour le premier jour des Choralies Intrassoc_Compteur"/>
+  </personalization>
+</prodsource:Source>

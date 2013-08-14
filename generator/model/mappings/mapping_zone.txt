@@ -14,6 +14,7 @@ Orientation,Product,Graphic,Landscape,atelierMainZone_choralies,Choralies,Title,
 Orientation,Product,Graphic,Bloc,rightZone_choralies,Choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_choralies.xmi
 Text,Orientation,Product,InactiviteZone_CA,Landscape,Elements,Zone,CA,Content,Design:./zone/inactiviteZone_ca.xmi
 IRSAM,Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,Full,Elements,MainZone_irsam,Zone,Content:./zone/mainZone_irsam.xmi
+Text,IRSAM,Orientation,VocalZone,Product,Landscape,Elements,Speakable,Zone,CA,Content,Design:./zone/vocaleZone.xmi
 Orientation,Product,Graphic,Bloc,Choralies,mobileMainZone_choralies,Title,Design,Text,Full,Elements,Portrait,Zone,Content,Thumbnails:./zone/mobileMainZone_choralies.xmi
 Text,Orientation,Product,Elements,Portrait,Choralies,Zone,jourUnRightZone_choralies,Content,Title,Design:./zone/jour1RightZone_choralies.xmi
 Orientation,Product,Graphic,GLC,Landscape,Elements,Zone,Content,HeaderZone_glc,Thumbnails,Design:./zone/headerZone_glc.xmi

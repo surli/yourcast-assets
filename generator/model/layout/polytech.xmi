@@ -7,4 +7,5 @@
   <resources name="less/functions.less" type="css" path="less/functions.less"/>
   <resources name="less/style.less" type="css" path="less/style.less"/>
   <resources name="less/variables.less" type="css" path="less/variables.less"/>
+  <resources name="style.css" type="css" path="style.css"/>
 </prodlayout:Layout>
