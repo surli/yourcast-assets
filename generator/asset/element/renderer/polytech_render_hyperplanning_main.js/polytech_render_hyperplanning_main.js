@@ -291,6 +291,9 @@ function polytech_render_hyperplanning_main(collection, zone, timeInfo) {
                         content += "<td class='tableSum'>"+optimize_center_div(summary,groups)+ "</td>";
                     }
                     content += "</tr>";
+
+                    var dico = {"content": content, "title": title, "time": time};
+                    zone.pushInfo(dico);
                 }
 
             }
