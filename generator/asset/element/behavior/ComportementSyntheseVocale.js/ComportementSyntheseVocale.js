@@ -28,6 +28,7 @@
  *		Guillaume Golfieri (golfieri.guillaume@gmail.com)
  */
 
+loadScript(BEHAVIOUR_PATH + "/utils/SoundManager/script/soundmanager2-nodebug-jsmin.js");
 loadScript(BEHAVIOUR_PATH + "/utils/YourcastVocale/YourcastVocale.js");
 
 var ComportementSyntheseVocale = Class.create(Comportement, {

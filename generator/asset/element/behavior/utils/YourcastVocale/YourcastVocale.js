@@ -12,26 +12,26 @@
  *      
  *  <b>Informations :</b>
  *      
- *	Librairie Yourcast pour la synthÃ¨se vocale. Ce fichier importe les 
- *	fonctions nÃ©cessaires au bon fonctionnement du client voclale Yourcast.
+ *	Librairie Yourcast pour la synthèse vocale. Ce fichier importe les 
+ *	fonctions nécessaires au bon fonctionnement du client voclale Yourcast.
  *	
- *	Il y a des dÃ©pendances obligatoire : SoundManager qui permet de lire le 
- *	son dans n'importe quel navigateur et VoiceRSS qui fait la synthÃ¨se 
- *	d'une chaÃ®ne.
+ *	Il y a des dépendances obligatoire : SoundManager qui permet de lire le 
+ *	son dans n'importe quel navigateur et VoiceRSS qui fait la synthèse 
+ *	d'une chaîne.
  *      
  *  <b>Fonctions :</b>
  *      
  *      <ul>
- *          <li>createSound(<i>chaÃ®ne Ã  synthÃ¨tiser</i>)</li>
- *          <li>createAndPlaySound(<i>chaÃ®ne Ã  synthÃ¨tiser</i>, <i>fonction Ã  
- *          appeller lorsque le son a Ã©tÃ© jouÃ©</i>)</li>
- *          <li>playSound(<i>son Ã  jouer</i>, <i>fonction Ã  appeller lorsque le 
- *          son a Ã©tÃ© jouÃ©</i>)</li>
+ *          <li>createSound(<i>chaîne à synthètiser</i>)</li>
+ *          <li>createAndPlaySound(<i>chaîne à synthètiser</i>, <i>fonction à 
+ *          appeller lorsque le son a été joué</i>)</li>
+ *          <li>playSound(<i>son à jouer</i>, <i>fonction à appeller lorsque le 
+ *          son a été joué</i>)</li>
  *      </ul>
  *      
  *  <b>Versions :</b>
  *      
- *      1.0.0 : CrÃ©ation d'une librairie fonctionnelle.
+ *      1.0.0 : Création d'une librairie fonctionnelle.
  *      
  *  <b>Contributors :</b>
  *      
@@ -44,9 +44,9 @@
 // ===================================================
 
 
-// CrÃ©ation de l'instance du SoundManager2
+// Création de l'instance du SoundManager2
 soundManager.setup({
-    url: 'lib/SoundManager/swf/',
+    url: 'utils/behaviours/utils/SoundManager/swf/',
     onready: function() {
         // Callback si besoin
     }
@@ -61,19 +61,19 @@ soundManager.setup({
 /**
  *  <b>CreateSound</b>
  *  
- *  CrÃ©e un son dans soundManager et le renvoie.
+ *  Crée un son dans soundManager et le renvoie.
  *  
- *  @param {type} string    ChaÃ®ne Ã  crÃ©er.
+ *  @param {type} string    Chaîne à créer.
  */
 function createSound(string) {
 
-    // Transformation dela chaÃ®ne
+    // Transformation dela chaîne
     string = encodeURIComponent(string);
 
-    // CrÃ©er le son
+    // Créer le son
     var sound = soundManager.createSound({
         
-        // Url de rÃ©cupÃ©ration du mp3 de la chaÃ®ne
+        // Url de récupération du mp3 de la chaîne
         url: "http://api.voicerss.org?" + "key=7aedb3da61c14aa9bfe4f6c2fd781519&src=" + string + "&hl=fr-fr&f=44khz_16bit_stereo"
         
     });
@@ -86,16 +86,16 @@ function createSound(string) {
 /**
  *  <b>CreateAndPlaySound</b>
  *  
- *  CrÃ©e et joue un son crÃ©e dans soundManager.
+ *  Crée et joue un son crée dans soundManager.
  *  
- *  @param {type} string    ChaÃ®ne Ã  jouer.
+ *  @param {type} string    Chaîne à jouer.
  */
 function createAndPlaySound(string) {
 
-    // Transformation dela chaÃ®ne
+    // Transformation dela chaîne
     string = encodeURIComponent(string);
 
-    // CrÃ©er le son
+    // Créer le son
     mySound = soundManager.createSound({
         url: "http://api.voicerss.org?" + "key=7aedb3da61c14aa9bfe4f6c2fd781519&src=" + string + "&hl=fr-fr&f=44khz_16bit_stereo",
         autoPlay: true,
@@ -103,7 +103,7 @@ function createAndPlaySound(string) {
         // Lorsque le son a fini de jouer
         onfinish: function() {
             
-            // On test si le callback est dÃ©fini
+            // On test si le callback est défini
             if(callback) {
                 
                 // On appelle le callback
@@ -120,10 +120,10 @@ function createAndPlaySound(string) {
 /**
  *  <b>PlaySound</b>
  *  
- *  Joue un son crÃ©e auparavant dans soundManager.
+ *  Joue un son crée auparavant dans soundManager.
  *  
- *  @param {type} sound     Son Ã  jouer.
- *  @param {type} callback  Fonction appelÃ© lorsque le son a fini d'Ãªtre jouÃ©.
+ *  @param {type} sound     Son à jouer.
+ *  @param {type} callback  Fonction appelé lorsque le son a fini d'être joué.
  */
 function playSound(sound, callback) {
 
@@ -138,7 +138,7 @@ function playSound(sound, callback) {
         // Lorsque le son a fini de jouer
         onfinish: function() {
             
-            // On test si le callback est dÃ©fini
+            // On test si le callback est défini
             if(callback) {
                 
                 // On appelle le callback
