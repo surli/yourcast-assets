@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="30" name="render_vocale_ephemeride.js" infoType="Ephemeride">
+  <function name="render_vocale_ephemeride"/>
+</prodrenderer:Renderer>

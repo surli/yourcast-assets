@@ -10,7 +10,7 @@ behaviour8 = FM(Behaviour: Animation Time Number Elements;  Animation: Push; Pus
 behaviour9 = FM(Behaviour: Animation Time Number Elements;  Animation: Scrolling; Scrolling: RightToLeft; Number: All; Time: Global; Elements: Content Logo; Logo: ByInformation;)
 behaviour10 = FM(Behaviour: Animation Time Number Elements;  Animation: Notification Appearance;  Number: One; Time: Individual; Elements: Content;)
 behaviour11 = FM(Behaviour: Animation Time Number Elements;  Animation: Scrolling; Scrolling: RightToLeft; Number: All; Time: Global; Elements: Content Logo; Logo: Static;)
-behaviour12 = FM(Behaviour: Animation Time Number Elements;  Animation: Vocalization;  Number: One; Time: Individual; Elements: Content;)
+behaviour12 = FM(Behaviour: Animation Time Number Elements;  Animation: Vocalization;  Number: One; Time: Individual; Elements: Content; Content: Text; Text: Speakable;)
 behaviour13 = FM(Behaviour: Animation Time Number Elements;  Animation: Scrolling; Scrolling: RightToLeft; Number: All; Time: Global; Elements: Content;)
 behaviour14 = FM(Behaviour: Animation Time Number Elements;  Animation: Notification Scrolling;  Scrolling: RightToLeft; Number: One; Time: Individual; Elements: Content;)
 
