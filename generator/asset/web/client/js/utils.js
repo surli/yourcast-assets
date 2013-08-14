@@ -233,7 +233,7 @@ var SILENT_DEBUG            = "silent";
 var PROD                    = true;
 var PAGE_CHARGE             = false;
 var LESS_CHARGE             = false;
-var ZONE_MASTER_CHARGE      = false;
+var NB_ZONE_CHARGE          = 0;
 
 // Speed up calls to hasOwnProperty
 var hasOwnProperty          = Object.prototype.hasOwnProperty;
@@ -293,7 +293,7 @@ var timeout_chargement = setInterval(function(){ modifValues(); }, 40);
 function finChargement() {
 
     // Cache le logo de chargement
-    if(LESS_CHARGE && ZONE_MASTER_CHARGE) {
+    if(NB_ZONE_CHARGE === ControlerGeneral.getInstance().getZones().length) {
         
         // Cache le logo du chargements
         $('logo_loading').hide();
@@ -322,13 +322,10 @@ function finChargementLess() {
  *  
  *  Fin du chargemenet de la zone master
  */
-function finChargementMaster() {
+function finChargementZone() {
 
     // Change la variable
-    ZONE_MASTER_CHARGE = true;
-
-    // Fin du chargement
-    finChargement();
+    NB_ZONE_CHARGE++;
 
 }
 

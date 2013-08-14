@@ -476,13 +476,8 @@ var Zone = Class.create({
         // On test si les images sont chargés et que on a des infos à afficher
         if (self.imagesAreLoaded() && self.soundsAreLoaded()) {
 
-            // Fin du chargement de la zone master
-            if (this.is_master) {
-
-                // Fin du chargement de l'application
-                finChargementMaster();
-
-            }
+            // Fin du chargement de l'application
+            finChargementZone();
 
             // On lance le comportement
             self.runComportement();
@@ -540,7 +535,6 @@ var Zone = Class.create({
                                 try {
                                     this.lancer_render(cle, elements[cpt][cle][index]);
                                 } catch (exception) {
-                                    throw new Exception(new Error().filename, exception, new Error().lineNumber);
                                 }
 
                             }
@@ -568,7 +562,6 @@ var Zone = Class.create({
                                 try {
                                     this.lancer_render(cle, elements[cle][index]);
                                 } catch (exception) {
-                                    throw new Exception(new Error().filename, exception, new Error().lineNumber);
                                 }
 
                             }
