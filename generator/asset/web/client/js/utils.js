@@ -1,4 +1,4 @@
-/**
+﻿/**
  *      <b>CONTROLER GENERAL</b>
  * 
  *  <b>Informations :</b>
@@ -293,7 +293,7 @@ var timeout_chargement = setInterval(function(){ modifValues(); }, 40);
 function finChargement() {
 
     // Cache le logo de chargement
-    if(NB_ZONE_CHARGE === ControlerGeneral.getInstance().getZones().length) {
+    if(NB_ZONE_CHARGE >= ControlerGeneral.getInstance().getZones().length) {
         
         // Cache le logo du chargements
         $('logo_loading').hide();
@@ -326,6 +326,8 @@ function finChargementZone() {
 
     // Change la variable
     NB_ZONE_CHARGE++;
+
+    finChargement();
 
 }
 
