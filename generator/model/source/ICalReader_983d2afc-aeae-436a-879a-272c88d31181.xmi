@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="ICalReader" id="ICalReader">
+  <service name="sources-icalreader.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="ICalReader_983d2afc-aeae-436a-879a-272c88d31181.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Calendar_Filter_By_Duration" pathPrefix="hours/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  ICalReader" editMessage="Editer Lecteur de calendrier avec dur√©e ICalReader" type="POST">
+      <parameters name="n" tip="Durée en heure" constraint="NONE" dbName="n"/>
+      <parameters name="URL Calendar" type="STRING" constraint="NONE" isPartOfPath="false" dbName="body"/>
+    </methods>
+    <list name="n" tip="Durée en heure" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="URL Calendar" parameters="//@personalization/@methods/@parameters.1"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-icalreader" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>

@@ -230,7 +230,7 @@ var VERBOSE_DEBUG           = "verbose";
 var SILENT_DEBUG            = "silent";
 
 // Variable avec des fonctions de debug
-var PROD                    = false;
+var PROD                    = true;
 var PAGE_CHARGE             = false;
 var LESS_CHARGE             = false;
 var ZONE_MASTER_CHARGE      = false;

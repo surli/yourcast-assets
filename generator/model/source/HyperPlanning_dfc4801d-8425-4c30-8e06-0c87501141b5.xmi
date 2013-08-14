@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="HyperPlanning" id="HyperPlanning">
+  <service name="sources-hyperplanning.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="HyperPlanning_dfc4801d-8425-4c30-8e06-0c87501141b5.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="getFreeRoomsPattern" pathPrefix="free_room_pattern" introductionMessage="Compléter les informations pour ajouter un(e) appel à  HyperPlanning" editMessage="Editer HyperPlanning des salles libres avec pattern pour le tri HyperPlanning">
+      <parameters name="Date" type="STRING" tip="Date" constraint="NONE" dbName="date"/>
+      <parameters name="Offset" type="STRING" tip="Offset en minutes" constraint="NONE" dbName="offset"/>
+      <parameters name="Pattern de tri" type="STRING" tip="Pattern de tri" constraint="NONE" dbName="pattern"/>
+    </methods>
+    <list name="Date" tip="Date" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Offset" tip="Offset en minutes" parameters="//@personalization/@methods/@parameters.1"/>
+    <list name="Pattern de tri" tip="Pattern de tri" parameters="//@personalization/@methods/@parameters.2"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-hyperplanning" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>

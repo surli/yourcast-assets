@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="ComportementSyntheseVocale.js">
+  <function name="ComportementSyntheseVocale"/>
+  <resource name="../utils/YourcastVocale/YourcastVocale.js" path="./js/behaviours/utils/YourcastVocale/YourcastVocale.js"/>
+</prodbehavior:Behavior>

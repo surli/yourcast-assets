@@ -10,5 +10,6 @@ Time,Animation,Number,Behaviour,Elements,Individual,One,Content,TopDown,Push:./b
 ByInformation,Time,Animation,Logo,Number,Behaviour,Elements,Scrolling,All,Content,Global,RightToLeft:./behaviour/ComportementScrollingEachLogoLeft.xmi
 Appearance,Time,Animation,Number,Behaviour,Elements,Individual,One,Content,Notification:./behaviour/ComportementTemporaire.xmi
 Time,Animation,Logo,Number,Behaviour,Elements,Static,Scrolling,All,Content,Global,RightToLeft:./behaviour/ComportementScrollingLeftLogoLeft.xmi
+Time,Animation,Number,Behaviour,Vocalization,Elements,Individual,One,Content:./behaviour/ComportementSyntheseVocale.xmi
 Time,Animation,Number,Behaviour,Elements,Scrolling,All,Content,Global,RightToLeft:./behaviour/ComportementScrollingLeft.xmi
 Time,Animation,Number,Behaviour,Elements,Scrolling,Individual,One,Content,Notification,RightToLeft:./behaviour/ComportementTemporaireScrollingLeft.xmi
