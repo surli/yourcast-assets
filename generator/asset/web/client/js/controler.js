@@ -291,15 +291,16 @@ var Zone = Class.create({
      */
     newSound: function(contenu) {
 
-        // On incr�mente le nombre de son
+        // On incrémente le nombre de son
         this.nb_son++;
 
         // Stockage du this
         var self = this;
+        var cle = this.cle;
 
         // On cr�e le nouveau son
         soundManager.onready(function() {
-            self.loadSound(createSound(contenu), self.cle);
+            self.loadSound(createSound(contenu), cle);
         });
 
     },

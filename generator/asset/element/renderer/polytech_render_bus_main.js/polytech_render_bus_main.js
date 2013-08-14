@@ -49,7 +49,7 @@ function my_terminus_format(str){
     }
     return res;
 }
-function request_colors(url,callback) {
+function request_colors(url) {
 
     var res;
     // Effecture la requête Ajax
@@ -70,7 +70,6 @@ function request_colors(url,callback) {
                 // On essaie de le traiter
                 try {
                     var json = JSON.parse(textContent);
-                    callback(json);
                     res=json;
 
                 }
@@ -87,25 +86,6 @@ function request_colors(url,callback) {
                 throw new Exception("[moteur/js/controler_zone.js] request", transport.statusText);
 
             }
-        },
-
-        onFailure: function(transport) {
-
-            // Création d'une exception
-            throw new Exception("[moteur/js/controler_zone.js] request", "La requête vers l'url donné a échouée.");
-
-        },
-
-        onException: function(transport, exception) {
-
-            // Création d'une exception
-            throw new Exception("[moteur/js/controler_zone.js] request", exception.message);
-
-        },
-
-        onComplete: function(transport) {
-
-
         }
 
     });
@@ -114,7 +94,6 @@ function request_colors(url,callback) {
 }
 function polytech_render_bus_main(collection, zone, timeInfo) {
 
-    var BUS_IMG_PATH="img/bus/";
     timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 20;
     var tableau = collection;
     var time = timeInfo;
@@ -132,7 +111,7 @@ function polytech_render_bus_main(collection, zone, timeInfo) {
         var stop=passage.stop.stopName;
         var terminus=passage.line.terminus;
         var line=passage.line.name;
-        var json=request_colors(DOMAIN_PATH+"/"+JS_ROOT+"/Bus_colors.json",function(json){});
+        var json=request_colors(DOMAIN_PATH+JS_ROOT+"/Bus_colors.json");
                 eventsNum++;
                 if ((eventsNum) % elements_per_time == 0) {
 

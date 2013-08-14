@@ -24,15 +24,12 @@
  */
 
 /**
- *  Renderer vocale des annonces.
+ *  Renderer vocale des intervenants.
  *  
  *  @param {type} tableau Tableau des annonces.
  *  @param {type} zone Zone concernée.
  */
-function render_Vocale_News(tableau, zone) {
-
-    // Test d'un titre
-    zone.newSound("Les annonces.");
+function render_vocale_intervenants(tableau, zone) {
 
     // On boucle sur les informations
     for (var indice = 0; indice < tableau.length; indice++) {
@@ -41,10 +38,10 @@ function render_Vocale_News(tableau, zone) {
         var elements = tableau[indice];
 
         // Si le title ou le contenu n'est pas défini
-        if (elements.title !== "" || elements.content !== "" ) {
+        if (elements.jour !== "" && elements.intervenant !== "" ) {
 
             // On envoie le son à la zone
-            zone.newSound(elements.title + ". " + elements.content + ". " + elements.author);
+            zone.newSound(elements.jour + ". " + elements.intervenants + ".");
 
         }
 

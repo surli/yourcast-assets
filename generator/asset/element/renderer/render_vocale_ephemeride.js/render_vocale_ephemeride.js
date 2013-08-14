@@ -24,29 +24,24 @@
  */
 
 /**
- *  Renderer vocale des intervenants.
+ *  Renderer vocale des saints.
  *  
  *  @param {type} tableau Tableau des annonces.
  *  @param {type} zone Zone concernée.
  */
-function render_Vocale_Intervenants(tableau, zone) {
+function render_vocale_ephemeride(tableau, zone) {
 
-    // Test d'un titre
-    zone.newSound("Les intervenants.");
+    // Récupère la date d'aujourd'hui
+    var date_actuelle = new Date();
+    
+    // Crée le son de la date
+    zone.newSound("On est actuellement " + get_a_day(date_actuelle.getDay()) + " " + date_actuelle.getDate() + " " + get_a_month(date_actuelle.getMonth()) + ". Il est " + date_actuelle.getHours() + " heures et " + date_actuelle.getMinutes() + " minutes.");
 
-    // On boucle sur les informations
-    for (var indice = 0; indice < tableau.length; indice++) {
-        
-        // On récupère l'annonce
-        var elements = tableau[indice];
+    // Si le title ou le contenu n'est pas défini
+    if (tableau.names || tableau.names.length > 0) {
 
-        // Si le title ou le contenu n'est pas défini
-        if (elements.jour !== "" && elements.intervenant !== "" ) {
-
-            // On envoie le son à la zone
-            zone.newSound(elements.jour + ". " + elements.intervenants + ".");
-
-        }
+        // On envoie le son à la zone
+        zone.newSound("Bonne fête aux " + tableau.names[Math.floor((Math.random()*tableau.names.length))]);
 
     }
 
