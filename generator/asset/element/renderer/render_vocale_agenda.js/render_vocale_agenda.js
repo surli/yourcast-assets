@@ -29,10 +29,7 @@
  *  @param {type} tableau Tableau des annonces.
  *  @param {type} zone Zone concernée.
  */
-function render_Vocale_Agenda(tableau, zone) {
-
-    // Test d'un titre
-    zone.newSound("L'agenda.");
+function render_vocale_agenda(tableau, zone) {
 
     // On boucle sur les évènements
     for (var cpt = 0; cpt < tableau.events.length; cpt++) {

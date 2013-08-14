@@ -52,10 +52,7 @@ function add_New_Sounds(table, zone) {
  *  @param {type} tableau Tableau des annonces.
  *  @param {type} zone Zone concernée.
  */
-function render_Vocale_Menu(tableau, zone) {
-
-    // Test d'un titre
-    zone.newSound("Le menu.");
+function render_vocale_menu(tableau, zone) {
 
     // On boucle sur les informations
     for (var indice = 0; indice < tableau.length; indice++) {
