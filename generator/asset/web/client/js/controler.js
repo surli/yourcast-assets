@@ -540,6 +540,7 @@ var Zone = Class.create({
                                 try {
                                     this.lancer_render(cle, elements[cpt][cle][index]);
                                 } catch (exception) {
+                                    throw new Exception(new Error().filename, exception, new Error().lineNumber);
                                 }
 
                             }
@@ -567,6 +568,7 @@ var Zone = Class.create({
                                 try {
                                     this.lancer_render(cle, elements[cle][index]);
                                 } catch (exception) {
+                                    throw new Exception(new Error().filename, exception, new Error().lineNumber);
                                 }
 
                             }
