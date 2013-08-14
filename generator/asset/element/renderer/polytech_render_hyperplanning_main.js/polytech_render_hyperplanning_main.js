@@ -137,25 +137,6 @@ function request_colors(url) {
                 throw new Exception("[moteur/js/controler_zone.js] request", transport.statusText);
 
             }
-        },
-
-        onFailure: function(transport) {
-
-            // Création d'une exception
-            throw new Exception("[moteur/js/controler_zone.js] request", "La requête vers l'url donné a échouée.");
-
-        },
-
-        onException: function(transport, exception) {
-
-            // Création d'une exception
-            throw new Exception("[moteur/js/controler_zone.js] request", exception.message);
-
-        },
-
-        onComplete: function(transport) {
-
-
         }
 
     });
@@ -172,7 +153,7 @@ function polytech_render_hyperplanning_main(collection, zone, timeInfo) {
     var time = timeInfo;
     var content;
     var elements_per_time=5;
-    var json=request_colors(DOMAIN_PATH+"/"+JS_ROOT+"/HP_colors.json");
+    var json=request_colors(DOMAIN_PATH+JS_ROOT+"/HP_colors.json");
     var eventsByDays = transform_in_days(tableau);
 
     var daysSort = Object.keys(eventsByDays).sort();

@@ -86,25 +86,6 @@ function request_colors(url) {
                 throw new Exception("[moteur/js/controler_zone.js] request", transport.statusText);
 
             }
-        },
-
-        onFailure: function(transport) {
-
-            // Création d'une exception
-            throw new Exception("[moteur/js/controler_zone.js] request", "La requête vers l'url donné a échouée.");
-
-        },
-
-        onException: function(transport, exception) {
-
-            // Création d'une exception
-            throw new Exception("[moteur/js/controler_zone.js] request", exception.message);
-
-        },
-
-        onComplete: function(transport) {
-
-
         }
 
     });
@@ -130,7 +111,7 @@ function polytech_render_bus_main(collection, zone, timeInfo) {
         var stop=passage.stop.stopName;
         var terminus=passage.line.terminus;
         var line=passage.line.name;
-        var json=request_colors(DOMAIN_PATH+"/"+JS_ROOT+"/Bus_colors.json");
+        var json=request_colors(DOMAIN_PATH+JS_ROOT+"/Bus_colors.json");
                 eventsNum++;
                 if ((eventsNum) % elements_per_time == 0) {
 
