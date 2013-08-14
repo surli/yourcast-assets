@@ -1,57 +1,37 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
-		
-		<title>YourCast Choralies - Ateliers</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
 
-		<script type="text/javascript" src="js/libs/prototype.js"></script>
-		<script type="text/javascript" src="js/utils.js"></script>
+        <title>YourCast Choralies - Ateliers</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script type="text/javascript" src="js/libs/prototype.js"></script>
+        <script type="text/javascript" src="js/utils.js"></script>
         <script type="text/javascript" src="js/date.js"></script>
         <script type="text/javascript" src="js/controler.js"></script>
-		
-		<link href="img/climacons-font/webfont/climacons-font.css" rel="stylesheet" type="text/css" />
-		<link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
-		
-		$zoneScripts
 
-		<script type="text/javascript">
+        <link href="img/climacons-font/webfont/climacons-font.css" rel="stylesheet" type="text/css" />
+        <link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
 
-            /**
-             *  Fin de traitement des fichiers less
-             */
-            function finTraitementLess() {
-                
-                // Cache le logo de chargement
-                $('logo_loading').hide();
+        $zoneScripts
 
-            }
-                
-		    less = {
-		        env: "production",
-		        async: false,
-		        fileAsync: true
-		    };
-		    
-		</script>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600' rel='stylesheet' type='text/css'>
 
-		<link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600' rel='stylesheet' type='text/css'>
-		
-	</head>
+    </head>
 
-	<body onload="$onLoadContent; loadScript('js/libs/less.js',true);init_date();" class="ateliers">
+    <body onload="$onLoadContent; init_date();" class="ateliers">
 
-	<div id="date_time"></div>
-	$layoutBody
-			
-		<div id="logo_loading">
-			<div>
-				<img id="loading_img" src="./img/yc_loading.gif" />
-			</div>
-		</div>
-		<span class="design_signature"><a href="http://c.line-design.fr">c.line-design.fr</a></span>
+        <div id="date_time"></div>
+        $layoutBody
 
-	</body>
+        <div id="logo_loading">
+            <div>
+                <img id="loading_img" src="./img/yc_loading.gif" />
+            </div>
+        </div>
+        <span class="design_signature"><a href="http://c.line-design.fr">c.line-design.fr</a></span>
+
+    </body>
 </html>
 

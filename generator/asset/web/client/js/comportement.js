@@ -197,8 +197,6 @@ var Comportement = Class.create({
             // Changement
             this.marche = true;
 
-            this.zone_concerne.randomInfo(true);
-
             // On appelle le changement d'Ã©lÃ©ment
             this.goto(this.indice);
 

@@ -1,55 +1,34 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
-		
-		<title>YourCast Choralies - Theatre Antique</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />		
 
-		<script type="text/javascript" src="js/libs/prototype.js"></script>
-		<script type="text/javascript" src="js/utils.js"></script>
+        <title>YourCast Choralies - Theatre Antique</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script type="text/javascript" src="js/libs/prototype.js"></script>
+        <script type="text/javascript" src="js/utils.js"></script>
         <script type="text/javascript" src="js/date.js"></script>
         <script type="text/javascript" src="js/controler.js"></script>
-		
 
-		<link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
-		
-		$zoneScripts
+        <link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
 
-		<script type="text/javascript">
+        $zoneScripts
 
-            /**
-             *  Fin de traitement des fichiers less
-             */
-            function finTraitementLess() {
-                
-                // Cache le logo de chargement
-                $('logo_loading').hide();
+        <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600' rel='stylesheet' type='text/css'>
 
-            }
-                
-		    less = {
-		        env: "production",
-		        async: false,
-		        fileAsync: true
-		    };
-		    
-		</script>
-				
-		<link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600' rel='stylesheet' type='text/css'>
-		
-	</head>
+    </head>
 
-	<body onload="$onLoadContent; loadScript('js/libs/less.js');" class="theatre">
+    <body onload="$onLoadContent; " class="theatre">
 
-		$layoutBody
-					
-		<div id="logo_loading">
-			<div>
-				<img id="loading_img" src="./img/yc_loading.gif" />
-			</div>
-		</div>
-		<span class="design_signature"><a href="http://c.line-design.fr">c.line-design.fr</a></span>
-	</body>
+        $layoutBody
+
+        <div id="logo_loading">
+            <div>
+                <img id="loading_img" src="./img/yc_loading.gif" />
+            </div>
+        </div>
+        <span class="design_signature"><a href="http://c.line-design.fr">c.line-design.fr</a></span>
+    </body>
 </html>
 
