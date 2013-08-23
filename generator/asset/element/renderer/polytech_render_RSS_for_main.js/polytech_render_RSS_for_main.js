@@ -11,8 +11,9 @@ function polytech_render_RSS_for_main(tableau, zone, timeInfo) {
 	
 	var titleFeed = tableau.title;
 	var mainTitle = tableau.title;
-    var number_of_lines=12;
-	
+    	var number_of_lines=12;
+	var title_size=50;
+
 	for (var indice = 0; indice < tableau.content.length; indice++) {
 		var elements = tableau.content[indice];
 
@@ -31,12 +32,6 @@ function polytech_render_RSS_for_main(tableau, zone, timeInfo) {
             }
             titre+=t;
             j++;
-        }
-        var titre2=titre;
-        if(titre2){
-            if(titre2.length>70){
-                titre2=titre2.substring(0,70)+" ...";
-            }
         }
         var reg=new RegExp("(\n)", "g");
         var regP=new RegExp("(<p>)", "g");
@@ -68,7 +63,7 @@ function polytech_render_RSS_for_main(tableau, zone, timeInfo) {
             var content="";
             content += "<div class='header_div' >";
             content += "<div class='rss_body'>";
-            content += "<div class='rss_Title'>"+titre+"</div>";    F
+            content += "<div class='rss_Title'>"+titre+"</div>";    
             content += "<div class='rss_Content'>"
             var nb_lines=number_of_lines;
             while(i<nb_lines && i<split_content.length){
@@ -89,7 +84,7 @@ function polytech_render_RSS_for_main(tableau, zone, timeInfo) {
                 contentAnnounces+=c;
                 i++;
             }
-            var dico = {"content": content, "logo": "", "title": titre2, "time": time};
+            var dico = {"content": content, "logo": "", "title": titleFeed, "time": time};
             zone.pushInfo(dico);
 
         }

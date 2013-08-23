@@ -7,7 +7,7 @@
 
 loadLess(LESS_ROOT+"/polytech_render_Announces_for_main_zone.less"); 
 loadScript(RENDERER_PATH+"/utils/calendar.js",true);
-                                                                                                                                                         8
+                                                                                                                                                         
 function polytech_render_Announces_for_main_zone(tableau, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 8;
 	var time = timeInfo;
@@ -18,15 +18,20 @@ function polytech_render_Announces_for_main_zone(tableau, zone, timeInfo) {
 		var elements = tableau[indice];
         if(elements.tag){
             title=elements.tag;
-        }
+        }else{
+		title="Annonce";
+	}
 		var reg=new RegExp("(\n)", "g");
-		var contentAnnounces = elements.contenu.replace(reg, "<br/>");
+		var contentAnnounces = elements.content;
+		if(contentAnnounces){
+			contentAnnounces=contentAnnounces.replace(reg, "<br/>");
+		}
 
 		var content = "";
 			
 		content += "<div id='announces' class='main_div_zone'>";
 			content += "<div class='announce_body'>";
-				content += "<br/><div class='announce_Title'>"+elements.titre+"</div>";
+				content += "<br/><div class='announce_Title'>"+elements.title+"</div>";
 				content += "<div style='clear:both;'> </div>";
 				if (isPropertyDefined(elements.image)){
 					zone.loadImage(elements.image);
