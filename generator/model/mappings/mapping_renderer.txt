@@ -13,6 +13,7 @@ TypeInfo,Text,Renderer,Discretization,Bloc,Breves,Elements,Choralies,Content,Tit
 Discretization,Logo,Graphic,CA,Design,TypeInfo,Source,Renderer,Full,Elements,Content,ByOne,Video:./renderer/ca_render_video.xmi
 TypeInfo,Renderer,PictureAlbum,Discretization,Graphic,Full,Elements,Choralies,Content,Title,ByOne,Design:./renderer/choralies_render_Pictures_full_for_main.xmi
 TypeInfo,Text,Renderer,Discretization,GLC,Elements,All,Content,Tweets,Design:./renderer/glc_render_Twitter_for_scrolling_simple.xmi
+AnnounceTitle,Discretization,Logo,Graphic,FilterByDate,FromSource,News,Title,Design,TypeInfo,EPU,Renderer,Text,UNS,Elements,Content,ByOne:./renderer/polytech_render_Announces_for_main_zone.xmi
 IRSAM,Discretization,Logo,Graphic,FromSource,Design,TypeInfo,Renderer,Full,Elements,Content,ByOne,Video:./renderer/irsam_render_video.xmi
 Discretization,All,Tweets,Title,Design,TypeInfo,Renderer,Text,Main,GLC,Elements,Content,FromTweet:./renderer/glc_render_Twitter_for_main_different_title.xmi
 PlaylistVideo,Discretization,Graphic,Choralies,Title,Design,Theatre,TypeInfo,Renderer,Text,Full,Elements,Content,ByOne:./renderer/choralies_render_Video_for_theatre.xmi
@@ -48,7 +49,6 @@ TypeInfo,Renderer,PictureAlbum,Discretization,Graphic,BySix,Elements,Choralies,C
 Discretization,Logo,FromSource,Scrolling,All,Tweets,Design,TypeInfo,Renderer,Text,GLC,Elements,Content:./renderer/glc_render_Twitter_for_scrolling_with_logo_twitter.xmi
 AnnounceTitle,Discretization,Logo,FilterByDate,FromSource,News,Push,Title,Design,TypeInfo,Renderer,Text,GLC,Elements,Content,ByOne:./renderer/glc_render_Announces_for_push_different_title.xmi
 Discretization,Logo,FromSource,Location,Calendar,Title,Design,TypeInfo,Renderer,Main,GLC,Elements,FrenchDate,Content,ByOne:./renderer/glc_render_ICalReader_for_main_same_title.xmi
-AnnounceTitle,Discretization,Logo,Graphic,FilterByDate,FromSource,News,Title,Design,TypeInfo,EPU,Renderer,Text,UNS,Elements,Content,ByOne:./renderer/polytech_render_Annonces_for_main_zone.xmi
 Discretization,Graphic,Affiche,Choralies,Title,Design,TypeInfo,Renderer,Text,Elements,Content,ByOne,Thumbnails:./renderer/choralies_render_Affiches_for_left_zone.xmi
 IRSAM,Discretization,Logo,FromSource,Title,Design,PredefinedTitle,TypeInfo,Renderer,Birthday,Elements,FirstName,Content,ByOne:./renderer/irsam_render_birthday.xmi
 TypeInfo,Renderer,Discretization,Elements,Accueil,CA,News,Content,ByOne,Design:./renderer/ca_render_accueil.xmi

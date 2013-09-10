@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Breves" id="Supralink_Breves">
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Supralink_Breves_372e0e25-311f-46bc-9991-9a6cbad3b112.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Supralink_Breves" pathPrefix="breve/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Supralink_Breves" editMessage="Editer Br√®ves d'actualit√© Supralink_Breves">
+      <parameters name="Nombre d'éléments" tip="Nombre maximum de brèves affichées." constraint="NONE" isPartOfPath="false" dbName="pagesize"/>
+      <parameters name="Catégorie" type="STRING" tip="La catégorie associée aux informations récupérées dans SupraLink." constraint="NONE" isPartOfPath="false" dbName="fields"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods/@parameters.0 //@personalization/@methods/@parameters.1"/>
+    </methods>
+    <list name="Nombre d'éléments" tip="Nombre maximum de brèves affichées." parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Catégorie" tip="La catégorie associée aux informations récupérées dans SupraLink." parameters="//@personalization/@methods/@parameters.1"/>
+  </personalization>
+</prodsource:Source>

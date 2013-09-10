@@ -2,4 +2,7 @@
 <prodbehavior:Behavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodbehavior="prodbehavior.yourcast.fr" name="ComportementSyntheseVocale.js">
   <function name="ComportementSyntheseVocale"/>
   <resource name="../utils/YourcastVocale/YourcastVocale.js" path="./js/behaviours/utils/YourcastVocale/YourcastVocale.js"/>
+  <resource name="../utils/SoundManager/script/soundmanager2-nodebug-jsmin.js" path="./js/behaviours/utils/SoundManager/script/soundmanager2-nodebug-jsmin.js"/>
+  <resource name="../utils/SoundManager/swf/soundmanager2.swf" path="./js/behaviours/utils/SoundManager/swf/soundmanager2.swf"/>
+  <resource name="../utils/SoundManager/swf/soundmanager2_flash9.swf" path="./js/behaviours/utils/SoundManager/swf/soundmanager2_flash9.swf"/>
 </prodbehavior:Behavior>
