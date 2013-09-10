@@ -111,7 +111,7 @@
                          <input name="paramDouble" ng-switch-when="NONE" type="number" step="0.1" ng-model="newCallValues[param.id]" required="">
                         <span class="error" ng-show="formAdd.paramDouble.$error.required"> Requis !</span>
                     </span>
-                                    <select name="{{param.nameInDB}}" ng-switch-when="list" ng-model="myOption" ng-options="element for element in param.values" ng-checked="setOptionInNewCall(param.id, myOption)"></select>
+                    <select name="{{param.nameInDB}}" ng-switch-when="LIST" ng-model="myOption" ng-options="element for element in param.values" ng-checked="setOptionInNewCall(param.id, myOption)"></select>
                                     <!--<a id="help-{{param.id}}" rel="popover"><i class="icon-question-sign icon-2x"></i></a>
                                     <a rel="tooltip" tooltip="param.help"><i class="icon-question-sign"></i></a> -->
                                 </div>
@@ -154,9 +154,10 @@
                                 </span>
 
                                 <span ng-switch-when="INT" ng-switch="params.typeCST">
-                                    <input ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-value="{{newCallValues[param.id]}}" ng-model="newCallValues[params.id]">
-                                     <input ng-switch-when="NUMBER" type="number" min="0" step="1" ng-value="{{newCallValues[param.id]}}" ng-model="newCallValues[params.id]">
-                                     <input ng-switch-when="NONE" type="number" min="0" step="1" ng-value="{{newCallValues[param.id]}}" ng-model="newCallValues[params.id]">
+                                    <span>{{newCallValues[params.id]}}</span>
+                                    <input ng-model="newCallValues[params.id]" ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1">
+                                     <input ng-model="newCallValues[params.id]" ng-switch-when="NUMBER" type="number" min="0" step="1">
+                                     <input ng-model="newCallValues[params.id]" ng-switch-when="NONE" type="number" min="0" step="1">
                                 </span>
                                 <span ng-switch-when="LONG" ng-switch="params.typeCST">
                                     <input ng-switch-when="POSITIVE_NUMBER" type="number" min="0" step="1" ng-model="newCallValues[params.id]">

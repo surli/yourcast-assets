@@ -1,25 +1,28 @@
 <div class="hero-unit" xmlns="http://www.w3.org/1999/html">
-   <h2 style="text-align: center"> WELCOME TO YourCast Personalizer </h2>
+    <h2 style="text-align: center"> WELCOME TO YourCast Personalizer </h2>
     <p></p>
-    <p></p>
+    <div></div>
 
     <div style="text-align: center">
-        <form name="auth" class="form-horizontal" ng-submit="connect({});">
-            <p>
-                <label class="control-label"> Identification </label>
-                <input name="login" type="text" placeholder="Saisissez votre login" ng-model="login" required="">
-                <!-- <span class="error" ng-show="auth.login.$error.required"> Requis !</span> -->
-            </p>
-
-            <p>
-                <label class="control-label">Mot de passe : </label>
-                <input name="password" type="password" placeholder="Saisissez votre mot de passe" ng-model="password" required="">
-                <!-- <span class="error" ng-show="auth.password.$error.required"> Requis !</span> -->
-            </p>
+        <!--<form name="auth" class="form-horizontal" ng-submit="connect({});"> -->
+        <p>
+         <!--<label class="control-label"> Identification : </label> -->
+        <form ng-submit="connect({});">
+        Identification :  <input name="login" type="text" placeholder="Saisissez votre login" ng-model="login" required="">
+            <!-- <span class="error" ng-show="auth.login.$error.required"> Requis !</span> -->
         </form>
+        </p>
+
+        <p>
+           <!-- <label class="control-label">Mot de passe : </label> -->
+            <form ng-submit="connect({});">
+            Mot de passe : <input name="password" type="password" placeholder="Saisissez votre mot de passe" ng-model="password" required="">
+            <!-- <span class="error" ng-show="auth.password.$error.required"> Requis !</span> -->
+        </form>
+        </p>
     </div>
 
     <div style="text-align: right">
-        <button class="btn btn-large" ng-click="connect()"> Se connecter </button>
+        <button class="btn btn-large" ng-click="connect()"> Se connecter <i class="icon-double-angle-right"></i></button>
     </div>
 </div>
