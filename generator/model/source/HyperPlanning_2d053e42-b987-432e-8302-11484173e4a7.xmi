@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="HyperPlanning" id="HyperPlanning">
+  <service name="sources-hyperplanning.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="HyperPlanning_2d053e42-b987-432e-8302-11484173e4a7.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="getFreeRooms" pathPrefix="free_room_date/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  HyperPlanning" editMessage="Editer HyperPlanning des salles libres HyperPlanning">
+      <parameters name="Date" type="STRING" tip="Une date au format yyyyMMdd" constraint="NONE" dbName="date"/>
+    </methods>
+    <list name="Date" tip="Une date au format yyyyMMdd" parameters="//@personalization/@methods/@parameters.0"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-hyperplanning" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
