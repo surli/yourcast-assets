@@ -27,8 +27,8 @@
                     <td>
                         <span ng-show="showTime[callID]">
                             <input ng-model="mapTime[zone][callID]" type="number" min="0" step="1">
-                            </span><button ng-show="showTime[callID]" class="btn btn-small" ng-click="setTime(zone, callID)">Valider </button>
-                        
+                            <button ng-show="showTime[callID]" class="btn btn-small" ng-click="setTime(zone, callID)">Valider </button>
+                        </span>
                     </td>
                 </tr>
             </table>
@@ -37,15 +37,15 @@
                    <h4>Timeout :<a href="" ng-click="showTimeoutEdition(zone)"> {{requestTimeout[zone]}}</a></h4> 
                     <span ng-show="showSetTimeout[zone]">
                             <input ng-model="requestTimeout[zone]" type="text">
-                            </span><button ng-show="showSetTimeout[zone]" class="btn btn-small" ng-click="setRequestTimeout(zone, requestTimeout[zone], requestUrl[zone])">Valider </button>
-                        
+                            <button ng-show="showSetTimeout[zone]" class="btn btn-small" ng-click="setRequestTimeout(zone, requestTimeout[zone], requestUrl[zone])">Valider </button>
+                        </span>
                </div>
                 <div style="text-align:left" ng-show="hasRequestUrl(zone)">
                     <h4>URL de la requête  :<a href="" ng-click="showRequestEdition(zone)"> {{requestUrl[zone]}}</a></h4> 
                     <span ng-show="showSetRequest[zone]">
                             <input ng-model="requestUrl[zone]" type="text">
-                            </span><button ng-show="showSetRequest[zone]" class="btn btn-small" ng-click="setRequestTimeout(zone, requestTimeout[zone], requestUrl[zone])">Valider </button>
-                        
+                            <button ng-show="showSetRequest[zone]" class="btn btn-small" ng-click="setRequestTimeout(zone, requestTimeout[zone], requestUrl[zone])">Valider </button>
+                        </span>
                 </div>
             </div>
         </div>
