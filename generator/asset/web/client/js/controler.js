@@ -109,7 +109,7 @@ var Zone = Class.create({
         if (!is_empty(url_conf) && url_conf) {
 
             // Effecture la requête Ajax
-            new Ajax.Request(url_conf, {
+            new Ajax.Request(DOMAIN_PATH+url_conf, {
                 // On utilise un get
                 method: 'get',
                 // Si la requête est un succès
@@ -170,7 +170,7 @@ var Zone = Class.create({
                 onFailure: function(transport) {
 
                     // Création d'une exception
-                    throw new Exception("controler.js", "L'url de la configuration n'est pas correct (" + transport + ") donc le chargement se fera par rapport aux paramètres", new Error().lineNumber);
+                    throw new Exception("controler.js", "L'url (" + url_conf + ") de la configuration n'est pas correct (erreur : "+transport.status+") donc le chargement se fera par rapport aux paramètres", new Error().lineNumber);
 
                 }
 
