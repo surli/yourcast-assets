@@ -22,7 +22,7 @@ loadLess(LESS_ROOT + '/ca_render_shedule.less');
 
 // On lit le fichier JSon pour les exceptions concernant les lieux
 var xmlhttp = new XMLHttpRequest();
-xmlhttp.open("GET", "/yourcast-CA-client/data/filtreCalendar.json", false);
+xmlhttp.open("GET", "filtreCalendar.json", false);
 xmlhttp.send(null);
 
 if(xmlhttp.readyState !== 4 || xmlhttp.status!== 200)
