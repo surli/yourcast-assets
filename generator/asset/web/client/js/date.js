@@ -192,20 +192,29 @@ function display_date_and_hour(date) {
 }
 
 
+/**
+ *  Fonction utilisée pour savoir si la date donnée se trouve dans une plage 
+ *  horaire d'une "pause" / d'une inactivité. Tous les paramètres peuvent être 
+ *  des Date ou des Timestamp indifféremment.
+ */
+function date_between_date(plage_horaire_debut, plage_horaire_fin, date_tested) {
 
+    // Si un des paramètres n'est pas défini
+    if(typeof plage_horaire_debut === 'undefined' || typeof plage_horaire_fin === 'undefined' || typeof date_tested === 'undefined') {
+        throw new Exception("[moteur/js/date.js] date_between_date", "L'un des paramètres n'est pas défini.");
+    }
 
+    // Transformation en timestamp
+    var plage_horaire_debut_tmp    = plage_horaire_debut instanceof Date ? plage_horaire_debut.getTime() : plage_horaire_debut;
+    var plage_horaire_fin_tmp      = plage_horaire_fin instanceof Date ? plage_horaire_fin.getTime() : plage_horaire_fin;
+    var date_tested_tmp            = date_tested instanceof Date ? date_tested.getTime() : date_tested;
 
+    // On test si la date est dans la plage horaire
+    if(date_tested_tmp > plage_horaire_debut_tmp && date_tested_tmp < plage_horaire_fin_tmp)
+        return true;
+    
+    // Elle n'y est pas
+    else
+        return false;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

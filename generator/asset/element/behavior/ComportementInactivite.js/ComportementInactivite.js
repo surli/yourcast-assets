@@ -83,33 +83,7 @@ var ComportementSmooth = Class.create(Comportement, {
 
 });
 
-/**
- *  Rights :
- *
- *      Copyright (c) 2013 YourCast - I3S/CNRS ADAM/INRIA.
- *
- *      All rights reserved. This program and the 
- *      accompanying materials are made available under the 
- *      terms of the GNU Public License v3.0 which accompanies 
- *      this distribution, and is available at
- *      http://www.gnu.org/licenses/gpl.html
- *
- *  Informations :
- *
- *      La classe comportement alternance rÈutilise la classe
- *      comportement et alterne deux styles diffÈrends de
- *      couleur pour la maquette de ClÈment Ader.
- *
- *  Versions :
- *
- *      1.0.0 : CrÈation d'une classe fonctionnelle.
- *
- *  Contributors :
- *
- *      Simon Urli (simon.urli@gmail.com)
- *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
- */
-
+// Classe
 var ComportementAlternanceSmooth = Class.create(ComportementSmooth, {
     /**
      *  Constructeur par dÈfaut
@@ -193,34 +167,6 @@ var ComportementAlternanceSmooth = Class.create(ComportementSmooth, {
     }
 
 });
-
-/**
- *  Rights :
- *
- *      Copyright (c) 2013 YourCast - I3S/CNRS ADAM/INRIA.
- *
- *      All rights reserved. This program and the 
- *      accompanying materials are made available under the 
- *      terms of the GNU Public License v3.0 which accompanies 
- *      this distribution, and is available at
- *      http://www.gnu.org/licenses/gpl.html
- *
- *  Informations :
- *
- *      La classe comportement alternance r√©utilise la classe
- *      comportement et alterne une infinit√© de styles diff√©rends.
- *      Par exemple pour la maquette de Cl√©ment Ader, on alterne
- *      un style noir avec un style Jaune.
- *
- *  Versions :
- *
- *      1.0.0 : Cr√©ation d'une classe fonctionnelle.
- *
- *  Contributors :
- *
- *      Simon Urli (simon.urli@gmail.com)
- *      Guillaume Golfieri (golfieri.guillaume@gmail.com)
- */
 
 // Classe
 var ComportementAlternanceSmoothCA = Class.create(ComportementAlternanceSmooth, {
@@ -340,61 +286,65 @@ var ComportementInactivite = Class.create(Comportement, {
      */
     run: function($super) {
 
-        // Il faut rÈcupÈrer les donnÈes
-        // TODO Faire en sorte d'avoir la bonne url ici
-        new Ajax.Request(url_conf, {
-            
-            // On utilise un get
-            method: 'get',
-            
-            // Si la requ√™te est un succ√®s
-            onSuccess: function(transport) {
+        clearTimeout(this.timeout_inactivite);
 
-                // On v√©rifie que le status est bon
-                if (transport.status === 200) {
+        this.tmp = false;
 
-                    // On r√©cup√®re la r√©ponse du JSon
-                    var textContent = transport.responseText;
+        // Boucle pour trouver le prochain √©l√©ment √† √©couter
+        for(var i = 0 ; i < this.zone_concerne.getInfos().length ; i++) {
 
-                    // On essaie de le traiter
-                    try {
-
-                        // On parse et on stock le JSon
-                        this.json_conf = JSON.parse(textContent);
-                        
+            // Test si l'information est d√©finie
+            if (typeof this.zone_concerne.getInfos()[i] !== 'undefined') {
+                
+                // Test si le callId correspond √† celui de la section
+                if(this.zone_concerne.getInfos()[i].callId === "Pause") {
+                    if (!this.tmp && date_between_date(this.zone_concerne.getInfos()[i].begin, this.zone_concerne.getInfos()[i].end, new Date())) {
+                        this.tmp = true;
+                        break;
                     }
-
-                    // Un erreur est survenue
-                    catch (e) {
-
-                        throw new Exception("controler.js", "Le fichier JSon de configuration n'est pas correct." + e, new Error().lineNumber);
-
-                    }
-
                 }
-
-            },
-            onFailure: function(transport) {
-
-                // Cr√©ation d'une exception
-                throw new Exception("controler.js", "L'url de la configuration n'est pas correct (" + transport + ") donc le chargement se fera par rapport aux param√®tres", new Error().lineNumber);
-
+                
             }
-
-        });
-
-        // Si on est dans les bornes On lance le run
-        // TODO 
-        if (date_between_date(pause[i].begin, pause[i].end, new Date())) {
-            $(this.zone_conerne.id).show();
-            $super();
-        } 
+            
+        }
         
-        // Sinon on cache la zone
-        else {
-            $(this.zone_conerne.id).hide();
+        // Pas de pause dÈtectÈ on cache la zone et on boucle la seconde
+        if(!this.tmp) {
+            this.zone_concerne.cacherZone();
+            this.stop();
+            this.reset();
+            var self = this;
+            this.timeout_inactivite = setTimeout(function() { self.zone_concerne.request(); }, 1000);
+        } else {
+            this.zone_concerne.afficherZone();
+            $super();
         }
 
+    },
+    /**
+     *  Passage ‡ l'ÈlÈment suivant
+     *
+     *  Le passage ‡ l'ÈlÈment suivant ne peut se faire
+     *  que si le comportement est en route. Sinon elle
+     *  ne fait rien. Lorsque la boucle arrive ‡ la fin
+     *  des informations de la zone, elle retourne au 
+     *  dÈbut. Elle alterne deux styles diffÈrends.
+     */
+    next: function($super) {
+
+        // On n'affiche pas les ÈlÈments de pause
+        if(this.zone_concerne.getInfos()[this.indice].callId && this.zone_concerne.getInfos()[this.indice].callId === "Pause") {
+
+            // On incr√©mente l'indice
+            this.indice = (this.indice + 1) % this.zone_concerne.getInfos().length;
+
+        } else {
+            
+            $super();
+            
+        }
+        
+        
     }
 
 });
