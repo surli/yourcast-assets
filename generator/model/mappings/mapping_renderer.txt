@@ -60,7 +60,7 @@ Discretization,Graphic,Affiche,Choralies,Title,Design,TypeInfo,Renderer,Text,Ele
 TypeInfo,Text,IRSAM,Renderer,Discretization,Elements,Speakable,Calendar,Content,ByOne,Design:./renderer/render_vocale_agenda.xmi
 RSSFeed,Discretization,Graphic,Title,Design,TypeInfo,Renderer,Text,EPU,UNS,Elements,Content,ByOne:./renderer/polytech_render_RSS_for_main.xmi
 Discretization,Logo,FromSource,CA,Title,Design,TypeInfo,Renderer,Text,MenuName,Elements,Content,Menus,ByOne:./renderer/ca_render_menu.xmi
-StaffScheduling,TypeInfo,Text,Renderer,Discretization,Logo,Elements,FromSource,CA,Content,ByOne,Design:./renderer/irsam_render_workers.xmi
+StaffScheduling,TypeInfo,Text,IRSAM,Renderer,Discretization,Logo,Elements,FromSource,Content,ByOne,Design:./renderer/irsam_render_workers.xmi
 TypeInfo,Renderer,AnnounceTitle,Discretization,Logo,Elements,FromSource,CA,News,Title,ByOne,Design:./renderer/ca_render_announcement.xmi
 User,TypeInfo,Text,Renderer,Discretization,Logo,GLC,Elements,All,Content,Tweets,Design:./renderer/glc_render_Twitter_for_scrolling_with_logo_user_each_twitter.xmi
 Discretization,Logo,FromSource,CA,Title,Design,PredefinedTitle,TypeInfo,Renderer,Birthday,Elements,FirstName,Content,ByOne:./renderer/ca_render_birthdays.xmi

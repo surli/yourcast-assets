@@ -3,6 +3,40 @@
   <function name="ca_render_weather"/>
   <resource name="../utils/meteo.js" path="./js/renderers/utils/meteo.js"/>
   <resource name="img/logos/weather.png" type="image" path="img/logos/weather.png"/>
-  <resource name="./img/weather_icons/brouillard.png" type="image" path="./img/weather_icons/brouillard.png"/>
-  <resource name="less/irsam_render_weather_irsam.less" type="css" path="less/irsam_render_weather_irsam.less"/>
+  <resource name="img/weather_icons/Orages.png" type="image" path="img/weather_icons/Orages.png"/>
+  <resource name="img/weather_icons/OragesPlus.png" type="image" path="img/weather_icons/OragesPlus.png"/>
+  <resource name="img/weather_icons/brouillard.png" type="image" path="img/weather_icons/brouillard.png"/>
+  <resource name="img/weather_icons/brume.png" type="image" path="img/weather_icons/brume.png"/>
+  <resource name="img/weather_icons/chaleur.png" type="image" path="img/weather_icons/chaleur.png"/>
+  <resource name="img/weather_icons/froid.png" type="image" path="img/weather_icons/froid.png"/>
+  <resource name="img/weather_icons/fumee.png" type="image" path="img/weather_icons/fumee.png"/>
+  <resource name="img/weather_icons/grele.png" type="image" path="img/weather_icons/grele.png"/>
+  <resource name="img/weather_icons/neige_grele.png" type="image" path="img/weather_icons/neige_grele.png"/>
+  <resource name="img/weather_icons/neige_grele_vent.png" type="image" path="img/weather_icons/neige_grele_vent.png"/>
+  <resource name="img/weather_icons/neige_pluie.png" type="image" path="img/weather_icons/neige_pluie.png"/>
+  <resource name="img/weather_icons/neige_pluie_froid.png" type="image" path="img/weather_icons/neige_pluie_froid.png"/>
+  <resource name="img/weather_icons/nuages.png" type="image" path="img/weather_icons/nuages.png"/>
+  <resource name="img/weather_icons/nuages_neige.png" type="image" path="img/weather_icons/nuages_neige.png"/>
+  <resource name="img/weather_icons/nuages_neigePlus.png" type="image" path="img/weather_icons/nuages_neigePlus.png"/>
+  <resource name="img/weather_icons/nuages_neige_grele.png" type="image" path="img/weather_icons/nuages_neige_grele.png"/>
+  <resource name="img/weather_icons/nuit.png" type="image" path="img/weather_icons/nuit.png"/>
+  <resource name="img/weather_icons/nuit_nuages.png" type="image" path="img/weather_icons/nuit_nuages.png"/>
+  <resource name="img/weather_icons/nuit_nuagesPlus.png" type="image" path="img/weather_icons/nuit_nuagesPlus.png"/>
+  <resource name="img/weather_icons/nuit_nuages_moins.png" type="image" path="img/weather_icons/nuit_nuages_moins.png"/>
+  <resource name="img/weather_icons/nuit_nuages_neige_grele.png" type="image" path="img/weather_icons/nuit_nuages_neige_grele.png"/>
+  <resource name="img/weather_icons/nuit_orages_pluie.png" type="image" path="img/weather_icons/nuit_orages_pluie.png"/>
+  <resource name="img/weather_icons/nuit_pluie.png" type="image" path="img/weather_icons/nuit_pluie.png"/>
+  <resource name="img/weather_icons/orages_pluie.png" type="image" path="img/weather_icons/orages_pluie.png"/>
+  <resource name="img/weather_icons/pluie.png" type="image" path="img/weather_icons/pluie.png"/>
+  <resource name="img/weather_icons/pluie_vent.png" type="image" path="img/weather_icons/pluie_vent.png"/>
+  <resource name="img/weather_icons/poussiere.png" type="image" path="img/weather_icons/poussiere.png"/>
+  <resource name="img/weather_icons/soleil.png" type="image" path="img/weather_icons/soleil.png"/>
+  <resource name="img/weather_icons/soleil_nuages.png" type="image" path="img/weather_icons/soleil_nuages.png"/>
+  <resource name="img/weather_icons/soleil_nuagesMoins.png" type="image" path="img/weather_icons/soleil_nuagesMoins.png"/>
+  <resource name="img/weather_icons/soleil_nuagesPlus.png" type="image" path="img/weather_icons/soleil_nuagesPlus.png"/>
+  <resource name="img/weather_icons/soleil_orages_pluie.png" type="image" path="img/weather_icons/soleil_orages_pluie.png"/>
+  <resource name="img/weather_icons/soleil_pluie.png" type="image" path="img/weather_icons/soleil_pluie.png"/>
+  <resource name="img/weather_icons/unknow.png" type="image" path="img/weather_icons/unknow.png"/>
+  <resource name="img/weather_icons/vent.png" type="image" path="img/weather_icons/vent.png"/>
+  <resource name="less/ca_render_weather.less" type="css" path="less/ca_render_weather.less"/>
 </prodrenderer:Renderer>

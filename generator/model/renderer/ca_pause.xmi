@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" name="ca_pause.js" infoType="Inactivite">
+  <function name="ca_pause"/>
+</prodrenderer:Renderer>
