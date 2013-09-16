@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Intrassoc_Stats" id="Intrassoc_Stats">
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Intrassoc_Stats_fa38f182-47a3-4e41-a232-ef40706846e6.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Intrassoc_Stats" pathPrefix="stats/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Intrassoc_Stats" editMessage="Editer Statistiques vari√©es sur les Choralies Intrassoc_Stats">
+      <parameters name="Thème" type="STRING" tip="Thème des statistiques parmi &quot;repas&quot;, &quot;departement&quot;, &quot;structure&quot;, &quot;role&quot;, &quot;activite&quot;." constraint="NONE" dbName="theme"/>
+      <parameters name="Nombre d'éléments" tip="Nombre max d'informations récupérées." constraint="NONE" dbName="limit"/>
+    </methods>
+    <list name="Thème" tip="Thème des statistiques parmi &quot;repas&quot;, &quot;departement&quot;, &quot;structure&quot;, &quot;role&quot;, &quot;activite&quot;." parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Nombre d'éléments" tip="Nombre max d'informations récupérées." parameters="//@personalization/@methods/@parameters.1"/>
+  </personalization>
+</prodsource:Source>
