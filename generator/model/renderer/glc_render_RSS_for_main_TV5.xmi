@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="15" name="glc_render_RSS_for_main_TV5.js" infoType="RSSFeed">
-  <function name="glc_render_RSS_for_main_TV5"/>
-  <resource name="img/logos/TV5.png" type="image" path="img/logos/TV5.png"/>
-  <resource name="less/glc_render_RSS_for_main_TV5.less" type="css" path="less/glc_render_RSS_for_main_TV5.less"/>
-</prodrenderer:Renderer>

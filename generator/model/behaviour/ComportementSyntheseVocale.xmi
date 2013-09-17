@@ -5,4 +5,6 @@
   <resource name="../utils/SoundManager/script/soundmanager2-nodebug-jsmin.js" path="./js/behaviours/utils/SoundManager/script/soundmanager2-nodebug-jsmin.js"/>
   <resource name="../utils/SoundManager/swf/soundmanager2.swf" path="./js/behaviours/utils/SoundManager/swf/soundmanager2.swf"/>
   <resource name="../utils/SoundManager/swf/soundmanager2_flash9.swf" path="./js/behaviours/utils/SoundManager/swf/soundmanager2_flash9.swf"/>
+  <resource name="../utils/SoundManager/swf/soundmanager2_debug.swf" path="./js/behaviours/utils/SoundManager/swf/soundmanager2_debug.swf"/>
+  <resource name="../utils/SoundManager/swf/soundmanager2_flash9_debug.swf" path="./js/behaviours/utils/SoundManager/swf/soundmanager2_flash9_debug.swf"/>
 </prodbehavior:Behavior>

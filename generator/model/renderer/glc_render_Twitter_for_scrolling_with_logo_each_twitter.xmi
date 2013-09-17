@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="20" name="glc_render_Twitter_for_scrolling_with_logo_each_twitter.js" infoType="Tweet">
   <function name="glc_render_Twitter_for_scrolling_with_logo_each_twitter"/>
-  <resource name="../utils/twitter.js" path="../utils/twitter.js"/>
+  <resource name="../utils/twitter.js" path="js/renderers/utils/twitter.js"/>
   <resource name="img/logos/twitter_bird.png" type="image" path="img/logos/twitter_bird.png"/>
   <resource name="img/left_arrow.png" type="image" path="img/left_arrow.png"/>
   <resource name="less/glc_render_Twitter_for_scrolling_with_logo_each_twitter.less" type="css" path="less/glc_render_Twitter_for_scrolling_with_logo_each_twitter.less"/>

@@ -1,6 +1,6 @@
 Orientation,Product,Logo,Graphic,Landscape,CA,Title,MainZone_CA,Design,Text,Full,Elements,Zone,Content:./zone/mainZone_ca.xmi
 Orientation,Product,Logo,Graphic,Landscape,Choralies,Design,Text,headerZone_choralies,Elements,Zone,Content,Thumbnails:./zone/headerZone_choralies.xmi
-Orientation,Product,Logo,Graphic,Title,Design,Text,GLC,RightZone_glc,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_glc.xmi
+Orientation,Product,Logo,Graphic,Bloc,Title,Design,Text,GLC,RightZone_glc,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_glc.xmi
 Orientation,Product,Graphic,Choralies,Title,Design,publicMainZone_choralies,Text,Full,Elements,Portrait,Zone,Content,Thumbnails:./zone/publicMainZone_choralies.xmi
 Text,Orientation,scrollingBottomZone_choralies,Product,Landscape,Elements,Choralies,Zone,Content,Design:./zone/scrollingBottomZone_choralies.xmi
 Orientation,Product,Logo,Graphic,MainZone_Polytech,Landscape,Title,Design,Text,EPU,Full,Elements,Zone,Content:./zone/polytech_mainZone.xmi

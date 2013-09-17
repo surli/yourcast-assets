@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="10" name="glc_render_ICalReader_for_main_same_title.js" infoType="Calendar">
   <function name="glc_render_ICalReader_for_main_same_title"/>
-  <resource name="../utils/calendar.js" path="../utils/calendar.js"/>
+  <resource name="../utils/calendar.js" path="js/renderers/utils/calendar.js"/>
   <resource name="img/logos/calendar.png" type="image" path="img/logos/calendar.png"/>
   <resource name="img/smooth.png" type="image" path="img/smooth.png"/>
   <resource name="less/glc_render_ICalReader_for_main_same_title.less" type="css" path="less/glc_render_ICalReader_for_main_same_title.less"/>

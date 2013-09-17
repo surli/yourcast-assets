@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="15" name="glc_render_RSS_for_main_CNN.js" infoType="RSSFeed">
-  <function name="glc_render_RSS_for_main_CNN"/>
-  <resource name="img/logos/CNN.png" type="image" path="img/logos/CNN.png"/>
-  <resource name="less/glc_render_RSS_for_main_CNN.less" type="css" path="less/glc_render_RSS_for_main_CNN.less"/>
-</prodrenderer:Renderer>
