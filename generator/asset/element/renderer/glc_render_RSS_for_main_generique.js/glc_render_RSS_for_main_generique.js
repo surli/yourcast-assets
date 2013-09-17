@@ -45,9 +45,9 @@ function glc_render_RSS_for_main(collection, zone, logo, timeInfo) {
 }
 
 /*
- * work on rss feed source CNN
+ * work on rss feed source universite
  */
-function render_RSS_for_main_CNN(collection, zone, timeInfo){
+function glc_render_RSS_for_main_generique(collection, zone, timeInfo){
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 5;
-	return render_RSS_for_main(collection, zone, "img/logos/CNN.png", timeInfo);
+	return glc_render_RSS_for_main(collection, zone, "img/logos/rss.png", timeInfo);
 }

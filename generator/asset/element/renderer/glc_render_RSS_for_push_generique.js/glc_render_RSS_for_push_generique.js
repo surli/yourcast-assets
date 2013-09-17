@@ -47,7 +47,7 @@ function glc_render_RSS_for_push(collection, zone, logo, timeInfo) {
 	}
 }
 
-function render_RSS_for_push_TV5(collection, zone, timeInfo){
+function render_RSS_for_push_generique(collection, zone, timeInfo){
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 5;
-	return render_RSS_for_push(collection, zone, "img/logos/TV5.png", timeInfo);
+	return render_RSS_for_push(collection, zone, "img/logos/rss.png", timeInfo);
 }
