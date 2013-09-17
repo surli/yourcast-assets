@@ -53,10 +53,10 @@ var ComportementScrollingEachLogoLeft = Class.create(Comportement, {
         var time = 0;
 
         // On récupère les informations
-        for (var i = 0; i < this.zone_concerne.getInfos(); i++) {
+        for (var i = 0; i < this.zone_concerne.counterInfo; i++) {
 
             // On stocke l'info
-            info = this.zone_concerne.getInfos[i];
+            info = this.zone_concerne.getInfos()[i];
 
             // On ajoute le content au content
             content += info.content;

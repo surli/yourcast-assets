@@ -54,10 +54,10 @@ var ComportementScrollingLeftLogoLeft = Class.create(Comportement, {
         var time = 0;
 
         // On récupère les informations
-        for (var i = 0; i < this.zone_concerne.getInfos(); i++) {
+        for (var i = 0; i < this.zone_concerne.counterInfo; i++) {
 
             // On stocke l'info
-            info = this.zone_concerne.getInfos[i];
+            info = this.zone_concerne.getInfos()[i];
 
             // On ajoute le content au content
             content += info.content;
@@ -74,6 +74,8 @@ var ComportementScrollingLeftLogoLeft = Class.create(Comportement, {
         var tailleSpan = document.getElementById('scrollcontent_' + this.zone_concerne.id).offsetWidth;
 
         var leftPourcent = (tailleSpan * 100) / this.zone_concerne.divMarquee.offsetWidth;
+
+		var style = create_or_replace_behaviour_style_zone(this.zone_concerne.id);
 
         // Ajout des animations
         style.innerHTML = "#" + this.zone_concerne.id + " span#scrollcontent_" + this.zone_concerne.id + " { ";

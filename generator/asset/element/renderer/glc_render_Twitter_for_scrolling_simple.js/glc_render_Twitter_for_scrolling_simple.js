@@ -14,7 +14,7 @@ loadScript(RENDERER_PATH+"/utils/twitter.js");
 function glc_render_Twitter_for_scrolling_simple(tableau, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 50;
 	var content = "";
-	var time = timeInfo;
+	var time = 0;
 	for (var indice = 0; indice < tableau.tweets.length; indice++) {
 		var elements = tableau.tweets[indice];
 		
@@ -27,7 +27,7 @@ function glc_render_Twitter_for_scrolling_simple(tableau, zone, timeInfo) {
 		content += "<span class='twitter_title'>"+titleTwitter+"</span>";
 		content += "<span class='twitter_Content'>"+contentTwitter+" &bull; </span>";
 		content += "</span>";
-		
+		time += timeInfo;
 	}
 
 	var dico = {"content": content, "time" : time};

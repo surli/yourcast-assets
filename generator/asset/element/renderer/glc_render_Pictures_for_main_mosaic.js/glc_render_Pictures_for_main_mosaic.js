@@ -16,34 +16,40 @@ function glc_render_Pictures_for_main_mosaic(collection, zone, timeInfo) {
 	var logo = '<img src="img/logos/picture.png"/>';
 	zone.loadImage("img/logos/picture.png");
 	var title = collection.albumName;
-	if (title.length > 30) {title = title.substring(0, 30); title += " ...";}
-	var time = timeInfo;
 	var tableau = collection.pictures;
 	
-	var zoneHeight = $(zone.id).getHeight() - 135;
-	
-	var content = "<div class='main_div_zone1 mosaicPictures' style='height:"+zoneHeight+"px;'>";	
-	
-	for (var indice = 0; indice < tableau.length; indice++){
-		elements = tableau[indice].thumbs[2].url;
-		zone.loadImage(elements);
-
-		if ((indice+1) % 6 == 0) {
-			content += "<span><img src='"+elements+"'/></span>";
-			content += "</div>";
-			var dico = {"content": content, "logo": logo, "title": title, "time" : time};
-			zone.pushInfo(dico);
-			content = "<div class='main_div_zone1 mosaicPictures' style='height:"+zoneHeight+"px;'>";
-		} else {
-			if (indice % 3 == 0 && indice % 6 !=0)
-				content += "<br/>";
-			content += "<span><img src='"+elements+"'/></span>";
+	if (typeof tableau !== 'undefined') {
+		if (typeof title !== 'undefined') {
+			if (title.length > 30) {title = title.substring(0, 30); title += " ...";}
 		}
-		if (indice+1 == tableau.length){
-			if ((indice+1) % 6 != 0) {
+		var time = timeInfo;
+		
+		
+		var zoneHeight = $(zone.id).getHeight() - 135;
+		
+		var content = "<div class='main_div_zone1 mosaicPictures' style='height:"+zoneHeight+"px;'>";	
+		
+		for (var indice = 0; indice < tableau.length; indice++){
+			elements = tableau[indice].thumbs[2].url;
+			zone.loadImage(elements);
+	
+			if ((indice+1) % 6 == 0) {
+				content += "<span><img src='"+elements+"'/></span>";
 				content += "</div>";
 				var dico = {"content": content, "logo": logo, "title": title, "time" : time};
 				zone.pushInfo(dico);
+				content = "<div class='main_div_zone1 mosaicPictures' style='height:"+zoneHeight+"px;'>";
+			} else {
+				if (indice % 3 == 0 && indice % 6 !=0)
+					content += "<br/>";
+				content += "<span><img src='"+elements+"'/></span>";
+			}
+			if (indice+1 == tableau.length){
+				if ((indice+1) % 6 != 0) {
+					content += "</div>";
+					var dico = {"content": content, "logo": logo, "title": title, "time" : time};
+					zone.pushInfo(dico);
+				}
 			}
 		}
 	}
