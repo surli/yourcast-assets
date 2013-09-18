@@ -35,7 +35,7 @@ loadScript(RENDERER_PATH + "/utils/calendar.js");
  * - calendar_edt_summary
  * - calendar_edt_summary inProgress 
  */
-function render_ICalReader_for_push_edt(collection, zone, timeInfo) {
+function glc_render_ICalReader_for_push_edt(collection, zone, timeInfo) {
     timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 7;
     var logo = '<img src="img/logos/calendar.png"/>';
     zone.loadImage("img/logos/calendar.png");

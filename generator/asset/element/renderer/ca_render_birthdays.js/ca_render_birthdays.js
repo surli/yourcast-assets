@@ -6,11 +6,11 @@ loadLess(LESS_ROOT + '/ca_render_birthdays.less');
 function ca_render_birthdays(datas, zone, timeInfo) {
 
     // Test si la collection est null ou ind√©fini
-    if(typeof datas === 'undefined' ||†datas === null || datas.length === 0)
+    if(typeof datas === 'undefined' || datas === null || datas.length === 0)
         throw new InformationsError("The informations are not correct");
 
     // Test si la collection est null ou ind√©fini
-    if(typeof zone === 'undefined' ||†zone === null)
+    if(typeof zone === 'undefined' || zone === null)
         throw new ZoneError("The zone is undefined or null");
 
 
