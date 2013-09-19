@@ -29,7 +29,7 @@ function glc_render_RSS_for_push(collection, zone, logo, timeInfo) {
 		
 		///if (contentAnnounces.length > 200) {contentAnnounces = contentAnnounces.substring(0, 200); contentAnnounces += "...";}
 		
-		content += "<div id='"+zone.id+"_new_push' class='push_div_zone4' style='display:none;'>";
+		content += "<div id='"+zone.id+"_new_push' class='push_div_zone4'>";
 		content += "<div class='rss_body'>";
 			content += "<div class='rss_Title'>"+title+"</div>";
 			content += "<div class='rss_Content'>"+contentAnnounces+"</div>";			
@@ -49,5 +49,5 @@ function glc_render_RSS_for_push(collection, zone, logo, timeInfo) {
 
 function glc_render_RSS_for_push_generique(collection, zone, timeInfo){
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 5;
-	return render_RSS_for_push(collection, zone, "img/logos/rss.png", timeInfo);
+	return glc_render_RSS_for_push(collection, zone, "img/logos/rss.png", timeInfo);
 }

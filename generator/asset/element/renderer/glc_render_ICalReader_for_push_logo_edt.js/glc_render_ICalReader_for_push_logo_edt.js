@@ -53,7 +53,7 @@ function glc_render_ICalReader_for_push_logo_edt(collection, zone, timeInfo) {
         var date = get_date_from_timestamp(start);
         var eventsNum = 0;
 
-        content = "<div id='" + zone.id + "_new_push' class='push_div_zone4' style='display:none;'>";
+        content = "<div id='" + zone.id + "_new_push' class='push_div_zone4'>";
         content += "<div class='calendar_body'>";
         content += logo;
         content += "<div class='calendar_title'>" + title + "</div>";
