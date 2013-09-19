@@ -46,7 +46,7 @@
 
 // Création de l'instance du SoundManager2
 soundManager.setup({
-    url: 'utils/behaviours/utils/SoundManager/swf/',
+    url: 'js/behaviours/utils/SoundManager/swf/',
     onready: function() {
         // Callback si besoin
     }

@@ -38,7 +38,7 @@ function render_vocale_ephemeride(tableau, zone) {
     zone.newSound("On est actuellement " + get_a_day(date_actuelle.getDay()) + " " + date_actuelle.getDate() + " " + get_a_month(date_actuelle.getMonth()) + ". Il est " + date_actuelle.getHours() + " heures et " + date_actuelle.getMinutes() + " minutes.");
 
     // Si le title ou le contenu n'est pas défini
-    if (tableau.names || tableau.names.length > 0) {
+    if ((typeof tableau !== 'undefined') && (typeof tableau.names !== 'undefined') && (tableau.names.length > 0)) {
 
         // On envoie le son à la zone
         zone.newSound("Bonne fête aux " + tableau.names[Math.floor((Math.random()*tableau.names.length))]);

@@ -447,3 +447,96 @@ function render_day_atelier(elements) {
 	    return "";
 	}
 }
+
+function render_date_irsam(elements) {
+	if (elements.start == 0 || elements.end == 0){
+		return "";
+	} else {
+		var start = get_date_from_timestamp(elements.start);
+		var end = get_date_from_timestamp(elements.end);		
+		
+		/* RŽcupŽrer la date du jour et du lendemain*/
+		var currentDate = new Date().getTime();		
+		var tomorrow = new Date(currentDate + (24*60*60*1000));
+		currentDate = get_date_from_timestamp(currentDate);
+		tomorrow = get_date_from_timestamp(tomorrow);
+		
+		/* Ne pas afficher les Žv�nements passŽs*/
+		if(pastEvent(elements)){return "";}
+		
+		
+			
+	
+		if (start.year != end.year) {
+	        startDate = start.day + " " + start.month + " " + start.year;
+	        endDate = end.day + " " + end.month + " " + end.year;
+	    }
+	    else {
+	        startDate = start.day + " " + start.month;
+	        endDate = end.day + " " + end.month;
+	    }
+	
+	    var startTime = start.hour + "h" + start.min;
+	    var endTime = end.hour + "h" + end.min;
+	    var content = "";
+	    
+	    if (startTime == "00h00"){
+	    	startTime = "";
+	    }
+	    
+	    if (endTime == "00h00"){
+	    	endTime = "";
+	    }
+	    
+	    /* Si la date de dŽbut de l'Žv�nement est la m�me que la date du jour, alors on affiche pas la date de l'Žv�nement*/	    
+	    if(is_same_date(currentDate,start)){
+	    	if(startTime =="" && endTime == ""){
+	    		return  "";
+	    	}
+	    	else{
+	    		return "de <i>"+startTime+" </i> &agrave; <i>"+endTime+"</i>";
+	    	}
+	    }	   
+	    
+	    /* Cas o� la date de dŽbut de l'Žv�nement corespond au jour suivant*/
+	    if(is_same_date(tomorrow,start)){
+	    	if(startTime =="" && endTime == ""){
+	    		return  "demain";
+	    	}
+	    	else{
+	    		return "demain de <i>"+startTime+" </i> &agrave; <i>"+endTime+"</i>";
+	    	}
+	    
+	    }
+	    /* Si la date du jour de dŽbut et du jour de fin est la m�me*/
+	    if (is_same_date(start,end)){
+	    	
+	    	/*RŽcupŽrer le jour de l'Žv�nement*/
+			debut = new Date(elements.start);
+			jourDebut = get_a_day(debut.getDay());
+			
+	    	if(startTime =="" && endTime == ""){
+	    		content = "<i>"+jourDebut+" "+startDate+"</i>";
+		    	return content;
+	    	}
+	    	
+	    	content = "<i>"+jourDebut+" "+startDate+"</i> de <i>"+startTime+" </i> &agrave; <i>"+endTime+"</i>";
+	    	return content;
+	    }
+	    else {
+	    	
+	    	/*RŽcupŽrer les jours*/
+			debut = new Date(elements.start);
+			fin = new Date(elements.end);
+			jourDebut = get_a_day(debut.getDay());
+			jourFin = get_a_day(fin.getDay());
+			
+	    	if(startTime =="" && endTime == ""){
+	    		content = "du <i>"+jourDebut+" "+startDate+"</i>au<i> "+jourFin+" "+endDate+""; 
+	    	}
+	        content = "du <i>"+jourDebut+" "+startDate+"</i>&nbsp;<i>"+startTime+" </i>au<i> "+jourFin+" "+endDate+"</i>&nbsp;<i>"+endTime+"</i>";                    
+	    }
+	
+	    return content;
+	}
+}

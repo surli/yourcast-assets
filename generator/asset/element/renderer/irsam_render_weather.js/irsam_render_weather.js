@@ -74,7 +74,7 @@ function irsam_current_weather(collection, zone, timeInfo) {
         var elements = tableau[indice];
         
         // Le code de la météo
-        var currentCode = dicoMeteo[elements.weather_code];
+        var currentCode = dicoMeteo_irsam[elements.weather_code];
 
         // Récupération de la température
         var temp = elements.temp;
@@ -175,7 +175,7 @@ function irsam_forcast_weather(collection, zone, timeInfo) {
         var elements = tableau[indice].day[0];
         
         // Le code de la météo
-        var currentCode = dicoMeteo[elements.weather_code];
+        var currentCode = dicoMeteo_irsam[elements.weather_code];
 
         // Ajout du jour dans le titre
         var title = "Demain, " + firstLettertoUpperCase(get_a_day(new Date(tableau[indice].date).getDay()));

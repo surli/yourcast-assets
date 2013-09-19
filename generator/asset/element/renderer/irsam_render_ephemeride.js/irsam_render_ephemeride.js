@@ -30,8 +30,10 @@ function irsam_render_ephemeride(datas, zone, timeInfo) {
 	content += "<div class='main_div_zone1' >";
 	content += "<div id='ephemTitle'>Aujourd'hui, <i>le "+day+" "+month+"</i>, nous fetons les : </div>";
 
-	for (var indice = 0; indice < datas.saints.length; indice++) {
-		content += "<div class='ephemSaint'>"+datas.saints[indice].name+" ( "+datas.saints[indice].gender+" )</div>";
+	if ((typeof datas !== 'undefined') && (typeof datas.saints !== 'undefined')) {
+		for (var indice = 0; indice < datas.saints.length; indice++) {
+			content += "<div class='ephemSaint'>"+datas.saints[indice].name+" ( "+datas.saints[indice].gender+" )</div>";
+		}
 	}
 	content += "</div>";	
 	var dico = {"content": content, "logo": logo, "title": title, "time" : time};
