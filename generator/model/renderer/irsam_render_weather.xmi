@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="8" name="irsam_render_weather.js" infoType="Forecast">
   <function name="irsam_render_weather"/>
+  <resource name="../utils/meteo.js" path="js/renderers/utils/meteo.js"/>
   <resource name="img/logos/weather.png" type="image" path="img/logos/weather.png"/>
   <resource name="img/weather_icons/Orages.png" type="image" path="img/weather_icons/Orages.png"/>
   <resource name="img/weather_icons/OragesPlus.png" type="image" path="img/weather_icons/OragesPlus.png"/>
