@@ -4,6 +4,20 @@
   <resources name="img/yc_loading.gif" type="image" path="img/yc_loading.gif"/>
   <resources name="img/yourcast_background.png" type="image" path="img/yourcast_background.png"/>
   <resources name="img/yourcast_small_blue.png" type="image" path="img/yourcast_small_blue.png"/>
+  <resources name="img/announce_separator.png" type="image" path="img/announce_separator.png"/>
+  <resources name="img/bottom_arrow_edt.png" type="image" path="img/bottom_arrow_edt.png"/>
+  <resources name="img/bottom_arrow_edt_blue.png" type="image" path="img/bottom_arrow_edt_blue.png"/>
+  <resources name="img/date_small.png" type="image" path="img/date_small.png"/>
+  <resources name="img/date_white.png" type="image" path="img/date_white.png"/>
+  <resources name="img/date_white_inprogress.png" type="image" path="img/date_white_inprogress.png"/>
+  <resources name="img/date_white_inprogress_small.png" type="image" path="img/date_white_inprogress_small.png"/>
+  <resources name="img/date.png" type="image" path="img/date.png"/>
+  <resources name="img/left_arrow.png" type="image" path="img/left_arrow.png"/>
+  <resources name="img/left_arrow_edt.png" type="image" path="img/left_arrow_edt.png"/>
+  <resources name="img/left_arrow_edt_blue.png" type="image" path="img/left_arrow_edt_blue.png"/>
+  <resources name="img/location_small.png" type="image" path="img/location_small.png"/>
+  <resources name="img/location_white.png" type="image" path="img/location_white.png"/>
+  <resources name="img/location.png" type="image" path="img/location.png"/>
   <resources name="less/functions.less" type="css" path="less/functions.less"/>
   <resources name="less/style.less" type="css" path="less/style.less"/>
   <resources name="less/variables.less" type="css" path="less/variables.less"/>
