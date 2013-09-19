@@ -33,7 +33,7 @@ function glc_render_Announces_for_push_logo_different_title(tableau, zone, timeI
 			if (contentAnnounces.length > 200) {contentAnnounces = contentAnnounces.substring(0, 200); contentAnnounces += "...";}
 			if (authorAnnounces.length > 30) {authorAnnounces = authorAnnounces.substring(0, 30); authorAnnounces += "...";}
 			
-			content += "<div id='"+zone.id+"_new_push' class='push_div_zone4' style='display:none;'>";
+			content += "<div id='"+zone.id+"_new_push' class='announces_div_push'>";
 			content += "<div class='announces_body'>";
 				content += logo;
 				content += "<div class='announces_Title'>"+title+"</div>";

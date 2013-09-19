@@ -29,7 +29,7 @@ function glc_render_RSS_for_push(collection, zone, logo, timeInfo) {
 		
 		///if (contentAnnounces.length > 200) {contentAnnounces = contentAnnounces.substring(0, 200); contentAnnounces += "...";}
 		
-		content += "<div id='"+zone.id+"_new_push' class='push_div_zone4'>";
+		content += "<div id='"+zone.id+"_new_push' class='rss_div_push'>";
 		content += "<div class='rss_body'>";
 			content += "<div class='rss_Title'>"+title+"</div>";
 			content += "<div class='rss_Content'>"+contentAnnounces+"</div>";			

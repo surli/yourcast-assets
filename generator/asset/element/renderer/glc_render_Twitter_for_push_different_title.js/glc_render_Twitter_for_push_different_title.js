@@ -30,7 +30,7 @@ function glc_render_Twitter_for_push_different_title(collection, zone, timeInfo)
 		var reg=new RegExp("(\n)", "g");
 		var contentTwitter = elements.text.replace(reg, "<br/>");
 		
-		content = "<div id='"+zone.id+"_new_push' class='push_div_zone4'>";
+		content = "<div id='"+zone.id+"_new_push' class='twitter_div_push'>";
 		content += "<div class='tweet'>";
 		content += "<div class='twitter_title'>"+titleTwitter+"</div>";
 		content += "<div class='twitter_body'>";
