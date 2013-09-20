@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="DailyMotion" id="DailyMotion">
+  <service name="sources-video.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="DailyMotion_918a4660-ee00-44b9-ac9c-e6d5f08aab4f.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="add_dailymotion_video" pathPrefix="video/dailymotion/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  DailyMotion" editMessage="Editer R√©cup√©ration d'une vid√©o DailyMotion DailyMotion" type="POST">
+      <parameters name="Durée de la vidéo" constraint="NONE" dbName="time"/>
+      <parameters name="URL de la vidéo" type="STRING" constraint="NONE" isPartOfPath="false" dbName="body"/>
+    </methods>
+    <list name="Durée de la vidéo" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="URL de la vidéo" parameters="//@personalization/@methods/@parameters.1"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-video" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
