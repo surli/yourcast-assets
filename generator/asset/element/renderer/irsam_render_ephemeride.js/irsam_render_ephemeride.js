@@ -28,11 +28,11 @@ function irsam_render_ephemeride(datas, zone, timeInfo) {
 	var day = datas.day;
 	var month = get_a_month(datas.month - 1);
 	content += "<div class='main_div_zone1' >";
-	content += "<div id='ephemTitle'>Aujourd'hui, <i>le "+day+" "+month+"</i>, nous fetons les : </div>";
+	content += "<div id='ephemTitle'>Aujourd'hui, <i>le "+day+" "+month+"</i>, nous fêtons les : </div>";
 
-	if ((typeof datas !== 'undefined') && (typeof datas.saints !== 'undefined')) {
-		for (var indice = 0; indice < datas.saints.length; indice++) {
-			content += "<div class='ephemSaint'>"+datas.saints[indice].name+" ( "+datas.saints[indice].gender+" )</div>";
+	if ((typeof datas !== 'undefined') && (typeof datas.names !== 'undefined')) {
+		for (var indice = 0; indice < datas.names.length; indice++) {
+			content += "<div class='ephemSaint'>"+datas.names[indice]+"</div>";
 		}
 	}
 	content += "</div>";	

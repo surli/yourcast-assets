@@ -94,7 +94,61 @@ var Zone = Class.create({
             throw new Exception("controler.js", "L'url des données est incorrect.", new Error().lineNumber);
         }
 
+        
+
         /***************************************************************
+         *	STEP 3 - INITIALISATION
+         *	
+         *	Initialisation de tout ce qui n'est pas obligatoire
+         *	dans les paramètres et des toutes les variables 
+         *	nécessaires au bon déroulement de la zone.
+         ***************************************************************/
+
+        // Test si le comportement est défini
+        if (behavior instanceof Function || behavior instanceof Comportement) {
+
+            // On stocke le comportement
+            this.comportement = behavior;
+
+        }
+
+        // Sinon on met le comportement par défaut
+        else {
+
+            // On stocke le comportement par défaut
+            this.comportement = new Comportement();
+
+        }
+
+		this.url_conf = url_conf;
+		
+        // Informations de la zone
+        this.infoList = new Array();
+
+        // Nombre d'informations dans la zone
+        this.counterInfo = 0;
+
+        // Tableau des images
+        this.array_img = {};
+
+        // Nombre d'images chargées
+        this.img_loaded = 0;
+
+        // Définition du timeout
+        this.timeout = null;
+
+        // Tableau de timeout
+        this.timeout_list = {};
+
+        // Nombre de son
+        this.nb_son = 0;
+        
+        this.config_is_init = false;
+
+    },
+    
+    initConfig: function() {
+    	/***************************************************************
          *	STEP 2 - RECUPERATION DE LA CONFIGURATION
          *	
          *	Requête à l'url de configuration si elle est remplie
@@ -106,10 +160,10 @@ var Zone = Class.create({
         var self = this;
 
         // Test si l'url de la configuration est remplie
-        if (!is_empty(url_conf) && url_conf) {
+        if (!is_empty(self.url_conf) && self.url_conf) {
 
             // Effecture la requête Ajax
-            new Ajax.Request(DOMAIN_PATH+url_conf, {
+            new Ajax.Request(DOMAIN_PATH+self.url_conf, {
                 // On utilise un get
                 method: 'get',
                 // Si la requête est un succès
@@ -143,7 +197,6 @@ var Zone = Class.create({
                                 for (var cle in json_conf.mapOrder) {
                                     self.tab_renderers.push(cle);
                                 }
-
                                 // On trie le tableau des renderers
                                 self.tab_renderers.sort(function(a, b) {
                                     return json_conf.mapOrder[a] - json_conf.mapOrder[b];
@@ -155,12 +208,15 @@ var Zone = Class.create({
                             if (typeof json_conf.mapTime !== 'undefined') {
                                 self.map_time = json_conf.mapTime;
                             }
+                            self.config_is_init = true;
+                            self.request();
                         }
 
                         // Un erreur est survenue
                         catch (e) {
 
                             throw new Exception("controler.js", "Le fichier JSon de configuration n'est pas correct." + e, new Error().lineNumber);
+                            self.defaultInit();
 
                         }
 
@@ -171,6 +227,7 @@ var Zone = Class.create({
 
                     // Création d'une exception
                     throw new Exception("controler.js", "L'url (" + url_conf + ") de la configuration n'est pas correct (erreur : "+transport.status+") donc le chargement se fera par rapport aux paramètres", new Error().lineNumber);
+                    self.defaultInit();
 
                 }
 
@@ -180,6 +237,11 @@ var Zone = Class.create({
 
         else {
 
+        }	
+    },
+    
+    defaultInit: function() {
+    
             // Création d'une exception
             new Information("controler.js", "Pas de lien de configuration donné pour la zone " + id + " donc le chargement se fera par rapport aux paramètres", new Error().lineNumber);
 
@@ -209,55 +271,11 @@ var Zone = Class.create({
 
             // Stocke le temps d'affichage de chaque renderers
             this.map_time = map_time;
-
-        }
-
-        /***************************************************************
-         *	STEP 3 - INITIALISATION
-         *	
-         *	Initialisation de tout ce qui n'est pas obligatoire
-         *	dans les paramètres et des toutes les variables 
-         *	nécessaires au bon déroulement de la zone.
-         ***************************************************************/
-
-        // Test si le comportement est défini
-        if (behavior instanceof Function || behavior instanceof Comportement) {
-
-            // On stocke le comportement
-            this.comportement = behavior;
-
-        }
-
-        // Sinon on met le comportement par défaut
-        else {
-
-            // On stocke le comportement par défaut
-            this.comportement = new Comportement();
-
-        }
-
-        // Informations de la zone
-        this.infoList = new Array();
-
-        // Nombre d'informations dans la zone
-        this.counterInfo = 0;
-
-        // Tableau des images
-        this.array_img = {};
-
-        // Nombre d'images chargées
-        this.img_loaded = 0;
-
-        // Définition du timeout
-        this.timeout = null;
-
-        // Tableau de timeout
-        this.timeout_list = {};
-
-        // Nombre de son
-        this.nb_son = 0;
+            this.config_is_init = true;
+            this.request();
 
     },
+    
     // function call to load the image before the launch
     loadImage: function(imgsrc) {
         try {
@@ -502,10 +520,10 @@ var Zone = Class.create({
 
             // On affiche la zone
             self.afficherZone();
-
+			
+						
             // On test si le tableau de renderers n'est pas indéfini
             if (typeof this.tab_renderers !== 'undefined') {
-
                 // Récupération des éléments du JSon
                 var elements = new Array();
 
@@ -590,6 +608,11 @@ var Zone = Class.create({
      *	ce qu'elle a obtenue pour analyse.
      */
     request: function() {
+
+		if (!this.config_is_init) {
+				this.initConfig();	
+			} else {
+
 
         // Réinitialiser le json stocké
         this.json = null;
@@ -734,6 +757,7 @@ var Zone = Class.create({
             });
 
         }
+			}
 
     },
     shuffleArray: function(array) {
