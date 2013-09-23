@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="HyperPlanning" id="HyperPlanning">
+  <service name="sources-hyperplanning.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="HyperPlanning_eff0576f-6fd8-4b8e-9f4b-bab111c3d56a.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="getNextPromotionCalendar" pathPrefix="next_calendar_promotion_date/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  HyperPlanning" editMessage="Editer HyperPlanning des cours √† venir suivant les promotions HyperPlanning">
+      <parameters name="Date" type="STRING" tip="Une date au format yyyyMMdd" constraint="NONE" dbName="date"/>
+      <parameters name="Offset" tip="Un offset en minutes" constraint="NONE" dbName="offset"/>
+      <parameters name="promotion" type="STRING" constraint="NONE" isPartOfPath="false" dbName="promotion"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods/@parameters.2"/>
+    </methods>
+    <list name="Date" tip="Une date au format yyyyMMdd" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Offset" tip="Un offset en minutes" parameters="//@personalization/@methods/@parameters.1"/>
+    <list name="promotion" parameters="//@personalization/@methods/@parameters.2"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-hyperplanning" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
