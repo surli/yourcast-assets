@@ -18,7 +18,7 @@ function glc_render_Twitter_for_scrolling_with_logo_user_each_twitter(tableau, z
 	zone.loadImage("img/logos/twitter_bird.png");	
 	zone.loadImage("img/left_arrow.png");
 	var content = "";
-	var time = timeInfo;
+	var time = 0;
 	for (var indice = 0; indice < tableau.tweets.length; indice++) {
 		var elements = tableau.tweets[indice];
 		
@@ -33,7 +33,7 @@ function glc_render_Twitter_for_scrolling_with_logo_user_each_twitter(tableau, z
 		content += " "+"<span class='twitter_title'>"+titleTwitter+"</span>";
 		content += "<span class='twitter_Content'>"+contentTwitter+" </span>";
 		content += "</span>";
-		
+		time += timeInfo;
 	}
 
 	var dico = {"content": content, "logo": logo, "time" : time};
