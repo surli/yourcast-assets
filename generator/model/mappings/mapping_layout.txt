@@ -1,6 +1,7 @@
 attenteMainZone_choralies,headerZone_choralies,Layout,scrollingBottomZone_choralies,Product,rightZone_choralies,alertZone_choralies,LayoutChoraliesAttente,Choralies,Zones,Design:./layout/choralies_attente.xmi
 Layout,Product,LayoutAcademic,RightZone_glc,GLC,BottomZone_glc,MainZone_glc,Zones,HeaderZone_glc,Design:./layout/glc.xmi
 Layout,scrollingBottomZone_choralies,Product,LayoutChoraliesMobile,alertZone_choralies,Choralies,mobileMainZone_choralies,Zones,Design:./layout/choralies_mobile.xmi
+Layout,Product,RightZone_glc,GLC,LayoutAcademicUNS,INRIA,BottomZone_glc,MainZone_glc,Zones,HeaderZone_glc,Design:./layout/inria.xmi
 Layout,VocalZone,Product,LayoutCA,InactiviteZone_CA,CA,Zones,MainZone_CA,Design:./layout/ca.xmi
 Layout,UNS,Product,RightZone_glc,GLC,LayoutAcademicUNS,BottomZone_glc,MainZone_glc,Zones,HeaderZone_glc,Design:./layout/uns.xmi
 LayoutChoraliesTheatre,Layout,Product,theatreMainZone_choralies,alertZone_choralies,Choralies,Zones,Theatre,Design:./layout/choralies_theatre.xmi
