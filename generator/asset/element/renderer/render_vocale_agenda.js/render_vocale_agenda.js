@@ -46,7 +46,10 @@ function render_vocale_agenda(tableau, zone) {
 
         // Détermine le jour
         var jour = "";
-        if(is_same_date(new Date(), start)) {
+        var maintenant = get_date_from_timestamp(new Date().getTime());
+        var dateStart = get_date_from_timestamp(start);
+        var demain = get_date_from_timestamp(new Date().getTime() + 24 * 60 * 60 * 1000);
+        if(is_same_date(maintenant, dateStart)) {
             jour = "aujourd'hui";
         } else if(is_same_date(new Date(new Date().getTime() + 24 * 60 * 60 * 1000), start)) {
             jour = "demain";
