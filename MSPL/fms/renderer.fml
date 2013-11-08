@@ -66,4 +66,4 @@ renderer64 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: New
 renderer65 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Tweets; Elements: Content; Content: Text Logo; Logo: User; Design: GLC; Discretization: All;)
 renderer66 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Birthday; Elements: Content Logo Title; Content: FirstName; Design: CA; Discretization: ByOne; Title: PredefinedTitle; Logo: FromSource;)
 
-fm_renderer = merge sunion renderer*
+yourcast_renderer = merge sunion renderer*

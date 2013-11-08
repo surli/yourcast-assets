@@ -14,4 +14,4 @@ behaviour12 = FM(Behaviour: Animation Time Number Elements;  Animation: Vocaliza
 behaviour13 = FM(Behaviour: Animation Time Number Elements;  Animation: Scrolling; Scrolling: RightToLeft; Number: All; Time: Global; Elements: Content;)
 behaviour14 = FM(Behaviour: Animation Time Number Elements;  Animation: Notification Scrolling;  Scrolling: RightToLeft; Number: One; Time: Individual; Elements: Content;)
 
-fm_behaviour = merge sunion behaviour*
+yourcast_behaviour = merge sunion behaviour*

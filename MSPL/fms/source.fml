@@ -67,4 +67,4 @@ source65 = FM(Source: TypeInfo Criteria Provider; TypeInfo: Calendar; Calendar: 
 source66 = FM(Source: TypeInfo Criteria Provider; TypeInfo: PictureAlbum; PictureAlbum: TwitterPicture; Criteria: Filter Limit; Filter: Search; Provider: I3S;)
 source67 = FM(Source: TypeInfo Criteria Provider; TypeInfo: PictureAlbum; PictureAlbum: Picasa; Criteria: Filter Limit; Filter: Album User; Provider: I3S;)
 
-fm_source = merge sunion source*
+yourcast_source = merge sunion source*

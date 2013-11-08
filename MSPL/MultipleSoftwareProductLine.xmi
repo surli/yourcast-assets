@@ -4,7 +4,8 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:msplm="msplm.spinefm.unice.fr"
-    xsi:schemaLocation="msplm.spinefm.unice.fr ../../../spinefm-core/model/MetamodelSpineFM.ecore#//MSPLModel">
+    xsi:schemaLocation="msplm.spinefm.unice.fr ../../../spinefm-core/model/MetamodelSpineFM.ecore#//MSPLModel"
+    id="yourcast">
   <domainElements
       belongs_to="//@associations.0"
       id="source">

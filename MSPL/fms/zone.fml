@@ -22,4 +22,4 @@ zone20 = FM(Zone: Product Elements Orientation Design; Product: counterZone_chor
 zone21 = FM(Zone: Product Elements Orientation Design; Product: alertZone_choralies; Elements: Content; Content: Text; Orientation: Landscape; Design: Choralies;)
 zone22 = FM(Zone: Product Elements Orientation Design; Product: theatreMainZone_choralies; Elements: Content Title; Content: Text Graphic; Graphic: Thumbnails Full; Orientation: Landscape; Design: Choralies Theatre;)
 
-fm_zone = merge sunion zone*
+yourcast_zone = merge sunion zone*
