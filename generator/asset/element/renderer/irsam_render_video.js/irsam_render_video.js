@@ -51,11 +51,7 @@
 loadLess(LESS_ROOT + '/renderers/irsam_render_video.less');
 
 // Fonction du rendu vidéo
-function irsam_render_video(tableau, zone, timeInfo) {
-
-    // Test si la collection est null ou indéfini
-    if(typeof tableau === 'undefined' || tableau === null || tableau.length === 0)
-        throw new Exception("The informations are not correct");
+function irsam_render_video(elements, zone, timeInfo) {
 
     // Test si la zone est null ou indéfini
     if(typeof zone === 'undefined' || zone === null)
@@ -67,13 +63,7 @@ function irsam_render_video(tableau, zone, timeInfo) {
     // Chargement de l'image de zone
     var logo = '<img src="'+IMG_PATH+'/logos/tv.png"/>';
     zone.loadImage(IMG_PATH+"/logos/tv.png");
-
-    // Pour chaque annonces que possède le json on l'ajoute à la zone
-    for (var indice = 0 ; indice < tableau.length ; indice++) {
-
-        // On stock les élements
-        var elements = tableau[indice];
-
+    
         // Récupération des dimensions
         var width = window.innerWidth * 0.9;
         var height = window.innerHeight * 0.7;
@@ -87,18 +77,17 @@ function irsam_render_video(tableau, zone, timeInfo) {
          */
 
         // Youtube
-        if(elements.type === 'youtube') {
-
+        if(elements.type.toLowerCase() === 'youtube') {
             // Test si on a une url absolu ou juste l'id
-            var url = elements.urls.player.search("youtube") === -1 ? 'https://www.youtube.com/v/' + elements.urls.player : elements.urls.player;
-
-            // Ajout du lecteur avec l'API Youtube
-            content += '<object width="' + width + '" height="' + height + '">';
-            content += '    <param name="movie" value="' + url + '?autoplay=1&controls=0&enablejsapi=1&playerapiid=ytplayer&modestbranding=1&version=3"></param>';
-            content += '    <param name="allowFullScreen" value="true"></param>';
-            content += '    <param name="allowScriptAccess" value="always"></param>';
-            content += '    <embed src="' + url + '?autoplay=1&controls=0&enablejsapi=1&playerapiid=ytplayer&modestbranding=1&version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="' + width + '" height="' + height + '"></embed>';
-            content += '</object>';
+            var url = "";
+            if (elements.url.PLAYER.search("youtu.be") !== -1) {
+            	url = elements.url.PLAYER.split("youtu.be/")[1];
+            } else if (elements.url.PLAYER.search("youtube.com/watch") !== -1) {
+            	url = elements.url.PLAYER.split("youtube.com/watch?v=")[1];
+            	url = url.split("&")[0];
+            }
+            //var url = elements.url.PLAYER.search("youtube") === -1 ? 'https://www.youtube.com/v/' + elements.url.PLAYER : elements.url.PLAYER;
+            content += '<iframe width="640" height="480" src="http://www.youtube.com/embed/'+url+'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
 
             // Information trouvée
             infoFound = true;
@@ -106,13 +95,13 @@ function irsam_render_video(tableau, zone, timeInfo) {
         }
 
         // Dailymotion
-        else if(elements.type === 'dailymotion') {
+        else if(elements.type.toLowerCase() === 'dailymotion') {
 
             content += '<object width="' + width + '" height="' + height + '">';
-            content += '    <param name="movie" value="http://www.dailymotion.com/swf/video/' + elements.urls['player']+ '?autoPlay=1&chromeless=1"></param>';
+            content += '    <param name="movie" value="http://www.dailymotion.com/swf/video/' + elements.url['player']+ '?autoPlay=1&chromeless=1"></param>';
             content += '    <param name="allowFullScreen" value="true"></param>';
             content += '    <param name="allowScriptAccess" value="always"></param>';
-            content += '    <embed type="application/x-shockwave-flash" src="http://www.dailymotion.com/swf/video/' + elements.urls['player'] + '?autoPlay=1&chromeless=1" width="' + width + '" height="' + height + '" allowscriptaccess="always"></embed>';
+            content += '    <embed type="application/x-shockwave-flash" src="http://www.dailymotion.com/swf/video/' + elements.url['player'] + '?autoPlay=1&chromeless=1" width="' + width + '" height="' + height + '" allowscriptaccess="always"></embed>';
             content += '</object>';
 
             // Information trouvée
@@ -121,27 +110,31 @@ function irsam_render_video(tableau, zone, timeInfo) {
         }
 
         // Specifique
-        else if(elements.type === 'specific') {
+        else if(elements.type.toLowerCase() === 'specific') {
 
             // Déclaration de l'url
             var url = "";
 
             // Mozilla
             if(window.mozRequestAnimationFrame) {
-                url = typeof elements.urls.webm === 'undefined' || elements.urls.webm === '' ? url : elements.urls.webm;
-                url = typeof elements.urls.ogv === 'undefined' || elements.urls.ogv === '' ? url : elements.urls.ogv;
+                url = typeof elements.url.webm === 'undefined' || elements.url.webm === '' ? url : elements.url.webm;
+                url = typeof elements.url.ogv === 'undefined' || elements.url.ogv === '' ? url : elements.url.ogv;
             }
 
             // Chrome
             else if(requestAnimationFrame) {
-                url = typeof elements.urls.webm === 'undefined' || elements.urls.webm === '' ? url : elements.urls.webm;
-                url = typeof elements.urls.ogv === 'undefined' || elements.urls.ogv === '' ? url : elements.urls.ogv;
+                url = typeof elements.url.webm === 'undefined' || elements.url.webm === '' ? url : elements.url.webm;
+                url = typeof elements.url.ogv === 'undefined' || elements.url.ogv === '' ? url : elements.url.ogv;
             }
 
             // Safari
             else if(window.webkitRequestAnimationFrame) {
-                url = typeof elements.urls.mp4 === 'undefined' || elements.urls.mp4 === '' ? url : elements.urls.mp4;
+                url = typeof elements.url.mp4 === 'undefined' || elements.url.mp4 === '' ? url : elements.url.mp4;
+            } else {
+            	console.log("impossible de déterminer le type de video");
+            	console.log(elements);
             }
+
 
             // Si l'url n'est pas vide
             if(url !== '') {
@@ -168,8 +161,7 @@ function irsam_render_video(tableau, zone, timeInfo) {
                 // Information trouvée
                 infoFound = true;
 
-            }
-
+            } 
         }
 
         // Si une information a été trouvée
@@ -189,7 +181,6 @@ function irsam_render_video(tableau, zone, timeInfo) {
 
         }
 
-    }
 
     // Retourne le dictionnaire
     return dico;

@@ -169,7 +169,7 @@ function irsam_forcast_weather(collection, zone, timeInfo) {
     var tableau = collection.weather.forecast;
 
     // On boucle sur les informations
-    for (var indice = 0; indice < tableau.length; indice++) {
+    for (var indice = 1; indice < tableau.length; indice++) {
         
         // On récupère les éléments
         var elements = tableau[indice].day[0];

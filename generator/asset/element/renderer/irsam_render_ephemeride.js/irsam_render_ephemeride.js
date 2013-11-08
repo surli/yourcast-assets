@@ -21,21 +21,26 @@ function irsam_render_ephemeride(datas, zone, timeInfo) {
 	timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 3;
 	var logo = '<img src="img/logos/absence.png"/>';
 	zone.loadImage("img/logos/absence.png");
-	var title = "Ephemeride";
 	var time = timeInfo;
 	var content = "";
-
-	var day = datas.day;
-	var month = get_a_month(datas.month - 1);
+	var date_actuelle = new Date();
+	var day = get_a_day(date_actuelle.getDay());
+	var dayNumber = date_actuelle.getDate();
+	var month = get_a_month(date_actuelle.getMonth());
+	
+	var title = day+" "+dayNumber+" "+month+"<br />"+get_time();
+	
 	content += "<div class='main_div_zone1' >";
-	content += "<div id='ephemTitle'>Aujourd'hui, <i>le "+day+" "+month+"</i>, nous fêtons les : </div>";
+	content += "<div id='ephemTitle'>Bonne fête </div>";
 
 	if ((typeof datas !== 'undefined') && (typeof datas.names !== 'undefined')) {
-		for (var indice = 0; indice < datas.names.length; indice++) {
-			content += "<div class='ephemSaint'>"+datas.names[indice]+"</div>";
+		if (datas.names.length > 1) {
+			valRandom = (Math.random()*1000).ceil() % datas.names.length;
+			content += "<div class='ephemSaint'>"+datas.names[valRandom]+"</div>";
 		}
 	}
 	content += "</div>";	
 	var dico = {"content": content, "logo": logo, "title": title, "time" : time};
 	zone.pushInfo(dico);
 }
+
