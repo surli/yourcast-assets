@@ -10,5 +10,6 @@ layout8 = FM (Layout: Product Zones Design; Product: LayoutChoraliesPublic; Zone
 layout9 = FM (Layout: Product Zones Design; Product: LayoutChoraliesAteliers; Zones: headerZone_choralies rightZone_choralies atelierMainZone_choralies scrollingBottomZone_choralies alertZone_choralies; Design: Choralies;)
 layout10 = FM (Layout: Product Zones Design;                                 Product: LayoutAcademicEPU;                                 Zones: MainZone_Polytech;                                 Design: EPU;)
 layout11 = FM (Layout: Product Zones Design; Product: LayoutChoraliesJourUn; Zones: headerZone_choralies jourUnRightZone_choralies jourUnMainZone_choralies counterZone_choralies scrollingBottomZone_choralies alertZone_choralies; Design: Choralies;)
+layout12 = FM (Layout: Product Zones Design;                                 Product: LayoutAcademicUniversite;                                 Zones: MainZone_glc BottomZone_glc;                                 Design: GLC UNS;)
 
-yourcast_layout = merge sunion layout*
+fm_layout = merge sunion layout*
