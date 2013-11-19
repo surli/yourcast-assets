@@ -6,7 +6,7 @@
   <parent>
     <groupId>fr.yourcast</groupId>
     <artifactId>yourcast-provider</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
   </parent>
   <artifactId>$artifactId</artifactId>
   <packaging>war</packaging>
