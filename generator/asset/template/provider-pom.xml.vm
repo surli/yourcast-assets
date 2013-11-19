@@ -6,7 +6,7 @@
   <parent>
     <groupId>fr.yourcast</groupId>
     <artifactId>yourcast-provider</artifactId>
-    <version>$parentVersion</version>
+    <version>1.1.0</version>
   </parent>
   <artifactId>$artifactId</artifactId>
   <packaging>war</packaging>
@@ -29,7 +29,7 @@
     <dependency>
     	<groupId>fr.yourcast</groupId>
     	<artifactId>provider-core</artifactId>
-    	<version>$parentVersion</version>
+    	<version>1.1.1</version>
     </dependency>
     <dependency>
   		<groupId>com.sun.jersey</groupId>
