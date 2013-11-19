@@ -6,7 +6,7 @@
   <parent>
     <groupId>fr.yourcast</groupId>
     <artifactId>yourcast-provider</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.0</version>
   </parent>
   <artifactId>$artifactId</artifactId>
   <packaging>war</packaging>
@@ -16,6 +16,11 @@
           	<id>snapshots</id>
           	<name>I3S Maven Snapshots Repository</name>
           	<url>http://nyx.unice.fr:9007/nexus/content/repositories/snapshots</url>	
+		</repository>
+		<repository>
+          	<id>releases</id>
+          	<name>I3S Maven Snapshots Repository</name>
+          	<url>http://nyx.unice.fr:9007/nexus/content/repositories/releases</url>	
 		</repository>
 	</repositories>  
   
