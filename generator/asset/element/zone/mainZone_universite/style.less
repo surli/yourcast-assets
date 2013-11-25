@@ -1,0 +1,56 @@
+@import "../less/functions.less";
+@import "../less/variables.less";
+
+#${zoneName} {
+    position:relative;
+    font-size:100%;
+    /*margin-top: 1%;    */
+    height : 76%;
+    width : 98%;
+    padding-left: 2%;
+    .zone1Background;
+    -moz-box-shadow: 1px 1px 1px #ccc;
+    -webkit-box-shadow: 1px 1px 1px #ccc;
+    box-shadow: 1px 1px 1px #ccc;
+    overflow:hidden;
+}
+
+#${zoneName} .logo{
+	width:85px;
+	height:85px;
+	display:block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	text-align:right;
+	img {
+	    margin-right: 10px;
+	    margin-top:10px;
+	    background : transparent no-repeat;
+	}
+}
+
+#${zoneName} .title {
+  	color: @grayDark;
+  	font-weight:500;
+	font-size:135%;
+	line-height:135%;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	display:block;
+	margin-right:90px;
+	text-shadow:2px 2px 5px #aaa;
+}
+
+#${zoneName}_content {
+	position: absolute;
+	top: 25%;
+	height: 75%;
+	width: 93%;
+}
+
+#${zoneName} .scrollContentLeft {
+  margin: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
