@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="Supralink_Articles" id="Supralink_Articles">
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="Supralink_Articles_7f4bef9e-c563-468e-b1c7-f617038deda9.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="Add_Supralink_Articles" pathPrefix="" introductionMessage="Compléter les informations pour ajouter un(e) appel à  Supralink_Articles" editMessage="Editer Articles de presse Supralink_Articles">
+      <parameters name="Chemin" type="STRING" tip="Le chemin doit être de la forme '{baseDrupal}/rest/article/' où baseDrupal correspond à un nom spécifique." constraint="NONE" dbName="supraName"/>
+      <parameters name="Nombre d'éléments" tip="Nombre maximum d'annonces affichées." constraint="NONE" isPartOfPath="false" dbName="pagesize"/>
+      <parameters name="Caractères par page." tip="La taille maximale en caractères de chaque page de contenu de chaque article." constraint="NONE" isPartOfPath="false" dbName="page"/>
+      <parameters name="Catégorie" type="STRING" tip="La catégorie associée aux informations récupérées dans SupraLink." constraint="NONE" isPartOfPath="false" dbName="fields"/>
+      <mapParameters name="query" type="MAP" constraint="NONE" dbName="query" relatedParams="//@personalization/@methods/@parameters.1 //@personalization/@methods/@parameters.2 //@personalization/@methods/@parameters.3"/>
+    </methods>
+    <list name="Chemin" tip="Le chemin doit être de la forme '{baseDrupal}/rest/article/' où baseDrupal correspond à un nom spécifique." parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Nombre d'éléments" tip="Nombre maximum d'annonces affichées." parameters="//@personalization/@methods/@parameters.1"/>
+    <list name="Caractères par page." tip="La taille maximale en caractères de chaque page de contenu de chaque article." parameters="//@personalization/@methods/@parameters.2"/>
+    <list name="Catégorie" tip="La catégorie associée aux informations récupérées dans SupraLink." parameters="//@personalization/@methods/@parameters.3"/>
+  </personalization>
+</prodsource:Source>

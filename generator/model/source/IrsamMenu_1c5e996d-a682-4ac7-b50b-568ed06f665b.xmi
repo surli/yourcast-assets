@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="IrsamMenu" id="IrsamMenu">
+  <service name="sources-irsam-menu.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="IrsamMenu_1c5e996d-a682-4ac7-b50b-568ed06f665b.properties"/>
+  <personalization image="">
+    <methods name="Add_Menu" pathPrefix="all/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  IrsamMenu" editMessage="Editer Tous les menus IrsamMenu"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-irsam-menu" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>

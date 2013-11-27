@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="HyperPlanning" id="HyperPlanning">
+  <service name="sources-hyperplanning.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="HyperPlanning_ccc9f55b-970e-4eb7-930d-07c95c5c8c77.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="getNextStudentCalendar" pathPrefix="next_calendar_student/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  HyperPlanning" editMessage="Editer HyperPlanning des cours en cours suivant les étudiants HyperPlanning">
+      <parameters name="Identifiant CAS etudiant" type="STRING" tip="Identifiant CAS étudiants" constraint="NONE" dbName="student"/>
+    </methods>
+    <list name="Identifiant CAS etudiant" tip="Identifiant CAS étudiants" parameters="//@personalization/@methods/@parameters.0"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-hyperplanning" version="1.0.0-SNAPSHOT"/>
+</prodsource:Source>
