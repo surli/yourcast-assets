@@ -67,4 +67,4 @@ source65 = FM(Source: TypeInfo Criteria Provider; TypeInfo: Tweets; Tweets: Twit
 source66 = FM(Source: TypeInfo Criteria Provider; TypeInfo: Article; Article: Supralink_Articles; Criteria: Filter Limit; Filter: Theme; Provider: Supralog;)
 source67 = FM(Source: TypeInfo Criteria Provider; TypeInfo: Names; Names: HyperPlanningFreeRooms; Provider: I3S;  Criteria: Filter; Filter: Date CalendarFilter Duration; Date: Beginning; Duration: BeginCourses; CalendarFilter: Room; Room: Free; Free: RoomNumber;)
 
-fm_source = merge sunion source*
+yourcast_source = merge sunion source*
