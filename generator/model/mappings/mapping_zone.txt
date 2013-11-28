@@ -11,14 +11,14 @@ Orientation,Product,Graphic,Logo,Landscape,Design,Text,GLC,Elements,BottomZone_g
 Orientation,Product,Bloc,Graphic,Choralies,publicRightZone_choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/publicRightZone_choralies.xmi
 Orientation,Product,Graphic,Landscape,Choralies,Title,Design,attenteMainZone_choralies,Text,Full,Elements,Zone,Content,Thumbnails:./zone/attenteMainZone_choralies.xmi
 Orientation,Product,Graphic,Landscape,atelierMainZone_choralies,Choralies,Title,Design,Text,Full,Elements,Zone,Content,Thumbnails:./zone/atelierMainZone_choralies.xmi
-Orientation,Product,Graphic,Logo,BottomZone_Universite,Landscape,Design,Text,Universite,Elements,Zone,Content,Thumbnails:./zone/bottomZone_universite.xmi
+Orientation,Product,Graphic,Logo,BottomZone_Universite,UNIVERSITE,Landscape,Design,Text,Elements,Zone,Content,Thumbnails:./zone/bottomZone_universite.xmi
 Orientation,Product,Bloc,Graphic,rightZone_choralies,Choralies,Title,Design,Text,Elements,Portrait,Zone,Content,Thumbnails:./zone/rightZone_choralies.xmi
 Text,Orientation,Product,InactiviteZone_CA,Landscape,Elements,Zone,CA,Content,Design:./zone/inactiviteZone_ca.xmi
 IRSAM,Orientation,Product,Logo,Graphic,Landscape,Title,Design,Text,Full,Elements,MainZone_irsam,Zone,Content:./zone/mainZone_irsam.xmi
 Text,IRSAM,Orientation,VocalZone,Product,Landscape,Elements,Speakable,Zone,CA,Content,Design:./zone/vocaleZone.xmi
 Orientation,Product,Bloc,Graphic,Choralies,mobileMainZone_choralies,Title,Design,Text,Full,Elements,Portrait,Zone,Content,Thumbnails:./zone/mobileMainZone_choralies.xmi
 Text,Orientation,Product,Elements,Portrait,Choralies,Zone,jourUnRightZone_choralies,Content,Title,Design:./zone/jour1RightZone_choralies.xmi
-Orientation,Product,Logo,Graphic,Landscape,MainZone_Universite,Title,Design,Text,Full,Universite,Elements,Zone,Content,Thumbnails:./zone/mainZone_universite.xmi
+Orientation,Product,Graphic,Logo,UNIVERSITE,Landscape,MainZone_Universite,Title,Design,Text,Full,Elements,Zone,Content,Thumbnails:./zone/mainZone_universite.xmi
 Orientation,Product,Graphic,GLC,Landscape,Elements,Zone,Content,Thumbnails,HeaderZone_glc,Design:./zone/headerZone_glc.xmi
 Orientation,Product,Elements,Counter,Portrait,Choralies,Zone,Content,counterZone_choralies,Design:./zone/counterZone_choralies.xmi
 Text,Orientation,Product,Landscape,Elements,alertZone_choralies,Choralies,Zone,Content,Design:./zone/alertZone_choralies.xmi

@@ -16,6 +16,9 @@
  *  Versions :
  *
  *      1.0.0 : CrÃ©ation d'une classe fonctionnelle.
+ *      1.0.1 : Résolution d'un bug par rapport au déploiement à l'université
+ *          - Réglage de la vitesse
+ *          - Réglage du cycle
  *
  *  Contributors :
  *
@@ -28,21 +31,22 @@ loadScript(BEHAVIOUR_PATH + "/utils/functions.js");
 
 // Classe
 var ComportementScrollingLeft = Class.create(Comportement, {
+    
     /**
      *  Boucle du comportement
      *
-     *  La boucle sert Ã  changer les Ã©lÃ©ments d'une zone par 
+     *  La boucle sert à changer les éléments d'une zone par 
      *  rapport aux informations que contient la zone. Pour 
-     *  cela, elle rÃ©cupÃ¨re les enfants de la zone et compare
+     *  cela, elle récupère les enfants de la zone et compare
      *  leur id au tableau info de la zone. Si un id n'est 
-     *  pas dÃ©fini, alors on cache l'Ã©lÃ©ment.
+     *  pas défini, alors on cache l'élément.
      */
     loop: function() {
 
-        // SÃ©curitÃ©
+        // Sécurité
         this.securiteInfosZone();
 
-        // On clear tout d'abord les timeouts stockÃ©s
+        // On clear tout d'abord les timeouts stockés
         clearTimeout(this.timeout);
         clearTimeout(this.interval_timeout);
 
@@ -51,7 +55,7 @@ var ComportementScrollingLeft = Class.create(Comportement, {
         var time = 0;
         var info;
 
-        // On rÃ©cupÃ¨re les informations
+        // On récupère les informations
         for (var i = 0; i < this.zone_concerne.counterInfo; i++) {
 
             // On stocke l'info
@@ -69,13 +73,10 @@ var ComportementScrollingLeft = Class.create(Comportement, {
         var dicoInfo = {"content": content};
         this.zone_concerne.changeContent(dicoInfo);
 
-        // RÃ©cupÃ©ration de la taille du span
-        var tailleSpan = document.getElementById('scrollcontent_' + this.zone_concerne.id).offsetWidth;
+        // Récupération de la taille du span
+        var tailleSpan = document.getElementById('scrollcontent_' + this.zone_concerne.id).offsetWidth + 400;
 
-        // Calcule du pourcentage pour la scrollbar
-        var leftPourcent = (tailleSpan * 100) / this.zone_concerne.divMarquee.offsetWidth;
-
-        // CrÃ©e un nouveau style
+        // Crée un nouveau style
         var style = create_or_replace_behaviour_style_zone(this.zone_concerne.id);
 
         // Ajout des animations
@@ -88,16 +89,18 @@ var ComportementScrollingLeft = Class.create(Comportement, {
         style.innerHTML += " animation: fromLeft" + this.zone_concerne.id + " " + time + "s linear 0s forwards; }";
 
         // Ajout des keyframes left et right
-        style.innerHTML += "@-webkit-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
-        style.innerHTML += "@-moz-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
-        style.innerHTML += "@-ms-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
-        style.innerHTML += "@-o-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
-        style.innerHTML += "@keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + leftPourcent + "%; } }";
+        style.innerHTML += "@-webkit-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + tailleSpan + "px; } }";
+        style.innerHTML += "@-moz-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + tailleSpan + "px; } }";
+        style.innerHTML += "@-ms-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + tailleSpan + "px; } }";
+        style.innerHTML += "@-o-keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + tailleSpan + "px; } }";
+        style.innerHTML += "@keyframes fromLeft" + this.zone_concerne.id + " { from { left: 100%; } to { left: -" + tailleSpan + "px; } }";
 
         // Ajout du style au head
         document.head.appendChild(style);
 
         var self = this;
+        
+        // Boucle
         this.interval_timeout = setTimeout(function() {
             self.zone_concerne.request();
         }, time * 1000);
