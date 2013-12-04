@@ -10,4 +10,4 @@ publicLeftZone_choralies,publicMainZone_choralies,headerZone_choralies,Layout,sc
 LayoutChoraliesAteliers,headerZone_choralies,Layout,scrollingBottomZone_choralies,Product,rightZone_choralies,atelierMainZone_choralies,alertZone_choralies,Choralies,Zones,Design:./layout/choralies_ateliers.xmi
 EPU,Layout,Product,MainZone_Polytech,LayoutAcademicEPU,Zones,Design:./layout/polytech.xmi
 headerZone_choralies,jourUnMainZone_choralies,Layout,scrollingBottomZone_choralies,Product,alertZone_choralies,Choralies,jourUnRightZone_choralies,counterZone_choralies,Zones,LayoutChoraliesJourUn,Design:./layout/choralies_jour1.xmi
-Layout,LayoutUniversite,Product,UNIVERSITE,BottomZone_Universite,GLC,MainZone_Universite,Zones,Design:./layout/universite.xmi
+Layout,LayoutUniversite,Product,BottomZone_Universite,UNIVERSITE,MainZone_Universite,Zones,Design:./layout/universite.xmi
