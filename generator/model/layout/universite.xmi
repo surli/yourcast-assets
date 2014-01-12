@@ -5,6 +5,7 @@
   <resources name="img/yourcast_background.png" type="image" path="img/yourcast_background.png"/>
   <resources name="img/yourcast_small_blue.png" type="image" path="img/yourcast_small_blue.png"/>
   <resources name="img/logo_universite.png" type="image" path="img/logo_universite.png"/>
+  <resources name="img/smooth.png" type="image" path="img/smooth.png"/>
   <resources name="less/functions.less" type="css" path="less/functions.less"/>
   <resources name="less/style.less" type="css" path="less/style.less"/>
   <resources name="less/variables.less" type="css" path="less/variables.less"/>
