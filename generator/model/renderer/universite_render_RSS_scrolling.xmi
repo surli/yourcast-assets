@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prodrenderer:Renderer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodrenderer="prodrenderer.yourcast.fr" displayTime="20" name="universite_render_RSS_scrolling.js" infoType="RSSFeed">
   <function name="universite_render_RSS_scrolling"/>
+  <resource name="img/left_arrow.png" type="image" path="img/left_arrow.png"/>
   <resource name="less/universite_render_RSS_scrolling.less" type="css" path="less/universite_render_RSS_scrolling.less"/>
 </prodrenderer:Renderer>
