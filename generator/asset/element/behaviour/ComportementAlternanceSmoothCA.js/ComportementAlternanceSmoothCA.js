@@ -27,13 +27,14 @@
 
 // Load le script d'apparition
 loadScript(BEHAVIOUR_PATH + "/utils/YourcastAnim/apparition.js");
+loadScript(BEHAVIOUR_PATH + "/utils/YourcastAnim/transformation.js");
 
 // Classe
 var ComportementSmooth = Class.create(Comportement, {
     /**
      *	Boucle du comportement
      *
-     *	La boucle sert à changer les éléments d'une zone par 
+     *	La boucle sert �  changer les éléments d'une zone par 
      *	rapport aux informations que contient la zone. Pour 
      *	cela, elle récupère les enfants de la zone et compare
      *	leur id au tableau info de la zone. Si un id n'est 
@@ -53,25 +54,32 @@ var ComportementSmooth = Class.create(Comportement, {
         clearTimeout(this.timeout_fadeOut);
 
         // On récupère les informations
-        var info = this.zone_concerne.getInfos()[this.indice];
-
-        // On change le content
-        this.zone_concerne.changeContent(info);
-
+        var info = self.zone_concerne.getInfos()[self.indice];
+        
+        // On test si une zone "_content" existe
+        if (!$(this.zone_concerne.id + "_content")) {
+            $(this.zone_concerne.id).insert("<div id='" + this.zone_concerne.id + "_content'></div>");
+        }
+        
+        // On test si une zone new_appear existe
+        if (!$(this.zone_concerne.id + "_new_appear")) {
+            $(this.zone_concerne.id + "_content").update("<div id='" + this.zone_concerne.id + "_new_appear'></div>");
+        }
+        
         // Met le nouveau block en opacité 0
         if ($(this.zone_concerne.id + "_content")) {
 
-            $(this.zone_concerne.id + "_content").setStyle({
-                opacity: 0
-            });
+            $(this.zone_concerne.id + "_new_appear").update(info.content);
+            $(this.zone_concerne.id + "_title").update(info.title);
+            $(this.zone_concerne.id + "_logo").update(info.logo);
+            $(this.zone_concerne.id + "_content").setOpacity(0);
 
-            // Transition d'apparition des informations
             this.timeout_fadeIn = setTimeout(function() {
-                fadeIn(self.zone_concerne.id + "_content", info.time / 4, "linear");
+                fadeIn(self.zone_concerne.id + "_content", 1, "linear");
             }, 1);
             this.timeout_fadeOut = setTimeout(function() {
-                fadeOut(self.zone_concerne.id + "_content", info.time / 4, "linear");
-            }, (1000 * 2.9 * info.time) / 4);
+                fadeOut(self.zone_concerne.id + "_content", 1, "linear");
+            }, info.time*1000 - 2000);
 
         }
 
@@ -80,6 +88,21 @@ var ComportementSmooth = Class.create(Comportement, {
             self.timeout = setTimeout(function() {
                 self.next();
             }, info.time * 1000);
+
+    },
+    /**
+     *  Setter de la zone
+     *
+     *  Permet de chancer la zone du comportement. 
+     *
+     *  /!\ Cette fonction doit être appelée lors du 
+     *  lancement du comportement sous peine d'avoir 
+     *  une erreur critique.
+     */
+    setZone: function($super, nouvelle_zone) {
+
+        // On execute le super
+        $super(nouvelle_zone);
 
     }
 

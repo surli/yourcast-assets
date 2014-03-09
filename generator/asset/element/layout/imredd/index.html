@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+        <title>YourCast</title>
+        <script type="text/javascript" src="js/libs/prototype.js"></script>
+        <script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/date.js"></script>
+        <script type="text/javascript" src="js/controler.js"></script>
+
+        <link href="img/climacons-font/webfont/climacons-font.css" rel="stylesheet" type="text/css">
+        
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/lessCompile.css" rel="stylesheet" type="text/css">
+        
+        $zoneScripts
+
+        <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600' rel='stylesheet' type='text/css'>
+
+    </head>
+
+    <body onload="$onLoadContent; init_date();">
+
+        $layoutBody
+        
+        <div class="row">
+            <div class="col-lg-1">
+                <img id="logo_universite" src="img/logo_universite.png" alt="Logo Université"/>
+            </div>
+            <div class="col-lg-3">
+                <img id="logo_yourcast" src="img/yourcast_small_blue.png" alt="Logo Yourcast"/>
+            </div>
+            <div class="col-lg-5">
+                <div id="ZoneDuHaut">
+                    <span class="logo" id="ZoneDuHaut_logo"></span>
+                    <span class="title" id="ZoneDuHaut_title"></span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="date_time"></div>
+            </div>
+        </div>
+
+        <div class="row" id="ligne_centrale">
+            <div class="col-lg-8">
+                <div id="ZoneCentrale">
+                    <span class="logo" id="ZoneCentrale_logo"></span>
+                    <span id="progressbar"></span>
+                    <span class="title" id="ZoneCentrale_title"></span>
+                    <div id="ZoneCentrale_content"></div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div id="ZoneDeDroite"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="ZoneDuBas"></div>
+        </div>
+
+        <div id="logo_loading">
+            <div>
+                <img id="loading_img" src="./img/yc_loading.gif" alt="Chargement de Yourcast ..." />
+            </div>
+        </div>
+    </body>
+</html>
+
