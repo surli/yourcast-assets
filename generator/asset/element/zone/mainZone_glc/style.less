@@ -1,7 +1,7 @@
 @import "../less/functions.less";
 @import "../less/variables.less";
 
-#MainZone {    
+#${zoneName} {    
     position:relative;
     font-size:100%;
     /*margin-top: 1%;    */
@@ -15,7 +15,7 @@
     overflow:hidden;
 }
 
-#MainZone .logo{
+#${zoneName} .logo{
 	width:85px;
 	height:85px;
 	display:block;
@@ -30,7 +30,7 @@
 	}
 }
 
-#MainZone .title {
+#${zoneName} .title {
   	color: @grayDark;
   	font-weight:500;
 	font-size:135%;
@@ -42,7 +42,7 @@
 	text-shadow:2px 2px 5px #aaa;
 }
 
-#MainZone_content {
+#${zoneName}_content {
 	position: absolute;
 	top: 25%;
 	height: 75%;
