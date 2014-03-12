@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="HyperPlanning" id="HyperPlanning">
+  <service name="sources-hyperplanning.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="HyperPlanning_514612a9-b5b9-4664-9f4b-ccd174ed958c.properties"/>
+  <personalization image="" listIntroductionMessage="Sélectionnez un renderer pour voir la liste des appels créés.">
+    <methods name="getNextTeacherCalendar" pathPrefix="next_calendar_teacher_date/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  HyperPlanning" editMessage="Editer HyperPlanning des cours en cours suivant les enseignants HyperPlanning">
+      <parameters name="Identifiant CAS enseignant" type="STRING" constraint="NONE" dbName="teacher"/>
+      <parameters name="Date" type="STRING" tip="Une date au format yyyyMMdd" constraint="NONE" dbName="date"/>
+      <parameters name="Offset" tip="Un offset en minutes" constraint="NONE" dbName="offset"/>
+    </methods>
+    <list name="Identifiant CAS enseignant" parameters="//@personalization/@methods/@parameters.0"/>
+    <list name="Date" tip="Une date au format yyyyMMdd" parameters="//@personalization/@methods/@parameters.1"/>
+    <list name="Offset" tip="Un offset en minutes" parameters="//@personalization/@methods/@parameters.2"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-hyperplanning" version="1.0.1"/>
+</prodsource:Source>

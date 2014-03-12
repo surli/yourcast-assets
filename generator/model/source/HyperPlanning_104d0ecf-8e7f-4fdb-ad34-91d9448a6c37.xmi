@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodsource:Source xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodsource="prodsource.yourcast.fr" name="HyperPlanning" id="HyperPlanning">
+  <service name="sources-hyperplanning.war"/>
+  <actor name="fr.yourcast.provider.model.actors.ServiceActorComposite" type="fr.yourcast.provider.model.actors.ServiceActorComposite"/>
+  <parameters name="HyperPlanning_104d0ecf-8e7f-4fdb-ad34-91d9448a6c37.properties"/>
+  <personalization image="">
+    <methods name="getFreeRooms" pathPrefix="free_room/" introductionMessage="Compléter les informations pour ajouter un(e) appel à  HyperPlanning" editMessage="Editer HyperPlanning des salles libres HyperPlanning"/>
+  </personalization>
+  <mavenDependency groupId="fr.yourcast.sources" artifactId="sources-hyperplanning" version="1.0.1"/>
+</prodsource:Source>
