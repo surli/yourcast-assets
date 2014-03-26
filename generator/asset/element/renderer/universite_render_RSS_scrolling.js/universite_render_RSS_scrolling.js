@@ -1,15 +1,9 @@
 
-/**
- * Renderer des RSS dans la bottomZone
- * @param {type} collection
- * @param {type} zone
- * @param {type} timeInfo
- * @returns {undefined}
- */
+// Renderer pour le scrolling de donnÃ©es RSS
 function universite_render_RSS_scrolling(collection, zone, timeInfo) {
 
     // Debug du temps d'information
-    timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 50;
+    var time_info = typeof timeInfo !== 'undefined' ? timeInfo : 50;
 
     // Variables
     var logo = '<img src="img/logos/rss.png" align="top"/>';
@@ -20,36 +14,30 @@ function universite_render_RSS_scrolling(collection, zone, timeInfo) {
     zone.loadImage("img/logos/rss.png");
     zone.loadImage("img/left_arrow.png");
 
-    // On parcours les éléments du fil rss
+    // On parcours les Ã©lÃ©ments du fil rss
     for (var indice = 0; indice < collection.content.length; indice++) {
-        
-        // Récupération des sous-éléments
+
+        // RÃ©cupÃ©ration des sous-Ã©lÃ©ments
         var elements = collection.content[indice];
-        
-        // Déclaration de l'html
-        content += logo;
-        content += "<img src='img/left_arrow.png' />";
-        content += "<span class='tweet'>";
-        content += " " + "<span class='twitter_title'>" + elements.title + " : </span>";
-        
-        if(elements.content.length > 40) {
-            content += "<span class='twitter_Content'>" + elements.content.substring(0,40) + "... </span>";
-        } else {
-            content += "<span class='twitter_Content'>" + elements.content + "... </span>";
-        }
-        
-        // On finis l'élément
-        content += "</span>";
-        
+
+        // DÃ©claration de l'html
+        content += logo + "<img src='img/left_arrow.png' />";
+        content += "<span class='tweet'> <span class='twitter_title'>" + collection.title + " : </span>";
+        content += "<span class='twitter_Content'>" + elements.title + " </span></span>";
+
         // Augmentation du temps d'affichage
-        time += timeInfo;
-        
+        time += time_info;
+
     }
 
-    // Déclaration du dictionnaire
-    var dico = {"content": content, "logo": logo, "time": time};
+    // DÃ©claration du dictionnaire
+    var dico = {
+        content: content,
+        logo: logo,
+        time: time
+    };
 
-    // On push le contenu généré dans la zone qui se chargera de l'afficher
+    // On push le contenu gÃ©nÃ©rÃ© dans la zone qui se chargera de l'afficher
     zone.pushInfo(dico);
 
 }

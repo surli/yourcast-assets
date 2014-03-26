@@ -1,22 +1,17 @@
-/*
- * work on rss feed source
- * display the rss feed on the zone1 (mainZone)
- * the content is modified but the logo and the title are the same
- *
- * CSS classes : 
- * - main_div_zone1
- * - rss_body 
- * - rss_Content
- * - rss_Source 
- * - smooth
- */
+
+// Renderer RSS Main
 function glc_render_RSS_for_main(collection, zone, logo, timeInfo) {
-    timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 5;
-    var logoFeed = '<img src="' + logo + '"/>';
+
+    // Debug du temps d'information
+    var time_info = typeof timeInfo !== 'undefined' ? timeInfo : 50;
+    
+    // On charge les images
     zone.loadImage(logo);
-    var time = timeInfo;
-    var titleFeed = collection.title;
+
+    // On parcours les éléments du fil rss
     for (var indice = 0; indice < collection.content.length; indice++) {
+
+        // Récupération des sous-éléments
         var elements = collection.content[indice];
 
         var title = elements.title;
@@ -26,23 +21,31 @@ function glc_render_RSS_for_main(collection, zone, logo, timeInfo) {
         var content = "";
 
         content += "<div id='rssfeed' class='main_div_zone1' >";
-        content += "<div class='rss_body'>";
-        content += "<div class='rss_Image'><img src='" + image + "'/></div>";
-        content += "<div class='rss_Content'>" + contentAnnounces + "</div>";
-        content += "<div class='rss_Source'>" + titleFeed + "</div>";
-        content += "</div>";
-        content += "</div>";
+        content += "<div class='rss_body'><div class='rss_Content'>";
 
+        if (typeof image !== "undefined" && image !== "") {
+            content += "<div class='rss_Image'><img src='" + image + "'/></div>";
+        }
+
+        content += contentAnnounces + "</div>";
+        content += "<div class='rss_Source'>" + collection.title + "</div></div></div>";
         content += "<div class='smooth'> </div>";
 
-        var dico = {"content": content, "logo": logoFeed, "title": title, "time": time};
+        // Déclaration du dictionnaire
+        var dico = {
+            content: content,
+            logo: logo,
+            title: title,
+            time: time_info
+        };
+
+        // On push le contenu généré dans la zone qui se chargera de l'afficher
         zone.pushInfo(dico);
+
     }
 }
 
-/*
- * work on rss feed source universite
- */
+//work on rss feed source universite
 function glc_render_RSS_for_main_generique(collection, zone, timeInfo) {
     timeInfo = typeof timeInfo !== 'undefined' ? timeInfo : 5;
     return glc_render_RSS_for_main(collection, zone, "img/logos/rss.png", timeInfo);
