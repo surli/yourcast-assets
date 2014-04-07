@@ -616,6 +616,7 @@ var Zone = Class.create({
 
         // Réinitialiser le json stocké
         this.json = null;
+        this.infoList = null;
 
         // Stocke le this
         var self = this;
@@ -752,8 +753,17 @@ var Zone = Class.create({
 
                     }
 
+                },
+                
+                // Si la requete est un echec
+                onFail: function() {
+                    self.comportement.stop();
+                    
+                    // Le rest n'est plus accessible on refresh toutes les 10 secondes pour voir s'il est revenu
+                    setTimeout(function() {
+                        self.request();
+                    }, 10000);
                 }
-
             });
 
         }
