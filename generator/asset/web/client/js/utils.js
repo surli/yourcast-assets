@@ -516,16 +516,3 @@ function firstLettertoUpperCase(str) {
 function basename(str) {
     return str.replace(/\\/g, '/').replace(/.*\//, '');
 }
-
-
-/**
- * Lien au personalizer
- */
-
-jQuery(document).ready(function() {
-    jQuery("#configuration").hover(function() {
-        jQuery(this).find(".lien").show();
-    }, function() {
-        jQuery(this).find(".lien").hide();
-    });
-});
