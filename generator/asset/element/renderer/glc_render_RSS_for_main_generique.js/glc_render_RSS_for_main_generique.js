@@ -34,7 +34,7 @@ function glc_render_RSS_for_main(collection, zone, logo, timeInfo) {
         // Déclaration du dictionnaire
         var dico = {
             content: content,
-            logo: logo,
+            logo: "<img src='" + logo + "'/>",
             title: title,
             time: time_info
         };
