@@ -1,50 +1,50 @@
-@import "../less/functions.less";
-@import "../less/variables.less";
 
-#${zoneName} {    
-    position:absolute;
-    font-size:100%;
-    top: 13%; left: 0px;
-    height : 76%;
-    width : 68%;
-    padding-left: 2%;
-    .zone1Background;
-    -moz-box-shadow: 1px 1px 1px #ccc;
-    -webkit-box-shadow: 1px 1px 1px #ccc;
-    box-shadow: 1px 1px 1px #ccc;
-    overflow:hidden;
-}
-
-#${zoneName} .logo{
-    width:85px;
-    height:85px;
-    display:block;
+#${zoneName} {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    text-align:right;
-    img {
-        margin-right: 10px;
-        margin-top:10px;
-        background : transparent no-repeat;
+    overflow: hidden;
+    top: 16%;
+    bottom: 16%;
+    right: 30%;
+    left: 0px;
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    min-height: 400px;
+}
+@media (max-width: 1200px) {
+    #${zoneName} {
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 0%;
+        right: 0%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: 15px auto;
     }
 }
-
 #${zoneName} .title {
-    color: @grayDark;
-    font-weight:500;
-    font-size:135%;
-    line-height:135%;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    display:block;
-    margin-right:90px;
-    text-shadow:2px 2px 5px #aaa;
+    color: #222222;
+    font-weight: 500;
+    font-size: 135%;
+    line-height: 135%;
+    padding: 20px;
+    background: transparent;
 }
-
-#${zoneName}_content {
+#${zoneName} iframe {
+    height: 100%;
+    width: 100%;
     position: absolute;
-    top: 25%;
-    height: 75%;
-    width: 93%;
+    bottom: -1px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+#${zoneName} #ZoneCentrale_content {
+    width: 100%;
+    padding: 20px;
+}
+#${zoneName} #ZoneCentrale_logo {
+    margin: -15px 20px;
+    margin-right: -15px;
 }

@@ -4,17 +4,18 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
         <title>YourCast</title>
+        <script type="text/javascript" src="js/libs/jquery.js"></script>
         <script type="text/javascript" src="js/libs/prototype.js"></script>
         <script type="text/javascript" src="js/utils.js"></script>
         <script type="text/javascript" src="js/date.js"></script>
         <script type="text/javascript" src="js/controler.js"></script>
 
         <link href="img/climacons-font/webfont/climacons-font.css" rel="stylesheet" type="text/css" />
-        <link href="less/style.less" rel="stylesheet/less" id="stylePage"/>
+        <link href="bootstrap.min.css" rel="stylesheet">
 
         $zoneScripts
 
-        <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600' rel='stylesheet' type='text/css'>
 
     </head>
 
@@ -22,14 +23,18 @@
 
         <div id="date_time"></div>
 
+        <div id="configuration"><a href="" class="btn lien btn-danger"><i class="fa fa-edit"></i> Personnaliser</a></div>
+
         $layoutBody
 
-        <div id="logo_loading">
-            <div>
-                <img id="loading_img" src="./img/yc_loading.gif" />
+        <div id="ZoneHautMilieu">
+            <div id="zoneHautMilieu_centrale">
+                <img src="img/yourcast_small_blue.png" alt="Logo Yourcast"/>
             </div>
         </div>
-        <span class="design_signature"><a href="http://c.line-design.fr">c.line-design.fr</a></span>
+        
+        <div id="logo_loading"><div><img id="loading_img" src="./img/yc_loading.gif" /></div></div>
+        <!--<span class="design_signature"><a href="http://c.line-design.fr">c.line-design.fr</a></span>-->
     </body>
 </html>
 

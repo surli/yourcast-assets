@@ -46,12 +46,11 @@ function day_date(){
         var month=date.month;
         var year=date.year;
         var dateString=get_day()+" "+day+" "+month;
-        document.getElementById("date_time").innerHTML = "<big>"+hour +"</big><br/>"+dateString;
+        document.getElementById("date_time").innerHTML = hour + "<br/>"+dateString;
     }
     else{
         hour = get_time();
-        //document.getElementById("date_time").innerHTML = date;
-        document.getElementById("date_time").innerHTML = "<big>" + hour + "</big>";
+        document.getElementById("date_time").innerHTML = hour;
     }
 }
 
@@ -193,15 +192,15 @@ function display_date_and_hour(date) {
 
 
 /**
- *  Fonction utilisée pour savoir si la date donnée se trouve dans une plage 
- *  horaire d'une "pause" / d'une inactivité. Tous les paramètres peuvent être 
- *  des Date ou des Timestamp indifféremment.
+ *  Fonction utilisï¿½e pour savoir si la date donnï¿½e se trouve dans une plage 
+ *  horaire d'une "pause" / d'une inactivitï¿½. Tous les paramï¿½tres peuvent ï¿½tre 
+ *  des Date ou des Timestamp indiffï¿½remment.
  */
 function date_between_date(plage_horaire_debut, plage_horaire_fin, date_tested) {
 
-    // Si un des paramètres n'est pas défini
+    // Si un des paramï¿½tres n'est pas dï¿½fini
     if(typeof plage_horaire_debut === 'undefined' || typeof plage_horaire_fin === 'undefined' || typeof date_tested === 'undefined') {
-        throw new Exception("[moteur/js/date.js] date_between_date", "L'un des paramètres n'est pas défini.");
+        throw new Exception("[moteur/js/date.js] date_between_date", "L'un des paramï¿½tres n'est pas dï¿½fini.");
     }
 
     // Transformation en timestamp

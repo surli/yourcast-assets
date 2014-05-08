@@ -1,22 +1,4 @@
-﻿/**
- *      <b>CONTROLER GENERAL</b>
- * 
- *  <b>Informations :</b>
- * 
- *      Le controler général permet de gérer toute l'application. Le controler 
- *      général ne dépend pas de Prototype. Le système de classe est celui de 
- *      base de Javascript.
- *      
- *  <b>Fonctions :</b>
- * 
- *      push - Pousse une nouvelle zone dans le Controler General
- *      getZones - Retourne toutes les zones qui ont été push
- *      refresh - Refresh la page du client lorsque le lien
- *      
- *  <b>Contributors :</b>
- *  
- *    	Guillaume Golfieri (golfieri.guillaume@gmail.com)
- */
+
 
 /**
  *  <b>ControlerGeneral</b>
@@ -30,29 +12,31 @@ function ControlerGeneral(url) {
 
     // Test si le controler général est instancié
     if (ControlerGeneral.caller !== ControlerGeneral.getInstance) {
-        
+
         // Retourne une exception
         throw new Exception("utils.js", "Le controleur général ne peux pas être instancié. Veuillez utiliser getInstance", new Error().lineNumber);
-        
+
     }
 
     // Test si l'url est définit
-    if(isPropertyDefined(url)) {
-        
+    if (isPropertyDefined(url)) {
+
         // Stockage de l'url
         this.url = url;
-        
+
         // Stockage du this
         var self = this;
-        
+
         // Refresh de la page
-        setInterval(function() { self.refresh(); }, 1000);
-        
+        setInterval(function() {
+            self.refresh();
+        }, 1000);
+
     } else {
-        
+
         // Affichage en information
         new Information("utils.js", "Aucun lien donnée pour le refresh de la page", new Error().lineNumber);
-        
+
     }
 
     /**
@@ -80,7 +64,7 @@ function ControlerGeneral(url) {
     this.stopAllBehaviors = function() {
 
         // Stop tous les comportements
-        for(var zone in this.zones) {
+        for (var zone in this.zones) {
             zone.comportement.pause();
         }
 
@@ -97,18 +81,16 @@ function ControlerGeneral(url) {
         return this.zones;
 
     };
-    
+
     /**
      *  Refresh de la page
      */
     this.refresh = function() {
-        
+
         // Effecture la requéte Ajax
         new Ajax.Request(this.url, {
-            
             // On utilise un get
             method: 'get',
-            
             // Si la requ�te est un succ�s
             onSuccess: function(transport) {
 
@@ -125,7 +107,7 @@ function ControlerGeneral(url) {
                         var json = JSON.parse(textContent);
 
                         // On test si on doit reload la page
-                        if(json.reload) {
+                        if (json.reload) {
                             location.reload();
                         }
 
@@ -133,7 +115,7 @@ function ControlerGeneral(url) {
 
                     // Un erreur est survenue
                     catch (e) {
-                        
+
                         // Cr�ation d'une exception 
                         new Exception("utils.js", "Erreur dans le parse du JSon", new Error().lineNumber);
 
@@ -146,15 +128,19 @@ function ControlerGeneral(url) {
 
                 }
             },
-            onFailure: function() { },
-            onException: function() { },
-            onComplete: function() { }
+            onFailure: function() {
+            },
+            onException: function() {
+            },
+            onComplete: function() {
+            }
 
         });
 
     };
 
-};
+}
+;
 
 // Propri�t� statique qui contient l'instance unique  
 ControlerGeneral.instance = null;
@@ -213,30 +199,30 @@ console.log("\t\t\t_____________________________________________________________
 //	VARIABLES
 // ====================================================
 
-var ROOT                    = document.location.pathname;
+var ROOT = document.location.pathname;
 
-var LESS_ROOT               = ROOT + "/less";
-var JS_ROOT                 = ROOT + "/js";
-var IMG_PATH                = ROOT + "/img";
+var LESS_ROOT = ROOT + "/less";
+var JS_ROOT = ROOT + "/js";
+var IMG_PATH = ROOT + "/img";
 
-var RENDERER_PATH           = JS_ROOT + "/renderers";
-var BEHAVIOUR_PATH          = JS_ROOT + "/behaviours";
+var RENDERER_PATH = JS_ROOT + "/renderers";
+var BEHAVIOUR_PATH = JS_ROOT + "/behaviours";
 
-var DOMAIN_PATH             = "http://" + document.location.host;
+var DOMAIN_PATH = "http://" + document.location.host;
 var DEFAULT_REQUEST_TIMEOUT = 60000;
 
 // Variables de debug
-var VERBOSE_DEBUG           = "verbose";
-var SILENT_DEBUG            = "silent";
+var VERBOSE_DEBUG = "verbose";
+var SILENT_DEBUG = "silent";
 
 // Variable avec des fonctions de debug
-var PROD                    = true;
-var PAGE_CHARGE             = false;
-var LESS_CHARGE             = false;
-var NB_ZONE_CHARGE          = 0;
+var PROD = true;
+var PAGE_CHARGE = false;
+var LESS_CHARGE = false;
+var NB_ZONE_CHARGE = 0;
 
 // Speed up calls to hasOwnProperty
-var hasOwnProperty          = Object.prototype.hasOwnProperty;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 // Variable du less
 less = {
@@ -265,24 +251,26 @@ if (window.addEventListener) {
 // ====================================================
 
 function modifValues() {
-    
-    if(document.getElementById('chargement')) {
-        
+
+    if (document.getElementById('chargement')) {
+
         val = document.getElementById('chargement').value;
-                
-        if(val>=100) {
-            val=5;
+
+        if (val >= 100) {
+            val = 5;
         } else {
             val += 2;
         }
-        
+
         document.getElementById('chargement').value = val;
 
     }
-    
-} 
 
-var timeout_chargement = setInterval(function(){ modifValues(); }, 40);
+}
+
+var timeout_chargement = setInterval(function() {
+    modifValues();
+}, 40);
 
 /**
  *  <b>FinChargement</b>
@@ -293,11 +281,11 @@ var timeout_chargement = setInterval(function(){ modifValues(); }, 40);
 function finChargement() {
 
     // Cache le logo de chargement
-    if(NB_ZONE_CHARGE >= ControlerGeneral.getInstance().getZones().length) {
-        
+    if (NB_ZONE_CHARGE >= ControlerGeneral.getInstance().getZones().length) {
+
         // Cache le logo du chargements
         $('logo_loading').hide();
-        
+
     }
 
 }
@@ -335,10 +323,10 @@ function finChargementZone() {
  *  
  */
 function pageCharge() {
-    
+
     // La page est chargé
     PAGE_CHARGE = true;
-    
+
 }
 
 /**
@@ -427,16 +415,16 @@ function loadLess(url) {
  * Le client bloqué
  */
 function clientBloque() {
-    
+
     // On clear le timeout
     clearTimeout(timeout_chargement);
-    
+
     // Récupérer la valeur
     val = document.getElementById('chargement').value;
-    
+
     // Change le text
     document.getElementById("progress").innerHTML = '<p style="color: red;">Erreur dans le chargement</p><progress id="chargement_bloque" value="' + val + '" max="100"></progress>';
-    
+
 }
 
 /**
@@ -523,3 +511,21 @@ function firstLettertoUpperCase(str) {
     return newstr;
 
 }
+
+// Fonction basename identique à celle Php
+function basename(str) {
+    return str.replace(/\\/g, '/').replace(/.*\//, '');
+}
+
+
+/**
+ * Lien au personalizer
+ */
+
+jQuery(document).ready(function() {
+    jQuery("#configuration").hover(function() {
+        jQuery(this).find(".lien").show();
+    }, function() {
+        jQuery(this).find(".lien").hide();
+    });
+});
