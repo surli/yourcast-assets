@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prodzone:Zone xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:prodzone="prodzone.yourcast.fr" name="bottomZone_imredd">
+  <block name="index.html" type="html"/>
+  <resources name="style.less" type="css"/>
+</prodzone:Zone>
