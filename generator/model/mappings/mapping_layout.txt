@@ -6,7 +6,7 @@ Layout,VocalZone,Product,LayoutCA,InactiviteZone_CA,CA,Zones,MainZone_CA,Design:
 LayoutChoraliesTheatre,Layout,Product,theatreMainZone_choralies,alertZone_choralies,Choralies,Zones,Theatre,Design:./layout/choralies_theatre.xmi
 publicLeftZone_choralies,publicMainZone_choralies,headerZone_choralies,Layout,scrollingBottomZone_choralies,Product,LayoutChoraliesPublic,alertZone_choralies,Choralies,publicRightZone_choralies,Zones,Design:./layout/choralies_public.xmi
 LayoutChoraliesAteliers,headerZone_choralies,Layout,scrollingBottomZone_choralies,Product,rightZone_choralies,atelierMainZone_choralies,alertZone_choralies,Choralies,Zones,Design:./layout/choralies_ateliers.xmi
-IMREDD,Layout,Product,RightZone_glc,GLC,BottomZone_glc,LayoutAcademicIMREDD,MainZone_glc,Zones,HeaderZone_glc,Design:./layout/imredd.xmi
+IMREDD,Layout,MainZone_Imredd,BottomZone_Imredd,Product,HeaderZone_Imredd,LayoutAcademicIMREDD,RightZone_Imredd,Zones,Design:./layout/imredd.xmi
 EPU,Layout,Product,MainZone_Polytech,LayoutAcademicEPU,Zones,Design:./layout/polytech.xmi
 Layout,LayoutUniversite,Product,BottomZone_Universite,UNIVERSITE,MainZone_Universite,Zones,Design:./layout/universite.xmi
 attenteMainZone_choralies,headerZone_choralies,Layout,scrollingBottomZone_choralies,Product,rightZone_choralies,alertZone_choralies,LayoutChoraliesAttente,Choralies,Zones,Design:./layout/choralies_attente.xmi
