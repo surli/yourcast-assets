@@ -26,7 +26,7 @@ function irsam_render_birthday(datas, zone, timeInfo) {
     }
     
     // Test si la collection est vide
-    if(datas.length === 0) {
+    if(datas.length === 0 || is_empty(datas[0])) {
         throw new Information("irsam_render_birthday.js", "The informations are empty", 30);
     }
 

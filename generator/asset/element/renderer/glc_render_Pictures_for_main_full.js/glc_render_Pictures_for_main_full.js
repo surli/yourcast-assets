@@ -42,12 +42,8 @@ function glc_render_Pictures_for_main_full(collection, zone, timeInfo) {
 
             var url = elements.url;
 
-            $(zone.id + "_title").innerHTML = "Démarrage de Yourcast";
-
-            var tmp_title = $(zone.id + "_title").getLayout();
-            var tmp_zone = $(zone.id).getLayout();
-
-            var zoneHeight = tmp_zone.get('height') - tmp_title.get('height') - tmp_title.get('padding-top') - tmp_title.get("padding-bottom") - 80;
+            jQuery("#" + zone.id + "_title").text("Démarrage de Yourcast");
+            var zoneHeight = $(zone.id).getHeight() - $(zone.id + "_title").getHeight() - 30;
 
             content = "<div id='Pictures' class='main_div_zone1' style='height:" + zoneHeight + "px;'>";
             content += "<div class='Picturesimage'><span class='imageLegende'><img src='" + url + "'/>";
