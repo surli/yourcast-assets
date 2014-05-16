@@ -18,6 +18,7 @@
   <resources name="img/location_small.png" type="image" path="img/location_small.png"/>
   <resources name="img/location_white.png" type="image" path="img/location_white.png"/>
   <resources name="img/location.png" type="image" path="img/location.png"/>
+  <resources name="img/logo_imredd.png" type="image" path="img/logo_imredd.png"/>
   <resources name="less/functions.less" type="css" path="less/functions.less"/>
   <resources name="less/style.less" type="css" path="less/style.less"/>
   <resources name="less/variables.less" type="css" path="less/variables.less"/>

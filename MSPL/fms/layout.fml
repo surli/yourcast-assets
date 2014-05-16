@@ -6,11 +6,10 @@ layout4 = FM (Layout: Product Zones Design;                                 Prod
 layout5 = FM (Layout: Product Zones Design; Product: LayoutChoraliesTheatre; Zones: theatreMainZone_choralies alertZone_choralies; Design: Choralies Theatre;)
 layout6 = FM (Layout: Product Zones Design; Product: LayoutChoraliesPublic; Zones: headerZone_choralies publicLeftZone_choralies publicMainZone_choralies publicRightZone_choralies scrollingBottomZone_choralies alertZone_choralies; Design: Choralies;)
 layout7 = FM (Layout: Product Zones Design; Product: LayoutChoraliesAteliers; Zones: headerZone_choralies rightZone_choralies atelierMainZone_choralies scrollingBottomZone_choralies alertZone_choralies; Design: Choralies;)
-layout8 = FM (Layout: Product Zones Design; Product: LayoutChoraliesJourUn; Zones: headerZone_choralies jourUnRightZone_choralies jourUnMainZone_choralies counterZone_choralies scrollingBottomZone_choralies alertZone_choralies; Design: Choralies;)
 layout9 = FM (Layout: Product Zones Design;                                 Product: LayoutAcademicEPU;                                 Zones: MainZone_Polytech;                                 Design: EPU;)
 layout10 = FM (Layout: Product Zones Design;                                 Product: LayoutUniversite;                                 Zones: MainZone_Universite BottomZone_Universite;                                 Design: UNIVERSITE;)
 layout11 = FM (Layout: Product Zones Design; Product: LayoutChoraliesAttente; Zones: headerZone_choralies rightZone_choralies attenteMainZone_choralies scrollingBottomZone_choralies alertZone_choralies; Design: Choralies;)
 layout12 = FM (Layout: Product Zones Design;                                 Product: LayoutHandicap;                                 Zones: MainZone_irsam VocalZone;                                 Design: IRSAM;)
-
+layout8 = FM (Layout: Product Zones Design; Product: LayoutChoraliesJourUn; Zones: headerZone_choralies jourUnRightZone_choralies jourUnMainZone_choralies counterZone_choralies scrollingBottomZone_choralies alertZone_choralies; Design: Choralies;)
 
 yourcast_layout = merge sunion layout*
