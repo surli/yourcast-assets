@@ -13,4 +13,4 @@ layout11 = FM (Layout: Product Zones Design; Product: LayoutChoraliesAttente; Zo
 layout12 = FM (Layout: Product Zones Design;                                 Product: LayoutHandicap;                                 Zones: MainZone_irsam VocalZone;                                 Design: IRSAM;)
 layout13 = FM (Layout: Product Zones Design; Product: LayoutChoraliesJourUn; Zones: headerZone_choralies jourUnRightZone_choralies jourUnMainZone_choralies counterZone_choralies scrollingBottomZone_choralies alertZone_choralies; Design: Choralies;)
 
-fm_layout = merge sunion layout*
+yourcast_layout = merge sunion layout*
