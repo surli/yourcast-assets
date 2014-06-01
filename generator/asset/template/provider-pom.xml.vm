@@ -64,4 +64,10 @@
   <build>
     <finalName>$finalName</finalName>
   </build>
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-war-plugin</artifactId>
+    <version>2.1.1</version>
+</plugin>
+  
 </project>
