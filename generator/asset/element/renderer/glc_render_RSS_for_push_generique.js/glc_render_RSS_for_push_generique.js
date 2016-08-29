@@ -17,33 +17,36 @@ function glc_render_RSS_for_push(collection, zone, logo, timeInfo) {
 	var logoFeed = '<img src="'+logo+'" align="center"/>';
 	zone.loadImage(logo);
 	var time = timeInfo;
-	var mainTitle = collection.title;
 	
-	for (var indice = 0; indice < collection.content.length; indice++) {
-		var elements = collection.content[indice];
-
-		var title = elements.title;
-		var reg=new RegExp("(\n)", "g");
-		var contentAnnounces = elements.content.replace(reg, "<br/>");
-		var content = "";
+	if (typeof collection === "object" && typeof collection.title === "string" && Array.isArray(collection.content)) {
+		var mainTitle = collection.title;
 		
-		///if (contentAnnounces.length > 200) {contentAnnounces = contentAnnounces.substring(0, 200); contentAnnounces += "...";}
-		
-		content += "<div id='"+zone.id+"_new_push' class='rss_div_push'>";
-		content += "<div class='rss_body'>";
-			content += "<div class='rss_Title'>"+title+"</div>";
-			content += "<div class='rss_Content'>"+contentAnnounces+"</div>";			
-		content += "</div>";
-		if(indice%3==0){
-			content += "<div class='rss_source'>";
-				content += "<div class='rss_sourceTitle'>"+logoFeed+mainTitle+"</div>";		
-			content += "</div>";	
-		}		
-		content += "</div>";		
-
-		
-		var dico = {"content": content, "logo": "", "title": "", "time": time};
-		zone.pushInfo(dico);
+		for (var indice = 0; indice < collection.content.length; indice++) {
+			var elements = collection.content[indice];
+	
+			var title = elements.title;
+			var reg=new RegExp("(\n)", "g");
+			var contentAnnounces = elements.content.replace(reg, "<br/>");
+			var content = "";
+			
+			///if (contentAnnounces.length > 200) {contentAnnounces = contentAnnounces.substring(0, 200); contentAnnounces += "...";}
+			
+			content += "<div id='"+zone.id+"_new_push' class='rss_div_push'>";
+			content += "<div class='rss_body'>";
+				content += "<div class='rss_Title'>"+title+"</div>";
+				content += "<div class='rss_Content'>"+contentAnnounces+"</div>";			
+			content += "</div>";
+			if(indice%3==0){
+				content += "<div class='rss_source'>";
+					content += "<div class='rss_sourceTitle'>"+logoFeed+mainTitle+"</div>";		
+				content += "</div>";	
+			}		
+			content += "</div>";		
+	
+			
+			var dico = {"content": content, "logo": "", "title": "", "time": time};
+			zone.pushInfo(dico);
+		}
 	}
 }
 

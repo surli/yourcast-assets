@@ -53,6 +53,7 @@ var Zone = Class.create({
                 // On récupère le code de départ
                 this.htmlinit = this.divMarquee.innerHTML;
                 this.map_time = map_time;
+                this.requestPending = false;
 
             }
 
@@ -124,6 +125,8 @@ var Zone = Class.create({
 		
         // Informations de la zone
         this.infoList = new Array();
+        
+        this.json = null;
 
         // Nombre d'informations dans la zone
         this.counterInfo = 0;
@@ -284,9 +287,12 @@ var Zone = Class.create({
             this.array_img[imgsrc].onload = function() {
                 self.incrementImageLoadedAndLaunchBehaviour();
             };
+            this.array_img[imgsrc].onerror = function() {
+                self.array_img[imgsrc].src = "http://www.yourcast.fr/lib/tpl/prsnl10/user/logo.png";
+            };
             this.array_img[imgsrc].src = imgsrc;
         } catch (err) {
-            new Exception("[Controler de la zone] LoadImage", err);
+        	new Exception("[Controler de la zone] LoadImage", err);
         }
     },
     // increment the number of images we need to load
@@ -612,38 +618,41 @@ var Zone = Class.create({
 		if (!this.config_is_init) {
 				this.initConfig();	
 			} else {
-
+		
+		if (this.requestPending) {
+			return;
+		}
 
         // Réinitialiser le json stocké
-        this.json = null;
-        this.infoList = null;
+        //this.json = null;
+        //this.infoList = null;
 
         // Stocke le this
         var self = this;
 
-        // On arrête le comportement
-        self.stopComportement();
-
         // Boucle sur les liens
         if(typeof this.url === "array") {
-
+			var requestSucess = false;
             for (var url in this.url) {
 
                 // Tant que le json est vide on test tous les liens
-                if (this.json === null) {
-
+                if (!requestSucess) {
+					
+					this.requestPending = true;
                     // Effecture la requête Ajax
                     new Ajax.Request(DOMAIN_PATH + this.url[url], {
                         // On utilise un get
                         method: 'get',
                         // Paramètres
-                        asynchronous: false,
+                        //asynchronous: false,
                         // Si la requête est un succès
-                        onSuccess: function(transport) {
-
-                            // On vérifie que le status est bon
+                        onComplete: function(transport) {
+                        	self.requestPending = false;
+							 // On vérifie que le status est bon
                             if (transport.status === 200) {
-
+								// On arrête le comportement
+        						self.stopComportement();
+                           
                                 // On récupère la réponse du JSon
                                 var textContent = transport.responseText;
 
@@ -656,7 +665,7 @@ var Zone = Class.create({
 
                                     // On appelle la méthode receive
                                     self.receive();
-
+									requestSucess = true;
                                 }
 
                                 // Un erreur est survenue
@@ -685,7 +694,7 @@ var Zone = Class.create({
             }
 
             // Test si on a récupéré un fichier json valide
-            if (this.json === null) {
+            if (!requestSucess) {
 
                 // S'il est maitre le client est bloqué
                 if (this.is_master) {
@@ -708,29 +717,32 @@ var Zone = Class.create({
         }
         
         else {
-
+			self.requestPending = true;
             // Effecture la requête Ajax
             new Ajax.Request(DOMAIN_PATH + this.url, {
                 // On utilise un get
                 method: 'get',
                 // Paramètres
-                asynchronous: false,
+                //asynchronous: false,
                 // Si la requête est un succès
-                onSuccess: function(transport) {
-
+                onComplete: function(transport) {
+					self.requestPending = false;
                     // On vérifie que le status est bon
                     if (transport.status === 200) {
-
+						// On arrête le comportement
+        				self.stopComportement();
+                           
                         // On récupère la réponse du JSon
                         var textContent = transport.responseText;
 
+						var oldDatas = this.json;
                         // On essaie de le traiter
                         try {
                             var json = JSON.parse(textContent);
 
                             // On stocke le nouveau JSon
                             self.json = json;
-
+							
                             // On appelle la méthode receive
                             self.receive();
 
@@ -738,16 +750,27 @@ var Zone = Class.create({
 
                         // Un erreur est survenue
                         catch (e) {
-
-                            console.log(e);
-
-                            // On stop le comportement
-                            self.comportement.stop();
-
+							console.log("erreur dans le parsing du JSON sur "+self.id);
+							console.log(e);						                            
+							self.json = oldDatas;
+                            self.receive();
+							 // Le rest n'est plus accessible on refresh toutes les 10 secondes pour voir s'il est revenu
+		                    setTimeout(function() {
+		                        self.request();
+		                    }, 10000);
                         }
 
                     } else {
-
+                    	console.log("On ne devrait pas passer là (onFailure doit prendre le relais)");
+						//self.comportement.stop();
+                    	//self.runComportement();
+	                    // Le rest n'est plus accessible on refresh toutes les 10 secondes pour voir s'il est revenu
+	                    
+	                    self.stopComportement();
+	                    self.receive();
+	                    setTimeout(function() {
+	                        self.request();
+	                    }, 10000);
                         // Création d'une exception
                         throw new Exception("controler.js", transport.statusText, new Error().lineNumber);
 
@@ -756,9 +779,13 @@ var Zone = Class.create({
                 },
                 
                 // Si la requete est un echec
-                onFail: function() {
-                    self.comportement.stop();
-                    
+                onFailure: function() {
+                	self.requestPending = false;
+                	console.log("Fail de la requete ajax."+self.id);
+                	 self.stopComportement();
+	                 self.receive();
+                    //self.comportement.stop();
+                    //self.runComportement();
                     // Le rest n'est plus accessible on refresh toutes les 10 secondes pour voir s'il est revenu
                     setTimeout(function() {
                         self.request();
